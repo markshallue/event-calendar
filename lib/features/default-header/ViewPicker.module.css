@@ -1,0 +1,44 @@
+.control {
+	width: 86px;
+	height: 32px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.25rem;
+	border: 1px solid #aaa;
+	background-color: #fff;
+	cursor: pointer;
+
+	&[data-expanded] {
+		background-color: #f1f3f5;
+	}
+}
+
+.control:hover {
+	background-color: #f1f3f5;
+}
+
+.label {
+	font-weight: 500;
+	font-size: 0.8rem;
+	text-transform: capitalize;
+}
+
+.icon {
+	transition: transform 300ms ease;
+	transform: rotate(0deg);
+
+	[data-expanded] & {
+		transform: rotate(180deg);
+	}
+}
+
+.item {
+	-webkit-font-smoothing: antialiased;
+	text-transform: capitalize;
+}
+
+.item:hover {
+	text-decoration: none !important;
+}

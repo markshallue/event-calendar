@@ -1,0 +1,221 @@
+{
+	"formId": 147,
+	"sequences": [
+		{
+			"formId": 147,
+			"sequenceId": 158,
+			"label": "General",
+			"position": 1,
+			"questions": [
+				{
+					"questionId": 836,
+					"type": 32,
+					"label": "Status",
+					"required": true,
+					"locked": false,
+					"position": 7
+				},
+				{
+					"questionId": 839,
+					"type": 3,
+					"label": "Job number",
+					"required": false,
+					"locked": true,
+					"position": 1
+				},
+				{
+					"questionId": 840,
+					"type": 1,
+					"label": "Job title",
+					"required": true,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 841,
+					"type": 5,
+					"label": "Description",
+					"required": false,
+					"locked": false,
+					"position": 3
+				},
+				{
+					"questionId": 842,
+					"type": 9,
+					"label": "Scheduled start date",
+					"required": true,
+					"locked": false,
+					"position": 4
+				},
+				{
+					"questionId": 843,
+					"type": 9,
+					"label": "Scheduled end date",
+					"required": false,
+					"locked": false,
+					"position": 5
+				},
+				{
+					"questionId": 845,
+					"type": 1,
+					"label": "Location",
+					"required": false,
+					"locked": false,
+					"position": 6
+				},
+				{
+					"questionId": 846,
+					"type": 30,
+					"label": "Coordinate",
+					"required": false,
+					"locked": true,
+					"position": 14
+				},
+				{
+					"questionId": 847,
+					"type": 37,
+					"label": "Equipment needed",
+					"required": false,
+					"locked": false,
+					"position": 8
+				},
+				{
+					"questionId": 838,
+					"type": 37,
+					"label": "Workers",
+					"required": false,
+					"locked": false,
+					"position": 9
+				},
+				{
+					"questionId": 850,
+					"type": 39,
+					"label": "Planned activity",
+					"required": false,
+					"locked": true,
+					"position": 10
+				},
+				{
+					"questionId": 995,
+					"type": 32,
+					"label": "Priority",
+					"required": false,
+					"locked": true,
+					"position": 11
+				},
+				{
+					"questionId": 2380,
+					"type": 38,
+					"label": "Management area",
+					"required": false,
+					"locked": false,
+					"position": 12
+				},
+				{
+					"questionId": 6431,
+					"type": 38,
+					"label": "Work type",
+					"required": false,
+					"locked": true,
+					"position": 13
+				},
+				{
+					"questionId": 6466,
+					"type": 39,
+					"label": "Strategy",
+					"required": false,
+					"locked": false,
+					"position": 15
+				},
+				{
+					"questionId": 6467,
+					"type": 39,
+					"label": "Road map",
+					"required": false,
+					"locked": false,
+					"position": 16
+				}
+			]
+		},
+		{
+			"formId": 147,
+			"sequenceId": 159,
+			"label": "Equipment",
+			"position": 2,
+			"questions": [
+				{
+					"questionId": 837,
+					"type": 5,
+					"label": "Description of outcomes",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 848,
+					"type": 51,
+					"label": "Images",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 6472,
+					"type": 41,
+					"label": "Records count",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 6473,
+					"type": 48,
+					"label": "Last record date",
+					"required": false,
+					"locked": false,
+					"position": 2
+				}
+			]
+		},
+		{
+			"formId": 147,
+			"sequenceId": 160,
+			"label": "Outcomes",
+			"position": 3,
+			"questions": [
+				{
+					"questionId": 837,
+					"type": 5,
+					"label": "Description of outcomes",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 848,
+					"type": 51,
+					"label": "Images",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 6472,
+					"type": 41,
+					"label": "Records count",
+					"required": false,
+					"locked": false,
+					"position": 2
+				},
+				{
+					"questionId": 6473,
+					"type": 48,
+					"label": "Last record date",
+					"required": false,
+					"locked": false,
+					"position": 2
+				}
+			]
+		}
+	]
+}

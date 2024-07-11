@@ -1,0 +1,42 @@
+.header {
+	height: 52px;
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	row-gap: 0.5rem;
+	column-gap: 0.25rem;
+	width: 100%;
+	font-size: 1.125rem;
+	z-index: 300;
+	padding: 0.5rem 0.75rem;
+	overflow: hidden;
+}
+
+.controls {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	justify-self: flex-end;
+}
+
+.navigation {
+	display: flex;
+	align-items: center;
+	flex-grow: 1;
+	gap: 0.75rem;
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+}
+
+.date {
+	white-space: nowrap;
+	font-weight: 500;
+	color: #333;
+	line-height: 1;
+	font-size: 1.25rem;
+	user-select: none;
+}

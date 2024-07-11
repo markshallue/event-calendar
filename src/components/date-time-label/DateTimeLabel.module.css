@@ -1,0 +1,12 @@
+.label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	color: #777;
+	margin: 0px;
+	-webkit-text-decoration: none;
+	text-decoration: none;
+
+	&[data-blur='true'] {
+		filter: blur(1px);
+	}
+}

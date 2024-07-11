@@ -1,0 +1,20 @@
+.wrapper {
+	display: flex;
+	align-items: center;
+	margin-left: -0.25rem;
+	z-index: 300;
+	pointer-events: none;
+}
+
+.dot {
+	background-color: red;
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 9999px;
+}
+
+.line {
+	background-color: red;
+	height: 1px;
+	width: 100%;
+}

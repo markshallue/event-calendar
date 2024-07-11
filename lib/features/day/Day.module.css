@@ -1,0 +1,34 @@
+.wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.scrollWrapper {
+	height: 100%;
+	overflow: auto;
+}
+
+.gridWrapper {
+	display: flex;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	flex-grow: 1;
+}
+
+.gridCell {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 12px;
+	max-height: 12px;
+	box-sizing: border-box;
+	&:nth-child(4n + 4) {
+		border-bottom: 1px solid #eee;
+	}
+}

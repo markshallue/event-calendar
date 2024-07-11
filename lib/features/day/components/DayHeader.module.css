@@ -1,0 +1,12 @@
+.headerRow {
+	position: relative;
+	display: grid;
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin-left: 2.25rem;
+	margin-right: 0.5rem;
+	border-bottom: 1px solid #ccc;
+	&[data-sm='true'] {
+		font-size: 0.75rem;
+	}
+}

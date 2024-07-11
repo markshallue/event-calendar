@@ -1,0 +1,28 @@
+.overflowCard {
+	width: 13rem;
+	background: rgb(255, 255, 255);
+	padding: 0.5rem 0.625rem 0.75rem 0.625rem;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	border: 0.0625rem solid #dee2e6;
+	border-radius: 0.25rem;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+.scrollWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 0.125rem;
+	max-height: min(308px, 90vh);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.label {
+	text-align: center;
+	font-size: 0.875rem;
+	font-weight: 600;
+	margin-bottom: 0.5rem;
+}

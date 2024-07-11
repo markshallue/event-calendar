@@ -1,0 +1,46 @@
+.monthHeader {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	font-size: 0.875rem;
+	font-weight: 600;
+}
+.headerCell {
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+	transition-property: background;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 750ms;
+	user-select: none;
+	padding: 0.25rem 0;
+	color: #333;
+}
+.calendar,
+.grid {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+.row {
+	position: relative;
+	display: grid;
+	flex-grow: 1;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	border-bottom: 1px solid #eee;
+	&:last-child {
+		border-bottom: none;
+	}
+}
+.datePopoverTitle {
+	margin-bottom: 0.5rem;
+	text-align: center;
+	color: #333;
+	font-size: 1rem;
+	font-weight: 600;
+}
+.dropdown {
+	pointer-events: auto;
+	cursor: auto;
+	padding: 0;
+	border: none;
+}

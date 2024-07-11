@@ -1,0 +1,6 @@
+.option {
+	&[data-checked='true'] {
+		background: var(--mantine-color-gray-1);
+		border-radius: 0;
+	}
+}
