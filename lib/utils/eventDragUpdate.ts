@@ -21,7 +21,7 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 	}
 
 	// Extract existing values
-	const { start, end, startTime, endTime, isAllDay } = state.clickedEvent;
+	const { start, end, startTime, endTime } = state.clickedEvent;
 
 	// On drag over grid, update the placeholder event
 	const newStart = date.subtract(state.dragStartOffset, timeScale);
@@ -34,10 +34,10 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 		type: 'mouse_move',
 		event: {
 			...state.placeholderEvent,
-			start: isAllDay ? newStart.hour(start.hour()).minute(start.minute()) : newStart,
-			end: isAllDay ? newEnd.hour(end.hour()).minute(end.minute()) : newEnd,
-			startTime: isAllDay ? startTime : newStart.format('h:mma'),
-			endTime: isAllDay ? endTime : newEnd.format('h:mma'),
+			start: view === 'month' ? newStart.hour(start.hour()).minute(start.minute()) : newStart,
+			end: view === 'month' ? newEnd.hour(end.hour()).minute(end.minute()) : newEnd,
+			startTime: view === 'month' ? startTime : newStart.format('h:mma'),
+			endTime: view === 'month' ? endTime : newEnd.format('h:mma'),
 		},
 	});
 }
