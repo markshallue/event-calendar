@@ -20,13 +20,13 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 		return;
 	}
 
-	// On drag over grid, update the placeholder event
+	// Extract existing values
 	const { start, end, startTime, endTime, isAllDay } = state.clickedEvent;
-	const newStart = date.subtract(state.dragStartOffset, timeScale).hour(start.hour()).minute(start.minute());
+
+	// On drag over grid, update the placeholder event
+	const newStart = date.subtract(state.dragStartOffset, timeScale);
 	const increment = end.diff(start, timeScale);
-	const newEnd = newStart.add(increment, timeScale).hour(end.hour()).minute(end.minute());
-	const newStartTime = isAllDay ? startTime : newStart.format('h:mma');
-	const newEndTime = isAllDay ? endTime : newEnd.format('h:mma');
+	const newEnd = newStart.add(increment, timeScale);
 
 	if (view !== 'month' && !newStart.isSame(newEnd, 'day')) return;
 
@@ -34,10 +34,10 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 		type: 'mouse_move',
 		event: {
 			...state.placeholderEvent,
-			start: newStart,
-			end: newEnd,
-			startTime: newStartTime,
-			endTime: newEndTime,
+			start: isAllDay ? newStart.hour(start.hour()).minute(start.minute()) : newStart,
+			end: isAllDay ? newEnd.hour(end.hour()).minute(end.minute()) : newEnd,
+			startTime: isAllDay ? startTime : newStart.format('h:mma'),
+			endTime: isAllDay ? endTime : newEnd.format('h:mma'),
 		},
 	});
 }

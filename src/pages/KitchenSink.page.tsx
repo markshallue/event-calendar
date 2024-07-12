@@ -61,6 +61,9 @@ export function KitchenSink() {
 				<Button onClick={() => calendar.setActiveDate(dayjs('01-01-2023'))}>January 2023</Button>
 				<Button onClick={() => calendar.setActiveDate(dayjs().add(4, 'M'))}>4 months from now</Button>
 			</Group>
+			<Group mb='sm'>
+				<Button onClick={() => calendar.setView('week')}>Week view</Button>
+			</Group>
 			<Paper withBorder radius='md' shadow='lg'>
 				<EventsCalendar
 					enableDragCreation
