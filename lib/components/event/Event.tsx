@@ -90,7 +90,7 @@ export function Event({
 	const onLongPress = () => {
 		dispatch({ type: 'reset_to_default' });
 		if (enableDragNDrop && !isInOverflow) {
-			dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id, order: 1000 } });
+			dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id, order: isMonthView ? 0 : 1000 } });
 		}
 	};
 	const longPressEvent = useLongPress({ onLongPress });
