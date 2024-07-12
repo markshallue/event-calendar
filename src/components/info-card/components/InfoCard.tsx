@@ -10,10 +10,10 @@ import { InfoCardToolbar } from './InfoCardToolbar';
 import { EventsCalendarPopoverProps } from '~/types';
 
 interface InfoCardProps extends EventsCalendarPopoverProps {
-	handleSubmit: (args: any) => void;
 	withViewLink?: boolean;
 	withEditLink?: boolean;
 	editable?: boolean;
+	handleSubmit?: (args: any) => void;
 }
 
 export function InfoCard({

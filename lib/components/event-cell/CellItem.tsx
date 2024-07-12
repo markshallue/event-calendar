@@ -82,6 +82,7 @@ export function CellItem({
 	};
 
 	const onLongPress = () => {
+		dispatch({ type: 'reset_to_default' });
 		if (enableDragNDrop && !isInOverflow) dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id } });
 	};
 	const longPressEvent = useLongPress({ onLongPress });

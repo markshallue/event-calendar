@@ -1,6 +1,6 @@
 import { Button, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconClipboardList, IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
+import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
 
 import { CalendarEvent } from '~/types';
 
@@ -12,14 +12,14 @@ interface EventActionsProps {
 	onClose: () => void;
 	closeContextMenu?: () => void;
 	setPopoverType: (type: 'view' | 'edit') => void;
-	handleSubmit: (args: HandleSubmitArgs) => void;
+	handleSubmit?: (args: HandleSubmitArgs) => void;
 	type: 'links' | 'icons' | 'buttons';
 	withEditLink?: boolean;
 	withViewLink?: boolean;
 }
 export function EventActions({
 	event,
-	handleSubmit,
+	handleSubmit = () => null,
 	setPopoverType,
 	onClose = () => null,
 	closeContextMenu = () => null,
@@ -56,31 +56,11 @@ export function EventActions({
 				<>
 					<ActionButton
 						buttonContext={type}
-						color='dark'
-						icon={<IconEye size='1.125rem' />}
-						label='View event'
-						onClick={() => {
-							// dispatch({ type: 'view_full_event', event });
-							closeContextMenu();
-						}}
-					/>
-					<ActionButton
-						buttonContext={type}
 						color='indigo'
 						icon={<IconEdit size='1.125rem' />}
-						label='Quick edit'
+						label='Edit'
 						onClick={() => {
 							setPopoverType('edit');
-							closeContextMenu();
-						}}
-					/>
-					<ActionButton
-						buttonContext={type}
-						color='green'
-						icon={<IconClipboardList size='1.125rem' />}
-						label='Edit full event'
-						onClick={() => {
-							// dispatch({ type: 'edit_full_event', event });
 							closeContextMenu();
 						}}
 					/>
@@ -106,6 +86,7 @@ export function EventActions({
 								onClick={e => {
 									e.stopPropagation();
 									onClose();
+									closeContextMenu();
 									close();
 								}}
 							>

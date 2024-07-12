@@ -92,9 +92,8 @@ export function WeekItem({
 	};
 
 	const onLongPress = () => {
-		if (enableDragNDrop) {
-			dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id, order: 1000 } });
-		}
+		dispatch({ type: 'reset_to_default' });
+		if (enableDragNDrop) dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id, order: 1000 } });
 	};
 	const longPressEvent = useLongPress({ onLongPress });
 

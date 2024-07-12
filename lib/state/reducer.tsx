@@ -1,5 +1,3 @@
-import dayjs from 'dayjs';
-
 import { EMPTY_EVENT } from './EMPTY_EVENT';
 import { DEFAULT_STATE } from './DEFAULT_STATE';
 import { CalendarAction, CalendarState } from '~/types';
@@ -62,8 +60,6 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				clickedEvent: EMPTY_EVENT,
 				placeholderEvent: EMPTY_EVENT,
 				eventDragActive: false,
-				dragEventId: null,
-				dragStartDate: null,
 			};
 		}
 		case 'mouse_down': {
@@ -86,12 +82,6 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		}
 
 		// Event drag & drop
-		case 'set_hovered_date': {
-			return {
-				...state,
-				hoveredDate: action.date || dayjs(),
-			};
-		}
 		case 'event_drag_start': {
 			return {
 				...state,

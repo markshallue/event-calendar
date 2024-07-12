@@ -9,10 +9,10 @@ interface InfoCardToolbarProps {
 	event: CalendarEvent;
 	onClose: () => void;
 	setPopoverType: (type: 'view' | 'edit') => void;
-	handleSubmit: (args: HandleSubmitArgs) => void;
 	withViewLink: boolean;
 	withEditLink: boolean;
 	editable: boolean;
+	handleSubmit?: (args: HandleSubmitArgs) => void;
 }
 
 export function InfoCardToolbar({

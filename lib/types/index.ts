@@ -81,8 +81,7 @@ type CalendarActionType =
 	| 'open_overflow'
 	| 'event_drag_start'
 	| 'event_drag_end'
-	| 'open_context_menu'
-	| 'set_hovered_date';
+	| 'open_context_menu';
 
 export interface CalendarAction {
 	activeFilters?: string[];
@@ -92,9 +91,6 @@ export interface CalendarAction {
 	date?: Dayjs;
 	newView?: CalendarView;
 	type: CalendarActionType;
-	dragEventId?: number;
-	dragStartDate?: Dayjs;
-	dragEndDate?: Dayjs;
 	popoverDisplayType?: PopoverDisplayType;
 	dragStartOffset?: number | null;
 }
@@ -117,12 +113,8 @@ export interface CalendarState {
 	placeholderEvent: PlaceholderEvent;
 
 	// Event Drag & drop
-	hoveredDate: Dayjs;
 	dragStartOffset: number | null;
 	eventDragActive: boolean;
-	dragEventId: null | number;
-	dragStartDate: Dayjs | null;
-	dragEndDate: Dayjs | null;
 
 	// Overflow Popover
 	overflowAnchor: HTMLDivElement | null;

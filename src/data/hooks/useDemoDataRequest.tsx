@@ -9,7 +9,7 @@ for (let index = 0; index < NUM_EVENTS; index++) {
 	demoEvents.push(createDemoEvent(index));
 }
 
-export default function useDemoDataRequest(delay?: number) {
+export default function useDemoDataRequest(delay: number = 0) {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {

@@ -25,7 +25,7 @@ export interface EventsCalendarProps {
 	compact?: boolean;
 	enableDragCreation?: boolean;
 	enableDragNDrop?: boolean;
-	events?: RawCalendarEvent[];
+	events?: CalendarEvent[] | RawCalendarEvent[];
 	height?: string | number;
 	isFetching?: boolean;
 	renderViewPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
@@ -88,7 +88,7 @@ export function EventsCalendar({
 				<DefaultHeader view={view} setDate={setActiveDate} setView={setView} date={activeDate} views={views} />
 			)}
 			<div className={classes.wrapper} style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}>
-				{/* Sidebar */}
+				{/* Sidebar could go here */}
 				<div className={classes.EventsCalendar} onClick={e => e.stopPropagation()}>
 					<CircularLoader visible={isFetching} />
 					{view === 'month' ? (
@@ -138,17 +138,9 @@ export function EventsCalendar({
 								: state.popoverDisplayType === 'edit' && renderEditPopover
 								? renderEditPopover({ onClose, setPopoverType, event: state.clickedEvent })
 								: state.popoverDisplayType === 'create' && renderCreatePopover
-								? renderCreatePopover({
-										onClose,
-										setPopoverType,
-										event: state.placeholderEvent,
-								  })
+								? renderCreatePopover({ onClose, setPopoverType, event: state.placeholderEvent })
 								: state.popoverDisplayType === 'drag-update' && renderEditPopover
-								? renderEditPopover({
-										onClose,
-										setPopoverType,
-										event: state.placeholderEvent,
-								  })
+								? renderEditPopover({ onClose, setPopoverType, event: state.placeholderEvent })
 								: null}
 						</Popover>
 					)}
