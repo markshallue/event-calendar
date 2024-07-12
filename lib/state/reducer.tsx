@@ -101,7 +101,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 					...state.placeholderEvent,
 					order: 0,
 					...action.event,
-					id: 0,
+					id: null,
 					isActive: true,
 				},
 			};
@@ -110,7 +110,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 			return {
 				...state,
 				dragStartOffset: action.dragStartOffset ?? state.dragStartOffset,
-				placeholderEvent: { ...state.placeholderEvent, ...action.event },
+				placeholderEvent: { ...state.placeholderEvent, ...action.event, id: null },
 			};
 		}
 		case 'event_drag_end': {

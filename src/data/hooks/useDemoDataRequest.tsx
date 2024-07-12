@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { CalendarEvent } from '~/types';
-import { createDemoEvent } from '../createDemoEvent';
+import { createDemoEvent } from '../utils';
 
 // Create demo events
 const NUM_EVENTS = 100;

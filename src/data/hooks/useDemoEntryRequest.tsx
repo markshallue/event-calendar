@@ -1,16 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
-import createDemoEntry from '../createDemoEntry';
+import { createDemoEntry } from '../utils';
 
 export default function useDemoEntryRequest(index: number) {
-  const [isLoading, setIsLoading] = useState(true);
+	const [isLoading, setIsLoading] = useState(true);
 
-  const demoEntry = useMemo(() => createDemoEntry(index), [index]);
+	const demoEntry = useMemo(() => createDemoEntry(index), [index]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1000);
-  }, [setIsLoading]);
+	useEffect(() => {
+		setTimeout(() => {
+			setIsLoading(false);
+		}, 1000);
+	}, [setIsLoading]);
 
-  return { data: isLoading ? undefined : demoEntry, isLoading };
+	return { data: isLoading ? undefined : demoEntry, isLoading };
 }

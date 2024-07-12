@@ -3,12 +3,13 @@ import classes from './InfoCard.module.css';
 import { EventActions } from '@/components';
 import { CalendarEvent } from '~/types';
 import { FilledBadge } from './FilledBadge';
+import { HandleSubmitArgs } from '@/components/form-card/types';
 
 interface InfoCardToolbarProps {
 	event: CalendarEvent;
 	onClose: () => void;
 	setPopoverType: (type: 'view' | 'edit') => void;
-	handleSubmit: (args: any) => void;
+	handleSubmit: (args: HandleSubmitArgs) => void;
 	withViewLink: boolean;
 	withEditLink: boolean;
 	editable: boolean;

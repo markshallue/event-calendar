@@ -5,7 +5,7 @@ export const getInitialValues = (event: CalendarEvent, defaultGroups?: string[])
 	return {
 		title: event.title,
 		info: event.info || '',
-		group: defaultGroups || event.groups?.map(g => g.label) || [],
+		groups: defaultGroups || event.groups?.map(g => g.label) || [],
 		start: event.start?.toDate(),
 		end: event.end?.toDate(),
 		startTime: event.startTime || null,

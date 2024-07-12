@@ -1,14 +1,14 @@
 import dayjs from 'dayjs';
 import { CalendarEvent } from '~/types';
 
-import { STATUS_OPTIONS } from './STATUS_OPTIONS';
-import { STAFF_OPTIONS } from './STAFF_OPTIONS';
-import { demoJobs } from './DEMO_JOBS';
-import demoImage1Url from './images/demoImage1.jpg';
-import demoImage2Url from './images/demoImage2.jpg';
-import demoImage3Url from './images/demoImage3.jpg';
-import demoImage4Url from './images/demoImage4.jpg';
-import demoImage5Url from './images/demoImage5.jpg';
+import { STATUS_OPTIONS } from '../constants/STATUS_OPTIONS';
+import { STAFF_OPTIONS } from '../constants/STAFF_OPTIONS';
+import { demoJobs } from '../constants/DEMO_JOBS';
+import demoImage1Url from '../images/demoImage1.jpg';
+import demoImage2Url from '../images/demoImage2.jpg';
+import demoImage3Url from '../images/demoImage3.jpg';
+import demoImage4Url from '../images/demoImage4.jpg';
+import demoImage5Url from '../images/demoImage5.jpg';
 
 const HOUR_OPTIONS = [8, 9, 10, 11, 12, 13, 14];
 const IMAGE_URLS = [demoImage1Url, demoImage2Url, demoImage3Url, demoImage4Url, demoImage5Url];
@@ -48,7 +48,7 @@ export function createDemoEvent(index: number): CalendarEvent {
 
 	return {
 		id: index + 1,
-		entryId: null,
+		dragId: null,
 		title: demoJobs[index % demoJobs.length].label,
 		start: START_DATE,
 		end: END_DATE,

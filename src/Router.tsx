@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Basic } from './pages/Basic.page';
 import { Root } from './pages/Root.page';
 import { KitchenSink } from './pages/KitchenSink.page';
-import { NothingFound } from './error-pages/NothingFound';
 import { ErrorFallback } from './error-pages/ErrorFallback';
 import { RootErrorBoundary } from './error-pages/RootErrorBoundary';
 

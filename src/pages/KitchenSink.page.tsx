@@ -5,11 +5,16 @@ import { EventsCalendar } from '~/EventsCalendar';
 import { useEventsCalendar } from '~/hooks';
 
 import { PageWrapper } from '@/layout/PageWrapper';
-import { useBuildDemoData } from '@/data/hooks/useBuildDemoData';
 import { ContextMenu, FormCard, InfoCard } from '@/components';
+import { demoData } from '@/data/constants/demoData';
+import { demoGroups } from '@/data/constants/demoGroups';
+import { useState } from 'react';
+import { HandleSubmitArgs } from '@/components/form-card/types';
+import { RawCalendarEvent } from '~/types';
+import { createNewEventFromForm } from '@/utils';
 
 export function KitchenSink() {
-	const { calendarData, groups } = useBuildDemoData();
+	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
 
 	const formFields = {
 		id: 'id',
@@ -20,11 +25,31 @@ export function KitchenSink() {
 	};
 
 	// Get calendar instance
-	const options = {};
-	const calendar = useEventsCalendar(options);
+	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
 
-	const handleSubmit = (args: unknown) => {
-		console.log(args);
+	const handleSubmit = (args: HandleSubmitArgs) => {
+		if (args.type === 'delete') {
+			setEvents(p => p.filter(event => event.id !== args.id));
+		}
+		if (args.type === 'create') {
+			const newId = Math.max(...events.map(e => e.id)) + 1;
+			console.log(newId);
+			const newEvent = createNewEventFromForm({ type: 'create', values: args.values, groups: demoGroups, id: newId });
+			setEvents(p => [...p, newEvent]);
+		}
+		if (args.type === 'edit') {
+			console.log(args.id);
+			const newEvents = events.map(event => {
+				if (event.id !== args.id) return event;
+				return createNewEventFromForm({
+					type: 'edit',
+					values: args.values,
+					groups: demoGroups,
+					event: event,
+				});
+			});
+			setEvents(newEvents);
+		}
 	};
 
 	return (
@@ -43,13 +68,13 @@ export function KitchenSink() {
 					enableDragNDrop
 					views={['month', 'week', 'day']}
 					calendar={calendar}
-					events={calendarData}
+					events={events}
 					renderViewPopover={props => <InfoCard {...props} editable handleSubmit={handleSubmit} />}
 					renderEditPopover={props => (
-						<FormCard {...props} groups={groups} fields={formFields} handleSubmit={handleSubmit} />
+						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='edit' />
 					)}
 					renderCreatePopover={props => (
-						<FormCard {...props} groups={groups} fields={formFields} handleSubmit={handleSubmit} />
+						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='create' />
 					)}
 					renderContextMenu={props => <ContextMenu {...props} handleSubmit={handleSubmit} />}
 				/>

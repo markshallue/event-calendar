@@ -78,7 +78,7 @@ export function WeekItem({
 	});
 
 	// Current event is placeholder event
-	const isPlaceholder = event.id === 0;
+	const isPlaceholder = event.id === null;
 	const eventRef = isPlaceholder ? placeholderRef : ref;
 	const timeDuration = Math.abs(getTimeDiff(event.start, event.end));
 	const isShort = timeDuration <= 30;

@@ -11,7 +11,7 @@ export const getPlaceholderEvent = (start: Dayjs, end: Dayjs, isTimeEntry?: bool
 
 	const updatedEvent: PlaceholderEvent = {
 		...EMPTY_EVENT,
-		id: 0,
+		id: null,
 		start: validStart,
 		end: eventEnd,
 		isActive: true,

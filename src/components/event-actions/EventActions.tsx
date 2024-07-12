@@ -5,13 +5,14 @@ import { IconClipboardList, IconEdit, IconEye, IconTrash } from '@tabler/icons-r
 import { CalendarEvent } from '~/types';
 
 import { ActionButton, ConfirmationModal, IconLink } from './components';
+import { HandleSubmitArgs } from '../form-card/types';
 
 interface EventActionsProps {
 	event: CalendarEvent;
 	onClose: () => void;
 	closeContextMenu?: () => void;
 	setPopoverType: (type: 'view' | 'edit') => void;
-	handleSubmit: (args: any) => void;
+	handleSubmit: (args: HandleSubmitArgs) => void;
 	type: 'links' | 'icons' | 'buttons';
 	withEditLink?: boolean;
 	withViewLink?: boolean;
@@ -120,7 +121,7 @@ export function EventActions({
 									onClose();
 									closeContextMenu();
 									close();
-									handleSubmit({ entryId: event.entryId, type: 'delete' });
+									handleSubmit({ id: event.id, type: 'delete' });
 								}}
 							>
 								Delete

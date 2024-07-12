@@ -3,7 +3,7 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import classes from './FormCard.module.css';
 
-import { CalendarGroup } from '../types';
+import { CalendarGroup, HandleSubmitArgs } from '../types';
 
 import { validateValues } from '../utils/validateValues';
 import { getInitialValues } from '../utils/getInitialValues';
@@ -24,12 +24,13 @@ interface FormCardProps extends EventsCalendarPopoverProps {
 		group: string;
 		info: string;
 	};
+	formType: 'edit' | 'create';
 	event: CalendarEvent;
 	groups: CalendarGroup[];
-	handleSubmit: (args: any) => void;
+	handleSubmit: (args: HandleSubmitArgs) => void;
 }
 
-export function FormCard({ fields, onClose, groups, handleSubmit, event }: FormCardProps) {
+export function FormCard({ fields, formType, onClose, groups, handleSubmit, event }: FormCardProps) {
 	const lengthInDays = event.end.diff(event.start, 'd') + 1;
 
 	// const [hasTime, setHasTime] = useState(!CONFIG.isMonthOnly && !event.isAllDay);
@@ -47,7 +48,7 @@ export function FormCard({ fields, onClose, groups, handleSubmit, event }: FormC
 	return (
 		<Card className={classes.formCard} withBorder>
 			<div>
-				<Text fw={600}>{event.title === 'Untitled' ? 'New event' : 'Edit event'}</Text>
+				<Text fw={600}>{formType === 'create' ? 'New event' : 'Edit event'}</Text>
 				<DateTimeLabel event={event} />
 			</div>
 			<TitleInput form={form} />
@@ -55,7 +56,7 @@ export function FormCard({ fields, onClose, groups, handleSubmit, event }: FormC
 			<TimeToggle form={form} setHasTime={setHasTime} hasTime={hasTime} />
 			<GroupInput groups={groups} fields={fields} form={form} />
 			<InfoInput fields={fields} form={form} />
-			<FormCardToolbar onClose={onClose} event={event} form={form} handleSubmit={handleSubmit} />
+			<FormCardToolbar onClose={onClose} event={event} form={form} formType={formType} handleSubmit={handleSubmit} />
 		</Card>
 	);
 }

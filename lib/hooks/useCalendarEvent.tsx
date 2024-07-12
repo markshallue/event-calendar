@@ -22,7 +22,7 @@ export function useCalendarEvent({
 	const closeContextMenu = () => setContextIsOpen(false);
 
 	// Constants
-	const isActive = event.id !== 0 && state.clickedEvent?.id === event.id;
+	const isActive = event.id !== null && state.clickedEvent?.id === event.id;
 
 	const { refs, floatingStyles, context } = useFloating({
 		open: contextIsOpen,

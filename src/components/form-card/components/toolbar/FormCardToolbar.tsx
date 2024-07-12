@@ -1,64 +1,41 @@
-import { Button } from '@mantine/core';
+import { Button, Flex } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 
 import { CalendarEvent } from '~/types';
-import { FormCardReturnValues, FormCardValues } from '../../types';
+import { FormCardReturnValues, FormCardValues, HandleSubmitArgs } from '../../types';
 
 interface ToolbarProps {
 	onClose: () => void;
+	formType: 'edit' | 'create';
 	event: CalendarEvent;
-	handleSubmit: (args: any) => void;
+	handleSubmit: (args: HandleSubmitArgs) => void;
 	form: UseFormReturnType<FormCardValues, (values: FormCardValues) => FormCardReturnValues>;
 }
 
-export function FormCardToolbar({ onClose, event, form, handleSubmit }: ToolbarProps) {
+export function FormCardToolbar({ onClose, formType, event, form, handleSubmit }: ToolbarProps) {
+	const handleClick = () => {
+		const validation = form.validate();
+		const eventId = event.id || event.dragId;
+		console.log(event);
+		console.log(eventId);
+		if (!validation.hasErrors && eventId !== undefined) {
+			handleSubmit({
+				id: eventId,
+				type: formType,
+				values: form.getTransformedValues(),
+			});
+			onClose();
+		}
+	};
+
 	return (
-		<div
-			style={{
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'flex-end',
-				gap: '0.5rem',
-				marginTop: '0.75rem',
-			}}
-		>
-			{/* {event.id !== 0 && (
-        <Button
-          color="gray"
-          onClick={() => dispatch({ type: 'edit_full_event', eventId: event.id })}
-          radius="sm"
-          rightSection={<IconExternalLink size={12} style={{ marginLeft: -6 }} />}
-          size="xs"
-          styles={getButtonStyles('#555')}
-          variant="subtle"
-        >
-          Edit full event
-        </Button>
-      )} */}
+		<Flex align='center' justify='flex-end' gap='sm' mt='sm'>
 			<Button onClick={onClose} radius='sm' size='xs' variant='default'>
 				Cancel
 			</Button>
-			<Button
-				onClick={() => {
-					const validation = form.validate();
-					if (!validation.hasErrors) {
-						const submitType = !event.entryId ? 'create' : 'update';
-						if (submitType === 'create' || form.isDirty()) {
-							handleSubmit({
-								entryId: event.entryId,
-								type: submitType,
-								values: form.getTransformedValues(),
-							});
-						}
-						onClose();
-					}
-				}}
-				radius='sm'
-				size='xs'
-				type='submit'
-			>
+			<Button onClick={handleClick} radius='sm' size='xs' type='submit'>
 				Save
 			</Button>
-		</div>
+		</Flex>
 	);
 }

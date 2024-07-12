@@ -70,7 +70,7 @@ export function CellItem({
 	});
 
 	// Current event is placeholder event
-	const isPlaceholder = event.id === 0;
+	const isPlaceholder = event.id === null;
 	const eventRef = isPlaceholder && event.start.isSame(date, 'd') ? placeholderRef : ref;
 	const onClose = () => dispatch({ type: 'reset_to_default' });
 	const setPopoverType = (type: 'view' | 'edit') => {
@@ -95,7 +95,7 @@ export function CellItem({
 				data-anchorday={date.format('DD-MMM-YYYY')}
 				data-placeholder={isPlaceholder}
 				data-dragactive={state.dragActive || state.eventDragActive}
-				data-isdragging={state.eventDragActive && (event.id === 0 || event.id === state.placeholderEvent.dragId)}
+				data-isdragging={state.eventDragActive && (event.id === null || event.id === state.placeholderEvent.dragId)}
 				data-sm={compact}
 				data-time={!event.isAllDay}
 				onClick={e => handleClick(e, isPlaceholder, eventRef)}
