@@ -21,11 +21,12 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 	}
 
 	// On drag over grid, update the placeholder event
-	const newStart = date.subtract(state.dragStartOffset, timeScale);
-	const increment = state.clickedEvent.end.diff(state.clickedEvent.start, timeScale);
-	const newEnd = newStart.add(increment, timeScale);
-	const newStartTime = newStart.format('h:mma');
-	const newEndTime = newEnd.format('h:mma');
+	const { start, end, startTime, endTime, isAllDay } = state.clickedEvent;
+	const newStart = date.subtract(state.dragStartOffset, timeScale).hour(start.hour()).minute(start.minute());
+	const increment = end.diff(start, timeScale);
+	const newEnd = newStart.add(increment, timeScale).hour(end.hour()).minute(end.minute());
+	const newStartTime = isAllDay ? startTime : newStart.format('h:mma');
+	const newEndTime = isAllDay ? endTime : newEnd.format('h:mma');
 
 	if (view !== 'month' && !newStart.isSame(newEnd, 'day')) return;
 

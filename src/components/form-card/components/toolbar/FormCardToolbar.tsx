@@ -16,8 +16,6 @@ export function FormCardToolbar({ onClose, formType, event, form, handleSubmit }
 	const handleClick = () => {
 		const validation = form.validate();
 		const eventId = event.id || event.dragId;
-		console.log(event);
-		console.log(eventId);
 		if (!validation.hasErrors && eventId !== undefined) {
 			handleSubmit({
 				id: eventId,

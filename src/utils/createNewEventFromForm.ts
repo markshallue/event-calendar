@@ -1,5 +1,6 @@
 import { CalendarGroup, FormCardReturnValues } from '@/components/form-card/types';
 import { RawCalendarEvent } from '~/types';
+import { createDayjsObjFromTime } from '~/utils';
 
 type createNewEventFromFormArgs =
 	| {
@@ -24,11 +25,19 @@ export const createNewEventFromForm = (args: createNewEventFromFormArgs): RawCal
 		{}
 	);
 
-	console.log(args.values);
+	const { start, end } = createDayjsObjFromTime(
+		args.values.startTime,
+		args.values.endTime,
+		args.values.start.format('DD-MMM-YYYY'),
+		args.values.end.format('DD-MMM-YYYY')
+	);
 
 	const commonProps = {
 		...args.values,
 		groups: args.values.groups.map(groupLabel => ({ label: groupLabel, color: groupToColorMap[groupLabel] })),
+		start,
+		end,
+		isAllDay: args.values.startTime === null && args.values.endTime === null,
 	};
 
 	if (args.type === 'create') {

@@ -38,7 +38,6 @@ export function KitchenSink() {
 			setEvents(p => [...p, newEvent]);
 		}
 		if (args.type === 'edit') {
-			console.log(args.id);
 			const newEvents = events.map(event => {
 				if (event.id !== args.id) return event;
 				return createNewEventFromForm({
