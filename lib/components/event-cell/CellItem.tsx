@@ -24,6 +24,7 @@ interface CellItemProps {
 	event: OrderedCalendarEvent;
 	isInPopover: boolean;
 	isWeekHeader?: boolean;
+	isInOverflow?: boolean;
 	isDayHeader?: boolean;
 	minMaxDatesInView?: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
@@ -40,6 +41,7 @@ export function CellItem({
 	event,
 	isInPopover,
 	isWeekHeader = false,
+	isInOverflow = false,
 	isDayHeader = false,
 	minMaxDatesInView,
 	placeholderRef,
@@ -80,7 +82,7 @@ export function CellItem({
 	};
 
 	const onLongPress = () => {
-		if (enableDragNDrop) dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id } });
+		if (enableDragNDrop && !isInOverflow) dispatch({ type: 'event_drag_start', event: { ...event, dragId: event.id } });
 	};
 	const longPressEvent = useLongPress({ onLongPress });
 

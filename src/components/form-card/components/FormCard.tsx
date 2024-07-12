@@ -45,7 +45,7 @@ export function FormCard({ fields, onClose, groups, handleSubmit, event }: FormC
 	// useHotkeys([['Enter', form.onSubmit(values => console.log(values))]]);
 
 	return (
-		<Card className={classes.formCard} withBorder style={{ width: 328, boxShadow: '0 0 10px #00000080' }}>
+		<Card className={classes.formCard} withBorder>
 			<div>
 				<Text fw={600}>{event.title === 'Untitled' ? 'New event' : 'Edit event'}</Text>
 				<DateTimeLabel event={event} />

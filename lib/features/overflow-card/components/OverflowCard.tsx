@@ -46,6 +46,7 @@ export function OverflowCard({
 					{arrangeWeekEvents(filterByDate(events, date)).map(event => (
 						<CellItem
 							isWeekHeader
+							isInOverflow
 							key={event.id}
 							enableDragNDrop={enableDragNDrop}
 							hasPopover={hasPopover}

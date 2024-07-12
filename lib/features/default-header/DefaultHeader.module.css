@@ -1,13 +1,10 @@
 .header {
 	height: 52px;
 	display: flex;
-	flex-shrink: 0;
 	align-items: center;
 	row-gap: 0.5rem;
 	column-gap: 0.25rem;
-	width: 100%;
 	font-size: 1.125rem;
-	z-index: 300;
 	padding: 0.5rem 0.75rem;
 	overflow: hidden;
 }

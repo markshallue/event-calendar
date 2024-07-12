@@ -10,7 +10,7 @@ export const getEventWrapperStyles = (
 	isWeekHeader: boolean,
 	isDayHeader: boolean
 ) => {
-	if (isInPopover) return { width: '11.5rem' };
+	if (isInPopover) return {};
 	const weekStart = event.start.isSame(date, 'w') ? event.start.day() : 0;
 	const weekEnd = event.end.isSame(date, 'w') ? event.end.day() : 6;
 	const styles: CSSProperties = {
