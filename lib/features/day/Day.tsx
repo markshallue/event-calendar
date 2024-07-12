@@ -14,7 +14,8 @@ import {
 import { TimeIndicator } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
 
-import { DayBackground, DayHeader, DayItem } from './components';
+import { DayBackground, DayHeader } from './components';
+import { Event } from '~/components/event/Event';
 
 interface DayProps {
 	hasPopover: boolean;
@@ -98,7 +99,8 @@ export function Day({
 
 						{/* Render events */}
 						{orderedEvents.map(event => (
-							<DayItem
+							<Event
+								view='day'
 								enableDragNDrop={enableDragNDrop}
 								hasPopover={hasPopover}
 								date={activeDate}

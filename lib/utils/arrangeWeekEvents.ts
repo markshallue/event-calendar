@@ -29,14 +29,14 @@ export function calendarSort(weekEventsArray: CalendarEvent[]) {
     Function that takes an array of events for a single week and arranges them to create a dense fit
 */
 export function arrangeWeekEvents(weekEventsArray: CalendarEvent[]): OrderedCalendarEvent[] {
-	if (weekEventsArray.length < 2) return weekEventsArray.map(event => ({ ...{ ...event, order: 0 } }));
+	if (weekEventsArray.length < 2) return weekEventsArray.map(event => ({ ...{ ...event, order: 0, indent: 0 } }));
 
 	// Sort events by start date, then length, then duration
 	const sortedWeekEvents = calendarSort(weekEventsArray);
 
 	// Extract first event from array and place as in first (top) slot/position
 	const firstEvent = sortedWeekEvents.shift()!;
-	const orderedArray = [{ ...firstEvent, order: 0 }];
+	const orderedArray = [{ ...firstEvent, order: 0, indent: 0 }];
 
 	// Now loop through all other events and add them to the ordered array
 	sortedWeekEvents.forEach(testEvent => {
@@ -57,7 +57,7 @@ export function arrangeWeekEvents(weekEventsArray: CalendarEvent[]): OrderedCale
 		while (overlappingSlots.includes(eventOrder)) eventOrder += 1;
 
 		// Add this event to the ordered array, along with its allocated slot
-		orderedArray.push({ ...testEvent, order: eventOrder });
+		orderedArray.push({ ...testEvent, order: eventOrder, indent: 0 });
 	});
 	return orderedArray;
 }

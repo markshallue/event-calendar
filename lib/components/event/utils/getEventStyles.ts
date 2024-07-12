@@ -1,8 +1,9 @@
-import { OrderedCalendarEvent } from '~/types';
 import { CSSProperties } from 'react';
 import { Dayjs } from 'dayjs';
 
-export const getEventWrapperStyles = (
+import { OrderedCalendarEvent } from '~/types';
+
+export const getEventStyles = (
 	isInOverflow: boolean,
 	event: OrderedCalendarEvent,
 	date: Dayjs,

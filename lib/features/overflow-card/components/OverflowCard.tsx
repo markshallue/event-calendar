@@ -45,7 +45,7 @@ export function OverflowCard({
 				<div className={classes.scrollWrapper}>
 					{arrangeWeekEvents(filterByDate(events, date)).map(event => (
 						<CellItem
-							isWeekHeader
+							isInWeekHeader
 							isInOverflow
 							key={event.id}
 							enableDragNDrop={enableDragNDrop}
@@ -54,7 +54,6 @@ export function OverflowCard({
 							date={date}
 							dispatch={dispatch}
 							event={event}
-							isInPopover={true}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}
 							state={state}

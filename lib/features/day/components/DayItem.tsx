@@ -6,10 +6,10 @@ import { splitColourCSS } from '~/utils/functions';
 import { getTimeLabel, getTimeDiff } from '~/utils';
 import { useCalendarEvent, useLongPress } from '~/hooks';
 import { CalendarAction, CalendarState } from '~/types';
-import { CalendarTimeEvent, EventsCalendarContextMenuProps } from '~/types';
+import { OrderedCalendarEvent, EventsCalendarContextMenuProps } from '~/types';
 
 const OVERLAP_MARGIN = 120;
-const getStyles = (event: CalendarTimeEvent, timeDuration: number, isActive: boolean) => {
+const getStyles = (event: OrderedCalendarEvent, timeDuration: number, isActive: boolean) => {
 	const colors = event.groups?.map(g => g.color).filter(Boolean) || [];
 	if (colors.length === 0) colors.push('#12B886');
 
@@ -32,7 +32,7 @@ interface DayItemProps {
 	hasPopover: boolean;
 	date: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
-	event: CalendarTimeEvent;
+	event: OrderedCalendarEvent;
 	placeholderRef: RefObject<HTMLDivElement>;
 	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
 	state: CalendarState;
@@ -66,6 +66,7 @@ export function DayItem({
 		event,
 		state,
 		hasContextMenu,
+		isInOverflow: false,
 	});
 
 	// Current event is placeholder event

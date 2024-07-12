@@ -15,10 +15,10 @@ import {
 
 import { filterByDate, getVisibleEvents } from '~/utils/functions';
 
-import { CellItem } from './CellItem';
 import { CellHeader } from './CellHeader';
 import { ShowMoreText } from './ShowMoreText';
 import { eventDragUpdate } from '~/utils';
+import { Event } from '../event/Event';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;
@@ -29,8 +29,8 @@ interface CellContainerProps {
 	dispatch: Dispatch<CalendarAction>;
 	handleMouseEvent: MouseEventHandler;
 	headerHeight?: number | string;
-	isWeekHeader?: boolean;
-	isDayHeader?: boolean;
+	isInWeekHeader?: boolean;
+	isInDayHeader?: boolean;
 	minMaxDatesInView: MinMaxDatesInView;
 	orderedEvents: OrderedCalendarEvent[];
 	placeholderRef: RefObject<HTMLDivElement>;
@@ -57,8 +57,8 @@ export function CellContainer({
 	dispatch,
 	handleMouseEvent,
 	headerHeight = '100%', // Explicit cell height for week header
-	isWeekHeader = false,
-	isDayHeader = false,
+	isInWeekHeader = false,
+	isInDayHeader = false,
 	minMaxDatesInView,
 	orderedEvents,
 	placeholderRef,
@@ -70,11 +70,11 @@ export function CellContainer({
 	// Calculate visible events within this cell
 	const eventsByDate = filterByDate(orderedEvents, date) as OrderedCalendarEvent[];
 	const numOverflowEvents = eventsByDate.reduce((a, c) => a + (c.order >= EVENT_LIMIT ? 1 : 0), 0);
-	const visibleEvents = getVisibleEvents(eventsByDate, date, EVENT_LIMIT, isDayHeader);
+	const visibleEvents = getVisibleEvents(eventsByDate, date, EVENT_LIMIT, isInDayHeader);
 
 	// Calculated boolean values
-	const showOverflowButton = (isDayHeader || isWeekHeader) && numOverflowEvents > 0;
-	const showPlaceholder = getPlaceholderActiveState(state.placeholderEvent, date, isWeekHeader || isDayHeader);
+	const showOverflowButton = (isInDayHeader || isInWeekHeader) && numOverflowEvents > 0;
+	const showPlaceholder = getPlaceholderActiveState(state.placeholderEvent, date, isInWeekHeader || isInDayHeader);
 	if (showPlaceholder) visibleEvents.push(state.placeholderEvent);
 
 	return (
@@ -94,7 +94,7 @@ export function CellContainer({
 				style={{ height: headerHeight, cursor: state.eventDragActive ? 'grabbing' : 'auto' }}
 			>
 				{/*  If month view, list cell header and overflow text */}
-				{!isWeekHeader && !isDayHeader && (
+				{!isInWeekHeader && !isInDayHeader && (
 					<CellHeader
 						dayRecord={dayRecord}
 						dispatch={dispatch}
@@ -103,7 +103,7 @@ export function CellContainer({
 						state={state}
 					/>
 				)}
-				<div className={classes.cellContent} data-week={isWeekHeader || isDayHeader}>
+				<div className={classes.cellContent} data-week={isInWeekHeader || isInDayHeader}>
 					{showOverflowButton && (
 						<ShowMoreText
 							date={date}
@@ -117,17 +117,17 @@ export function CellContainer({
 			</div>
 			{/* Render events (which may span multiple cells) */}
 			{visibleEvents.map(event => (
-				<CellItem
+				<Event
 					key={event.id}
+					view='month'
 					enableDragNDrop={enableDragNDrop}
 					hasPopover={hasPopover}
 					compact={compact}
 					date={date}
 					dispatch={dispatch}
 					event={event}
-					isInPopover={false}
-					isWeekHeader={isWeekHeader}
-					isDayHeader={isDayHeader}
+					isInWeekHeader={isInWeekHeader}
+					isInDayHeader={isInDayHeader}
 					minMaxDatesInView={minMaxDatesInView}
 					placeholderRef={placeholderRef}
 					renderContextMenu={renderContextMenu}

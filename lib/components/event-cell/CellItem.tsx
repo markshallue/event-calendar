@@ -11,8 +11,8 @@ import {
 } from '~/types';
 import { useLongPress, useCalendarEvent } from '~/hooks';
 
-import { TimeEvent } from './TimeEvent';
-import { AllDayEvent } from './AllDayEvent';
+import { TimeEvent } from '../event/TimeEvent';
+import { AllDayEvent } from '../event/AllDayEvent';
 import { getEventWrapperStyles } from './utils';
 
 interface CellItemProps {
@@ -22,10 +22,9 @@ interface CellItemProps {
 	date: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
 	event: OrderedCalendarEvent;
-	isInPopover: boolean;
-	isWeekHeader?: boolean;
+	isInWeekHeader?: boolean;
 	isInOverflow?: boolean;
-	isDayHeader?: boolean;
+	isInDayHeader?: boolean;
 	minMaxDatesInView?: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
 	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
@@ -39,10 +38,9 @@ export function CellItem({
 	date,
 	dispatch,
 	event,
-	isInPopover,
-	isWeekHeader = false,
+	isInWeekHeader = false,
 	isInOverflow = false,
-	isDayHeader = false,
+	isInDayHeader = false,
 	minMaxDatesInView,
 	placeholderRef,
 	renderContextMenu,
@@ -64,9 +62,9 @@ export function CellItem({
 	} = useCalendarEvent({
 		dispatch,
 		event,
-		hasContextMenu,
-		isInPopover,
 		state,
+		hasContextMenu,
+		isInOverflow,
 	});
 
 	// Current event is placeholder event
@@ -90,7 +88,7 @@ export function CellItem({
 	return (
 		<>
 			<div
-				className={`cell-item ${classes.itemContainer}`}
+				className={classes.itemContainer}
 				data-interactive={hasPopover}
 				data-active={hasPopover && isActive}
 				data-anchorday={date.format('DD-MMM-YYYY')}
@@ -102,7 +100,7 @@ export function CellItem({
 				onClick={e => handleClick(e, isPlaceholder, eventRef)}
 				onContextMenu={e => handleContextMenu(e, eventRef)}
 				ref={eventRef}
-				style={getEventWrapperStyles(isInPopover, event, date, compact, isWeekHeader, isDayHeader)}
+				style={getEventWrapperStyles(isInOverflow, event, date, compact, isInWeekHeader, isInDayHeader)}
 				{...longPressEvent}
 			>
 				{!event.isAllDay && event.startTime && event.endTime ? (
@@ -112,20 +110,14 @@ export function CellItem({
 						date={date}
 						event={event}
 						isCompact={compact}
-						isInPopover={isInPopover}
+						isInOverflow={isInOverflow}
 						minMaxDatesInView={minMaxDatesInView}
 					/>
 				)}
 			</div>
 			{contextIsOpen && (
 				<div ref={refs.setFloating} style={{ ...floatingStyles, zIndex: 500 }} {...getFloatingProps()}>
-					{renderContextMenu &&
-						renderContextMenu({
-							event,
-							closeContextMenu,
-							onClose,
-							setPopoverType,
-						})}
+					{renderContextMenu && renderContextMenu({ event, closeContextMenu, onClose, setPopoverType })}
 				</div>
 			)}
 		</>

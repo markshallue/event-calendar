@@ -73,7 +73,7 @@ export function Month({
 									dayRecord={dayRecord}
 									dispatch={dispatch}
 									handleMouseEvent={handleMouseEvent}
-									isWeekHeader={false}
+									isInWeekHeader={false}
 									minMaxDatesInView={minMaxDatesInView}
 									orderedEvents={orderedEvents}
 									placeholderRef={placeholderRef}

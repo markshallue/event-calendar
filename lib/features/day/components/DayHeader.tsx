@@ -63,7 +63,7 @@ export function DayHeader({
 	return (
 		<div className={classes.headerRow} onMouseLeave={handleStopDrag}>
 			<CellContainer
-				isDayHeader
+				isInDayHeader
 				EVENT_LIMIT={EVENT_LIMIT}
 				enableDragNDrop={enableDragNDrop}
 				hasPopover={hasPopover}

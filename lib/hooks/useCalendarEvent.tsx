@@ -5,18 +5,12 @@ import { CalendarEvent, CalendarAction, CalendarState } from '~/types';
 interface useCalendarEventProps {
 	dispatch: Dispatch<CalendarAction>;
 	event: CalendarEvent;
-	isInPopover?: boolean;
+	isInOverflow: boolean;
 	hasContextMenu: boolean;
 	state: CalendarState;
 }
 
-export function useCalendarEvent({
-	dispatch,
-	event,
-	isInPopover = false,
-	hasContextMenu,
-	state,
-}: useCalendarEventProps) {
+export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu, state }: useCalendarEventProps) {
 	// Context menu state
 	const [contextIsOpen, setContextIsOpen] = useState(false);
 	const closeContextMenu = () => setContextIsOpen(false);
@@ -48,7 +42,7 @@ export function useCalendarEvent({
 		if (!hasContextMenu) return;
 		e.preventDefault();
 
-		if (state.popoverDisplayType !== 'hidden' || (state.overflowIsOpen && !isInPopover)) return;
+		if (state.popoverDisplayType !== 'hidden' || (state.overflowIsOpen && !isInOverflow)) return;
 
 		refs.setPositionReference({
 			getBoundingClientRect() {
@@ -81,7 +75,7 @@ export function useCalendarEvent({
 		const popoverIsAnchored = isActive && state.eventAnchor?.dataset.anchorday === eventRef.current.dataset.anchorday;
 
 		// Overflow popover should close if clicked event was not inside the overflow popover
-		const overflowShouldClose = !isInPopover && state.overflowIsOpen;
+		const overflowShouldClose = !isInOverflow && state.overflowIsOpen;
 
 		// Close popover (this is either a double-click on an open event or an event outside the popover)
 		if (popoverIsAnchored || overflowShouldClose) dispatch({ type: 'reset_to_default' });

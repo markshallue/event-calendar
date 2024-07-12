@@ -69,7 +69,7 @@ export function WeekHeader({
 							{`${date.format('ddd')} ${date.format('DD')}`}
 						</div>
 						<CellContainer
-							isWeekHeader
+							isInWeekHeader
 							EVENT_LIMIT={EVENT_LIMIT}
 							enableDragNDrop={enableDragNDrop}
 							hasPopover={hasPopover}

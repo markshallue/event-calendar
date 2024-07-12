@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, RefObject, useRef } from 'react';
 import { Dayjs } from 'dayjs';
-import classes from './Week.module.css';
+import classes from './Event.module.css';
 
 import { getTimeDiff, getTimeLabel } from '~/utils';
 import { useLongPress, useCalendarEvent } from '~/hooks';
@@ -10,16 +10,15 @@ import {
 	MinMaxDatesInView,
 	OrderedCalendarEvent,
 	EventsCalendarContextMenuProps,
+	CalendarView,
 } from '~/types';
 
-import { getWeekOrDayEventStyles } from '~/components/event/utils/getWeekOrDayEventStyles';
-import { isBeingDragged } from '~/components/event/utils/isBeingDragged';
-import { getEventStyles } from '~/components/event/utils';
-import { AllDayEvent } from '~/components/event/AllDayEvent';
-import { TimeEvent } from '~/components/event/TimeEvent';
+import { TimeEvent } from './TimeEvent';
+import { AllDayEvent } from './AllDayEvent';
+import { getEventStyles, isBeingDragged, getWeekOrDayEventStyles } from './utils';
 
-interface WeekItemProps {
-	isMonthView: boolean;
+interface EventProps {
+	view: CalendarView;
 	enableDragNDrop: boolean;
 	hasPopover: boolean;
 	compact?: boolean;
@@ -35,8 +34,8 @@ interface WeekItemProps {
 	state: CalendarState;
 }
 
-export function WeekItem({
-	isMonthView,
+export function Event({
+	view,
 	hasPopover,
 	enableDragNDrop,
 	compact = false,
@@ -50,9 +49,11 @@ export function WeekItem({
 	placeholderRef,
 	renderContextMenu,
 	state,
-}: WeekItemProps) {
+}: EventProps) {
 	const ref = useRef<HTMLDivElement>(null);
 	const hasContextMenu = !!renderContextMenu;
+	const isMonthView = view === 'month';
+	const isDayView = view === 'day';
 
 	// Main event hook
 	const {
@@ -96,12 +97,12 @@ export function WeekItem({
 
 	const wrapperStyles = isMonthView
 		? getEventStyles(isInOverflow, event, date, compact, isInWeekHeader, isInDayHeader)
-		: getWeekOrDayEventStyles(event, timeDuration, date.day(), hasPopover && isActive);
+		: getWeekOrDayEventStyles(event, timeDuration, isDayView ? 0 : date.day(), hasPopover && isActive);
 
 	return (
 		<>
 			<div
-				className={classes.itemContainer}
+				className={isMonthView ? classes.monthItemContainer : classes.weekItemContainer}
 				data-interactive={hasPopover}
 				data-active={hasPopover && isActive}
 				data-anchorday={date.format('DD-MMM-YYYY')}

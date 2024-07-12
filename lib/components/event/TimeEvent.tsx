@@ -1,6 +1,6 @@
 import { CalendarEvent } from '~/types';
 import { splitColourCSS } from '~/utils/functions';
-import classes from './EventCell.module.css';
+import classes from './TimeEvent.module.css';
 
 interface TimeEventProps {
 	event: CalendarEvent;

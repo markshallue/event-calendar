@@ -1,0 +1,41 @@
+.allDayContainer {
+	position: relative;
+	max-width: 100%;
+	pointer-events: none;
+	border-radius: 0.25rem;
+	width: 100%;
+}
+.allDayTextContainer {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 1.25rem;
+	font-size: 0.75rem;
+	padding: 0 0.25rem;
+	border-radius: 0.25rem;
+	max-width: 100%;
+	z-index: 201;
+	&[data-sm='true'] {
+		height: 1.125rem;
+		font-size: 0.65rem;
+	}
+}
+.allDayText {
+	line-height: normal;
+	font-weight: 600;
+	color: #fff;
+	overflow: hidden;
+	text-overflow: clip;
+	white-space: nowrap;
+	user-select: none;
+	&[data-arrows='both'] {
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+	&[data-arrows='left'] {
+		margin-left: 10px;
+	}
+	&[data-arrows='right'] {
+		margin-right: 10px;
+	}
+}

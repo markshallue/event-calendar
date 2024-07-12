@@ -22,79 +22,6 @@
 		padding-bottom: 0.5rem;
 	}
 }
-
-.itemContainer {
-	z-index: 201;
-	display: flex;
-	border-radius: 0.25rem;
-	font-size: 0.75rem;
-
-	&[data-sm='true'] {
-		font-size: 0.65rem;
-	}
-	&[data-active='true'] {
-		filter: brightness(0.8);
-	}
-	&[data-time='true'] {
-		background-color: #fff;
-	}
-	&[data-dragactive='true'] {
-		pointer-events: none;
-	}
-	&[data-isdragging='true'] {
-		opacity: 0.65;
-	}
-	&[data-placeholder='true'] {
-		cursor: auto;
-		z-index: 202;
-		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-	}
-}
-.itemContainer[data-interactive='true']:not([data-placeholder='true']):hover {
-	filter: brightness(0.9);
-	cursor: pointer;
-}
-.allDayContainer {
-	position: relative;
-	max-width: 100%;
-	pointer-events: none;
-	border-radius: 0.25rem;
-	width: 100%;
-}
-.allDayTextContainer {
-	position: relative;
-	display: flex;
-	align-items: center;
-	height: 1.25rem;
-	font-size: 0.75rem;
-	padding: 0 0.25rem;
-	border-radius: 0.25rem;
-	max-width: 100%;
-	z-index: 201;
-	&[data-sm='true'] {
-		height: 1.125rem;
-		font-size: 0.65rem;
-	}
-}
-.allDayText {
-	line-height: normal;
-	font-weight: 600;
-	color: #fff;
-	overflow: hidden;
-	text-overflow: clip;
-	white-space: nowrap;
-	user-select: none;
-	&[data-arrows='both'] {
-		margin-left: 10px;
-		margin-right: 10px;
-	}
-	&[data-arrows='left'] {
-		margin-left: 10px;
-	}
-	&[data-arrows='right'] {
-		margin-right: 10px;
-	}
-}
 .showMoreText {
 	position: relative;
 	z-index: 201;
@@ -159,51 +86,6 @@
 	}
 	&[data-sm='true'] {
 		font-size: 0.75rem;
-	}
-}
-.timeContainer {
-	position: relative;
-	display: flex;
-	align-items: center;
-	color: #444;
-	gap: 0.25rem;
-	pointer-events: none;
-	height: 1.25rem;
-	font-size: 0.75rem;
-	padding: 0 0.25rem;
-	border-radius: 0.25rem;
-	max-width: 100%;
-	z-index: 201;
-	overflow: hidden;
-	&[data-sm='true'] {
-		height: 1.125rem;
-		font-size: 0.65rem;
-	}
-}
-.timeDot {
-	flex-shrink: 0;
-	border-radius: 9999px;
-	width: 8px;
-	height: 8px;
-}
-.timeText {
-	flex-shrink: 0;
-	line-height: normal;
-	font-weight: 400;
-	overflow: hidden;
-	cursor: pointer;
-	user-select: none;
-}
-.timeLabel {
-	line-height: normal;
-	font-weight: 500;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	cursor: pointer;
-	user-select: none;
-	&[data-sm='true'] {
-		font-weight: 600;
 	}
 }
 .smOnly {

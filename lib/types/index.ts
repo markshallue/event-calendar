@@ -35,8 +35,6 @@ export interface CalendarEvent {
 
 export interface OrderedCalendarEvent extends CalendarEvent {
 	order: number;
-}
-export interface CalendarTimeEvent extends OrderedCalendarEvent {
 	indent: number;
 }
 
@@ -86,7 +84,7 @@ type CalendarActionType =
 export interface CalendarAction {
 	activeFilters?: string[];
 	activeGroups?: string[];
-	event?: CalendarEvent | CalendarTimeEvent;
+	event?: CalendarEvent | OrderedCalendarEvent;
 	anchor?: HTMLDivElement | null;
 	date?: Dayjs;
 	newView?: CalendarView;
@@ -95,7 +93,7 @@ export interface CalendarAction {
 	dragStartOffset?: number | null;
 }
 
-export interface PlaceholderEvent extends CalendarTimeEvent {
+export interface PlaceholderEvent extends OrderedCalendarEvent {
 	isActive: boolean;
 }
 

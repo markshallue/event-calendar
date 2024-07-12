@@ -1,5 +1,5 @@
 import { Dayjs } from 'dayjs';
-import { CalendarEvent, CalendarTimeEvent } from '~/types';
+import { CalendarEvent, OrderedCalendarEvent } from '~/types';
 
 import { setTime } from './setTime';
 import { getTimeDiff } from './getTimeDiff';
@@ -27,7 +27,7 @@ function overlapsStart(test_start: Dayjs, start_2: Dayjs, end_2: Dayjs) {
 /*
     Function that takes an array of events for a single day and orders & indents them based on overlaps
 */
-export function arrangeWeekdayEvents(dayEvents: CalendarEvent[], date: Dayjs): CalendarTimeEvent[] {
+export function arrangeWeekdayEvents(dayEvents: CalendarEvent[], date: Dayjs): OrderedCalendarEvent[] {
 	if (dayEvents.length < 2) return dayEvents.map(event => ({ ...event, order: 0, indent: 0 }));
 
 	// Sort events by start time
@@ -35,7 +35,7 @@ export function arrangeWeekdayEvents(dayEvents: CalendarEvent[], date: Dayjs): C
 
 	// Extract first event from array and place it first with no indent
 	const firstEvent = sortedEvents.shift()!;
-	const orderedArray: CalendarTimeEvent[] = [{ ...firstEvent, order: 0, indent: 0 }];
+	const orderedArray: OrderedCalendarEvent[] = [{ ...firstEvent, order: 0, indent: 0 }];
 
 	// Now loop through all other events and add them to the ordered array
 	sortedEvents.forEach((testEvent, index) => {

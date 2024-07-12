@@ -1,5 +1,5 @@
 import { Dayjs } from 'dayjs';
-import classes from './EventCell.module.css';
+import classes from './AllDayEvent.module.css';
 
 import { splitColourCSS } from '~/utils/functions';
 import { CalendarEvent, MinMaxDatesInView } from '~/types';
@@ -11,10 +11,10 @@ interface AllDayEventProps {
 	event: CalendarEvent;
 	minMaxDatesInView?: MinMaxDatesInView;
 	isCompact: boolean;
-	isInPopover: boolean;
+	isInOverflow: boolean;
 }
 
-export function AllDayEvent({ date, event, minMaxDatesInView, isCompact, isInPopover }: AllDayEventProps) {
+export function AllDayEvent({ date, event, minMaxDatesInView, isCompact, isInOverflow }: AllDayEventProps) {
 	// Destructure event
 	const { title, start, end, groups } = event;
 	const colors = groups?.map(g => g.color).filter(Boolean) || [];
@@ -22,9 +22,9 @@ export function AllDayEvent({ date, event, minMaxDatesInView, isCompact, isInPop
 
 	// Calculate arrows for display in overflow popover
 	const arrowLeft =
-		(isInPopover && start.isBefore(date, 'd')) || (minMaxDatesInView && start.isBefore(minMaxDatesInView?.first, 'd'));
+		(isInOverflow && start.isBefore(date, 'd')) || (minMaxDatesInView && start.isBefore(minMaxDatesInView?.first, 'd'));
 	const arrowRight =
-		(isInPopover && end.isAfter(date, 'd')) || (minMaxDatesInView && end.isAfter(minMaxDatesInView?.last, 'd'));
+		(isInOverflow && end.isAfter(date, 'd')) || (minMaxDatesInView && end.isAfter(minMaxDatesInView?.last, 'd'));
 	const arrows = arrowLeft && arrowRight ? 'both' : arrowLeft ? 'left' : arrowRight ? 'right' : false;
 
 	// Event background color(s)
