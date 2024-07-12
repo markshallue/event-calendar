@@ -2,7 +2,7 @@ import { Card } from '@mantine/core';
 
 import { EventsCalendarContextMenuProps } from '~/types';
 import { EventActions } from '../event-actions';
-import { HandleSubmitArgs } from '../form-card/types';
+import { HandleSubmitArgs } from '../form-popover/types';
 
 interface ContextMenuProps extends EventsCalendarContextMenuProps {
 	handleSubmit: (args: HandleSubmitArgs) => void;

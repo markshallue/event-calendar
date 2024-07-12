@@ -1,4 +1,4 @@
-import { CalendarGroup, CalendarFields, FormCardReturnValues, FormCardValues } from '../../types';
+import { CalendarGroup, CalendarFields, FormPopoverReturnValues, FormPopoverValues } from '../../types';
 import { GroupMultiSelect } from './GroupMultiSelect';
 import { UseFormReturnType } from '@mantine/form';
 import { GroupSelect } from './GroupSelect';
@@ -7,7 +7,7 @@ interface GroupInputProps {
 	disabled?: boolean;
 	groups: CalendarGroup[];
 	fields: CalendarFields;
-	form: UseFormReturnType<FormCardValues, (values: FormCardValues) => FormCardReturnValues>;
+	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 }
 
 export function GroupInput({ groups, fields, form }: GroupInputProps) {

@@ -1,22 +1,22 @@
 import { Card, Text, Badge, ScrollArea, Stack } from '@mantine/core';
 import { IconCalendarEvent } from '@tabler/icons-react';
-import classes from './InfoCard.module.css';
+import classes from './ViewPopover.module.css';
 
 import { ImageCarousel } from '@/components';
 
 import { humanize, getDateTimeLabel } from '~/utils';
 
-import { InfoCardToolbar } from './InfoCardToolbar';
+import { ViewPopoverToolbar } from './ViewPopoverToolbar';
 import { EventsCalendarPopoverProps } from '~/types';
 
-interface InfoCardProps extends EventsCalendarPopoverProps {
+interface ViewPopoverProps extends EventsCalendarPopoverProps {
 	withViewLink?: boolean;
 	withEditLink?: boolean;
 	editable?: boolean;
 	handleSubmit?: (args: any) => void;
 }
 
-export function InfoCard({
+export function ViewPopover({
 	onClose,
 	setPopoverType,
 	withViewLink = true,
@@ -24,16 +24,16 @@ export function InfoCard({
 	editable = false,
 	handleSubmit,
 	event,
-}: InfoCardProps) {
+}: ViewPopoverProps) {
 	const timeLabel = getDateTimeLabel(event.start, event.end, event.startTime, event.endTime);
 
 	return (
-		<Card className={classes.infoCard} padding={0} withBorder>
+		<Card className={classes.ViewPopover} padding={0} withBorder>
 			{/* Image carousel */}
 			{event.images && event.images.length > 0 && <ImageCarousel images={event.images} />}
 
 			{/* Other content */}
-			<div className={classes.infoCardSection}>
+			<div className={classes.ViewPopoverSection}>
 				{/* Heading */}
 				<Text fw={700} className={classes.title} size='md' lh='xs'>
 					{event.title}
@@ -92,7 +92,7 @@ export function InfoCard({
 				)}
 			</div>
 			{/* Bottom Toolbar */}
-			<InfoCardToolbar
+			<ViewPopoverToolbar
 				withViewLink={withViewLink}
 				withEditLink={withEditLink}
 				editable={editable}

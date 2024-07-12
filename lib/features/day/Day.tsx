@@ -2,8 +2,8 @@ import { Dispatch, ReactNode, RefObject, useEffect, useRef } from 'react';
 import { Dayjs } from 'dayjs';
 import classes from './Day.module.css';
 
-import { filterByDate } from '~/utils';
-import { HoursColumn } from '~/components';
+import { filterByDate, arrangeWeekdayEvents } from '~/utils';
+import { HoursColumn, TimeIndicator, Event } from '~/components';
 import {
 	CalendarEvent,
 	EventsCalendarContextMenuProps,
@@ -11,11 +11,8 @@ import {
 	CalendarAction,
 	CalendarState,
 } from '~/types';
-import { TimeIndicator } from '~/components';
-import { arrangeWeekdayEvents } from '~/utils';
 
 import { DayBackground, DayHeader } from './components';
-import { Event } from '~/components/event/Event';
 
 interface DayProps {
 	hasPopover: boolean;

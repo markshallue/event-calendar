@@ -28,9 +28,7 @@ export interface EventsCalendarProps {
 	events?: CalendarEvent[] | RawCalendarEvent[];
 	height?: string | number;
 	isFetching?: boolean;
-	renderViewPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
-	renderEditPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
-	renderCreatePopover?: (props: EventsCalendarPopoverProps) => ReactNode;
+	renderPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	views?: CalendarView[];
 	noHeader?: boolean;
@@ -43,9 +41,7 @@ export function EventsCalendar({
 	enableDragNDrop = false,
 	events = [],
 	height = 550,
-	renderViewPopover,
-	renderCreatePopover,
-	renderEditPopover,
+	renderPopover,
 	renderContextMenu,
 	isFetching = false,
 	noHeader = false,
@@ -65,6 +61,7 @@ export function EventsCalendar({
 
 	// Popover
 	const onClose = () => dispatch({ type: 'reset_to_default' });
+	const popoverType = state.popoverDisplayType;
 	const setPopoverType = (type: 'view' | 'edit') => {
 		if (type === 'view') {
 			dispatch({ type: 'view_calendar_event' });
@@ -73,8 +70,7 @@ export function EventsCalendar({
 		}
 	};
 	const popoverIsOpen = state.popoverDisplayType !== 'hidden' && state.eventAnchor !== null;
-	const hasViewPopover = !!renderViewPopover;
-	const hasPopover = !!(renderViewPopover || renderEditPopover || renderCreatePopover);
+	const hasViewPopover = !!renderPopover;
 
 	// Placeholder ref
 	const placeholderRef = useRef<HTMLDivElement>(null);
@@ -131,17 +127,14 @@ export function EventsCalendar({
 							state={state}
 						/>
 					)}
-					{hasPopover && (
+					{renderPopover && (
 						<Popover isOpen={popoverIsOpen} anchor={state.eventAnchor} dispatch={dispatch} zIndex={501}>
-							{state.popoverDisplayType === 'view' && renderViewPopover
-								? renderViewPopover({ onClose, setPopoverType, event: state.clickedEvent })
-								: state.popoverDisplayType === 'edit' && renderEditPopover
-								? renderEditPopover({ onClose, setPopoverType, event: state.clickedEvent })
-								: state.popoverDisplayType === 'create' && renderCreatePopover
-								? renderCreatePopover({ onClose, setPopoverType, event: state.placeholderEvent })
-								: state.popoverDisplayType === 'drag-update' && renderEditPopover
-								? renderEditPopover({ onClose, setPopoverType, event: state.placeholderEvent })
-								: null}
+							{renderPopover({
+								onClose,
+								popoverType,
+								setPopoverType,
+								event: popoverType === 'view' || popoverType === 'edit' ? state.clickedEvent : state.placeholderEvent,
+							})}
 						</Popover>
 					)}
 					<OverflowCard

@@ -2,6 +2,7 @@ import { Dispatch, ReactNode, RefObject } from 'react';
 import { Dayjs } from 'dayjs';
 import classes from './EventCell.module.css';
 
+import { Event } from '~/components';
 import {
 	OrderedCalendarEvent,
 	DateRecord,
@@ -18,7 +19,6 @@ import { filterByDate, getVisibleEvents } from '~/utils/functions';
 import { CellHeader } from './CellHeader';
 import { ShowMoreText } from './ShowMoreText';
 import { eventDragUpdate } from '~/utils';
-import { Event } from '../event/Event';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;

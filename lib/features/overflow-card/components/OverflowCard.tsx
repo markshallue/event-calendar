@@ -2,12 +2,10 @@ import { Dispatch, ReactNode, RefObject } from 'react';
 import dayjs from 'dayjs';
 import classes from './OverflowCard.module.css';
 
-import { CalendarEvent, EventsCalendarContextMenuProps, CalendarAction, CalendarState } from '~/types';
-
-import { filterByDate } from '~/utils/functions';
-
 import { arrangeWeekEvents } from '~/utils';
-import { Popover, CellItem } from '~/components';
+import { Popover, Event } from '~/components';
+import { filterByDate } from '~/utils/functions';
+import { CalendarEvent, EventsCalendarContextMenuProps, CalendarAction, CalendarState } from '~/types';
 
 interface OverflowCardProps {
 	hasPopover: boolean;
@@ -44,8 +42,8 @@ export function OverflowCard({
 				<span className={classes.label}>{date.format('dddd, MMMM D')}</span>
 				<div className={classes.scrollWrapper}>
 					{arrangeWeekEvents(filterByDate(events, date)).map(event => (
-						<CellItem
-							isInWeekHeader
+						<Event
+							view='month'
 							isInOverflow
 							key={event.id}
 							enableDragNDrop={enableDragNDrop}

@@ -11,11 +11,10 @@ import {
 	CalendarAction,
 	CalendarState,
 } from '~/types';
-import { TimeIndicator } from '~/components';
+import { TimeIndicator, Event } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
 
 import { WeekBackground } from './WeekBackground';
-import { Event } from '~/components/event/Event';
 
 interface WeekGridProps {
 	enableDragNDrop: boolean;

@@ -2,7 +2,7 @@ import { Paper, Title } from '@mantine/core';
 
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { InfoCard } from '@/components';
+import { ViewPopover } from '@/components';
 import { PageWrapper } from '@/layout/PageWrapper';
 import useDemoDataRequest from '@/data/hooks/useDemoDataRequest';
 
@@ -13,7 +13,7 @@ export function Popovers() {
 		<PageWrapper>
 			<Title mb='sm'>View popover</Title>
 			<Paper withBorder radius='md' shadow='lg'>
-				<EventsCalendar events={events} renderViewPopover={props => <InfoCard {...props} />} />
+				<EventsCalendar events={events} renderPopover={props => <ViewPopover {...props} />} />
 			</Paper>
 		</PageWrapper>
 	);

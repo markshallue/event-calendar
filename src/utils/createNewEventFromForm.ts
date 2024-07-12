@@ -1,17 +1,17 @@
-import { CalendarGroup, FormCardReturnValues } from '@/components/form-card/types';
+import { CalendarGroup, FormPopoverReturnValues } from '@/components/form-popover/types';
 import { RawCalendarEvent } from '~/types';
 import { createDayjsObjFromTime } from '~/utils';
 
 type createNewEventFromFormArgs =
 	| {
 			type: 'create';
-			values: FormCardReturnValues;
+			values: FormPopoverReturnValues;
 			groups: CalendarGroup[];
 			id: number;
 	  }
 	| {
 			type: 'edit';
-			values: FormCardReturnValues;
+			values: FormPopoverReturnValues;
 			groups: CalendarGroup[];
 			event: RawCalendarEvent;
 	  };

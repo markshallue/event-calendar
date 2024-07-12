@@ -4,11 +4,11 @@ import { EventsCalendar } from '~/EventsCalendar';
 import { useEventsCalendar } from '~/hooks';
 
 import { PageWrapper } from '@/layout/PageWrapper';
-import { FormCard, InfoCard } from '@/components';
+import { FormPopover, ViewPopover } from '@/components';
 import { demoData } from '@/data/constants/demoData';
 import { demoGroups } from '@/data/constants/demoGroups';
 import { useState } from 'react';
-import { HandleSubmitArgs } from '@/components/form-card/types';
+import { HandleSubmitArgs } from '@/components/form-popover/types';
 import { RawCalendarEvent } from '~/types';
 import { createNewEventFromForm } from '@/utils';
 
@@ -58,10 +58,19 @@ export function DragNDrop() {
 					enableDragNDrop
 					calendar={calendar}
 					events={events}
-					renderViewPopover={props => <InfoCard {...props} editable handleSubmit={handleSubmit} />}
-					renderEditPopover={props => (
-						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='edit' />
-					)}
+					renderPopover={props => {
+						return props.popoverType === 'view' ? (
+							<ViewPopover {...props} editable handleSubmit={handleSubmit} />
+						) : (
+							<FormPopover
+								{...props}
+								groups={demoGroups}
+								fields={formFields}
+								handleSubmit={handleSubmit}
+								formType={props.popoverType}
+							/>
+						);
+					}}
 				/>
 			</Paper>
 		</PageWrapper>

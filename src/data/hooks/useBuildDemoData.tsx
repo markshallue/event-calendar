@@ -5,7 +5,7 @@ import useDemoGroupsRequest from './useDemoGroupsRequest';
 import useDemoFiltersRequest from './useDemoFiltersRequest';
 
 import { CalendarEvent } from '~/types';
-import { CalendarGroup } from '@/components/form-card/types';
+import { CalendarGroup } from '@/components/form-popover/types';
 
 export function useBuildDemoData(delay: number = 0) {
 	// Calendar State

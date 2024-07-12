@@ -1,7 +1,7 @@
 import { CalendarEvent } from '~/types';
-import { FormCardValues } from '../types';
+import { FormPopoverValues } from '../types';
 
-export const getInitialValues = (event: CalendarEvent, defaultGroups?: string[]): FormCardValues => {
+export const getInitialValues = (event: CalendarEvent, defaultGroups?: string[]): FormPopoverValues => {
 	return {
 		title: event.title,
 		info: event.info || '',

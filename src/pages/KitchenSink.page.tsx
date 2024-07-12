@@ -1,17 +1,19 @@
-import { Button, Group, Paper, Title } from '@mantine/core';
+import { useState } from 'react';
 import dayjs from 'dayjs';
+import { Button, Group, Paper, Title } from '@mantine/core';
 
-import { EventsCalendar } from '~/EventsCalendar';
+import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
+import { EventsCalendar } from '~/EventsCalendar';
+
+import { createNewEventFromForm } from '@/utils';
+import { ContextMenu, FormPopover, ViewPopover } from '@/components';
 
 import { PageWrapper } from '@/layout/PageWrapper';
-import { ContextMenu, FormCard, InfoCard } from '@/components';
+
 import { demoData } from '@/data/constants/demoData';
 import { demoGroups } from '@/data/constants/demoGroups';
-import { useState } from 'react';
-import { HandleSubmitArgs } from '@/components/form-card/types';
-import { RawCalendarEvent } from '~/types';
-import { createNewEventFromForm } from '@/utils';
+import { HandleSubmitArgs } from '@/components/form-popover/types';
 
 export function KitchenSink() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
@@ -71,13 +73,19 @@ export function KitchenSink() {
 					views={['month', 'week', 'day']}
 					calendar={calendar}
 					events={events}
-					renderViewPopover={props => <InfoCard {...props} editable handleSubmit={handleSubmit} />}
-					renderEditPopover={props => (
-						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='edit' />
-					)}
-					renderCreatePopover={props => (
-						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='create' />
-					)}
+					renderPopover={props => {
+						return props.popoverType === 'view' ? (
+							<ViewPopover {...props} editable handleSubmit={handleSubmit} />
+						) : (
+							<FormPopover
+								{...props}
+								groups={demoGroups}
+								fields={formFields}
+								handleSubmit={handleSubmit}
+								formType={props.popoverType}
+							/>
+						);
+					}}
 					renderContextMenu={props => <ContextMenu {...props} handleSubmit={handleSubmit} />}
 				/>
 			</Paper>

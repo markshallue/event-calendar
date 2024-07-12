@@ -1,13 +1,13 @@
 import dayjs from 'dayjs';
 import { createDayjsObjFromTime } from '~/utils/createDayjsObjFromTime';
 
-import { CalendarFields, FormCardValues } from '../types';
+import { CalendarFields, FormPopoverValues } from '../types';
 
 export const validateValues = (fields: CalendarFields) => {
 	return {
 		title: (value: string) => (!value ? true : null),
 		// group: (value: string[]) => (fields.group && (!value || value.length === 0) ? true : null),
-		endTime: (value: string | null, values: FormCardValues) => {
+		endTime: (value: string | null, values: FormPopoverValues) => {
 			const endTime = value;
 			// Start and end inputs not required
 			if (!endTime && !values.startTime) return null;
@@ -17,7 +17,7 @@ export const validateValues = (fields: CalendarFields) => {
 			const isError = start.isSame(end) || start.isAfter(end);
 			return isError ? true : null;
 		},
-		end: (value: Date, values: FormCardValues) => {
+		end: (value: Date, values: FormPopoverValues) => {
 			if (!(fields.start && fields.end)) return null;
 			const start = dayjs(values.start);
 			const isError = start.isAfter(value);

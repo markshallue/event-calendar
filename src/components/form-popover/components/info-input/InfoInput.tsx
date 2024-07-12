@@ -1,12 +1,12 @@
 import { Textarea } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 
-import { CalendarFields, FormCardReturnValues, FormCardValues } from '../../types';
+import { CalendarFields, FormPopoverReturnValues, FormPopoverValues } from '../../types';
 import { humanize } from '~/utils/functions';
 
 interface InfoInputProps {
 	fields: CalendarFields;
-	form: UseFormReturnType<FormCardValues, (values: FormCardValues) => FormCardReturnValues>;
+	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 }
 
 export function InfoInput({ fields, form }: InfoInputProps) {

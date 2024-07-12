@@ -1,25 +1,26 @@
 import { Button, Flex } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 
-import { CalendarEvent } from '~/types';
-import { FormCardReturnValues, FormCardValues, HandleSubmitArgs } from '../../types';
+import { CalendarEvent, PopoverDisplayType } from '~/types';
+import { FormPopoverReturnValues, FormPopoverValues, HandleSubmitArgs } from '../../types';
 
 interface ToolbarProps {
 	onClose: () => void;
-	formType: 'edit' | 'create';
+	formType: PopoverDisplayType;
 	event: CalendarEvent;
 	handleSubmit: (args: HandleSubmitArgs) => void;
-	form: UseFormReturnType<FormCardValues, (values: FormCardValues) => FormCardReturnValues>;
+	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 }
 
-export function FormCardToolbar({ onClose, formType, event, form, handleSubmit }: ToolbarProps) {
+export function FormPopoverToolbar({ onClose, formType, event, form, handleSubmit }: ToolbarProps) {
 	const handleClick = () => {
 		const validation = form.validate();
 		const eventId = event.id || event.dragId;
 		if (!validation.hasErrors && eventId !== undefined) {
+			const submitType = formType === 'create' ? 'create' : 'edit';
 			handleSubmit({
 				id: eventId,
-				type: formType,
+				type: submitType,
 				values: form.getTransformedValues(),
 			});
 			onClose();

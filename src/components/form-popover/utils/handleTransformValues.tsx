@@ -1,9 +1,9 @@
 import dayjs from 'dayjs';
-import { CalendarFields, FormCardReturnValues, FormCardValues } from '../types';
+import { CalendarFields, FormPopoverReturnValues, FormPopoverValues } from '../types';
 
 import { convertStringToDate } from './convertStringToDate';
 
-export const handleTransformValues = (values: FormCardValues, fields: CalendarFields): FormCardReturnValues => {
+export const handleTransformValues = (values: FormPopoverValues, fields: CalendarFields): FormPopoverReturnValues => {
 	const { hour: startHour, minute: startMinute } = convertStringToDate(values.startTime);
 	const { hour: endHour, minute: endMinute } = convertStringToDate(values.endTime);
 	const start = fields.start ? dayjs(values.start).hour(startHour).minute(startMinute) : undefined;

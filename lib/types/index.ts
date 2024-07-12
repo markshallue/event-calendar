@@ -57,6 +57,7 @@ export interface MonthDates extends MinMaxDatesInView {
 
 export interface EventsCalendarPopoverProps {
 	onClose: () => void;
+	popoverType: PopoverDisplayType;
 	setPopoverType: (type: 'view' | 'edit') => void;
 	event: CalendarEvent;
 }

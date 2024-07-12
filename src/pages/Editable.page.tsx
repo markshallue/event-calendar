@@ -4,11 +4,11 @@ import { EventsCalendar } from '~/EventsCalendar';
 import { useEventsCalendar } from '~/hooks';
 
 import { PageWrapper } from '@/layout/PageWrapper';
-import { ContextMenu, FormCard, InfoCard } from '@/components';
+import { ContextMenu, FormPopover, ViewPopover } from '@/components';
 import { demoData } from '@/data/constants/demoData';
 import { demoGroups } from '@/data/constants/demoGroups';
 import { useState } from 'react';
-import { HandleSubmitArgs } from '@/components/form-card/types';
+import { HandleSubmitArgs } from '@/components/form-popover/types';
 import { RawCalendarEvent } from '~/types';
 import { createNewEventFromForm } from '@/utils';
 
@@ -57,9 +57,9 @@ export function Editable() {
 				<EventsCalendar
 					calendar={calendar}
 					events={events}
-					renderViewPopover={props => <InfoCard {...props} editable handleSubmit={handleSubmit} />}
+					renderPopover={props => <ViewPopover {...props} editable handleSubmit={handleSubmit} />}
 					renderEditPopover={props => (
-						<FormCard {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='edit' />
+						<FormPopover {...props} groups={demoGroups} fields={formFields} handleSubmit={handleSubmit} formType='edit' />
 					)}
 					renderContextMenu={props => <ContextMenu {...props} handleSubmit={handleSubmit} />}
 				/>

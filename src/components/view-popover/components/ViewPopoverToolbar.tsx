@@ -1,11 +1,11 @@
-import classes from './InfoCard.module.css';
+import classes from './ViewPopover.module.css';
 
 import { EventActions } from '@/components';
 import { CalendarEvent } from '~/types';
 import { FilledBadge } from './FilledBadge';
-import { HandleSubmitArgs } from '@/components/form-card/types';
+import { HandleSubmitArgs } from '@/components/form-popover/types';
 
-interface InfoCardToolbarProps {
+interface ViewPopoverToolbarProps {
 	event: CalendarEvent;
 	onClose: () => void;
 	setPopoverType: (type: 'view' | 'edit') => void;
@@ -15,7 +15,7 @@ interface InfoCardToolbarProps {
 	handleSubmit?: (args: HandleSubmitArgs) => void;
 }
 
-export function InfoCardToolbar({
+export function ViewPopoverToolbar({
 	withViewLink,
 	withEditLink,
 	editable,
@@ -23,7 +23,7 @@ export function InfoCardToolbar({
 	setPopoverType,
 	event,
 	handleSubmit,
-}: InfoCardToolbarProps) {
+}: ViewPopoverToolbarProps) {
 	// Variants
 	const showBadge = event.groups && event.groups.length !== 0;
 

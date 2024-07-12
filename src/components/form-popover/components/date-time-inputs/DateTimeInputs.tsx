@@ -3,12 +3,12 @@ import { UseFormReturnType } from '@mantine/form';
 import dayjs from 'dayjs';
 
 import { DateTimeSelect } from './DateTimeSelect';
-import { FormCardReturnValues, FormCardValues, CalendarFields } from '../../types';
+import { FormPopoverReturnValues, FormPopoverValues, CalendarFields } from '../../types';
 
 interface DateTimeInputs {
 	fields: CalendarFields;
 	lengthInDays: number;
-	form: UseFormReturnType<FormCardValues, (values: FormCardValues) => FormCardReturnValues>;
+	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 	hasTime: boolean;
 }
 

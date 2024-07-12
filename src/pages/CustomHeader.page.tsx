@@ -2,7 +2,7 @@ import { Paper, Title } from '@mantine/core';
 
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { InfoCard } from '@/components';
+import { ViewPopover } from '@/components';
 import { PageWrapper } from '@/layout/PageWrapper';
 import useDemoDataRequest from '@/data/hooks/useDemoDataRequest';
 import { useEventsCalendar } from '~/hooks';
@@ -36,7 +36,7 @@ export function CustomHeader() {
 			<Title mb='sm'>Custom header element</Title>
 			<Paper withBorder radius='md' shadow='lg'>
 				{customHeader}
-				<EventsCalendar noHeader calendar={calendar} events={events} renderViewPopover={props => <InfoCard {...props} />} />
+				<EventsCalendar noHeader calendar={calendar} events={events} renderPopover={props => <ViewPopover {...props} />} />
 			</Paper>
 		</PageWrapper>
 	);

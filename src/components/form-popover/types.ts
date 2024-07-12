@@ -20,7 +20,7 @@ export type CalendarFields = {
 	multiGroup?: boolean;
 };
 
-export type FormCardValues = {
+export type FormPopoverValues = {
 	end: Date;
 	groups: string[];
 	info: string;
@@ -30,7 +30,7 @@ export type FormCardValues = {
 	title: string;
 };
 
-export type FormCardReturnValues = {
+export type FormPopoverReturnValues = {
 	end: Dayjs;
 	groups: string[];
 	info: string;
@@ -48,5 +48,5 @@ export type HandleSubmitArgs =
 	| {
 			id: number | null;
 			type: 'create' | 'edit';
-			values: FormCardReturnValues;
+			values: FormPopoverReturnValues;
 	  };
