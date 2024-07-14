@@ -6,14 +6,13 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { createNewEventFromForm } from '@/utils';
 import { ContextMenu, FormPopover, ViewPopover } from '@/components';
 
 import { PageWrapper } from '@/layout/PageWrapper';
 
 import { demoData } from '@/data/constants/demoData';
 import { demoGroups } from '@/data/constants/demoGroups';
-import { HandleSubmitArgs } from '@/components/form-popover/types';
+import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
 
 export function KitchenSink() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
@@ -29,29 +28,7 @@ export function KitchenSink() {
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
 
-	const handleSubmit = (args: HandleSubmitArgs) => {
-		if (args.type === 'delete') {
-			setEvents(p => p.filter(event => event.id !== args.id));
-		}
-		if (args.type === 'create') {
-			const newId = Math.max(...events.map(e => e.id)) + 1;
-			console.log(newId);
-			const newEvent = createNewEventFromForm({ type: 'create', values: args.values, groups: demoGroups, id: newId });
-			setEvents(p => [...p, newEvent]);
-		}
-		if (args.type === 'edit') {
-			const newEvents = events.map(event => {
-				if (event.id !== args.id) return event;
-				return createNewEventFromForm({
-					type: 'edit',
-					values: args.values,
-					groups: demoGroups,
-					event: event,
-				});
-			});
-			setEvents(newEvents);
-		}
-	};
+	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
 
 	return (
 		<PageWrapper>

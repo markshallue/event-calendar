@@ -1,9 +1,11 @@
 import classes from './ViewPopover.module.css';
 
-import { EventActions } from '@/components';
 import { CalendarEvent } from '~/types';
+
+import { HandleSubmitArgs } from '@/utils';
+import { EventActions } from '@/components';
+
 import { FilledBadge } from './FilledBadge';
-import { HandleSubmitArgs } from '@/components/form-popover/types';
 
 interface ViewPopoverToolbarProps {
 	event: CalendarEvent;

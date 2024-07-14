@@ -1,1 +1,1 @@
-export { FormPopover } from './components/FormPopover';
+export { FormPopover } from './FormPopover';

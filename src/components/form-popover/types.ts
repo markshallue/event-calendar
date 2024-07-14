@@ -39,14 +39,3 @@ export type FormPopoverReturnValues = {
 	start: Dayjs;
 	title: string;
 };
-
-export type HandleSubmitArgs =
-	| {
-			type: 'delete';
-			id: number | null;
-	  }
-	| {
-			id: number | null;
-			type: 'create' | 'edit';
-			values: FormPopoverReturnValues;
-	  };

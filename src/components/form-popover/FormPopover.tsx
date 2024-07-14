@@ -3,20 +3,14 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import classes from './FormPopover.module.css';
 
-import { CalendarGroup, HandleSubmitArgs } from '../types';
-
-import { validateValues } from '../utils/validateValues';
-import { getInitialValues } from '../utils/getInitialValues';
-import { handleTransformValues } from '../utils/handleTransformValues';
-
-import { FormPopoverToolbar } from './toolbar/FormPopoverToolbar';
-import { InfoInput } from './info-input/InfoInput';
-import { DateTimeInputs } from './date-time-inputs/DateTimeInputs';
-import { GroupInput } from './group-input';
-import { TitleInput } from './title-input/TitleInput';
-import { TimeToggle } from './time-toggle/TimeToggle';
 import { CalendarEvent, EventsCalendarPopoverProps, PopoverDisplayType } from '~/types';
-import { DateTimeLabel } from '@/components/date-time-label';
+
+import { HandleSubmitArgs } from '@/utils';
+import { DateTimeLabel } from '@/components';
+
+import { CalendarGroup } from './types';
+import { validateValues, getInitialValues, handleTransformValues } from './utils';
+import { InfoInput, GroupInput, TitleInput, TimeToggle, FormPopoverToolbar, DateTimeInputs } from './components';
 
 interface FormPopoverProps extends EventsCalendarPopoverProps {
 	fields: {

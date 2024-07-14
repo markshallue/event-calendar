@@ -3,9 +3,9 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
 
 import { CalendarEvent } from '~/types';
+import { HandleSubmitArgs } from '@/utils';
 
 import { ActionButton, ConfirmationModal, IconLink } from './components';
-import { HandleSubmitArgs } from '../form-popover/types';
 
 interface EventActionsProps {
 	event: CalendarEvent;
