@@ -88,7 +88,7 @@ export function CellContainer({
 		<>
 			<div
 				className={classes.cell}
-				data-border={date.day() !== 6}
+				data-border={isInWeekHeader && date.day() !== 6}
 				onMouseDown={e => handleMouseEvent(e, date, false, placeholderRef)}
 				onMouseEnter={e => {
 					if (state.eventDragActive) updateEvent({ state, dispatch, date, view: 'month' });

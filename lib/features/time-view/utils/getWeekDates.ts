@@ -1,7 +1,9 @@
 import { DateRecord } from '~/types';
 import { Dayjs } from 'dayjs';
 
-export const getWeekDates = (activeDate: Dayjs) => {
+export const getWeekDates = (activeDate: Dayjs, view: 'day' | 'week') => {
+	if (view === 'day') return [{ date: activeDate }];
+
 	const firstDate = activeDate.startOf('week').weekday(0);
 	let tempDate = firstDate;
 	const datesArray: DateRecord[] = [];

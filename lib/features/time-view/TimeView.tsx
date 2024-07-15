@@ -1,22 +1,22 @@
-import { Dispatch, ReactNode, RefObject, useEffect, useRef } from 'react';
+import { Dispatch, ReactNode, RefObject, useEffect, useMemo, useRef } from 'react';
 import { Dayjs } from 'dayjs';
-import classes from './Day.module.css';
+import classes from './TimeView.module.css';
 
-import { HoursColumn } from '~/components';
 import {
-	CalendarEvent,
-	EventsCalendarContextMenuProps,
-	MouseEventHandler,
 	CalendarAction,
 	CalendarState,
 	EventClickProps,
 	EventEditProps,
+	CalendarEvent,
+	MouseEventHandler,
+	EventsCalendarContextMenuProps,
 } from '~/types';
 
-import { DayHeader } from './components';
-import { TimeViewGrid } from '~/components/time-view/TimeViewGrid';
+import { getWeekDates } from './utils';
+import { TimeViewHeader, TimeViewGrid, HoursColumn } from './components';
 
-interface DayProps {
+interface TimeViewProps {
+	view: 'day' | 'week';
 	enableRescheduling: boolean;
 	compact: boolean;
 	activeDate: Dayjs;
@@ -30,7 +30,8 @@ interface DayProps {
 	state: CalendarState;
 }
 
-export function Day({
+export function TimeView({
+	view,
 	activeDate,
 	compact,
 	dispatch,
@@ -42,7 +43,7 @@ export function Day({
 	placeholderRef,
 	renderContextMenu,
 	state,
-}: DayProps) {
+}: TimeViewProps) {
 	// Split events into all day / timed
 	const allDayEvents = eventsArray.filter(event => event.isAllDay);
 	const timeEvents = eventsArray.filter(event => !event.isAllDay);
@@ -55,28 +56,35 @@ export function Day({
 	}, [activeDate]);
 
 	// Get week days
-	const weekDates = [{ date: activeDate }];
+	const weekDates = useMemo(() => getWeekDates(activeDate, view), [activeDate, view]);
+	const minMaxDatesInView = {
+		first: view === 'day' ? activeDate : weekDates[0].date,
+		last: view === 'day' ? activeDate : weekDates[6].date,
+	};
 
 	return (
-		<div className={classes.wrapper}>
-			<DayHeader
+		<div className={classes.timeView}>
+			<TimeViewHeader
+				view={view}
 				enableRescheduling={enableRescheduling}
 				compact={compact}
 				allDayEvents={allDayEvents}
 				dispatch={dispatch}
 				handleMouseEvent={handleMouseEvent}
-				minMaxDatesInView={{ first: activeDate, last: activeDate }}
+				minMaxDatesInView={minMaxDatesInView}
 				placeholderRef={placeholderRef}
+				onEventClick={onEventClick}
+				onEventReschedule={onEventReschedule}
 				renderContextMenu={renderContextMenu}
 				state={state}
-				date={activeDate}
+				weekDatesArray={weekDates}
 			/>
 			<div ref={viewportRef} className={classes.scrollWrapper}>
 				<div className={classes.gridWrapper}>
 					<HoursColumn />
 
 					<TimeViewGrid
-						view='day'
+						view={view}
 						enableRescheduling={enableRescheduling}
 						activeDate={activeDate}
 						dispatch={dispatch}

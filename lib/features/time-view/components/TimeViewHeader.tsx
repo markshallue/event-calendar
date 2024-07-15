@@ -1,5 +1,5 @@
 import { Dispatch, ReactNode, RefObject } from 'react';
-import classes from './Week.module.css';
+import classes from './TimeViewHeader.module.css';
 
 import {
 	DateRecord,
@@ -13,15 +13,14 @@ import {
 	EventClickProps,
 	EventEditProps,
 } from '~/types';
-
-import { filterByWeek } from '~/utils/filterByWeek';
 import { CellContainer } from '~/components';
-import { arrangeWeekEvents } from '~/utils/arrangeWeekEvents';
+import { filterByDate, filterByWeek, arrangeWeekEvents } from '~/utils';
 
 // Only show a max of two events in header
 const EVENT_LIMIT = 2;
 
-interface WeekHeaderProps {
+interface TimeViewHeaderProps {
+	view: 'day' | 'week';
 	enableRescheduling: boolean;
 	compact: boolean;
 	allDayEvents: CalendarEvent[];
@@ -36,7 +35,8 @@ interface WeekHeaderProps {
 	weekDatesArray: DateRecord[];
 }
 
-export function WeekHeader({
+export function TimeViewHeader({
+	view,
 	enableRescheduling,
 	compact,
 	allDayEvents,
@@ -49,8 +49,12 @@ export function WeekHeader({
 	renderContextMenu,
 	state,
 	weekDatesArray,
-}: WeekHeaderProps) {
-	const orderedEvents = arrangeWeekEvents(filterByWeek(allDayEvents, weekDatesArray[0].date));
+}: TimeViewHeaderProps) {
+	const filteredEvents =
+		view === 'day'
+			? filterByDate(allDayEvents, weekDatesArray[0].date)
+			: filterByWeek(allDayEvents, weekDatesArray[0].date);
+	const orderedEvents = arrangeWeekEvents(filteredEvents);
 	const totalEventsOnThisDate =
 		orderedEvents.length > 0 ? Math.max(...orderedEvents.map((x: OrderedCalendarEvent) => x.order + 1)) : 0;
 
@@ -66,16 +70,19 @@ export function WeekHeader({
 	};
 
 	return (
-		<div className={classes.headerRow} onMouseLeave={handleStopDrag}>
+		<div className={classes.headerRow} data-isweekview={view === 'week'} onMouseLeave={handleStopDrag}>
 			{weekDatesArray.map((dayRecord, dayIndex) => {
 				const { date } = dayRecord;
 				return (
 					<div className={classes.headerCell} key={dayIndex}>
-						<div className={classes.headerLabel} data-today={date.isToday()} onMouseEnter={handleStopDrag}>
-							{`${date.format('ddd')} ${date.format('DD')}`}
-						</div>
+						{view === 'week' && (
+							<div className={classes.headerLabel} data-today={date.isToday()} onMouseEnter={handleStopDrag}>
+								{`${date.format('ddd')} ${date.format('DD')}`}
+							</div>
+						)}
 						<CellContainer
-							isInWeekHeader
+							isInDayHeader={view === 'day'}
+							isInWeekHeader={view === 'week'}
 							EVENT_LIMIT={EVENT_LIMIT}
 							enableRescheduling={enableRescheduling}
 							compact={compact}

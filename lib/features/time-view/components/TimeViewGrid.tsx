@@ -13,8 +13,11 @@ import {
 	EventClickProps,
 	EventEditProps,
 } from '~/types';
-import { TimeIndicator, Event, TimeBackground } from '~/components';
+import { Event } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
+
+import { TimeIndicator } from './TimeIndicator';
+import { TimeBackground } from './TimeBackground';
 
 interface TimeViewGridProps {
 	view: 'day' | 'week';
@@ -79,7 +82,7 @@ export function TimeViewGrid({
 				const showPlaceholder =
 					placeholderEvent.isActive &&
 					!placeholderEvent.isAllDay &&
-					activeDate.isBetween(placeholderEvent.start, placeholderEvent.end, 'd', '[]');
+					date.isBetween(placeholderEvent.start, placeholderEvent.end, 'd', '[]');
 				if (showPlaceholder) orderedEvents.push(placeholderEvent);
 
 				return orderedEvents.map(event => (

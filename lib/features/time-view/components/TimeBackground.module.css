@@ -10,7 +10,7 @@
 		border-bottom: 1px solid #eee;
 	}
 
-	&[data-isweekview]:not(:nth-child(n + 577)) {
+	&[data-isweekview='true']:not(:nth-child(n + 577)) {
 		border-right: 1px solid #eee;
 	}
 }

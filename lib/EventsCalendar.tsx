@@ -12,9 +12,8 @@ import {
 	RawCalendarEvent,
 } from './types';
 
-import { Day } from './features/day';
-import { Week } from './features/week';
 import { Month } from './features/month';
+import { TimeView } from './features/time-view';
 import { OverflowCard } from './features/overflow-card';
 import { DefaultHeader } from './features/default-header/DefaultHeader';
 
@@ -107,22 +106,9 @@ export function EventsCalendar({
 							renderContextMenu={renderContextMenu}
 							state={state}
 						/>
-					) : view === 'week' ? (
-						<Week
-							enableRescheduling={enableRescheduling}
-							compact={compact}
-							activeDate={activeDate}
-							dispatch={dispatch}
-							eventsArray={eventsArray}
-							handleMouseEvent={handleMouseEvent}
-							onEventClick={onEventClick}
-							onEventReschedule={onEventReschedule}
-							placeholderRef={placeholderRef}
-							renderContextMenu={renderContextMenu}
-							state={state}
-						/>
 					) : (
-						<Day
+						<TimeView
+							view={view}
 							enableRescheduling={enableRescheduling}
 							compact={compact}
 							activeDate={activeDate}
