@@ -3,7 +3,7 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import classes from './FormPopover.module.css';
 
-import { EventsCalendarPopoverProps } from '~/types';
+import { CalendarEvent } from '~/types';
 
 import { HandleSubmitArgs } from '@/utils';
 import { DateTimeLabel } from '@/components';
@@ -12,7 +12,9 @@ import { CalendarGroup } from './types';
 import { validateValues, getInitialValues, handleTransformValues } from './utils';
 import { InfoInput, GroupInput, TitleInput, TimeToggle, FormPopoverToolbar, DateTimeInputs } from './components';
 
-interface FormPopoverProps extends EventsCalendarPopoverProps {
+interface FormPopoverProps {
+	onClose: () => void;
+	event: CalendarEvent | null;
 	fields: {
 		end: string;
 		group: string;

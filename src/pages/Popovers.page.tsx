@@ -16,7 +16,7 @@ export function Popovers() {
 				<EventsCalendar
 					events={events}
 					onEventClick={({ openPopover }) => openPopover()}
-					renderPopover={props => <ViewPopover {...props} />}
+					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
 				/>
 			</Paper>
 		</PageWrapper>

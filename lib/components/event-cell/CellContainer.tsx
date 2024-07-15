@@ -73,16 +73,19 @@ export function CellContainer({
 
 	// Calculate visible events within this cell
 	const eventsByDate = filterByDate(orderedEvents, date) as OrderedCalendarEvent[];
-	const numOverflowEvents = eventsByDate.reduce((a, c) => a + (c.order >= EVENT_LIMIT ? 1 : 0), 0);
 	const visibleEvents = getVisibleEvents(eventsByDate, date, EVENT_LIMIT, isInDayHeader);
 
-	// Calculated boolean values
+	// Add button to show events that do not fit in cell, if required
+	const numOverflowEvents = eventsByDate.reduce((a, c) => a + (c.order >= EVENT_LIMIT ? 1 : 0), 0);
 	const showOverflowButton = (isInDayHeader || isInWeekHeader) && numOverflowEvents > 0;
+
+	// Add placeholder event to events when required
 	const showPlaceholder = getPlaceholderActiveState(state.placeholderEvent, date, isInWeekHeader || isInDayHeader);
 	if (showPlaceholder) visibleEvents.push(state.placeholderEvent);
 
 	// Popover handler
 	const openPopover = () => dispatch({ type: 'open_popover' });
+	const reset = () => dispatch({ type: 'reset_calendar' });
 
 	return (
 		<>
@@ -96,9 +99,15 @@ export function CellContainer({
 				}}
 				onMouseUp={e => {
 					if (state.eventDragActive) {
-						dispatch({ type: 'update_event_end', anchor: placeholderRef.current });
+						dispatch({ type: 'event_reschedule_end', anchor: placeholderRef.current });
 						onEventReschedule &&
-							onEventReschedule({ event: state.placeholderEvent, eventRef: placeholderRef.current!, openPopover });
+							onEventReschedule({
+								clickedEvent: state.clickedEvent,
+								newEvent: state.placeholderEvent,
+								eventRef: placeholderRef.current!,
+								openPopover,
+								reset,
+							});
 					}
 					handleMouseEvent(e, date, false, placeholderRef);
 				}}
@@ -129,20 +138,20 @@ export function CellContainer({
 			{/* Render events (which may span multiple cells) */}
 			{visibleEvents.map(event => (
 				<Event
-					key={event.id}
-					view='month'
-					enableRescheduling={enableRescheduling}
 					compact={compact}
 					date={date}
 					dispatch={dispatch}
+					enableRescheduling={enableRescheduling}
 					event={event}
-					isInWeekHeader={isInWeekHeader}
 					isInDayHeader={isInDayHeader}
+					isInWeekHeader={isInWeekHeader}
+					key={event.id}
 					minMaxDatesInView={minMaxDatesInView}
 					onEventClick={onEventClick}
 					placeholderRef={placeholderRef}
 					renderContextMenu={renderContextMenu}
 					state={state}
+					view='month'
 				/>
 			))}
 		</>

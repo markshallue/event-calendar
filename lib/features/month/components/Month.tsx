@@ -21,6 +21,7 @@ interface MonthProps {
 	dispatch: Dispatch<CalendarAction>;
 	eventsArray: CalendarEvent[];
 	handleMouseEvent: MouseEventHandler;
+	handleStopDrag: () => void;
 	onEventClick?: (props: EventClickProps) => void;
 	onEventReschedule?: (props: EventEditProps) => void;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
@@ -35,6 +36,7 @@ export function Month({
 	dispatch,
 	eventsArray,
 	handleMouseEvent,
+	handleStopDrag,
 	onEventClick,
 	onEventReschedule,
 	placeholderRef,
@@ -49,11 +51,6 @@ export function Month({
 	const { ref: gridRef, height: gridHeight } = useElementSize();
 	const ROW_HEIGHT = gridHeight / monthDates.weeks.length;
 	const EVENT_LIMIT = getMaxEvents(ROW_HEIGHT, compact);
-
-	// Handlers
-	const handleStopDrag = () => {
-		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
-	};
 
 	return (
 		<div className={classes.calendar}>

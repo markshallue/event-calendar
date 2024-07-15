@@ -7,9 +7,11 @@ import { ImageCarousel } from '@/components';
 import { humanize, getDateTimeLabel } from '~/utils';
 
 import { ViewPopoverToolbar } from './ViewPopoverToolbar';
-import { EventsCalendarPopoverProps } from '~/types';
+import { CalendarEvent } from '~/types';
 
-interface ViewPopoverProps extends EventsCalendarPopoverProps {
+interface ViewPopoverProps {
+	onClose: () => void;
+	event: CalendarEvent | null;
 	withViewLink?: boolean;
 	withEditLink?: boolean;
 	editable?: boolean;

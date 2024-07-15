@@ -1,4 +1,4 @@
 export * from './HoursColumn';
-export * from './TimeViewGrid';
+export * from './TimeIndicator';
 export * from './TimeBackground';
 export * from './TimeViewHeader';

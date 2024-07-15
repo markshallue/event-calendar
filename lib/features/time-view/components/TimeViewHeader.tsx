@@ -26,6 +26,7 @@ interface TimeViewHeaderProps {
 	allDayEvents: CalendarEvent[];
 	dispatch: Dispatch<CalendarAction>;
 	handleMouseEvent: MouseEventHandler;
+	handleStopDrag: () => void;
 	minMaxDatesInView: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
 	onEventClick?: (props: EventClickProps) => void;
@@ -42,6 +43,7 @@ export function TimeViewHeader({
 	allDayEvents,
 	dispatch,
 	handleMouseEvent,
+	handleStopDrag,
 	minMaxDatesInView,
 	onEventClick,
 	onEventReschedule,
@@ -63,11 +65,6 @@ export function TimeViewHeader({
 	const heightOfEvent = compact ? 20 : 23;
 	const bottomPadding = numEventsToShow > 0 ? 8 : 0;
 	const headerHeight = heightOfEvent * numEventsToShow + bottomPadding;
-
-	// Handlers
-	const handleStopDrag = () => {
-		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
-	};
 
 	return (
 		<div className={classes.headerRow} data-isweekview={view === 'week'} onMouseLeave={handleStopDrag}>

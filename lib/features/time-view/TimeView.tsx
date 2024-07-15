@@ -11,9 +11,11 @@ import {
 	MouseEventHandler,
 	EventsCalendarContextMenuProps,
 } from '~/types';
+import { Event } from '~/components';
+import { arrangeWeekdayEvents, filterByDate } from '~/utils';
 
 import { getWeekDates } from './utils';
-import { TimeViewHeader, TimeViewGrid, HoursColumn } from './components';
+import { TimeViewHeader, HoursColumn, TimeBackground, TimeIndicator } from './components';
 
 interface TimeViewProps {
 	view: 'day' | 'week';
@@ -23,6 +25,7 @@ interface TimeViewProps {
 	dispatch: Dispatch<CalendarAction>;
 	eventsArray: CalendarEvent[];
 	handleMouseEvent: MouseEventHandler;
+	handleStopDrag: () => void;
 	placeholderRef: RefObject<HTMLDivElement>;
 	onEventClick?: (props: EventClickProps) => void;
 	onEventReschedule?: (props: EventEditProps) => void;
@@ -38,12 +41,17 @@ export function TimeView({
 	enableRescheduling,
 	eventsArray,
 	handleMouseEvent,
+	handleStopDrag,
 	onEventClick,
 	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
 }: TimeViewProps) {
+	// Constants
+	const isDayView = view === 'day';
+	const isWeekView = view === 'week';
+
 	// Split events into all day / timed
 	const allDayEvents = eventsArray.filter(event => event.isAllDay);
 	const timeEvents = eventsArray.filter(event => !event.isAllDay);
@@ -56,47 +64,79 @@ export function TimeView({
 	}, [activeDate]);
 
 	// Get week days
-	const weekDates = useMemo(() => getWeekDates(activeDate, view), [activeDate, view]);
+	const weekDatesArray = useMemo(() => getWeekDates(activeDate, view), [activeDate, view]);
 	const minMaxDatesInView = {
-		first: view === 'day' ? activeDate : weekDates[0].date,
-		last: view === 'day' ? activeDate : weekDates[6].date,
+		first: isDayView ? activeDate : weekDatesArray[0].date,
+		last: isDayView ? activeDate : weekDatesArray[6].date,
 	};
 
 	return (
 		<div className={classes.timeView}>
 			<TimeViewHeader
-				view={view}
-				enableRescheduling={enableRescheduling}
-				compact={compact}
 				allDayEvents={allDayEvents}
+				compact={compact}
 				dispatch={dispatch}
+				enableRescheduling={enableRescheduling}
 				handleMouseEvent={handleMouseEvent}
+				handleStopDrag={handleStopDrag}
 				minMaxDatesInView={minMaxDatesInView}
-				placeholderRef={placeholderRef}
 				onEventClick={onEventClick}
 				onEventReschedule={onEventReschedule}
+				placeholderRef={placeholderRef}
 				renderContextMenu={renderContextMenu}
 				state={state}
-				weekDatesArray={weekDates}
+				view={view}
+				weekDatesArray={weekDatesArray}
 			/>
 			<div ref={viewportRef} className={classes.scrollWrapper}>
 				<div className={classes.gridWrapper}>
 					<HoursColumn />
 
-					<TimeViewGrid
-						view={view}
-						enableRescheduling={enableRescheduling}
-						activeDate={activeDate}
-						dispatch={dispatch}
-						handleMouseEvent={handleMouseEvent}
-						placeholderRef={placeholderRef}
-						onEventClick={onEventClick}
-						onEventReschedule={onEventReschedule}
-						renderContextMenu={renderContextMenu}
-						state={state}
-						timeEvents={timeEvents}
-						weekDaysArray={weekDates}
-					/>
+					<div
+						className={classes.grid}
+						data-isweekview={isWeekView}
+						onMouseEnter={handleStopDrag}
+						onMouseLeave={handleStopDrag}
+					>
+						<TimeBackground
+							activeDate={activeDate}
+							dispatch={dispatch}
+							handleMouseEvent={handleMouseEvent}
+							onEventReschedule={onEventReschedule}
+							placeholderRef={placeholderRef}
+							state={state}
+							view={view}
+						/>
+
+						<TimeIndicator activeDate={activeDate} isDayView={isDayView} />
+
+						{/* Render events */}
+						{weekDatesArray.map(dayRecord => {
+							const { date } = dayRecord;
+							const eventsByDate = filterByDate(timeEvents, date);
+							const orderedEvents = arrangeWeekdayEvents(eventsByDate, date);
+
+							// Add placeholder event to events when required
+							const { isActive, isAllDay, start, end } = state.placeholderEvent;
+							const showPlaceholder = isActive && !isAllDay && date.isBetween(start, end, 'd', '[]');
+							if (showPlaceholder) orderedEvents.push(state.placeholderEvent);
+
+							return orderedEvents.map(event => (
+								<Event
+									date={date}
+									dispatch={dispatch}
+									enableRescheduling={enableRescheduling}
+									event={event}
+									key={event.id}
+									onEventClick={onEventClick}
+									placeholderRef={placeholderRef}
+									renderContextMenu={renderContextMenu}
+									state={state}
+									view={view}
+								/>
+							));
+						})}
+					</div>
 				</div>
 			</div>
 		</div>

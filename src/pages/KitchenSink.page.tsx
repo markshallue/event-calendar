@@ -14,21 +14,22 @@ import { demoData } from '@/data/constants/demoData';
 import { demoGroups } from '@/data/constants/demoGroups';
 import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
 
+const formFields = {
+	id: 'id',
+	start: 'start',
+	end: 'end',
+	group: 'Status',
+	info: 'Description',
+};
+
 export function KitchenSink() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
-	const [popoverType, setPopoverType] = useState<'create' | 'view' | 'edit'>('view');
-
-	const formFields = {
-		id: 'id',
-		start: 'start',
-		end: 'end',
-		group: 'Status',
-		info: 'Description',
-	};
+	const [popoverType, setPopoverType] = useState<'view' | 'edit' | 'create' | 'reschedule'>('view');
 
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024', closeOnClickOutside: false });
 
+	// Submit handler
 	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
 
 	return (
@@ -61,12 +62,12 @@ export function KitchenSink() {
 					}}
 					onEventReschedule={({ openPopover }) => {
 						openPopover();
-						setPopoverType('edit');
+						setPopoverType('reschedule');
 					}}
-					renderPopover={({ event, onClose }) => {
+					renderPopover={({ clickedEvent, newEvent, onClose }) => {
 						return popoverType === 'view' ? (
 							<ViewPopover
-								event={event}
+								event={clickedEvent}
 								onClose={onClose}
 								setPopoverType={setPopoverType}
 								editable
@@ -74,12 +75,12 @@ export function KitchenSink() {
 							/>
 						) : (
 							<FormPopover
-								event={event}
+								event={popoverType === 'edit' ? clickedEvent : newEvent}
 								onClose={onClose}
 								groups={demoGroups}
 								fields={formFields}
 								handleSubmit={handleSubmit}
-								formType={popoverType}
+								formType={popoverType === 'reschedule' ? 'edit' : popoverType}
 							/>
 						);
 					}}

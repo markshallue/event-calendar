@@ -36,7 +36,13 @@ export function CustomHeader() {
 			<Title mb='sm'>Custom header element</Title>
 			<Paper withBorder radius='md' shadow='lg'>
 				{customHeader}
-				<EventsCalendar noHeader calendar={calendar} events={events} renderPopover={props => <ViewPopover {...props} />} />
+				<EventsCalendar
+					noHeader
+					calendar={calendar}
+					events={events}
+					onEventClick={({ openPopover }) => openPopover()}
+					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
+				/>
 			</Paper>
 		</PageWrapper>
 	);

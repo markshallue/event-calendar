@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 import classes from './Event.module.css';
 
 import { getTimeDiff, getTimeLabel } from '~/utils';
-import { useLongPress, useCalendarEvent } from '~/hooks';
+import { useCalendarEvent } from '~/hooks';
 import {
 	CalendarState,
 	CalendarAction,
@@ -16,7 +16,7 @@ import {
 
 import { TimeEvent } from './TimeEvent';
 import { AllDayEvent } from './AllDayEvent';
-import { getEventStyles, isBeingDragged, getWeekOrDayEventStyles } from './utils';
+import { getEventStyles, getWeekOrDayEventStyles, isBeingDragged } from './utils';
 
 interface EventProps {
 	view: CalendarView;
@@ -85,16 +85,15 @@ export function Event({
 	const onClose = () => dispatch({ type: 'reset_calendar' });
 	const openPopover = () => dispatch({ type: 'open_popover' });
 
-	const onLongPress = () => {
+	const onDragStart = () => {
 		dispatch({ type: 'reset_calendar' });
 		if (enableRescheduling && !isInOverflow) {
 			dispatch({
-				type: 'update_event_start',
+				type: 'event_reschedule_start',
 				event: { ...event, dragId: event.id, order: isMonthView ? event.order : 1000 },
 			});
 		}
 	};
-	const longPressEvent = useLongPress({ onLongPress });
 
 	const wrapperStyles = isMonthView
 		? getEventStyles(isInOverflow, event, date, compact, isInWeekHeader, isInDayHeader)
@@ -109,14 +108,15 @@ export function Event({
 				data-anchorday={date.format('DD-MMM-YYYY')}
 				data-placeholder={isPlaceholder}
 				data-dragactive={state.dragActive || state.eventDragActive}
-				data-isdragging={isBeingDragged(isMonthView, state, event)}
+				data-isdragging={isBeingDragged(state, event)}
 				data-sm={compact}
 				data-time={isMonthView && !event.isAllDay}
+				draggable='true'
 				onClick={e => handleClick(e, isPlaceholder, eventRef, onEventClick)}
 				onContextMenu={e => handleContextMenu(e, eventRef)}
+				onDragStart={onDragStart}
 				ref={eventRef}
 				style={wrapperStyles}
-				{...longPressEvent}
 			>
 				{isMonthView ? (
 					!event.isAllDay && event.startTime && event.endTime ? (

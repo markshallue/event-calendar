@@ -1,9 +1,0 @@
-.grid {
-	display: grid;
-	grid-template-columns: repeat(1, minmax(0, 1fr));
-	flex-grow: 1;
-
-	&[data-isweekview='true'] {
-		grid-template-columns: repeat(7, minmax(0, 1fr));
-	}
-}

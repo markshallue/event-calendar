@@ -33,9 +33,8 @@ export function useEventsCalendar({
 	// Reset calendar on click outside of the react component
 	useEffect(() => {
 		if (!closeOnClickOutside || isInitialised) return;
-		const handleClose = () => {
-			dispatch({ type: 'reset_calendar' });
-		};
+		const handleClose = () => dispatch({ type: 'reset_calendar' });
+
 		window.addEventListener('click', handleClose);
 		return () => {
 			window.removeEventListener('click', handleClose);

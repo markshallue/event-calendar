@@ -42,16 +42,15 @@ const updatePlaceholder = ({
 
 export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCreate }: useMouseEventProps) => {
 	// If view only calendar, only close popovers on mousedown
-	if (!enableDragCreation)
+	if (!enableDragCreation) {
 		return (e: React.MouseEvent) => {
-			if (e.type === 'mousedown') {
-				dispatch({ type: 'reset_calendar' });
-				return;
-			}
+			if (e.type === 'mousedown') dispatch({ type: 'reset_calendar' });
 		};
+	}
 
 	// Popover handler
 	const openPopover = () => dispatch({ type: 'open_popover' });
+	const reset = () => dispatch({ type: 'reset_calendar' });
 
 	const mouseEventHandler: MouseEventHandler = (e, date, isTimeEvent, placeholderRef) => {
 		const { dragActive, firstClickDate, placeholderEvent } = state;
@@ -82,7 +81,14 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 			case 'mouseup': {
 				if (!dragActive) return;
 
-				onEventCreate && onEventCreate({ event: state.placeholderEvent, eventRef: placeholderRef.current!, openPopover });
+				onEventCreate &&
+					onEventCreate({
+						clickedEvent: state.clickedEvent,
+						newEvent: state.placeholderEvent,
+						eventRef: placeholderRef.current!,
+						openPopover,
+						reset,
+					});
 
 				// Delay opening of popup
 				setTimeout(() => {

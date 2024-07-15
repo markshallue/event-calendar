@@ -5,7 +5,7 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { ContextMenu, FormPopover, ViewPopover } from '@/components';
+import { ContextMenu, FormPopover } from '@/components';
 
 import { PageWrapper } from '@/layout/PageWrapper';
 
@@ -15,7 +15,6 @@ import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHan
 
 export function Editable() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
-	const [popoverType, setPopoverType] = useState<'create' | 'view' | 'edit'>('view');
 
 	const formFields = {
 		id: 'id',
@@ -39,37 +38,27 @@ export function Editable() {
 					events={events}
 					onEventClick={({ openPopover }) => {
 						openPopover();
-						setPopoverType('view');
 					}}
-					onEventCreate={({ openPopover }) => {
-						openPopover();
-						setPopoverType('create');
-					}}
-					onEventReschedule={({ openPopover }) => {
-						openPopover();
-						setPopoverType('edit');
-					}}
-					renderPopover={({ event, onClose }) => {
-						return popoverType === 'view' ? (
-							<ViewPopover
-								event={event}
-								onClose={onClose}
-								setPopoverType={setPopoverType}
-								editable
-								handleSubmit={handleSubmit}
-							/>
-						) : (
-							<FormPopover
-								event={event}
-								onClose={onClose}
-								groups={demoGroups}
-								fields={formFields}
-								handleSubmit={handleSubmit}
-								formType={popoverType}
-							/>
-						);
-					}}
-					renderContextMenu={props => <ContextMenu {...props} setPopoverType={setPopoverType} handleSubmit={handleSubmit} />}
+					renderPopover={({ clickedEvent, onClose }) => (
+						<FormPopover
+							event={clickedEvent}
+							onClose={onClose}
+							groups={demoGroups}
+							fields={formFields}
+							handleSubmit={handleSubmit}
+							formType={'edit'}
+						/>
+					)}
+					renderContextMenu={({ event, onClose, openPopover, closeContextMenu }) => (
+						<ContextMenu
+							event={event}
+							onClose={onClose}
+							openPopover={openPopover}
+							closeContextMenu={closeContextMenu}
+							setPopoverType={() => null}
+							handleSubmit={handleSubmit}
+						/>
+					)}
 				/>
 			</Paper>
 		</PageWrapper>

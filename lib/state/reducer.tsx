@@ -35,7 +35,6 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		case 'open_context_menu': {
 			return {
 				...state,
-				popoverEvent: 'clickedEvent',
 				clickedEvent: action.event || state.clickedEvent,
 				eventAnchor: action.anchor || state.eventAnchor,
 			};
@@ -45,7 +44,6 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		case 'set_clicked_event': {
 			return {
 				...state,
-				popoverEvent: 'clickedEvent',
 				clickedEvent: action.event || state.clickedEvent,
 				eventAnchor: action.anchor || state.eventAnchor,
 				placeholderEvent: EMPTY_EVENT,
@@ -75,7 +73,6 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				...state,
 				dragActive: false,
 				firstClickDate: null,
-				popoverEvent: 'placeholder',
 				placeholderEvent: { ...state.placeholderEvent, isActive: true },
 				eventAnchor: action.anchor || state.eventAnchor,
 			};
@@ -92,7 +89,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		}
 
 		// Event drag & drop rescheduling
-		case 'update_event_start': {
+		case 'event_reschedule_start': {
 			return {
 				...state,
 				eventDragActive: true,
@@ -106,11 +103,10 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				},
 			};
 		}
-		case 'update_event_end': {
+		case 'event_reschedule_end': {
 			return {
 				...state,
 				eventDragActive: false,
-				popoverEvent: 'placeholder',
 				dragStartOffset: null,
 				eventAnchor: action.anchor || state.eventAnchor,
 			};

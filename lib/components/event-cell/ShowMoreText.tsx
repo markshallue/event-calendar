@@ -19,7 +19,7 @@ export function ShowMoreText({ date, dispatch, isCompact, numOverflowEvents, sta
 		if (state.overflowIsOpen && e.target === state.overflowAnchor) {
 			dispatch({ type: 'reset_calendar' });
 		} else {
-			dispatch({ type: 'open_overflow', date: date, anchor: ref.current });
+			dispatch({ type: 'open_overflow', date, anchor: ref.current });
 		}
 	};
 

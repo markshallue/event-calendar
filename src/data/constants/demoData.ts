@@ -40,7 +40,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -62,7 +61,6 @@ export const demoData = [
 				content: 'Rehabilitating the areas adjacent to the Murray River to enhance its ecosystem.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -99,7 +97,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds', 'Ivan Wisozk'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -141,7 +138,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Alvin Ernser', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage1.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -190,7 +186,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Joel Lockman', 'Steven Herman', 'Herbert Cummerata', 'Erick Reynolds'],
 		images: [],
 	},
 	{
@@ -244,7 +239,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Joel Lockman', 'Beulah Kreiger', 'Steven Herman', 'Alvin Ernser'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -293,7 +287,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Alvin Ernser', 'Melanie Armstrong-Nolan', 'Steven Herman'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -332,7 +325,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Erick Reynolds'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -381,7 +373,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Erick Reynolds', 'Alvin Ernser', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -405,7 +396,6 @@ export const demoData = [
 				content: 'Eradicating invasive species to protect the biodiversity of Wilsons Promontory.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -449,7 +439,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Ivan Wisozk', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -473,7 +462,6 @@ export const demoData = [
 				content: 'Organizing campaigns involving the community to clean up rivers and waterways.',
 			},
 		],
-		filter: ['Undefined'],
 		images: [],
 	},
 	{
@@ -512,7 +500,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Ivan Wisozk'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage1.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -551,7 +538,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Steven Herman'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -590,7 +576,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Ivan Wisozk'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -644,7 +629,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Alvin Ernser', 'Beulah Kreiger', 'Melanie Armstrong-Nolan', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -678,7 +662,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds'],
 		images: ['/src/data/images/demoImage5.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -717,7 +700,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Ivan Wisozk'],
 		images: [],
 	},
 	{
@@ -766,7 +748,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Steven Herman', 'Erick Reynolds', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -820,7 +801,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Ivan Wisozk', 'Herbert Cummerata', 'Steven Herman', 'Joel Lockman'],
 		images: [],
 	},
 	{
@@ -864,7 +844,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Erick Reynolds', 'Steven Herman'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -896,7 +875,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Joel Lockman'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -930,7 +908,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -974,7 +951,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage1.jpg', '/src/data/images/demoImage4.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -1013,7 +989,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1057,7 +1032,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -1081,7 +1055,6 @@ export const demoData = [
 				content: 'Developing programs for eco-friendly disposal and waste management.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1115,7 +1088,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Alvin Ernser'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1159,7 +1131,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Joel Lockman', 'Beulah Kreiger', 'Erick Reynolds'],
 		images: [],
 	},
 	{
@@ -1203,7 +1174,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Steven Herman', 'Erick Reynolds'],
 		images: [],
 	},
 	{
@@ -1250,7 +1220,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Steven Herman', 'Ivan Wisozk', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -1292,7 +1261,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Melanie Armstrong-Nolan', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1346,7 +1314,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Beulah Kreiger', 'Erick Reynolds', 'Joel Lockman', 'Steven Herman'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1385,7 +1352,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Steven Herman'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1439,7 +1405,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Ivan Wisozk', 'Steven Herman', 'Alvin Ernser', 'Beulah Kreiger'],
 		images: [],
 	},
 	{
@@ -1483,7 +1448,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Ivan Wisozk', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1505,7 +1469,6 @@ export const demoData = [
 				content: 'Managing fire regimes in arid landscapes for ecosystem health.',
 			},
 		],
-		filter: ['Undefined'],
 		images: [],
 	},
 	{
@@ -1549,7 +1512,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1591,7 +1553,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds', 'Steven Herman', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1635,7 +1596,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Joel Lockman', 'Alvin Ernser'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -1672,7 +1632,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -1706,7 +1665,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds'],
 		images: [],
 	},
 	{
@@ -1755,7 +1713,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Joel Lockman', 'Alvin Ernser', 'Erick Reynolds'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -1794,7 +1751,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -1826,7 +1782,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -1848,7 +1803,6 @@ export const demoData = [
 				content: 'Monitoring rangelands in Western Australia for sustainable land management.',
 			},
 		],
-		filter: ['Undefined'],
 		images: [],
 	},
 	{
@@ -1892,7 +1846,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Erick Reynolds', 'Ivan Wisozk'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -1914,7 +1867,6 @@ export const demoData = [
 				content: 'Implementing erosion control measures in far North Queensland.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -1961,7 +1913,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Melanie Armstrong-Nolan', 'Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -1993,7 +1944,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman'],
 		images: ['/src/data/images/demoImage1.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -2037,7 +1987,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Melanie Armstrong-Nolan', 'Ivan Wisozk'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -2076,7 +2025,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Erick Reynolds'],
 		images: ['/src/data/images/demoImage5.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2110,7 +2058,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -2154,7 +2101,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Erick Reynolds', 'Beulah Kreiger'],
 		images: ['/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -2198,7 +2144,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage5.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2222,7 +2167,6 @@ export const demoData = [
 				content: 'Developing strategies to adapt to climate change impacts in urban areas.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2266,7 +2210,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds', 'Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -2308,7 +2251,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Alvin Ernser', 'Steven Herman', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2355,7 +2297,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds', 'Herbert Cummerata', 'Joel Lockman', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -2404,7 +2345,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Alvin Ernser', 'Melanie Armstrong-Nolan', 'Steven Herman'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -2453,7 +2393,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Erick Reynolds', 'Melanie Armstrong-Nolan', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage1.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -2490,7 +2429,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -2529,7 +2467,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Herbert Cummerata'],
 		images: [],
 	},
 	{
@@ -2551,7 +2488,6 @@ export const demoData = [
 				content: 'Planning land use in coastal areas for sustainability and conservation.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2595,7 +2531,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Alvin Ernser', 'Herbert Cummerata'],
 		images: [],
 	},
 	{
@@ -2639,7 +2574,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Beulah Kreiger', 'Erick Reynolds'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -2676,7 +2610,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -2723,7 +2656,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Erick Reynolds', 'Beulah Kreiger', 'Alvin Ernser'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -2762,7 +2694,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Erick Reynolds'],
 		images: [],
 	},
 	{
@@ -2809,7 +2740,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Herbert Cummerata', 'Beulah Kreiger', 'Steven Herman'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -2846,7 +2776,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Steven Herman'],
 		images: [],
 	},
 	{
@@ -2883,7 +2812,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -2917,7 +2845,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -2959,7 +2886,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan', 'Beulah Kreiger', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3003,7 +2929,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Melanie Armstrong-Nolan', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -3047,7 +2972,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Steven Herman', 'Joel Lockman', 'Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -3069,7 +2993,6 @@ export const demoData = [
 				content: 'Implementing measures for soil conservation in Outback Queensland.',
 			},
 		],
-		filter: ['Undefined'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage5.jpg'],
 	},
 	{
@@ -3108,7 +3031,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -3155,7 +3077,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Erick Reynolds', 'Alvin Ernser', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3194,7 +3115,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -3231,7 +3151,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -3270,7 +3189,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage5.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3314,7 +3232,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Steven Herman', 'Alvin Ernser'],
 		images: [],
 	},
 	{
@@ -3351,7 +3268,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -3398,7 +3314,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Erick Reynolds', 'Herbert Cummerata', 'Beulah Kreiger', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3445,7 +3360,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Joel Lockman', 'Steven Herman', 'Erick Reynolds'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3494,7 +3408,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Steven Herman', 'Ivan Wisozk', 'Joel Lockman'],
 		images: ['/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -3536,7 +3449,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Herbert Cummerata', 'Alvin Ernser'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -3573,7 +3485,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Joel Lockman', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3617,7 +3528,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Herbert Cummerata', 'Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -3649,7 +3559,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage2.jpg'],
 	},
 	{
@@ -3681,7 +3590,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger'],
 		images: ['/src/data/images/demoImage4.jpg', '/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -3728,7 +3636,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Joel Lockman', 'Steven Herman', 'Ivan Wisozk', 'Herbert Cummerata'],
 		images: ['/src/data/images/demoImage1.jpg'],
 	},
 	{
@@ -3770,7 +3677,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Alvin Ernser', 'Beulah Kreiger', 'Melanie Armstrong-Nolan'],
 		images: ['/src/data/images/demoImage2.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3817,7 +3723,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Beulah Kreiger', 'Herbert Cummerata', 'Steven Herman'],
 		images: ['/src/data/images/demoImage3.jpg', '/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3849,7 +3754,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Melanie Armstrong-Nolan'],
 		images: [],
 	},
 	{
@@ -3886,7 +3790,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Ivan Wisozk', 'Steven Herman'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 	{
@@ -3923,7 +3826,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Alvin Ernser', 'Steven Herman'],
 		images: ['/src/data/images/demoImage1.jpg', '/src/data/images/demoImage4.jpg', '/src/data/images/demoImage3.jpg'],
 	},
 	{
@@ -3965,7 +3867,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger', 'Joel Lockman', 'Steven Herman'],
 		images: [],
 	},
 	{
@@ -3999,7 +3900,6 @@ export const demoData = [
 				],
 			},
 		],
-		filter: ['Beulah Kreiger'],
 		images: ['/src/data/images/demoImage4.jpg'],
 	},
 ];

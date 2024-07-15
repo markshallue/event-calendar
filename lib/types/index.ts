@@ -10,7 +10,7 @@ export type RelatedForm = {
 export type CalendarView = 'month' | 'week' | 'day';
 
 export interface RawCalendarEvent {
-	id: number;
+	id: number | null;
 	title: string;
 	start: string | number | Date | Dayjs;
 	end: string | number | Date | Dayjs;
@@ -56,7 +56,8 @@ export interface MonthDates extends MinMaxDatesInView {
 }
 
 export interface EventsCalendarPopoverProps {
-	event: CalendarEvent | null;
+	clickedEvent: CalendarEvent | null;
+	newEvent: CalendarEvent | null;
 	onClose: () => void;
 }
 
@@ -75,8 +76,8 @@ type CalendarActionType =
 	| 'update_event'
 	| 'event_create_end'
 	| 'open_overflow'
-	| 'update_event_start'
-	| 'update_event_end'
+	| 'event_reschedule_start'
+	| 'event_reschedule_end'
 	| 'open_popover'
 	| 'open_context_menu';
 
@@ -100,7 +101,6 @@ export interface CalendarState {
 	clickedEvent: CalendarEvent;
 	popoverIsOpen: boolean;
 	eventAnchor: HTMLDivElement | null;
-	popoverEvent: 'clickedEvent' | 'placeholder';
 
 	// Drag creation
 	dragActive: boolean;
@@ -122,4 +122,10 @@ export type EventClickProps = {
 	eventRef: HTMLDivElement;
 	openPopover: () => void;
 };
-export type EventEditProps = { event: CalendarEvent; eventRef: HTMLDivElement; openPopover: () => void };
+export type EventEditProps = {
+	clickedEvent: CalendarEvent;
+	newEvent: CalendarEvent | null;
+	eventRef: HTMLDivElement;
+	openPopover: () => void;
+	reset: () => void;
+};

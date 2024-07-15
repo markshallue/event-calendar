@@ -1,4 +1,3 @@
-export * from './useLongPress';
 export * from './useMouseEvent';
 export * from './useElementSize';
 export * from './useCalendarEvent';

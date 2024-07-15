@@ -65,10 +65,13 @@ export function EventsCalendar({
 	);
 
 	// Main reducer
-	const { eventAnchor, popoverIsOpen, popoverEvent, clickedEvent, placeholderEvent } = state;
+	const { eventAnchor, popoverIsOpen, clickedEvent, placeholderEvent } = state;
 
 	// Popover
 	const onClose = () => dispatch({ type: 'reset_calendar' });
+	const handleStopDrag = () => {
+		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
+	};
 
 	// Placeholder ref
 	const placeholderRef = useRef<HTMLDivElement>(null);
@@ -90,7 +93,7 @@ export function EventsCalendar({
 			)}
 			<div className={classes.wrapper} style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}>
 				{/* Sidebar could go here */}
-				<div className={classes.EventsCalendar}>
+				<div className={classes.EventsCalendar} onClick={e => e.stopPropagation()}>
 					<CircularLoader visible={isFetching} />
 					{view === 'month' ? (
 						<Month
@@ -100,6 +103,7 @@ export function EventsCalendar({
 							dispatch={dispatch}
 							eventsArray={eventsArray}
 							handleMouseEvent={handleMouseEvent}
+							handleStopDrag={handleStopDrag}
 							onEventClick={onEventClick}
 							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
@@ -115,6 +119,7 @@ export function EventsCalendar({
 							dispatch={dispatch}
 							eventsArray={eventsArray}
 							handleMouseEvent={handleMouseEvent}
+							handleStopDrag={handleStopDrag}
 							onEventClick={onEventClick}
 							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
@@ -124,7 +129,7 @@ export function EventsCalendar({
 					)}
 					{renderPopover && eventAnchor && (
 						<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
-							{renderPopover({ onClose, event: popoverEvent === 'clickedEvent' ? clickedEvent : placeholderEvent })}
+							{renderPopover({ onClose, clickedEvent, newEvent: placeholderEvent })}
 						</EventsCalendarPopover>
 					)}
 					<OverflowCard

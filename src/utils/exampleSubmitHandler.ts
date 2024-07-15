@@ -1,7 +1,7 @@
 import { FormPopoverReturnValues } from '@/components/form-popover/types';
 import { demoGroups } from '@/data/constants/demoGroups';
 import { Dispatch, SetStateAction } from 'react';
-import { RawCalendarEvent } from '~/types';
+import { CalendarEvent, RawCalendarEvent } from '~/types';
 import { createNewEventFromForm } from './createNewEventFromForm';
 
 export type HandleSubmitArgs =
@@ -13,6 +13,11 @@ export type HandleSubmitArgs =
 			id: number | null;
 			type: 'create' | 'edit';
 			values: FormPopoverReturnValues;
+	  }
+	| {
+			type: 'reschedule';
+			id: number | null;
+			event: CalendarEvent;
 	  };
 
 export const exampleSubmitHandler = (
@@ -25,9 +30,18 @@ export const exampleSubmitHandler = (
 		setEvents(p => p.filter(event => event.id !== args.id));
 	}
 	if (type === 'create') {
-		const newId = Math.max(...events.map(e => e.id)) + 1;
+		const newId = Math.max(...events.map(e => e.id ?? 0)) + 1;
 		const newEvent = createNewEventFromForm({ type, values: args.values, groups: demoGroups, id: newId });
 		setEvents(p => [...p, newEvent]);
+	}
+	if (type === 'reschedule') {
+		const newEvents = events.map(event => {
+			if (event.id !== args.id) return event;
+			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+			const { dragId, isActive, indent, order, ...props } = args.event;
+			return { ...props, id: dragId };
+		});
+		setEvents(newEvents);
 	}
 	if (type === 'edit') {
 		const newEvents = events.map(event => {

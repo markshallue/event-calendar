@@ -6,7 +6,6 @@ export const DEFAULT_STATE: CalendarState = {
 	clickedEvent: EMPTY_EVENT,
 	popoverIsOpen: false,
 	eventAnchor: null,
-	popoverEvent: 'clickedEvent',
 
 	// Drag creation
 	dragActive: false,

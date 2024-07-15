@@ -45,6 +45,7 @@ export function TimeBackground({
 
 	// Popover handler
 	const openPopover = () => dispatch({ type: 'open_popover' });
+	const reset = () => dispatch({ type: 'reset_calendar' });
 
 	return (
 		<>
@@ -64,12 +65,14 @@ export function TimeBackground({
 								}}
 								onMouseUp={e => {
 									if (state.eventDragActive) {
-										dispatch({ type: 'update_event_end', anchor: placeholderRef.current });
+										dispatch({ type: 'event_reschedule_end', anchor: placeholderRef.current });
 										onEventReschedule &&
 											onEventReschedule({
-												event: state.placeholderEvent,
+												clickedEvent: state.clickedEvent,
+												newEvent: state.placeholderEvent,
 												eventRef: placeholderRef.current!,
 												openPopover,
+												reset,
 											});
 									}
 									handleMouseEvent(e, date, true, placeholderRef);

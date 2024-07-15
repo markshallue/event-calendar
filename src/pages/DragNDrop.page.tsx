@@ -5,29 +5,18 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { FormPopover } from '@/components';
+import { ViewPopover } from '@/components';
 
 import { PageWrapper } from '@/layout/PageWrapper';
 
 import { demoData } from '@/data/constants/demoData';
-import { demoGroups } from '@/data/constants/demoGroups';
-import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
+import { exampleSubmitHandler } from '@/utils/exampleSubmitHandler';
 
 export function DragNDrop() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
 
-	const formFields = {
-		id: 'id',
-		start: 'start',
-		end: 'end',
-		group: 'Status',
-		info: 'Description',
-	};
-
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
-
-	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
 
 	return (
 		<PageWrapper>
@@ -37,19 +26,13 @@ export function DragNDrop() {
 					enableRescheduling
 					calendar={calendar}
 					events={events}
-					onEventReschedule={({ openPopover }) => {
-						openPopover();
+					onEventReschedule={({ clickedEvent, newEvent, reset }) => {
+						if (newEvent === null) return;
+						exampleSubmitHandler({ type: 'reschedule', id: clickedEvent.id, event: newEvent }, events, setEvents);
+						reset();
 					}}
-					renderPopover={({ event, onClose }) => (
-						<FormPopover
-							event={event}
-							onClose={onClose}
-							groups={demoGroups}
-							fields={formFields}
-							handleSubmit={handleSubmit}
-							formType='edit'
-						/>
-					)}
+					onEventClick={({ openPopover }) => openPopover()}
+					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
 				/>
 			</Paper>
 		</PageWrapper>
