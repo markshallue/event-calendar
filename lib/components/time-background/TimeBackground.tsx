@@ -1,6 +1,6 @@
 import { Dayjs } from 'dayjs';
 import { Dispatch, RefObject } from 'react';
-import classes from './Week.module.css';
+import classes from './TimeBackground.module.css';
 
 import { updateEvent } from '~/utils';
 import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
@@ -19,7 +19,8 @@ const getActiveDateTime = (activeDate: Dayjs, day: number, hour: number, timeBlo
 		.minute(timeBlock * 15);
 };
 
-interface WeekBackgroundProps {
+interface TimeBackgroundProps {
+	view: 'day' | 'week';
 	activeDate: Dayjs;
 	handleMouseEvent: MouseEventHandler;
 	placeholderRef: RefObject<HTMLDivElement>;
@@ -28,16 +29,17 @@ interface WeekBackgroundProps {
 	onEventReschedule?: (props: EventEditProps) => void;
 }
 
-export function WeekBackground({
+export function TimeBackground({
+	view,
 	activeDate,
 	handleMouseEvent,
 	placeholderRef,
 	state,
 	dispatch,
 	onEventReschedule,
-}: WeekBackgroundProps) {
+}: TimeBackgroundProps) {
 	// Build grid arrays
-	const daysArray = buildIndexArr(7);
+	const daysArray = view === 'day' ? [0] : buildIndexArr(7);
 	const hoursArray = buildIndexArr(24);
 	const timeBlocksArray = buildIndexArr(4);
 
@@ -53,10 +55,11 @@ export function WeekBackground({
 						return (
 							<div
 								className={classes.gridCell}
+								data-isweekview={view === 'week'}
 								key={`${day}${hour}${timeBlock}`}
 								onMouseDown={e => handleMouseEvent(e, date, true, placeholderRef)}
 								onMouseEnter={e => {
-									if (state.eventDragActive) updateEvent({ state, dispatch, date, view: 'week' });
+									if (state.eventDragActive) updateEvent({ state, dispatch, date, view });
 									handleMouseEvent(e, date, true, placeholderRef);
 								}}
 								onMouseUp={e => {

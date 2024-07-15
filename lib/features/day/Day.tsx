@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 import classes from './Day.module.css';
 
 import { filterByDate, arrangeWeekdayEvents } from '~/utils';
-import { HoursColumn, TimeIndicator, Event } from '~/components';
+import { HoursColumn, TimeIndicator, Event, TimeBackground } from '~/components';
 import {
 	CalendarEvent,
 	EventsCalendarContextMenuProps,
@@ -14,7 +14,7 @@ import {
 	EventEditProps,
 } from '~/types';
 
-import { DayBackground, DayHeader } from './components';
+import { DayHeader } from './components';
 
 interface DayProps {
 	enableRescheduling: boolean;
@@ -39,6 +39,7 @@ export function Day({
 	state,
 	dispatch,
 	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 }: DayProps) {
 	// Split events into all day / timed
@@ -86,9 +87,11 @@ export function Day({
 					<HoursColumn />
 
 					<div className={classes.grid} onMouseEnter={handleStopDrag} onMouseLeave={handleStopDrag}>
-						<DayBackground
+						<TimeBackground
+							view='day'
 							activeDate={activeDate}
 							handleMouseEvent={handleMouseEvent}
+							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
 							state={state}
 							dispatch={dispatch}

@@ -13,10 +13,8 @@ import {
 	EventClickProps,
 	EventEditProps,
 } from '~/types';
-import { TimeIndicator, Event } from '~/components';
+import { TimeIndicator, Event, TimeBackground } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
-
-import { WeekBackground } from './WeekBackground';
 
 interface WeekGridProps {
 	enableRescheduling: boolean;
@@ -52,7 +50,8 @@ export function WeekGrid({
 
 	return (
 		<div className={classes.grid} onMouseEnter={handleStopDrag} onMouseLeave={handleStopDrag}>
-			<WeekBackground
+			<TimeBackground
+				view='week'
 				activeDate={activeDate}
 				handleMouseEvent={handleMouseEvent}
 				onEventReschedule={onEventReschedule}

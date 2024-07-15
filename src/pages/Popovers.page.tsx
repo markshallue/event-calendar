@@ -13,7 +13,11 @@ export function Popovers() {
 		<PageWrapper>
 			<Title mb='sm'>View popover</Title>
 			<Paper withBorder radius='md' shadow='lg'>
-				<EventsCalendar events={events} renderPopover={props => <ViewPopover {...props} />} />
+				<EventsCalendar
+					events={events}
+					onEventClick={({ openPopover }) => openPopover()}
+					renderPopover={props => <ViewPopover {...props} />}
+				/>
 			</Paper>
 		</PageWrapper>
 	);

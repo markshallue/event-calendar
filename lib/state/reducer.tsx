@@ -4,7 +4,7 @@ import { CalendarAction, CalendarState } from '~/types';
 
 export function reducer(state: CalendarState, action: CalendarAction): CalendarState {
 	switch (action.type) {
-		// Reset to deafult interaction state (keep existing data and filtering config)
+		// Reset to deafult state
 		case 'reset_calendar': {
 			return {
 				...state,
@@ -12,7 +12,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 			};
 		}
 
-		// General
+		// Overflow
 		case 'open_overflow': {
 			return {
 				...state,

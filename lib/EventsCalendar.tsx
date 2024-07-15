@@ -59,7 +59,7 @@ export function EventsCalendar({
 	// Initialise data calendar
 	const { activeDate, setActiveDate, view, setView, state, dispatch } = useInitEventsCalendar(calendar);
 
-	// Parse events to dayjs format
+	// Parse events to dayjs
 	const eventsArray: CalendarEvent[] = useMemo(
 		() => events.map(e => ({ ...e, start: dayjs(e.start), end: dayjs(e.end), dragId: null })),
 		[events]
@@ -80,11 +80,18 @@ export function EventsCalendar({
 	return (
 		<div style={{ width: '100%', height: height }}>
 			{noHeader ? null : (
-				<DefaultHeader view={view} setDate={setActiveDate} setView={setView} date={activeDate} views={views} />
+				<DefaultHeader
+					view={view}
+					dispatch={dispatch}
+					setDate={setActiveDate}
+					setView={setView}
+					date={activeDate}
+					views={views}
+				/>
 			)}
 			<div className={classes.wrapper} style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}>
 				{/* Sidebar could go here */}
-				<div className={classes.EventsCalendar} onClick={e => e.stopPropagation()}>
+				<div className={classes.EventsCalendar}>
 					<CircularLoader visible={isFetching} />
 					{view === 'month' ? (
 						<Month

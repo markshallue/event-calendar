@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { Dayjs } from 'dayjs';
-import { CalendarView } from '~/types';
+import { CalendarAction, CalendarView } from '~/types';
 import classes from './DefaultHeader.module.css';
 
 import { DefaultNavigation } from './DefaultNavigation';
@@ -8,6 +8,7 @@ import { DefaultControls } from './DefaultControls';
 
 interface DefaultHeaderProps {
 	date: Dayjs;
+	dispatch: Dispatch<CalendarAction>;
 	view?: CalendarView;
 	maxDate?: Dayjs | null;
 	minDate?: Dayjs | null;
@@ -16,9 +17,17 @@ interface DefaultHeaderProps {
 	setView?: Dispatch<SetStateAction<CalendarView>>;
 	children?: ReactNode;
 }
-export function DefaultHeader({ date, setDate, setView, views, view = 'month', children }: DefaultHeaderProps) {
+export function DefaultHeader({
+	date,
+	dispatch,
+	setDate,
+	setView,
+	views,
+	view = 'month',
+	children,
+}: DefaultHeaderProps) {
 	return (
-		<div className={classes.header}>
+		<div className={classes.header} onMouseDown={() => dispatch({ type: 'reset_calendar' })}>
 			<DefaultNavigation date={date} setDate={setDate} view={view} />
 			<DefaultControls views={views} setView={setView} view={view}>
 				{children}

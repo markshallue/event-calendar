@@ -49,24 +49,3 @@
 	grid-template-columns: repeat(7, minmax(0, 1fr));
 	flex-grow: 1;
 }
-.gridCell {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	height: 12px;
-	max-height: 12px;
-	box-sizing: border-box;
-	&:not(:nth-child(n + 577)) {
-		border-right: 1px solid #eee;
-	}
-	&:nth-child(4n + 4) {
-		border-bottom: 1px solid #eee;
-	}
-}
-.dropdown {
-	pointer-events: auto;
-	cursor: auto;
-	padding: 0;
-	border: none;
-}
