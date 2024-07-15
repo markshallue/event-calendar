@@ -80,6 +80,8 @@ export function Event({
 	const eventRef = isPlaceholder && event.start.isSame(date, 'd') ? placeholderRef : ref;
 	const timeDuration = Math.abs(getTimeDiff(event.start, event.end));
 	const isShort = timeDuration <= 30;
+	const overlapOffset = isDayView ? 120 : 20;
+	const dayIndex = isDayView ? 0 : date.day();
 	const onClose = () => dispatch({ type: 'reset_calendar' });
 	const openPopover = () => dispatch({ type: 'open_popover' });
 
@@ -96,7 +98,7 @@ export function Event({
 
 	const wrapperStyles = isMonthView
 		? getEventStyles(isInOverflow, event, date, compact, isInWeekHeader, isInDayHeader)
-		: getWeekOrDayEventStyles(event, timeDuration, isDayView ? 0 : date.day(), isInteractive && isActive);
+		: getWeekOrDayEventStyles(event, timeDuration, dayIndex, overlapOffset, isInteractive && isActive);
 
 	return (
 		<>

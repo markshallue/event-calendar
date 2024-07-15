@@ -43,9 +43,3 @@
 		color: #fff;
 	}
 }
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(7, minmax(0, 1fr));
-	flex-grow: 1;
-}

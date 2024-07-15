@@ -1,11 +1,11 @@
 import { OrderedCalendarEvent } from '~/types';
 import { splitColourCSS } from '~/utils';
 
-const OVERLAP_MARGIN = 20;
 export const getWeekOrDayEventStyles = (
 	event: OrderedCalendarEvent,
 	timeDuration: number,
 	dayIndex: number,
+	overlapOffset: number,
 	isActive: boolean
 ) => {
 	const colors = event.groups?.map(g => g.color).filter(Boolean) || [];
@@ -20,8 +20,8 @@ export const getWeekOrDayEventStyles = (
 		backgroundColor: colors[0],
 		backgroundImage: splitColourCSS(colors),
 		borderWidth: event.indent > 0 ? (timeDuration > 30 ? '1px' : '0.5px') : 0,
-		marginLeft: OVERLAP_MARGIN * event.indent + sundayOffset,
-		width: `calc(100% - ${OVERLAP_MARGIN * (event.indent + 1) + sundayOffset}px)`,
+		marginLeft: overlapOffset * event.indent + sundayOffset,
+		width: `calc(100% - ${overlapOffset * (event.indent + 1) + sundayOffset}px)`,
 		zIndex: isActive ? 299 : 201 + event.order,
 	};
 };

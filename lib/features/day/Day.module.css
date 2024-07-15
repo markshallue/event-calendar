@@ -13,9 +13,3 @@
 .gridWrapper {
 	display: flex;
 }
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(1, minmax(0, 1fr));
-	flex-grow: 1;
-}

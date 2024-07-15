@@ -18,7 +18,7 @@ import { filterByWeek } from '~/utils/filterByWeek';
 import { CellContainer } from '~/components';
 import { arrangeWeekEvents } from '~/utils/arrangeWeekEvents';
 
-// Only show a max of two events in week header
+// Only show a max of two events in header
 const EVENT_LIMIT = 2;
 
 interface WeekHeaderProps {
@@ -51,12 +51,14 @@ export function WeekHeader({
 	weekDatesArray,
 }: WeekHeaderProps) {
 	const orderedEvents = arrangeWeekEvents(filterByWeek(allDayEvents, weekDatesArray[0].date));
-	const maxDailyEvents =
+	const totalEventsOnThisDate =
 		orderedEvents.length > 0 ? Math.max(...orderedEvents.map((x: OrderedCalendarEvent) => x.order + 1)) : 0;
 
 	// Calculate header height
-	const cellHeightScalar = maxDailyEvents > EVENT_LIMIT ? EVENT_LIMIT + 1 : maxDailyEvents;
-	const headerHeight = (compact ? 20 : 23 * cellHeightScalar) + (cellHeightScalar > 0 ? 8 : 0);
+	const numEventsToShow = Math.min(totalEventsOnThisDate, EVENT_LIMIT + 1); // Include space for show more text
+	const heightOfEvent = compact ? 20 : 23;
+	const bottomPadding = numEventsToShow > 0 ? 8 : 0;
+	const headerHeight = heightOfEvent * numEventsToShow + bottomPadding;
 
 	// Handlers
 	const handleStopDrag = () => {

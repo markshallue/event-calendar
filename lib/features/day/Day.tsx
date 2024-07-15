@@ -2,8 +2,7 @@ import { Dispatch, ReactNode, RefObject, useEffect, useRef } from 'react';
 import { Dayjs } from 'dayjs';
 import classes from './Day.module.css';
 
-import { filterByDate, arrangeWeekdayEvents } from '~/utils';
-import { HoursColumn, TimeIndicator, Event, TimeBackground } from '~/components';
+import { HoursColumn } from '~/components';
 import {
 	CalendarEvent,
 	EventsCalendarContextMenuProps,
@@ -15,6 +14,7 @@ import {
 } from '~/types';
 
 import { DayHeader } from './components';
+import { TimeViewGrid } from '~/components/time-view/TimeViewGrid';
 
 interface DayProps {
 	enableRescheduling: boolean;
@@ -32,15 +32,16 @@ interface DayProps {
 
 export function Day({
 	activeDate,
-	enableRescheduling,
-	renderContextMenu,
-	handleMouseEvent,
-	eventsArray,
-	state,
+	compact,
 	dispatch,
+	enableRescheduling,
+	eventsArray,
+	handleMouseEvent,
 	onEventClick,
 	onEventReschedule,
 	placeholderRef,
+	renderContextMenu,
+	state,
 }: DayProps) {
 	// Split events into all day / timed
 	const allDayEvents = eventsArray.filter(event => event.isAllDay);
@@ -53,26 +54,14 @@ export function Day({
 		viewportRef.current!.scrollTo({ top: offset8am });
 	}, [activeDate]);
 
-	const eventsByDate = filterByDate(timeEvents, activeDate);
-	const orderedEvents = arrangeWeekdayEvents(eventsByDate, activeDate);
-
-	const { placeholderEvent } = state;
-	const showPlaceholder =
-		placeholderEvent.isActive &&
-		!placeholderEvent.isAllDay &&
-		activeDate.isBetween(placeholderEvent.start, placeholderEvent.end, 'd', '[]');
-	if (showPlaceholder) orderedEvents.push(placeholderEvent);
-
-	// Handlers
-	const handleStopDrag = () => {
-		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
-	};
+	// Get week days
+	const weekDates = [{ date: activeDate }];
 
 	return (
 		<div className={classes.wrapper}>
 			<DayHeader
 				enableRescheduling={enableRescheduling}
-				compact={false} // TODO
+				compact={compact}
 				allDayEvents={allDayEvents}
 				dispatch={dispatch}
 				handleMouseEvent={handleMouseEvent}
@@ -86,35 +75,20 @@ export function Day({
 				<div className={classes.gridWrapper}>
 					<HoursColumn />
 
-					<div className={classes.grid} onMouseEnter={handleStopDrag} onMouseLeave={handleStopDrag}>
-						<TimeBackground
-							view='day'
-							activeDate={activeDate}
-							handleMouseEvent={handleMouseEvent}
-							onEventReschedule={onEventReschedule}
-							placeholderRef={placeholderRef}
-							state={state}
-							dispatch={dispatch}
-						/>
-
-						{activeDate.isSame(new Date(), 'day') && <TimeIndicator isDayView />}
-
-						{/* Render events */}
-						{orderedEvents.map(event => (
-							<Event
-								view='day'
-								enableRescheduling={enableRescheduling}
-								date={activeDate}
-								dispatch={dispatch}
-								event={event}
-								onEventClick={onEventClick}
-								placeholderRef={placeholderRef}
-								renderContextMenu={renderContextMenu}
-								key={event.id}
-								state={state}
-							/>
-						))}
-					</div>
+					<TimeViewGrid
+						view='day'
+						enableRescheduling={enableRescheduling}
+						activeDate={activeDate}
+						dispatch={dispatch}
+						handleMouseEvent={handleMouseEvent}
+						placeholderRef={placeholderRef}
+						onEventClick={onEventClick}
+						onEventReschedule={onEventReschedule}
+						renderContextMenu={renderContextMenu}
+						state={state}
+						timeEvents={timeEvents}
+						weekDaysArray={weekDates}
+					/>
 				</div>
 			</div>
 		</div>

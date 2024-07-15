@@ -10,6 +10,8 @@ import {
 	EventsCalendarContextMenuProps,
 	CalendarAction,
 	CalendarState,
+	EventClickProps,
+	EventEditProps,
 } from '~/types';
 
 import { CellContainer } from '~/components';
@@ -26,6 +28,8 @@ interface DayHeaderProps {
 	handleMouseEvent: MouseEventHandler;
 	minMaxDatesInView: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 	date: Dayjs;
@@ -38,6 +42,8 @@ export function DayHeader({
 	dispatch,
 	handleMouseEvent,
 	minMaxDatesInView,
+	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
@@ -70,6 +76,8 @@ export function DayHeader({
 				handleMouseEvent={handleMouseEvent}
 				headerHeight={headerHeight}
 				minMaxDatesInView={minMaxDatesInView}
+				onEventClick={onEventClick}
+				onEventReschedule={onEventReschedule}
 				orderedEvents={orderedEvents}
 				placeholderRef={placeholderRef}
 				renderContextMenu={renderContextMenu}

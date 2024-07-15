@@ -9,7 +9,7 @@ import { CalendarEvent, MouseEventHandler, EventsCalendarContextMenuProps } from
 import { getWeekDates } from '../utils';
 
 import { WeekHeader } from './WeekHeader';
-import { WeekGrid } from './WeekGrid';
+import { TimeViewGrid } from '~/components/time-view/TimeViewGrid';
 
 interface WeekProps {
 	enableRescheduling: boolean;
@@ -26,10 +26,10 @@ interface WeekProps {
 }
 
 export function Week({
-	enableRescheduling,
-	compact,
 	activeDate,
+	compact,
 	dispatch,
+	enableRescheduling,
 	eventsArray,
 	handleMouseEvent,
 	onEventClick,
@@ -51,6 +51,7 @@ export function Week({
 
 	// Get week days
 	const weekDates = useMemo(() => getWeekDates(activeDate), [activeDate]);
+	console.log(weekDates);
 	const minMaxDatesInView = { first: weekDates[0].date, last: weekDates[6].date };
 
 	return (
@@ -72,7 +73,8 @@ export function Week({
 			<div ref={viewportRef} className={classes.scrollWrapper}>
 				<div className={classes.gridWrapper}>
 					<HoursColumn />
-					<WeekGrid
+					<TimeViewGrid
+						view='week'
 						enableRescheduling={enableRescheduling}
 						activeDate={activeDate}
 						dispatch={dispatch}

@@ -1,6 +1,6 @@
 import { Dispatch, ReactNode, RefObject } from 'react';
 import { Dayjs } from 'dayjs';
-import classes from './Week.module.css';
+import classes from './TimeViewGrid.module.css';
 
 import { filterByDate } from '~/utils/functions';
 import {
@@ -16,7 +16,8 @@ import {
 import { TimeIndicator, Event, TimeBackground } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
 
-interface WeekGridProps {
+interface TimeViewGridProps {
+	view: 'day' | 'week';
 	enableRescheduling: boolean;
 	activeDate: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
@@ -30,7 +31,8 @@ interface WeekGridProps {
 	weekDaysArray: DateRecord[];
 }
 
-export function WeekGrid({
+export function TimeViewGrid({
+	view,
 	enableRescheduling,
 	activeDate,
 	dispatch,
@@ -42,16 +44,21 @@ export function WeekGrid({
 	state,
 	timeEvents,
 	weekDaysArray,
-}: WeekGridProps) {
+}: TimeViewGridProps) {
 	// Handlers
 	const handleStopDrag = () => {
 		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
 	};
 
 	return (
-		<div className={classes.grid} onMouseEnter={handleStopDrag} onMouseLeave={handleStopDrag}>
+		<div
+			className={classes.grid}
+			data-isweekview={view === 'week'}
+			onMouseEnter={handleStopDrag}
+			onMouseLeave={handleStopDrag}
+		>
 			<TimeBackground
-				view='week'
+				view={view}
 				activeDate={activeDate}
 				handleMouseEvent={handleMouseEvent}
 				onEventReschedule={onEventReschedule}
@@ -60,7 +67,7 @@ export function WeekGrid({
 				state={state}
 			/>
 
-			<TimeIndicator />
+			<TimeIndicator activeDate={activeDate} isDayView={view === 'day'} />
 
 			{/* Render events */}
 			{weekDaysArray.map(dayRecord => {
@@ -72,12 +79,12 @@ export function WeekGrid({
 				const showPlaceholder =
 					placeholderEvent.isActive &&
 					!placeholderEvent.isAllDay &&
-					date.isBetween(placeholderEvent.start, placeholderEvent.end, 'd', '[]');
+					activeDate.isBetween(placeholderEvent.start, placeholderEvent.end, 'd', '[]');
 				if (showPlaceholder) orderedEvents.push(placeholderEvent);
 
 				return orderedEvents.map(event => (
 					<Event
-						view='week'
+						view={view}
 						enableRescheduling={enableRescheduling}
 						date={date}
 						dispatch={dispatch}
