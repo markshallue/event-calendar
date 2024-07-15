@@ -52,7 +52,7 @@ export function Month({
 
 	// Handlers
 	const handleStopDrag = () => {
-		if (state.dragActive || state.eventDragActive) dispatch({ type: 'stop_drag_events' });
+		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
 	};
 
 	return (

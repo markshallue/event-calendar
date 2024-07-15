@@ -86,14 +86,14 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		const overflowShouldClose = !isInOverflow && state.overflowIsOpen;
 
 		// Close popover (this is either a double-click on an open event or an event outside the popover)
-		if (overflowShouldClose) dispatch({ type: 'reset_to_default' });
+		if (overflowShouldClose) dispatch({ type: 'reset_calendar' });
 
 		// Open popover if there is currently no anchored popover
 		// TODO: remove this block and let onEventClick handle this
 		if (!popoverIsAnchored) {
-			dispatch({ type: 'view_calendar_event', event: event, anchor: eventRef.current });
+			dispatch({ type: 'set_clicked_event', event: event, anchor: eventRef.current });
 		} else {
-			dispatch({ type: 'reset_to_default' });
+			dispatch({ type: 'reset_calendar' });
 		}
 
 		onEventClick && onEventClick({ event, isDoubleClick: popoverIsAnchored, eventRef: eventRef.current, openPopover });

@@ -2,7 +2,7 @@ import { Dispatch, RefObject } from 'react';
 import { Dayjs } from 'dayjs';
 import classes from '../Day.module.css';
 
-import { eventDragUpdate } from '~/utils';
+import { updateEvent } from '~/utils';
 import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
 
 // Functions
@@ -53,12 +53,12 @@ export function DayBackground({
 							key={`${hour}${timeBlock}`}
 							onMouseDown={e => handleMouseEvent(e, date, true, placeholderRef)}
 							onMouseEnter={e => {
-								if (state.eventDragActive) eventDragUpdate({ state, dispatch, date, view: 'day' });
+								if (state.eventDragActive) updateEvent({ state, dispatch, date, view: 'day' });
 								handleMouseEvent(e, date, true, placeholderRef);
 							}}
 							onMouseUp={e => {
 								if (state.eventDragActive) {
-									dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+									dispatch({ type: 'update_event_end', anchor: placeholderRef.current });
 									onEventReschedule &&
 										onEventReschedule({
 											event: state.placeholderEvent,

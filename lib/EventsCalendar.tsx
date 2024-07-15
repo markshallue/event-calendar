@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useMemo, useReducer, useRef } from 'react';
+import { ReactNode, useMemo, useRef } from 'react';
 import dayjs from 'dayjs';
 import classes from './EventsCalendar.module.css';
 
@@ -20,7 +20,6 @@ import { DefaultHeader } from './features/default-header/DefaultHeader';
 
 import { EventsCalendarPopover, CircularLoader } from './components';
 import { useMouseEvent, useInitEventsCalendar, EventsCalendarObject } from './hooks';
-import { DEFAULT_STATE, reducer } from './state';
 
 export interface EventsCalendarProps {
 	calendar?: EventsCalendarObject;
@@ -58,7 +57,7 @@ export function EventsCalendar({
 	children,
 }: EventsCalendarProps) {
 	// Initialise data calendar
-	const { activeDate, setActiveDate, view, setView } = useInitEventsCalendar(calendar);
+	const { activeDate, setActiveDate, view, setView, state, dispatch } = useInitEventsCalendar(calendar);
 
 	// Parse events to dayjs format
 	const eventsArray: CalendarEvent[] = useMemo(
@@ -67,22 +66,10 @@ export function EventsCalendar({
 	);
 
 	// Main reducer
-	const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
 	const { eventAnchor, popoverIsOpen, popoverEvent, clickedEvent, placeholderEvent } = state;
 
-	// Reset calendar on click outside of the react component
-	useEffect(() => {
-		const handleClose = () => {
-			dispatch({ type: 'reset_to_default' });
-		};
-		window.addEventListener('click', handleClose);
-		return () => {
-			window.removeEventListener('click', handleClose);
-		};
-	}, [dispatch]);
-
 	// Popover
-	const onClose = () => dispatch({ type: 'reset_to_default' });
+	const onClose = () => dispatch({ type: 'reset_calendar' });
 
 	// Placeholder ref
 	const placeholderRef = useRef<HTMLDivElement>(null);
@@ -144,10 +131,7 @@ export function EventsCalendar({
 					)}
 					{renderPopover && eventAnchor && (
 						<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
-							{renderPopover({
-								onClose,
-								event: popoverEvent === 'clickedEvent' ? clickedEvent : placeholderEvent, // 'create' || 'drag-update'
-							})}
+							{renderPopover({ onClose, event: popoverEvent === 'clickedEvent' ? clickedEvent : placeholderEvent })}
 						</EventsCalendarPopover>
 					)}
 					<OverflowCard

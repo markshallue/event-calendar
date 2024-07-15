@@ -32,11 +32,11 @@ const updatePlaceholder = ({
 		const tempEnd = start.hour(date.hour()).minute(date.minute());
 		if (Math.abs(getTimeDiff(tempStart, date)) >= 15) {
 			const updatedEvent = getPlaceholderEvent(tempStart, tempEnd, true);
-			dispatch({ type: 'mouse_move', event: updatedEvent });
+			dispatch({ type: 'update_event', event: updatedEvent });
 		}
 	} else {
 		const updatedEvent = getPlaceholderEvent(firstClickDate, date);
-		dispatch({ type: 'mouse_move', event: updatedEvent });
+		dispatch({ type: 'update_event', event: updatedEvent });
 	}
 };
 
@@ -45,7 +45,7 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 	if (!enableDragCreation)
 		return (e: React.MouseEvent) => {
 			if (e.type === 'mousedown') {
-				dispatch({ type: 'reset_to_default' });
+				dispatch({ type: 'reset_calendar' });
 				return;
 			}
 		};
@@ -59,19 +59,19 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 
 		// Reset drag event if anything other than left click triggered
 		if (e.button !== 0) {
-			if (dragActive) dispatch({ type: 'stop_drag_events' });
+			if (dragActive) dispatch({ type: 'event_create_stop' });
 			return;
 		}
 
 		switch (e.type) {
 			case 'mousedown': {
 				if (state.eventAnchor || state.overflowIsOpen) {
-					dispatch({ type: 'reset_to_default' });
+					dispatch({ type: 'reset_calendar' });
 					return;
 				}
 
 				const updatedEvent = getPlaceholderEvent(date, date, isTimeEvent, true);
-				dispatch({ type: 'mouse_down', date: date, event: updatedEvent });
+				dispatch({ type: 'event_create_start', date: date, event: updatedEvent });
 				break;
 			}
 			case 'mouseenter': {
@@ -86,7 +86,7 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 
 				// Delay opening of popup
 				setTimeout(() => {
-					dispatch({ type: 'mouse_up', anchor: placeholderRef.current });
+					dispatch({ type: 'event_create_end', anchor: placeholderRef.current });
 				}, 10);
 			}
 		}

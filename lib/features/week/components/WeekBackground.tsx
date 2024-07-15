@@ -2,7 +2,7 @@ import { Dayjs } from 'dayjs';
 import { Dispatch, RefObject } from 'react';
 import classes from './Week.module.css';
 
-import { eventDragUpdate } from '~/utils';
+import { updateEvent } from '~/utils';
 import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
 
 // Functions
@@ -56,12 +56,12 @@ export function WeekBackground({
 								key={`${day}${hour}${timeBlock}`}
 								onMouseDown={e => handleMouseEvent(e, date, true, placeholderRef)}
 								onMouseEnter={e => {
-									if (state.eventDragActive) eventDragUpdate({ state, dispatch, date, view: 'week' });
+									if (state.eventDragActive) updateEvent({ state, dispatch, date, view: 'week' });
 									handleMouseEvent(e, date, true, placeholderRef);
 								}}
 								onMouseUp={e => {
 									if (state.eventDragActive) {
-										dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+										dispatch({ type: 'update_event_end', anchor: placeholderRef.current });
 										onEventReschedule &&
 											onEventReschedule({
 												event: state.placeholderEvent,

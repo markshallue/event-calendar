@@ -5,7 +5,7 @@ import { CalendarAction, CalendarState } from '~/types';
 export function reducer(state: CalendarState, action: CalendarAction): CalendarState {
 	switch (action.type) {
 		// Reset to deafult interaction state (keep existing data and filtering config)
-		case 'reset_to_default': {
+		case 'reset_calendar': {
 			return {
 				...state,
 				...DEFAULT_STATE,
@@ -42,7 +42,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		}
 
 		// Calendar event interaction
-		case 'view_calendar_event': {
+		case 'set_clicked_event': {
 			return {
 				...state,
 				popoverEvent: 'clickedEvent',
@@ -52,18 +52,17 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 			};
 		}
 
-		// Drag creation
-		case 'stop_drag_events': {
+		// Update event
+		case 'update_event': {
 			return {
 				...state,
-				dragActive: false,
-				firstClickDate: null,
-				clickedEvent: EMPTY_EVENT,
-				placeholderEvent: EMPTY_EVENT,
-				eventDragActive: false,
+				dragStartOffset: action.dragStartOffset ?? state.dragStartOffset,
+				placeholderEvent: { ...state.placeholderEvent, ...action.event, id: null },
 			};
 		}
-		case 'mouse_down': {
+
+		// Drag creation
+		case 'event_create_start': {
 			return {
 				...state,
 				dragActive: true,
@@ -71,7 +70,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				placeholderEvent: { ...state.placeholderEvent, ...action.event, isActive: true },
 			};
 		}
-		case 'mouse_up': {
+		case 'event_create_end': {
 			return {
 				...state,
 				dragActive: false,
@@ -81,9 +80,19 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				eventAnchor: action.anchor || state.eventAnchor,
 			};
 		}
+		case 'event_create_stop': {
+			return {
+				...state,
+				dragActive: false,
+				firstClickDate: null,
+				clickedEvent: EMPTY_EVENT,
+				placeholderEvent: EMPTY_EVENT,
+				eventDragActive: false,
+			};
+		}
 
-		// Event drag & drop
-		case 'event_drag_start': {
+		// Event drag & drop rescheduling
+		case 'update_event_start': {
 			return {
 				...state,
 				eventDragActive: true,
@@ -97,14 +106,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				},
 			};
 		}
-		case 'mouse_move': {
-			return {
-				...state,
-				dragStartOffset: action.dragStartOffset ?? state.dragStartOffset,
-				placeholderEvent: { ...state.placeholderEvent, ...action.event, id: null },
-			};
-		}
-		case 'event_drag_end': {
+		case 'update_event_end': {
 			return {
 				...state,
 				eventDragActive: false,

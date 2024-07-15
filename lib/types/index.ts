@@ -68,15 +68,15 @@ export interface EventsCalendarContextMenuProps {
 }
 
 type CalendarActionType =
-	| 'reset_to_default'
-	| 'view_calendar_event'
-	| 'stop_drag_events'
-	| 'mouse_down'
-	| 'mouse_move'
-	| 'mouse_up'
+	| 'reset_calendar'
+	| 'set_clicked_event'
+	| 'event_create_stop'
+	| 'event_create_start'
+	| 'update_event'
+	| 'event_create_end'
 	| 'open_overflow'
-	| 'event_drag_start'
-	| 'event_drag_end'
+	| 'update_event_start'
+	| 'update_event_end'
 	| 'open_popover'
 	| 'open_context_menu';
 

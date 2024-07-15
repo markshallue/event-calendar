@@ -1,18 +1,8 @@
-import dayjs from 'dayjs';
-import { useState } from 'react';
-import { CalendarView } from '../types';
-import { EventsCalendarObject } from './useEventsCalendar';
+import { EventsCalendarObject, useEventsCalendar } from './useEventsCalendar';
 
 export function useInitEventsCalendar(calendar?: EventsCalendarObject): EventsCalendarObject {
-  const [activeDate, setActiveDate] = useState(dayjs());
-  const [view, setView] = useState<CalendarView>('month');
+	const isInitialised = !!calendar;
+	const defaultCalendar = useEventsCalendar({ isInitialised });
 
-  return (
-    calendar || {
-      activeDate,
-      setActiveDate,
-      view,
-      setView,
-    }
-  );
+	return calendar || defaultCalendar;
 }

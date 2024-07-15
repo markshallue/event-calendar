@@ -10,13 +10,13 @@ interface updateDragNDropPlaceholderProps {
 	view: CalendarView;
 }
 
-export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDropPlaceholderProps) {
+export function updateEvent({ state, dispatch, date, view }: updateDragNDropPlaceholderProps) {
 	const timeScale = view === 'month' ? 'day' : 'minute';
 
 	// After placeholder event is created (for dragging), record where on the event we have clicked (e.g. 2 days/60mins in)
 	if (state.dragStartOffset === null) {
 		const dateDiff = date.diff(state.clickedEvent.start, timeScale);
-		dispatch({ type: 'mouse_move', dragStartOffset: dateDiff });
+		dispatch({ type: 'update_event', dragStartOffset: dateDiff });
 		return;
 	}
 
@@ -31,7 +31,7 @@ export function eventDragUpdate({ state, dispatch, date, view }: updateDragNDrop
 	if (view !== 'month' && !newStart.isSame(newEnd, 'day')) return;
 
 	dispatch({
-		type: 'mouse_move',
+		type: 'update_event',
 		event: {
 			...state.placeholderEvent,
 			start: view === 'month' ? newStart.hour(start.hour()).minute(start.minute()) : newStart,

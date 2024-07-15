@@ -27,7 +27,7 @@ export function KitchenSink() {
 	};
 
 	// Get calendar instance
-	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
+	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024', closeOnClickOutside: false });
 
 	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
 
@@ -43,6 +43,7 @@ export function KitchenSink() {
 			</Group>
 			<Group mb='sm'>
 				<Button onClick={() => calendar.setView('week')}>Week view</Button>
+				<Button onClick={() => calendar.dispatch({ type: 'reset_calendar' })}>Reset</Button>
 			</Group>
 			<Paper withBorder radius='md' shadow='lg'>
 				<EventsCalendar

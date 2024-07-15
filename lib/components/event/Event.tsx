@@ -80,14 +80,14 @@ export function Event({
 	const eventRef = isPlaceholder && event.start.isSame(date, 'd') ? placeholderRef : ref;
 	const timeDuration = Math.abs(getTimeDiff(event.start, event.end));
 	const isShort = timeDuration <= 30;
-	const onClose = () => dispatch({ type: 'reset_to_default' });
+	const onClose = () => dispatch({ type: 'reset_calendar' });
 	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	const onLongPress = () => {
-		dispatch({ type: 'reset_to_default' });
+		dispatch({ type: 'reset_calendar' });
 		if (enableRescheduling && !isInOverflow) {
 			dispatch({
-				type: 'event_drag_start',
+				type: 'update_event_start',
 				event: { ...event, dragId: event.id, order: isMonthView ? event.order : 1000 },
 			});
 		}

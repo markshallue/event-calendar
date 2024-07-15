@@ -20,7 +20,7 @@ import { filterByDate, getVisibleEvents } from '~/utils/functions';
 
 import { CellHeader } from './CellHeader';
 import { ShowMoreText } from './ShowMoreText';
-import { eventDragUpdate } from '~/utils';
+import { updateEvent } from '~/utils';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;
@@ -91,12 +91,12 @@ export function CellContainer({
 				data-border={date.day() !== 6}
 				onMouseDown={e => handleMouseEvent(e, date, false, placeholderRef)}
 				onMouseEnter={e => {
-					if (state.eventDragActive) eventDragUpdate({ state, dispatch, date, view: 'month' });
+					if (state.eventDragActive) updateEvent({ state, dispatch, date, view: 'month' });
 					handleMouseEvent(e, date, false, placeholderRef);
 				}}
 				onMouseUp={e => {
 					if (state.eventDragActive) {
-						dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+						dispatch({ type: 'update_event_end', anchor: placeholderRef.current });
 						onEventReschedule &&
 							onEventReschedule({ event: state.placeholderEvent, eventRef: placeholderRef.current!, openPopover });
 					}
