@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 import classes from './Month.module.css';
 
 import { arrangeWeekEvents, filterByWeek } from '~/utils';
-import { CalendarAction, CalendarState } from '~/types';
+import { CalendarAction, CalendarState, EventClickProps, EventEditProps } from '~/types';
 import { CalendarEvent, MouseEventHandler, EventsCalendarContextMenuProps } from '~/types';
 
 import { CellContainer } from '~/components';
@@ -15,26 +15,28 @@ import { getMaxEvents } from '../utils/getMaxEvents';
 import { MonthHeader } from './MonthHeader';
 
 interface MonthProps {
-	hasPopover: boolean;
-	enableDragNDrop: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	activeDate: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
 	eventsArray: CalendarEvent[];
 	handleMouseEvent: MouseEventHandler;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
 	state: CalendarState;
 }
 
 export function Month({
-	hasPopover,
-	enableDragNDrop,
+	enableRescheduling,
 	compact,
 	activeDate,
 	dispatch,
 	eventsArray,
 	handleMouseEvent,
+	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
@@ -67,14 +69,15 @@ export function Month({
 								<CellContainer
 									key={index}
 									EVENT_LIMIT={EVENT_LIMIT}
-									enableDragNDrop={enableDragNDrop}
-									hasPopover={hasPopover}
+									enableRescheduling={enableRescheduling}
 									compact={compact}
 									dayRecord={dayRecord}
 									dispatch={dispatch}
 									handleMouseEvent={handleMouseEvent}
 									isInWeekHeader={false}
 									minMaxDatesInView={minMaxDatesInView}
+									onEventClick={onEventClick}
+									onEventReschedule={onEventReschedule}
 									orderedEvents={orderedEvents}
 									placeholderRef={placeholderRef}
 									renderContextMenu={renderContextMenu}

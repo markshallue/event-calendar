@@ -1,18 +1,17 @@
-import { useEffect, useRef, Dispatch, ReactNode } from 'react';
-import { CalendarAction } from '~/types';
+import { useEffect, useRef, ReactNode } from 'react';
 import { useBindPopover } from './useBindPopover';
 
 interface PopoverContentProps {
 	anchor: Element;
-	dispatch: Dispatch<CalendarAction>;
 	zIndex: number;
 	children: ReactNode;
 }
 
-export function PopoverContent({ anchor, dispatch, zIndex, children }: PopoverContentProps) {
+export function PopoverContent({ anchor, zIndex, children }: PopoverContentProps) {
 	const styles = useRef({});
-	const { refs, floatingStyles } = useBindPopover({ anchor, dispatch });
+	const { refs, floatingStyles } = useBindPopover({ anchor });
 
+	// Only apply repositioning styles after element is mounted
 	useEffect(() => {
 		setTimeout(() => {
 			styles.current = { transitionDuration: '250ms', transitionProperty: 'all' };

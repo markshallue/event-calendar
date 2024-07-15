@@ -1,1 +1,1 @@
-export * from './Popover';
+export { EventsCalendarPopover } from './EventsCalendarPopover';

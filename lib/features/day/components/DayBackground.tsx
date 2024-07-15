@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 import classes from '../Day.module.css';
 
 import { eventDragUpdate } from '~/utils';
-import { MouseEventHandler, CalendarAction, CalendarState } from '~/types';
+import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
 
 // Functions
 const buildIndexArr = (l: number) => {
@@ -24,12 +24,23 @@ interface DayBackgroundProps {
 	placeholderRef: RefObject<HTMLDivElement>;
 	state: CalendarState;
 	dispatch: Dispatch<CalendarAction>;
+	onEventReschedule?: (props: EventEditProps) => void;
 }
 
-export function DayBackground({ activeDate, handleMouseEvent, placeholderRef, state, dispatch }: DayBackgroundProps) {
+export function DayBackground({
+	activeDate,
+	handleMouseEvent,
+	placeholderRef,
+	state,
+	dispatch,
+	onEventReschedule,
+}: DayBackgroundProps) {
 	// Build grid arrays
 	const hoursArray = buildIndexArr(24);
 	const timeBlocksArray = buildIndexArr(4);
+
+	// Popover handler
+	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	return (
 		<>
@@ -46,7 +57,15 @@ export function DayBackground({ activeDate, handleMouseEvent, placeholderRef, st
 								handleMouseEvent(e, date, true, placeholderRef);
 							}}
 							onMouseUp={e => {
-								if (state.eventDragActive) dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+								if (state.eventDragActive) {
+									dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+									onEventReschedule &&
+										onEventReschedule({
+											event: state.placeholderEvent,
+											eventRef: placeholderRef.current!,
+											openPopover,
+										});
+								}
 								handleMouseEvent(e, date, true, placeholderRef);
 							}}
 							style={{

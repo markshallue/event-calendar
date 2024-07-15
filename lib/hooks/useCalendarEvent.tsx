@@ -1,6 +1,6 @@
 import { Dispatch, MouseEvent, RefObject, useState } from 'react';
 import { useFloating, autoUpdate, flip, offset, shift, useDismiss, useInteractions } from '@floating-ui/react';
-import { CalendarEvent, CalendarAction, CalendarState } from '~/types';
+import { CalendarEvent, CalendarAction, CalendarState, EventClickProps } from '~/types';
 
 interface useCalendarEventProps {
 	dispatch: Dispatch<CalendarAction>;
@@ -17,6 +17,9 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 
 	// Constants
 	const isActive = event.id !== null && state.clickedEvent?.id === event.id;
+
+	// Popover handler
+	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	const { refs, floatingStyles, context } = useFloating({
 		open: contextIsOpen,
@@ -42,7 +45,7 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		if (!hasContextMenu) return;
 		e.preventDefault();
 
-		if (state.popoverDisplayType !== 'hidden' || (state.overflowIsOpen && !isInOverflow)) return;
+		if (state.popoverIsOpen || (state.overflowIsOpen && !isInOverflow)) return;
 
 		refs.setPositionReference({
 			getBoundingClientRect() {
@@ -64,7 +67,12 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 	};
 
 	// Handle event left click (info popover)
-	const handleClick = (e: MouseEvent, isPlaceholder: boolean, eventRef: RefObject<HTMLDivElement>) => {
+	const handleClick = (
+		e: MouseEvent,
+		isPlaceholder: boolean,
+		eventRef: RefObject<HTMLDivElement>,
+		onEventClick?: (props: EventClickProps) => void
+	) => {
 		e.stopPropagation();
 		if (isPlaceholder) return;
 
@@ -78,10 +86,17 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		const overflowShouldClose = !isInOverflow && state.overflowIsOpen;
 
 		// Close popover (this is either a double-click on an open event or an event outside the popover)
-		if (popoverIsAnchored || overflowShouldClose) dispatch({ type: 'reset_to_default' });
+		if (overflowShouldClose) dispatch({ type: 'reset_to_default' });
 
 		// Open popover if there is currently no anchored popover
-		if (!popoverIsAnchored) dispatch({ type: 'view_calendar_event', event: event, anchor: eventRef.current });
+		// TODO: remove this block and let onEventClick handle this
+		if (!popoverIsAnchored) {
+			dispatch({ type: 'view_calendar_event', event: event, anchor: eventRef.current });
+		} else {
+			dispatch({ type: 'reset_to_default' });
+		}
+
+		onEventClick && onEventClick({ event, isDoubleClick: popoverIsAnchored, eventRef: eventRef.current, openPopover });
 	};
 	return {
 		handleClick,

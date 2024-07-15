@@ -15,6 +15,7 @@ import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHan
 
 export function Editable() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
+	const [popoverType, setPopoverType] = useState<'create' | 'view' | 'edit'>('view');
 
 	const formFields = {
 		id: 'id',
@@ -36,20 +37,39 @@ export function Editable() {
 				<EventsCalendar
 					calendar={calendar}
 					events={events}
-					renderPopover={props => {
-						return props.popoverType === 'view' ? (
-							<ViewPopover {...props} editable handleSubmit={handleSubmit} />
+					onEventClick={({ openPopover }) => {
+						openPopover();
+						setPopoverType('view');
+					}}
+					onEventCreate={({ openPopover }) => {
+						openPopover();
+						setPopoverType('create');
+					}}
+					onEventReschedule={({ openPopover }) => {
+						openPopover();
+						setPopoverType('edit');
+					}}
+					renderPopover={({ event, onClose }) => {
+						return popoverType === 'view' ? (
+							<ViewPopover
+								event={event}
+								onClose={onClose}
+								setPopoverType={setPopoverType}
+								editable
+								handleSubmit={handleSubmit}
+							/>
 						) : (
 							<FormPopover
-								{...props}
+								event={event}
+								onClose={onClose}
 								groups={demoGroups}
 								fields={formFields}
 								handleSubmit={handleSubmit}
-								formType={props.popoverType}
+								formType={popoverType}
 							/>
 						);
 					}}
-					renderContextMenu={props => <ContextMenu {...props} handleSubmit={handleSubmit} />}
+					renderContextMenu={props => <ContextMenu {...props} setPopoverType={setPopoverType} handleSubmit={handleSubmit} />}
 				/>
 			</Paper>
 		</PageWrapper>

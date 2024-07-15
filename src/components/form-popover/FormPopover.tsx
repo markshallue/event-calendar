@@ -3,7 +3,7 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 import classes from './FormPopover.module.css';
 
-import { CalendarEvent, EventsCalendarPopoverProps, PopoverDisplayType } from '~/types';
+import { EventsCalendarPopoverProps } from '~/types';
 
 import { HandleSubmitArgs } from '@/utils';
 import { DateTimeLabel } from '@/components';
@@ -18,17 +18,14 @@ interface FormPopoverProps extends EventsCalendarPopoverProps {
 		group: string;
 		info: string;
 	};
-	formType: PopoverDisplayType;
-	event: CalendarEvent;
+	formType: 'edit' | 'create';
 	groups: CalendarGroup[];
 	handleSubmit: (args: HandleSubmitArgs) => void;
 }
 
 export function FormPopover({ fields, formType, onClose, groups, handleSubmit, event }: FormPopoverProps) {
-	const lengthInDays = event.end.diff(event.start, 'd') + 1;
-
 	// const [hasTime, setHasTime] = useState(!CONFIG.isMonthOnly && !event.isAllDay);
-	const [hasTime, setHasTime] = useState(!event.isAllDay);
+	const [hasTime, setHasTime] = useState(!event?.isAllDay);
 
 	const form = useForm({
 		initialValues: getInitialValues(event),
@@ -36,6 +33,9 @@ export function FormPopover({ fields, formType, onClose, groups, handleSubmit, e
 		validateInputOnChange: true,
 		validate: validateValues(fields),
 	});
+
+	if (!event) return <></>;
+	const lengthInDays = event.end.diff(event.start, 'd') + 1;
 
 	// useHotkeys([['Enter', form.onSubmit(values => console.log(values))]]);
 

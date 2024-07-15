@@ -3,7 +3,7 @@ import { Dispatch, RefObject } from 'react';
 import classes from './Week.module.css';
 
 import { eventDragUpdate } from '~/utils';
-import { MouseEventHandler, CalendarAction, CalendarState } from '~/types';
+import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
 
 // Functions
 const buildIndexArr = (l: number) => {
@@ -25,13 +25,24 @@ interface WeekBackgroundProps {
 	placeholderRef: RefObject<HTMLDivElement>;
 	state: CalendarState;
 	dispatch: Dispatch<CalendarAction>;
+	onEventReschedule?: (props: EventEditProps) => void;
 }
 
-export function WeekBackground({ activeDate, handleMouseEvent, placeholderRef, state, dispatch }: WeekBackgroundProps) {
+export function WeekBackground({
+	activeDate,
+	handleMouseEvent,
+	placeholderRef,
+	state,
+	dispatch,
+	onEventReschedule,
+}: WeekBackgroundProps) {
 	// Build grid arrays
 	const daysArray = buildIndexArr(7);
 	const hoursArray = buildIndexArr(24);
 	const timeBlocksArray = buildIndexArr(4);
+
+	// Popover handler
+	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	return (
 		<>
@@ -49,7 +60,15 @@ export function WeekBackground({ activeDate, handleMouseEvent, placeholderRef, s
 									handleMouseEvent(e, date, true, placeholderRef);
 								}}
 								onMouseUp={e => {
-									if (state.eventDragActive) dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+									if (state.eventDragActive) {
+										dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+										onEventReschedule &&
+											onEventReschedule({
+												event: state.placeholderEvent,
+												eventRef: placeholderRef.current!,
+												openPopover,
+											});
+									}
 									handleMouseEvent(e, date, true, placeholderRef);
 								}}
 								style={{

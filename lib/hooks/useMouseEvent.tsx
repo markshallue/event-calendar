@@ -1,5 +1,5 @@
 import { Dispatch } from 'react';
-import { MouseEventHandler, CalendarAction, CalendarState } from '~/types';
+import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
 import { Dayjs } from 'dayjs';
 
 import { getTimeDiff, getPlaceholderEvent, returnValidStartEnd } from '../utils';
@@ -8,6 +8,7 @@ interface useMouseEventProps {
 	enableDragCreation: boolean;
 	dispatch: Dispatch<CalendarAction>;
 	state: CalendarState;
+	onEventCreate?: (props: EventEditProps) => void;
 }
 
 const updatePlaceholder = ({
@@ -39,15 +40,18 @@ const updatePlaceholder = ({
 	}
 };
 
-export const useMouseEvent = ({ enableDragCreation, dispatch, state }: useMouseEventProps) => {
+export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCreate }: useMouseEventProps) => {
 	// If view only calendar, only close popovers on mousedown
 	if (!enableDragCreation)
 		return (e: React.MouseEvent) => {
-			if (e.type === 'mousedown' && (state.overflowIsOpen || state.popoverDisplayType !== 'hidden')) {
+			if (e.type === 'mousedown') {
 				dispatch({ type: 'reset_to_default' });
 				return;
 			}
 		};
+
+	// Popover handler
+	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	const mouseEventHandler: MouseEventHandler = (e, date, isTimeEvent, placeholderRef) => {
 		const { dragActive, firstClickDate, placeholderEvent } = state;
@@ -77,6 +81,8 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state }: useMouseE
 			}
 			case 'mouseup': {
 				if (!dragActive) return;
+
+				onEventCreate && onEventCreate({ event: state.placeholderEvent, eventRef: placeholderRef.current!, openPopover });
 
 				// Delay opening of popup
 				setTimeout(() => {

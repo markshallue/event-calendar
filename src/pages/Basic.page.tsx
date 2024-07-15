@@ -12,7 +12,7 @@ export function Basic() {
 		<PageWrapper>
 			<Title mb='sm'>Basic calendar</Title>
 			<Paper withBorder radius='md' shadow='lg'>
-				<EventsCalendar enableDragNDrop events={events} />
+				<EventsCalendar enableRescheduling events={events} />
 			</Paper>
 		</PageWrapper>
 	);

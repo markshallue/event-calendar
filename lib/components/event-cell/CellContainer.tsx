@@ -12,6 +12,8 @@ import {
 	CalendarAction,
 	CalendarState,
 	PlaceholderEvent,
+	EventClickProps,
+	EventEditProps,
 } from '~/types';
 
 import { filterByDate, getVisibleEvents } from '~/utils/functions';
@@ -22,8 +24,7 @@ import { eventDragUpdate } from '~/utils';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;
-	hasPopover: boolean;
-	enableDragNDrop: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	dayRecord: DateRecord;
 	dispatch: Dispatch<CalendarAction>;
@@ -32,9 +33,11 @@ interface CellContainerProps {
 	isInWeekHeader?: boolean;
 	isInDayHeader?: boolean;
 	minMaxDatesInView: MinMaxDatesInView;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
 	orderedEvents: OrderedCalendarEvent[];
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 }
 
@@ -50,8 +53,7 @@ const getPlaceholderActiveState = (placeholderEvent: PlaceholderEvent, date: Day
 
 export function CellContainer({
 	EVENT_LIMIT,
-	hasPopover,
-	enableDragNDrop,
+	enableRescheduling,
 	compact,
 	dayRecord,
 	dispatch,
@@ -60,6 +62,8 @@ export function CellContainer({
 	isInWeekHeader = false,
 	isInDayHeader = false,
 	minMaxDatesInView,
+	onEventClick,
+	onEventReschedule,
 	orderedEvents,
 	placeholderRef,
 	renderContextMenu,
@@ -77,6 +81,9 @@ export function CellContainer({
 	const showPlaceholder = getPlaceholderActiveState(state.placeholderEvent, date, isInWeekHeader || isInDayHeader);
 	if (showPlaceholder) visibleEvents.push(state.placeholderEvent);
 
+	// Popover handler
+	const openPopover = () => dispatch({ type: 'open_popover' });
+
 	return (
 		<>
 			<div
@@ -88,7 +95,11 @@ export function CellContainer({
 					handleMouseEvent(e, date, false, placeholderRef);
 				}}
 				onMouseUp={e => {
-					if (state.eventDragActive) dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+					if (state.eventDragActive) {
+						dispatch({ type: 'event_drag_end', anchor: placeholderRef.current });
+						onEventReschedule &&
+							onEventReschedule({ event: state.placeholderEvent, eventRef: placeholderRef.current!, openPopover });
+					}
 					handleMouseEvent(e, date, false, placeholderRef);
 				}}
 				style={{ height: headerHeight, cursor: state.eventDragActive ? 'grabbing' : 'auto' }}
@@ -120,8 +131,7 @@ export function CellContainer({
 				<Event
 					key={event.id}
 					view='month'
-					enableDragNDrop={enableDragNDrop}
-					hasPopover={hasPopover}
+					enableRescheduling={enableRescheduling}
 					compact={compact}
 					date={date}
 					dispatch={dispatch}
@@ -129,6 +139,7 @@ export function CellContainer({
 					isInWeekHeader={isInWeekHeader}
 					isInDayHeader={isInDayHeader}
 					minMaxDatesInView={minMaxDatesInView}
+					onEventClick={onEventClick}
 					placeholderRef={placeholderRef}
 					renderContextMenu={renderContextMenu}
 					state={state}

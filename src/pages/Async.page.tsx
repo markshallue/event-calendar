@@ -10,7 +10,7 @@ export function Async() {
 		<PageWrapper>
 			<Title mb='sm'>Asynchronous data fetching</Title>
 			<Paper withBorder radius='md' shadow='lg'>
-				<EventsCalendar enableDragNDrop events={events} isFetching={isLoading} />
+				<EventsCalendar enableRescheduling events={events} isFetching={isLoading} />
 			</Paper>
 		</PageWrapper>
 	);

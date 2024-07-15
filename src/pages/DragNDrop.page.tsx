@@ -5,7 +5,7 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { FormPopover, ViewPopover } from '@/components';
+import { FormPopover } from '@/components';
 
 import { PageWrapper } from '@/layout/PageWrapper';
 
@@ -34,22 +34,22 @@ export function DragNDrop() {
 			<Title mb='sm'>Drag-n-drop event rescheduling</Title>
 			<Paper withBorder radius='md' shadow='lg'>
 				<EventsCalendar
-					enableDragNDrop
+					enableRescheduling
 					calendar={calendar}
 					events={events}
-					renderPopover={props => {
-						return props.popoverType === 'view' ? (
-							<ViewPopover {...props} editable handleSubmit={handleSubmit} />
-						) : (
-							<FormPopover
-								{...props}
-								groups={demoGroups}
-								fields={formFields}
-								handleSubmit={handleSubmit}
-								formType={props.popoverType}
-							/>
-						);
+					onEventReschedule={({ openPopover }) => {
+						openPopover();
 					}}
+					renderPopover={({ event, onClose }) => (
+						<FormPopover
+							event={event}
+							onClose={onClose}
+							groups={demoGroups}
+							fields={formFields}
+							handleSubmit={handleSubmit}
+							formType='edit'
+						/>
+					)}
 				/>
 			</Paper>
 		</PageWrapper>

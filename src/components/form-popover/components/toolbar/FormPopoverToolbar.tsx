@@ -1,13 +1,13 @@
 import { Button, Flex } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 
-import { CalendarEvent, PopoverDisplayType } from '~/types';
+import { CalendarEvent } from '~/types';
 import { FormPopoverReturnValues, FormPopoverValues } from '../../types';
 import { HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
 
 interface ToolbarProps {
 	onClose: () => void;
-	formType: PopoverDisplayType;
+	formType: 'edit' | 'create';
 	event: CalendarEvent;
 	handleSubmit: (args: HandleSubmitArgs) => void;
 	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;

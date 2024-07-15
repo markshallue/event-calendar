@@ -16,6 +16,7 @@ import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHan
 
 export function KitchenSink() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
+	const [popoverType, setPopoverType] = useState<'create' | 'view' | 'edit'>('view');
 
 	const formFields = {
 		id: 'id',
@@ -46,25 +47,52 @@ export function KitchenSink() {
 			<Paper withBorder radius='md' shadow='lg'>
 				<EventsCalendar
 					enableDragCreation
-					enableDragNDrop
-					views={['month', 'week', 'day']}
+					enableRescheduling
 					calendar={calendar}
 					events={events}
-					renderPopover={props => {
-						return props.popoverType === 'view' ? (
-							<ViewPopover {...props} editable handleSubmit={handleSubmit} />
+					onEventClick={({ openPopover }) => {
+						openPopover();
+						setPopoverType('view');
+					}}
+					onEventCreate={({ openPopover }) => {
+						openPopover();
+						setPopoverType('create');
+					}}
+					onEventReschedule={({ openPopover }) => {
+						openPopover();
+						setPopoverType('edit');
+					}}
+					renderPopover={({ event, onClose }) => {
+						return popoverType === 'view' ? (
+							<ViewPopover
+								event={event}
+								onClose={onClose}
+								setPopoverType={setPopoverType}
+								editable
+								handleSubmit={handleSubmit}
+							/>
 						) : (
 							<FormPopover
-								{...props}
+								event={event}
+								onClose={onClose}
 								groups={demoGroups}
 								fields={formFields}
 								handleSubmit={handleSubmit}
-								formType={props.popoverType}
+								formType={popoverType}
 							/>
 						);
 					}}
-					renderContextMenu={props => <ContextMenu {...props} handleSubmit={handleSubmit} />}
-				/>
+					renderContextMenu={({ event, onClose, openPopover, closeContextMenu }) => (
+						<ContextMenu
+							event={event}
+							onClose={onClose}
+							openPopover={openPopover}
+							closeContextMenu={closeContextMenu}
+							setPopoverType={setPopoverType}
+							handleSubmit={handleSubmit}
+						/>
+					)}
+				></EventsCalendar>
 			</Paper>
 		</PageWrapper>
 	);

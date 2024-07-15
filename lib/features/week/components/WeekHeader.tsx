@@ -10,6 +10,8 @@ import {
 	EventsCalendarContextMenuProps,
 	CalendarAction,
 	CalendarState,
+	EventClickProps,
+	EventEditProps,
 } from '~/types';
 
 import { filterByWeek } from '~/utils/filterByWeek';
@@ -20,27 +22,29 @@ import { arrangeWeekEvents } from '~/utils/arrangeWeekEvents';
 const EVENT_LIMIT = 2;
 
 interface WeekHeaderProps {
-	enableDragNDrop: boolean;
-	hasPopover: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	allDayEvents: CalendarEvent[];
 	dispatch: Dispatch<CalendarAction>;
 	handleMouseEvent: MouseEventHandler;
 	minMaxDatesInView: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 	weekDatesArray: DateRecord[];
 }
 
 export function WeekHeader({
-	enableDragNDrop,
-	hasPopover,
+	enableRescheduling,
 	compact,
 	allDayEvents,
 	dispatch,
 	handleMouseEvent,
 	minMaxDatesInView,
+	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
@@ -71,14 +75,15 @@ export function WeekHeader({
 						<CellContainer
 							isInWeekHeader
 							EVENT_LIMIT={EVENT_LIMIT}
-							enableDragNDrop={enableDragNDrop}
-							hasPopover={hasPopover}
+							enableRescheduling={enableRescheduling}
 							compact={compact}
 							dayRecord={dayRecord}
 							dispatch={dispatch}
 							handleMouseEvent={handleMouseEvent}
 							headerHeight={headerHeight}
 							minMaxDatesInView={minMaxDatesInView}
+							onEventClick={onEventClick}
+							onEventReschedule={onEventReschedule}
 							orderedEvents={orderedEvents}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}

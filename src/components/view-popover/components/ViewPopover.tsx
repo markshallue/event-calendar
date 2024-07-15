@@ -13,6 +13,7 @@ interface ViewPopoverProps extends EventsCalendarPopoverProps {
 	withViewLink?: boolean;
 	withEditLink?: boolean;
 	editable?: boolean;
+	setPopoverType?: (type: 'view' | 'edit') => void;
 	handleSubmit?: (args: any) => void;
 }
 
@@ -25,6 +26,7 @@ export function ViewPopover({
 	handleSubmit,
 	event,
 }: ViewPopoverProps) {
+	if (!event) return <></>;
 	const timeLabel = getDateTimeLabel(event.start, event.end, event.startTime, event.endTime);
 
 	return (

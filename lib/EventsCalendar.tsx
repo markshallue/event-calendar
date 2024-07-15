@@ -1,10 +1,12 @@
-import { ReactNode, useMemo, useReducer, useRef } from 'react';
+import { ReactNode, useEffect, useMemo, useReducer, useRef } from 'react';
 import dayjs from 'dayjs';
 import classes from './EventsCalendar.module.css';
 
 import {
 	CalendarEvent,
 	CalendarView,
+	EventClickProps,
+	EventEditProps,
 	EventsCalendarContextMenuProps,
 	EventsCalendarPopoverProps,
 	RawCalendarEvent,
@@ -16,7 +18,7 @@ import { Month } from './features/month';
 import { OverflowCard } from './features/overflow-card';
 import { DefaultHeader } from './features/default-header/DefaultHeader';
 
-import { Popover, CircularLoader } from './components';
+import { EventsCalendarPopover, CircularLoader } from './components';
 import { useMouseEvent, useInitEventsCalendar, EventsCalendarObject } from './hooks';
 import { DEFAULT_STATE, reducer } from './state';
 
@@ -24,28 +26,36 @@ export interface EventsCalendarProps {
 	calendar?: EventsCalendarObject;
 	compact?: boolean;
 	enableDragCreation?: boolean;
-	enableDragNDrop?: boolean;
+	enableRescheduling?: boolean;
 	events?: CalendarEvent[] | RawCalendarEvent[];
 	height?: string | number;
 	isFetching?: boolean;
 	renderPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
-	views?: CalendarView[];
 	noHeader?: boolean;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventCreate?: (props: EventEditProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	views?: CalendarView[];
+	children?: ReactNode;
 }
 
 export function EventsCalendar({
 	calendar,
 	compact = false,
 	enableDragCreation = false,
-	enableDragNDrop = false,
+	enableRescheduling = false,
 	events = [],
 	height = 550,
+	isFetching = false,
 	renderPopover,
 	renderContextMenu,
-	isFetching = false,
 	noHeader = false,
+	onEventClick,
+	onEventCreate,
+	onEventReschedule,
 	views = ['month', 'week', 'day'],
+	children,
 }: EventsCalendarProps) {
 	// Initialise data calendar
 	const { activeDate, setActiveDate, view, setView } = useInitEventsCalendar(calendar);
@@ -58,25 +68,27 @@ export function EventsCalendar({
 
 	// Main reducer
 	const [state, dispatch] = useReducer(reducer, DEFAULT_STATE);
+	const { eventAnchor, popoverIsOpen, popoverEvent, clickedEvent, placeholderEvent } = state;
+
+	// Reset calendar on click outside of the react component
+	useEffect(() => {
+		const handleClose = () => {
+			dispatch({ type: 'reset_to_default' });
+		};
+		window.addEventListener('click', handleClose);
+		return () => {
+			window.removeEventListener('click', handleClose);
+		};
+	}, [dispatch]);
 
 	// Popover
 	const onClose = () => dispatch({ type: 'reset_to_default' });
-	const popoverType = state.popoverDisplayType;
-	const setPopoverType = (type: 'view' | 'edit') => {
-		if (type === 'view') {
-			dispatch({ type: 'view_calendar_event' });
-		} else {
-			dispatch({ type: 'edit_calendar_event' });
-		}
-	};
-	const popoverIsOpen = state.popoverDisplayType !== 'hidden' && state.eventAnchor !== null;
-	const hasViewPopover = !!renderPopover;
 
 	// Placeholder ref
 	const placeholderRef = useRef<HTMLDivElement>(null);
 
 	// Mouse event handler
-	const handleMouseEvent = useMouseEvent({ enableDragCreation, dispatch, state });
+	const handleMouseEvent = useMouseEvent({ enableDragCreation, dispatch, state, onEventCreate });
 
 	return (
 		<div style={{ width: '100%', height: height }}>
@@ -89,64 +101,66 @@ export function EventsCalendar({
 					<CircularLoader visible={isFetching} />
 					{view === 'month' ? (
 						<Month
-							hasPopover={hasViewPopover}
-							enableDragNDrop={enableDragNDrop}
+							enableRescheduling={enableRescheduling}
 							compact={compact}
 							activeDate={activeDate}
 							dispatch={dispatch}
 							eventsArray={eventsArray}
 							handleMouseEvent={handleMouseEvent}
+							onEventClick={onEventClick}
+							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}
 							state={state}
 						/>
 					) : view === 'week' ? (
 						<Week
-							hasPopover={hasViewPopover}
-							enableDragNDrop={enableDragNDrop}
+							enableRescheduling={enableRescheduling}
 							compact={compact}
 							activeDate={activeDate}
 							dispatch={dispatch}
 							eventsArray={eventsArray}
 							handleMouseEvent={handleMouseEvent}
+							onEventClick={onEventClick}
+							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}
 							state={state}
 						/>
 					) : (
 						<Day
-							hasPopover={hasViewPopover}
-							enableDragNDrop={enableDragNDrop}
+							enableRescheduling={enableRescheduling}
 							compact={compact}
 							activeDate={activeDate}
 							dispatch={dispatch}
 							eventsArray={eventsArray}
 							handleMouseEvent={handleMouseEvent}
+							onEventClick={onEventClick}
+							onEventReschedule={onEventReschedule}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}
 							state={state}
 						/>
 					)}
-					{renderPopover && (
-						<Popover isOpen={popoverIsOpen} anchor={state.eventAnchor} dispatch={dispatch} zIndex={501}>
+					{renderPopover && eventAnchor && (
+						<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
 							{renderPopover({
 								onClose,
-								popoverType,
-								setPopoverType,
-								event: popoverType === 'view' || popoverType === 'edit' ? state.clickedEvent : state.placeholderEvent,
+								event: popoverEvent === 'clickedEvent' ? clickedEvent : placeholderEvent, // 'create' || 'drag-update'
 							})}
-						</Popover>
+						</EventsCalendarPopover>
 					)}
 					<OverflowCard
-						hasPopover={hasViewPopover}
 						compact={compact}
 						dispatch={dispatch}
 						events={view === 'week' ? eventsArray.filter(event => event.isAllDay) : eventsArray}
 						placeholderRef={placeholderRef}
+						onEventClick={onEventClick}
 						renderContextMenu={renderContextMenu}
 						state={state}
-						enableDragNDrop={enableDragNDrop}
+						enableRescheduling={enableRescheduling}
 					/>
+					{children}
 				</div>
 			</div>
 		</div>

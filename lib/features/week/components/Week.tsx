@@ -3,7 +3,7 @@ import { Dayjs } from 'dayjs';
 import classes from './Week.module.css';
 
 import { HoursColumn } from '~/components';
-import { CalendarAction, CalendarState } from '~/types';
+import { CalendarAction, CalendarState, EventClickProps, EventEditProps } from '~/types';
 import { CalendarEvent, MouseEventHandler, EventsCalendarContextMenuProps } from '~/types';
 
 import { getWeekDates } from '../utils';
@@ -12,26 +12,28 @@ import { WeekHeader } from './WeekHeader';
 import { WeekGrid } from './WeekGrid';
 
 interface WeekProps {
-	hasPopover: boolean;
-	enableDragNDrop: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	activeDate: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
 	eventsArray: CalendarEvent[];
 	handleMouseEvent: MouseEventHandler;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 }
 
 export function Week({
-	hasPopover,
-	enableDragNDrop,
+	enableRescheduling,
 	compact,
 	activeDate,
 	dispatch,
 	eventsArray,
 	handleMouseEvent,
+	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
@@ -54,14 +56,15 @@ export function Week({
 	return (
 		<div className={classes.wrapper}>
 			<WeekHeader
-				enableDragNDrop={enableDragNDrop}
-				hasPopover={hasPopover}
+				enableRescheduling={enableRescheduling}
 				compact={compact}
 				allDayEvents={allDayEvents}
 				dispatch={dispatch}
 				handleMouseEvent={handleMouseEvent}
 				minMaxDatesInView={minMaxDatesInView}
 				placeholderRef={placeholderRef}
+				onEventClick={onEventClick}
+				onEventReschedule={onEventReschedule}
 				renderContextMenu={renderContextMenu}
 				state={state}
 				weekDatesArray={weekDates}
@@ -70,12 +73,13 @@ export function Week({
 				<div className={classes.gridWrapper}>
 					<HoursColumn />
 					<WeekGrid
-						enableDragNDrop={enableDragNDrop}
-						hasPopover={hasPopover}
+						enableRescheduling={enableRescheduling}
 						activeDate={activeDate}
 						dispatch={dispatch}
 						handleMouseEvent={handleMouseEvent}
 						placeholderRef={placeholderRef}
+						onEventClick={onEventClick}
+						onEventReschedule={onEventReschedule}
 						renderContextMenu={renderContextMenu}
 						state={state}
 						timeEvents={timeEvents}

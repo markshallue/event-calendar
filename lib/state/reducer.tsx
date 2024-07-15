@@ -23,10 +23,19 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 			};
 		}
 
+		// Popover
+		case 'open_popover': {
+			return {
+				...state,
+				popoverIsOpen: true,
+			};
+		}
+
 		// Context menu
 		case 'open_context_menu': {
 			return {
 				...state,
+				popoverEvent: 'clickedEvent',
 				clickedEvent: action.event || state.clickedEvent,
 				eventAnchor: action.anchor || state.eventAnchor,
 			};
@@ -36,18 +45,10 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 		case 'view_calendar_event': {
 			return {
 				...state,
-				popoverDisplayType: 'view',
+				popoverEvent: 'clickedEvent',
 				clickedEvent: action.event || state.clickedEvent,
 				eventAnchor: action.anchor || state.eventAnchor,
 				placeholderEvent: EMPTY_EVENT,
-			};
-		}
-		case 'edit_calendar_event': {
-			return {
-				...state,
-				popoverDisplayType: 'edit',
-				clickedEvent: action.event || state.clickedEvent,
-				eventAnchor: action.anchor || state.eventAnchor,
 			};
 		}
 
@@ -75,7 +76,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				...state,
 				dragActive: false,
 				firstClickDate: null,
-				popoverDisplayType: 'create',
+				popoverEvent: 'placeholder',
 				placeholderEvent: { ...state.placeholderEvent, isActive: true },
 				eventAnchor: action.anchor || state.eventAnchor,
 			};
@@ -107,7 +108,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 			return {
 				...state,
 				eventDragActive: false,
-				popoverDisplayType: 'drag-update',
+				popoverEvent: 'placeholder',
 				dragStartOffset: null,
 				eventAnchor: action.anchor || state.eventAnchor,
 			};

@@ -19,22 +19,20 @@ import { filterByDate, arrangeWeekEvents } from '~/utils';
 const EVENT_LIMIT = 2;
 
 interface DayHeaderProps {
-	enableDragNDrop: boolean;
-	hasPopover: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	allDayEvents: CalendarEvent[];
 	dispatch: Dispatch<CalendarAction>;
 	handleMouseEvent: MouseEventHandler;
 	minMaxDatesInView: MinMaxDatesInView;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 	date: Dayjs;
 }
 
 export function DayHeader({
-	enableDragNDrop,
-	hasPopover,
+	enableRescheduling,
 	compact,
 	allDayEvents,
 	dispatch,
@@ -65,8 +63,7 @@ export function DayHeader({
 			<CellContainer
 				isInDayHeader
 				EVENT_LIMIT={EVENT_LIMIT}
-				enableDragNDrop={enableDragNDrop}
-				hasPopover={hasPopover}
+				enableRescheduling={enableRescheduling}
 				compact={compact}
 				dayRecord={{ date }}
 				dispatch={dispatch}

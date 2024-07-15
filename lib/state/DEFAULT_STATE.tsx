@@ -4,8 +4,9 @@ import { EMPTY_EVENT } from './EMPTY_EVENT';
 export const DEFAULT_STATE: CalendarState = {
 	// View/edit event
 	clickedEvent: EMPTY_EVENT,
+	popoverIsOpen: false,
 	eventAnchor: null,
-	popoverDisplayType: 'hidden',
+	popoverEvent: 'clickedEvent',
 
 	// Drag creation
 	dragActive: false,

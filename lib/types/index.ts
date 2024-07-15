@@ -56,23 +56,20 @@ export interface MonthDates extends MinMaxDatesInView {
 }
 
 export interface EventsCalendarPopoverProps {
+	event: CalendarEvent | null;
 	onClose: () => void;
-	popoverType: PopoverDisplayType;
-	setPopoverType: (type: 'view' | 'edit') => void;
-	event: CalendarEvent;
 }
 
 export interface EventsCalendarContextMenuProps {
 	event: CalendarEvent;
 	onClose: () => void;
-	setPopoverType: (type: 'view' | 'edit') => void;
+	openPopover: () => void;
 	closeContextMenu: () => void;
 }
 
 type CalendarActionType =
 	| 'reset_to_default'
 	| 'view_calendar_event'
-	| 'edit_calendar_event'
 	| 'stop_drag_events'
 	| 'mouse_down'
 	| 'mouse_move'
@@ -80,6 +77,7 @@ type CalendarActionType =
 	| 'open_overflow'
 	| 'event_drag_start'
 	| 'event_drag_end'
+	| 'open_popover'
 	| 'open_context_menu';
 
 export interface CalendarAction {
@@ -90,7 +88,6 @@ export interface CalendarAction {
 	date?: Dayjs;
 	newView?: CalendarView;
 	type: CalendarActionType;
-	popoverDisplayType?: PopoverDisplayType;
 	dragStartOffset?: number | null;
 }
 
@@ -98,13 +95,12 @@ export interface PlaceholderEvent extends OrderedCalendarEvent {
 	isActive: boolean;
 }
 
-export type PopoverDisplayType = 'hidden' | 'create' | 'view' | 'edit' | 'drag-update';
-
 export interface CalendarState {
 	// Entry Popover
 	clickedEvent: CalendarEvent;
+	popoverIsOpen: boolean;
 	eventAnchor: HTMLDivElement | null;
-	popoverDisplayType: PopoverDisplayType;
+	popoverEvent: 'clickedEvent' | 'placeholder';
 
 	// Drag creation
 	dragActive: boolean;
@@ -119,3 +115,11 @@ export interface CalendarState {
 	overflowAnchor: HTMLDivElement | null;
 	overflowIsOpen: boolean;
 }
+
+export type EventClickProps = {
+	event: CalendarEvent;
+	isDoubleClick: boolean;
+	eventRef: HTMLDivElement;
+	openPopover: () => void;
+};
+export type EventEditProps = { event: CalendarEvent; eventRef: HTMLDivElement; openPopover: () => void };

@@ -3,19 +3,19 @@ import dayjs from 'dayjs';
 import classes from './OverflowCard.module.css';
 
 import { arrangeWeekEvents } from '~/utils';
-import { Popover, Event } from '~/components';
+import { EventsCalendarPopover, Event } from '~/components';
 import { filterByDate } from '~/utils/functions';
-import { CalendarEvent, EventsCalendarContextMenuProps, CalendarAction, CalendarState } from '~/types';
+import { CalendarEvent, EventsCalendarContextMenuProps, CalendarAction, CalendarState, EventClickProps } from '~/types';
 
 interface OverflowCardProps {
-	hasPopover: boolean;
 	compact: boolean;
 	dispatch: Dispatch<CalendarAction>;
 	events: CalendarEvent[];
+	onEventClick?: ({ event, isDoubleClick }: EventClickProps) => void;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
-	enableDragNDrop: boolean;
+	enableRescheduling: boolean;
 }
 
 /* 
@@ -24,20 +24,20 @@ interface OverflowCardProps {
 const tryDate = (dateString?: string) => (dateString ? dayjs(dateString) : undefined);
 
 export function OverflowCard({
-	hasPopover,
 	compact,
 	dispatch,
 	events,
+	onEventClick,
 	placeholderRef,
 	renderContextMenu,
 	state,
-	enableDragNDrop,
+	enableRescheduling,
 }: OverflowCardProps) {
 	const date = tryDate(state.overflowAnchor?.dataset.date);
 
-	if (!date) return;
+	if (!date || !state.overflowAnchor) return <></>;
 	return (
-		<Popover anchor={state.overflowAnchor} dispatch={dispatch} isOpen={state.overflowIsOpen}>
+		<EventsCalendarPopover anchor={state.overflowAnchor} isOpen={state.overflowIsOpen}>
 			<div className={classes.overflowCard}>
 				<span className={classes.label}>{date.format('dddd, MMMM D')}</span>
 				<div className={classes.scrollWrapper}>
@@ -46,12 +46,12 @@ export function OverflowCard({
 							view='month'
 							isInOverflow
 							key={event.id}
-							enableDragNDrop={enableDragNDrop}
-							hasPopover={hasPopover}
+							enableRescheduling={enableRescheduling}
 							compact={compact}
 							date={date}
 							dispatch={dispatch}
 							event={event}
+							onEventClick={onEventClick}
 							placeholderRef={placeholderRef}
 							renderContextMenu={renderContextMenu}
 							state={state}
@@ -59,6 +59,6 @@ export function OverflowCard({
 					))}
 				</div>
 			</div>
-		</Popover>
+		</EventsCalendarPopover>
 	);
 }

@@ -10,32 +10,35 @@ import {
 	MouseEventHandler,
 	CalendarAction,
 	CalendarState,
+	EventClickProps,
+	EventEditProps,
 } from '~/types';
 
 import { DayBackground, DayHeader } from './components';
 
 interface DayProps {
-	hasPopover: boolean;
-	enableDragNDrop: boolean;
+	enableRescheduling: boolean;
 	compact: boolean;
 	activeDate: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
 	eventsArray: CalendarEvent[];
 	handleMouseEvent: MouseEventHandler;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 }
 
 export function Day({
 	activeDate,
-	enableDragNDrop,
+	enableRescheduling,
 	renderContextMenu,
 	handleMouseEvent,
-	hasPopover,
 	eventsArray,
 	state,
 	dispatch,
+	onEventClick,
 	placeholderRef,
 }: DayProps) {
 	// Split events into all day / timed
@@ -67,8 +70,7 @@ export function Day({
 	return (
 		<div className={classes.wrapper}>
 			<DayHeader
-				enableDragNDrop={enableDragNDrop}
-				hasPopover={hasPopover}
+				enableRescheduling={enableRescheduling}
 				compact={false} // TODO
 				allDayEvents={allDayEvents}
 				dispatch={dispatch}
@@ -98,11 +100,11 @@ export function Day({
 						{orderedEvents.map(event => (
 							<Event
 								view='day'
-								enableDragNDrop={enableDragNDrop}
-								hasPopover={hasPopover}
+								enableRescheduling={enableRescheduling}
 								date={activeDate}
 								dispatch={dispatch}
 								event={event}
+								onEventClick={onEventClick}
 								placeholderRef={placeholderRef}
 								renderContextMenu={renderContextMenu}
 								key={event.id}

@@ -10,7 +10,7 @@ import { FilledBadge } from './FilledBadge';
 interface ViewPopoverToolbarProps {
 	event: CalendarEvent;
 	onClose: () => void;
-	setPopoverType: (type: 'view' | 'edit') => void;
+	setPopoverType?: (type: 'view' | 'edit') => void;
 	withViewLink: boolean;
 	withEditLink: boolean;
 	editable: boolean;

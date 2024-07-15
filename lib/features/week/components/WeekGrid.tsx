@@ -10,6 +10,8 @@ import {
 	EventsCalendarContextMenuProps,
 	CalendarAction,
 	CalendarState,
+	EventClickProps,
+	EventEditProps,
 } from '~/types';
 import { TimeIndicator, Event } from '~/components';
 import { arrangeWeekdayEvents } from '~/utils';
@@ -17,24 +19,26 @@ import { arrangeWeekdayEvents } from '~/utils';
 import { WeekBackground } from './WeekBackground';
 
 interface WeekGridProps {
-	enableDragNDrop: boolean;
-	hasPopover: boolean;
+	enableRescheduling: boolean;
 	activeDate: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
 	handleMouseEvent: MouseEventHandler;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	onEventClick?: (props: EventClickProps) => void;
+	onEventReschedule?: (props: EventEditProps) => void;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 	timeEvents: CalendarEvent[];
 	weekDaysArray: DateRecord[];
 }
 
 export function WeekGrid({
-	enableDragNDrop,
-	hasPopover,
+	enableRescheduling,
 	activeDate,
 	dispatch,
 	handleMouseEvent,
+	onEventClick,
+	onEventReschedule,
 	placeholderRef,
 	renderContextMenu,
 	state,
@@ -51,6 +55,7 @@ export function WeekGrid({
 			<WeekBackground
 				activeDate={activeDate}
 				handleMouseEvent={handleMouseEvent}
+				onEventReschedule={onEventReschedule}
 				placeholderRef={placeholderRef}
 				dispatch={dispatch}
 				state={state}
@@ -74,11 +79,11 @@ export function WeekGrid({
 				return orderedEvents.map(event => (
 					<Event
 						view='week'
-						enableDragNDrop={enableDragNDrop}
-						hasPopover={hasPopover}
+						enableRescheduling={enableRescheduling}
 						date={date}
 						dispatch={dispatch}
 						event={event}
+						onEventClick={onEventClick}
 						placeholderRef={placeholderRef}
 						renderContextMenu={renderContextMenu}
 						key={event.id}

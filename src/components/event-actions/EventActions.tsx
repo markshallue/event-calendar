@@ -3,15 +3,16 @@ import { useDisclosure } from '@mantine/hooks';
 import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
 
 import { CalendarEvent } from '~/types';
-import { HandleSubmitArgs } from '@/utils';
 
+import { HandleSubmitArgs } from '@/utils';
 import { ActionButton, ConfirmationModal, IconLink } from './components';
 
 interface EventActionsProps {
 	event: CalendarEvent;
 	onClose: () => void;
+	openPopover?: () => void;
 	closeContextMenu?: () => void;
-	setPopoverType: (type: 'view' | 'edit') => void;
+	setPopoverType?: (type: 'view' | 'edit') => void;
 	handleSubmit?: (args: HandleSubmitArgs) => void;
 	type: 'links' | 'icons' | 'buttons';
 	withEditLink?: boolean;
@@ -21,6 +22,7 @@ export function EventActions({
 	event,
 	handleSubmit = () => null,
 	setPopoverType,
+	openPopover = () => null,
 	onClose = () => null,
 	closeContextMenu = () => null,
 	type,
@@ -54,16 +56,19 @@ export function EventActions({
 				</>
 			) : (
 				<>
-					<ActionButton
-						buttonContext={type}
-						color='indigo'
-						icon={<IconEdit size='1.125rem' />}
-						label='Edit'
-						onClick={() => {
-							setPopoverType('edit');
-							closeContextMenu();
-						}}
-					/>
+					{setPopoverType && (
+						<ActionButton
+							buttonContext={type}
+							color='indigo'
+							icon={<IconEdit size='1.125rem' />}
+							label='Edit'
+							onClick={() => {
+								setPopoverType('edit');
+								openPopover();
+								closeContextMenu();
+							}}
+						/>
+					)}
 					<ConfirmationModal
 						title='Confirm delete'
 						body='Are you sure you want to delete this entry?'

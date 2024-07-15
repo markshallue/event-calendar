@@ -11,6 +11,7 @@ import {
 	OrderedCalendarEvent,
 	EventsCalendarContextMenuProps,
 	CalendarView,
+	EventClickProps,
 } from '~/types';
 
 import { TimeEvent } from './TimeEvent';
@@ -19,8 +20,7 @@ import { getEventStyles, isBeingDragged, getWeekOrDayEventStyles } from './utils
 
 interface EventProps {
 	view: CalendarView;
-	enableDragNDrop: boolean;
-	hasPopover: boolean;
+	enableRescheduling: boolean;
 	compact?: boolean;
 	date: Dayjs;
 	dispatch: Dispatch<CalendarAction>;
@@ -29,15 +29,15 @@ interface EventProps {
 	isInOverflow?: boolean;
 	isInDayHeader?: boolean;
 	minMaxDatesInView?: MinMaxDatesInView;
+	onEventClick?: ({ event, isDoubleClick }: EventClickProps) => void;
 	placeholderRef: RefObject<HTMLDivElement>;
-	renderContextMenu: ((props: EventsCalendarContextMenuProps) => ReactNode) | undefined;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 }
 
 export function Event({
 	view,
-	hasPopover,
-	enableDragNDrop,
+	enableRescheduling,
 	compact = false,
 	date,
 	dispatch,
@@ -46,12 +46,14 @@ export function Event({
 	isInOverflow = false,
 	isInDayHeader = false,
 	minMaxDatesInView,
+	onEventClick,
 	placeholderRef,
 	renderContextMenu,
 	state,
 }: EventProps) {
 	const ref = useRef<HTMLDivElement>(null);
 	const hasContextMenu = !!renderContextMenu;
+	const isInteractive = !!onEventClick || enableRescheduling;
 	const isMonthView = view === 'month';
 	const isDayView = view === 'day';
 
@@ -79,17 +81,11 @@ export function Event({
 	const timeDuration = Math.abs(getTimeDiff(event.start, event.end));
 	const isShort = timeDuration <= 30;
 	const onClose = () => dispatch({ type: 'reset_to_default' });
-	const setPopoverType = (type: 'view' | 'edit') => {
-		if (type === 'view') {
-			dispatch({ type: 'view_calendar_event' });
-		} else {
-			dispatch({ type: 'edit_calendar_event' });
-		}
-	};
+	const openPopover = () => dispatch({ type: 'open_popover' });
 
 	const onLongPress = () => {
 		dispatch({ type: 'reset_to_default' });
-		if (enableDragNDrop && !isInOverflow) {
+		if (enableRescheduling && !isInOverflow) {
 			dispatch({
 				type: 'event_drag_start',
 				event: { ...event, dragId: event.id, order: isMonthView ? event.order : 1000 },
@@ -100,21 +96,21 @@ export function Event({
 
 	const wrapperStyles = isMonthView
 		? getEventStyles(isInOverflow, event, date, compact, isInWeekHeader, isInDayHeader)
-		: getWeekOrDayEventStyles(event, timeDuration, isDayView ? 0 : date.day(), hasPopover && isActive);
+		: getWeekOrDayEventStyles(event, timeDuration, isDayView ? 0 : date.day(), isInteractive && isActive);
 
 	return (
 		<>
 			<div
 				className={isMonthView ? classes.monthItemContainer : classes.weekItemContainer}
-				data-interactive={hasPopover}
-				data-active={hasPopover && isActive}
+				data-interactive={isInteractive}
+				data-active={isInteractive && isActive}
 				data-anchorday={date.format('DD-MMM-YYYY')}
 				data-placeholder={isPlaceholder}
 				data-dragactive={state.dragActive || state.eventDragActive}
 				data-isdragging={isBeingDragged(isMonthView, state, event)}
 				data-sm={compact}
 				data-time={isMonthView && !event.isAllDay}
-				onClick={e => handleClick(e, isPlaceholder, eventRef)}
+				onClick={e => handleClick(e, isPlaceholder, eventRef, onEventClick)}
 				onContextMenu={e => handleContextMenu(e, eventRef)}
 				ref={eventRef}
 				style={wrapperStyles}
@@ -141,7 +137,7 @@ export function Event({
 			</div>
 			{contextIsOpen && (
 				<div ref={refs.setFloating} style={{ ...floatingStyles, zIndex: 500 }} {...getFloatingProps()}>
-					{renderContextMenu && renderContextMenu({ event, closeContextMenu, onClose, setPopoverType })}
+					{renderContextMenu && renderContextMenu({ event, closeContextMenu, onClose, openPopover })}
 				</div>
 			)}
 		</>
