@@ -121,6 +121,7 @@ export type EventClickProps = {
 	isDoubleClick: boolean;
 	eventRef: HTMLDivElement;
 	openPopover: () => void;
+	closePopover: () => void;
 };
 export type EventEditProps = {
 	clickedEvent: CalendarEvent;

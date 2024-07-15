@@ -52,9 +52,13 @@ export function KitchenSink() {
 					enableRescheduling
 					calendar={calendar}
 					events={events}
-					onEventClick={({ openPopover }) => {
-						openPopover();
-						setPopoverType('view');
+					onEventClick={({ openPopover, isDoubleClick, closePopover }) => {
+						if (isDoubleClick) {
+							closePopover();
+						} else {
+							openPopover();
+							setPopoverType('view');
+						}
 					}}
 					onEventCreate={({ openPopover }) => {
 						openPopover();

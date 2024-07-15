@@ -6,10 +6,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 	switch (action.type) {
 		// Reset to deafult state
 		case 'reset_calendar': {
-			return {
-				...state,
-				...DEFAULT_STATE,
-			};
+			return DEFAULT_STATE;
 		}
 
 		// Overflow

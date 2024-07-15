@@ -36,8 +36,12 @@ export function Editable() {
 				<EventsCalendar
 					calendar={calendar}
 					events={events}
-					onEventClick={({ openPopover }) => {
-						openPopover();
+					onEventClick={({ openPopover, isDoubleClick, closePopover }) => {
+						if (isDoubleClick) {
+							closePopover();
+						} else {
+							openPopover();
+						}
 					}}
 					renderPopover={({ clickedEvent, onClose }) => (
 						<FormPopover

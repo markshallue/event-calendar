@@ -20,6 +20,7 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 
 	// Popover handler
 	const openPopover = () => dispatch({ type: 'open_popover' });
+	const closePopover = () => dispatch({ type: 'reset_calendar' });
 
 	const { refs, floatingStyles, context } = useFloating({
 		open: contextIsOpen,
@@ -92,11 +93,10 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		// TODO: remove this block and let onEventClick handle this
 		if (!popoverIsAnchored) {
 			dispatch({ type: 'set_clicked_event', event: event, anchor: eventRef.current });
-		} else {
-			dispatch({ type: 'reset_calendar' });
 		}
 
-		onEventClick && onEventClick({ event, isDoubleClick: popoverIsAnchored, eventRef: eventRef.current, openPopover });
+		onEventClick &&
+			onEventClick({ event, isDoubleClick: popoverIsAnchored, eventRef: eventRef.current, openPopover, closePopover });
 	};
 	return {
 		handleClick,

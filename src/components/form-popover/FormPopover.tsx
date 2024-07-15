@@ -26,7 +26,6 @@ interface FormPopoverProps {
 }
 
 export function FormPopover({ fields, formType, onClose, groups, handleSubmit, event }: FormPopoverProps) {
-	// const [hasTime, setHasTime] = useState(!CONFIG.isMonthOnly && !event.isAllDay);
 	const [hasTime, setHasTime] = useState(!event?.isAllDay);
 
 	const form = useForm({
