@@ -11,7 +11,7 @@ export const getEventStyles = (
 	isInWeekHeader: boolean,
 	isInDayHeader: boolean
 ) => {
-	if (isInOverflow) return {};
+	if (isInOverflow) return { width: '100%' };
 	const weekStart = event.start.isSame(date, 'w') ? event.start.day() : 0;
 	const weekEnd = event.end.isSame(date, 'w') ? event.end.day() : 6;
 	const styles: CSSProperties = {

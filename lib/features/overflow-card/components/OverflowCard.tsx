@@ -40,7 +40,7 @@ export function OverflowCard({
 		<EventsCalendarPopover anchor={state.overflowAnchor} isOpen={state.overflowIsOpen}>
 			<div className={classes.overflowCard}>
 				<span className={classes.label}>{date.format('dddd, MMMM D')}</span>
-				<div className={classes.scrollWrapper}>
+				<div className={classes.eventsWrapper}>
 					{arrangeWeekEvents(filterByDate(events, date)).map(event => (
 						<Event
 							view='month'

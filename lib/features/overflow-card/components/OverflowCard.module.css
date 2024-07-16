@@ -11,13 +11,11 @@
 	flex-direction: column;
 }
 
-.scrollWrapper {
+.eventsWrapper {
 	display: flex;
 	flex-direction: column;
 	gap: 0.125rem;
 	max-height: min(308px, 90vh);
-	overflow-y: auto;
-	overflow-x: hidden;
 }
 
 .label {
