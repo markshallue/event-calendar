@@ -6,6 +6,8 @@
 	"main": "dist/events-calendar.js",
 	"types": "dist/EventsCalendar.d.ts",
 	"files": [
+		"dist/index.css",
+		"dist/index.d.ts",
 		"dist/events-calendar.js",
 		"dist/EventsCalendar.d.ts",
 		"dist/hooks/useEventsCalendar.d.ts",
