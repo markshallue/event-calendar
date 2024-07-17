@@ -1,4 +1,4 @@
-export * from './EventsCalendar';
-export * from './hooks';
+export { EventsCalendar } from './EventsCalendar';
+export { useEventsCalendar } from './hooks';
+export * from './features/header';
 export * from './types';
-export * from './utils';
