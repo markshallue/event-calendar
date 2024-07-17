@@ -125,7 +125,7 @@ export type EventClickProps = {
 };
 export type EventEditProps = {
 	clickedEvent: CalendarEvent;
-	newEvent: CalendarEvent | null;
+	newEvent: PlaceholderEvent;
 	eventRef: HTMLDivElement;
 	openPopover: () => void;
 	reset: () => void;

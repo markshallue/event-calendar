@@ -27,11 +27,16 @@ export function DragNDrop() {
 					calendar={calendar}
 					events={events}
 					onEventReschedule={({ clickedEvent, newEvent, reset }) => {
-						if (newEvent === null) return;
 						exampleSubmitHandler({ type: 'reschedule', id: clickedEvent.id, event: newEvent }, events, setEvents);
 						reset();
 					}}
-					onEventClick={({ openPopover }) => openPopover()}
+					onEventClick={({ openPopover, isDoubleClick, closePopover }) => {
+						if (isDoubleClick) {
+							closePopover();
+						} else {
+							openPopover();
+						}
+					}}
 					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
 				/>
 			</Paper>
