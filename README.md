@@ -1,5 +1,3 @@
-# Mantine Vite template
+# React Events Calendar
 
-Get started with the template by clicking `Use this template` button on the top of the page.
-
-[Documentation](https://mantine.dev/guides/vite/)
+Fully featured events calendar with full CRUD (Create, Read, Update, Delete) capability, drag-n0drop event rescheduling and inbuild popovers API.
