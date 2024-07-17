@@ -1,28 +1,38 @@
 import { Dispatch, ReactNode, SetStateAction } from 'react';
 import { Dayjs } from 'dayjs';
-import { CalendarAction, CalendarView } from '~/types';
+import { CalendarView } from '~/types';
 import classes from './Header.module.css';
 
 import { Navigation } from './Navigation';
 import { Controls } from './Controls';
 
 interface HeaderProps {
-	date: Dayjs;
-	dispatch: Dispatch<CalendarAction>;
+	activeDate: Dayjs;
 	view?: CalendarView;
+	hideViewToggle?: boolean;
 	maxDate?: Dayjs | null;
 	minDate?: Dayjs | null;
-	views: CalendarView[];
-	setDate: Dispatch<SetStateAction<Dayjs>>;
+	onClick?: () => void;
+	setActiveDate: Dispatch<SetStateAction<Dayjs>>;
 	setView?: Dispatch<SetStateAction<CalendarView>>;
-	children?: ReactNode;
+	views?: CalendarView[];
+	customControls?: ReactNode;
 }
-export function Header({ date, dispatch, setDate, setView, views, view = 'month', children }: HeaderProps) {
+export function Header({
+	activeDate,
+	onClick = () => null,
+	hideViewToggle,
+	setActiveDate,
+	setView,
+	views = ['month', 'week', 'day'],
+	view = 'month',
+	customControls,
+}: HeaderProps) {
 	return (
-		<div className={classes.header} onMouseDown={() => dispatch({ type: 'reset_calendar' })}>
-			<Navigation date={date} setDate={setDate} view={view} />
-			<Controls views={views} setView={setView} view={view}>
-				{children}
+		<div className={classes.header} onClick={onClick}>
+			<Navigation activeDate={activeDate} setActiveDate={setActiveDate} view={view} />
+			<Controls hideViewToggle={hideViewToggle} views={views} setView={setView} view={view}>
+				{customControls}
 			</Controls>
 		</div>
 	);

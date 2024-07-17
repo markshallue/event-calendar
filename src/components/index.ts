@@ -3,4 +3,5 @@ export * from './form-popover';
 export * from './context-menu';
 export * from './event-actions';
 export * from './image-carousel';
+export * from './filter-control';
 export * from './date-time-label';

@@ -5,17 +5,18 @@ import { CalendarView } from '~/types';
 import { HeaderButton } from './HeaderButton';
 
 interface ControlsProps {
+	hideViewToggle?: boolean;
 	views: CalendarView[];
 	view: CalendarView;
 	setView?: Dispatch<SetStateAction<CalendarView>>;
 	children: ReactNode;
 }
 
-export function Controls({ views, setView = () => null, view, children }: ControlsProps) {
+export function Controls({ hideViewToggle, views, setView = () => null, view, children }: ControlsProps) {
 	if (views.length === 0 && !children) return;
 	return (
 		<div className={classes.controls}>
-			{views.length > 0 && (
+			{!hideViewToggle && views.length > 0 && (
 				<div style={{ display: 'flex' }}>
 					{views.map((viewLabel, i) => (
 						<HeaderButton

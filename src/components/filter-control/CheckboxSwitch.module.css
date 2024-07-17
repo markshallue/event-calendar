@@ -1,0 +1,25 @@
+.button:hover {
+	background: var(--mantine-color-gray-1);
+	&:hover {
+		text-decoration: none !important;
+		background: #f3f4f6;
+		& .showOnly {
+			opacity: 100;
+		}
+	}
+}
+
+.showOnly {
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	right: 0.5rem;
+	transform: translateY(-50%);
+	background: #fff;
+	&:hover {
+		background: var(--mantine-color-gray-1);
+	}
+	&:active {
+		transform: translateY(-45%);
+	}
+}

@@ -7,16 +7,16 @@ import { CalendarView } from '~/types';
 import { HeaderButton } from './HeaderButton';
 
 interface NavigationProps {
-	date: Dayjs;
-	setDate: Dispatch<SetStateAction<Dayjs>>;
+	activeDate: Dayjs;
+	setActiveDate: Dispatch<SetStateAction<Dayjs>>;
 	view: CalendarView;
 }
 
-export function Navigation({ date, setDate, view }: NavigationProps) {
+export function Navigation({ activeDate, setActiveDate, view }: NavigationProps) {
 	// Navigation handlers
-	const handleToday = () => setDate(dayjs());
-	const handleNext = (increment: CalendarView) => setDate(currDate => currDate.add(1, increment));
-	const handlePrev = (increment: CalendarView) => setDate(currDate => currDate.subtract(1, increment));
+	const handleToday = () => setActiveDate(dayjs());
+	const handleNext = (increment: CalendarView) => setActiveDate(currDate => currDate.add(1, increment));
+	const handlePrev = (increment: CalendarView) => setActiveDate(currDate => currDate.subtract(1, increment));
 
 	// Functions
 	const returnTitle = (currDate: Dayjs) => {
@@ -42,7 +42,7 @@ export function Navigation({ date, setDate, view }: NavigationProps) {
 					<IconChevronRight size='1.5rem' stroke={2} />
 				</HeaderButton>
 			</div>
-			<span className={classes.date}>{returnTitle(date)}</span>
+			<span className={classes.date}>{returnTitle(activeDate)}</span>
 		</div>
 	);
 }

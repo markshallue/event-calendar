@@ -74,7 +74,7 @@ export function EventsCalendar({
 	return (
 		<div className={classes.calendarWrapper}>
 			{noHeader ? null : (
-				<Header view={view} dispatch={dispatch} setDate={setActiveDate} setView={setView} date={activeDate} views={views} />
+				<Header view={view} setActiveDate={setActiveDate} setView={setView} activeDate={activeDate} views={views} />
 			)}
 			<div
 				className={classes.calendar}
