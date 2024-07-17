@@ -56,8 +56,8 @@ export interface MonthDates extends MinMaxDatesInView {
 }
 
 export interface EventsCalendarPopoverProps {
-	clickedEvent: CalendarEvent | null;
-	newEvent: CalendarEvent | null;
+	clickedEvent: CalendarEvent;
+	newEvent: PlaceholderEvent;
 	onClose: () => void;
 }
 

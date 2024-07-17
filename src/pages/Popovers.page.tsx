@@ -12,7 +12,7 @@ export function Popovers() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>View popover</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar
 					events={events}
 					onEventClick={({ openPopover }) => openPopover()}

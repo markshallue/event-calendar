@@ -11,7 +11,7 @@ import { CalendarEvent } from '~/types';
 
 interface ViewPopoverProps {
 	onClose: () => void;
-	event: CalendarEvent | null;
+	event: CalendarEvent;
 	withViewLink?: boolean;
 	withEditLink?: boolean;
 	editable?: boolean;

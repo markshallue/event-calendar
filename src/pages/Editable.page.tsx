@@ -32,7 +32,7 @@ export function Editable() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Edit and delete events</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar
 					calendar={calendar}
 					events={events}

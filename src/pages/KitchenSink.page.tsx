@@ -46,7 +46,7 @@ export function KitchenSink() {
 				<Button onClick={() => calendar.setView('week')}>Week view</Button>
 				<Button onClick={() => calendar.dispatch({ type: 'reset_calendar' })}>Reset</Button>
 			</Group>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar
 					enableDragCreation
 					enableRescheduling

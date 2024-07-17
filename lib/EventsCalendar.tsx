@@ -26,7 +26,6 @@ export interface EventsCalendarProps {
 	enableDragCreation?: boolean;
 	enableRescheduling?: boolean;
 	events?: CalendarEvent[] | RawCalendarEvent[];
-	height?: string | number;
 	isFetching?: boolean;
 	renderPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
@@ -44,7 +43,6 @@ export function EventsCalendar({
 	enableDragCreation = false,
 	enableRescheduling = false,
 	events = [],
-	height = 550,
 	isFetching = false,
 	renderPopover,
 	renderContextMenu,
@@ -80,7 +78,7 @@ export function EventsCalendar({
 	const handleMouseEvent = useMouseEvent({ enableDragCreation, dispatch, state, onEventCreate });
 
 	return (
-		<div style={{ width: '100%', height: height }}>
+		<div className={classes.calendarWrapper}>
 			{noHeader ? null : (
 				<DefaultHeader
 					view={view}
@@ -91,59 +89,60 @@ export function EventsCalendar({
 					views={views}
 				/>
 			)}
-			<div className={classes.wrapper} style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}>
-				{/* Sidebar could go here */}
-				<div className={classes.EventsCalendar} onClick={e => e.stopPropagation()}>
-					<CircularLoader visible={isFetching} />
-					{view === 'month' ? (
-						<Month
-							enableRescheduling={enableRescheduling}
-							compact={compact}
-							activeDate={activeDate}
-							dispatch={dispatch}
-							eventsArray={eventsArray}
-							handleMouseEvent={handleMouseEvent}
-							handleStopDrag={handleStopDrag}
-							onEventClick={onEventClick}
-							onEventReschedule={onEventReschedule}
-							placeholderRef={placeholderRef}
-							renderContextMenu={renderContextMenu}
-							state={state}
-						/>
-					) : (
-						<TimeView
-							view={view}
-							enableRescheduling={enableRescheduling}
-							compact={compact}
-							activeDate={activeDate}
-							dispatch={dispatch}
-							eventsArray={eventsArray}
-							handleMouseEvent={handleMouseEvent}
-							handleStopDrag={handleStopDrag}
-							onEventClick={onEventClick}
-							onEventReschedule={onEventReschedule}
-							placeholderRef={placeholderRef}
-							renderContextMenu={renderContextMenu}
-							state={state}
-						/>
-					)}
-					{renderPopover && eventAnchor && (
-						<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
-							{renderPopover({ onClose, clickedEvent, newEvent: placeholderEvent })}
-						</EventsCalendarPopover>
-					)}
-					<OverflowCard
+			<div
+				className={classes.calendar}
+				style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}
+				onClick={e => e.stopPropagation()}
+			>
+				<CircularLoader visible={isFetching} />
+				{view === 'month' ? (
+					<Month
+						enableRescheduling={enableRescheduling}
 						compact={compact}
+						activeDate={activeDate}
 						dispatch={dispatch}
-						events={view === 'week' ? eventsArray.filter(event => event.isAllDay) : eventsArray}
-						placeholderRef={placeholderRef}
+						eventsArray={eventsArray}
+						handleMouseEvent={handleMouseEvent}
+						handleStopDrag={handleStopDrag}
 						onEventClick={onEventClick}
+						onEventReschedule={onEventReschedule}
+						placeholderRef={placeholderRef}
 						renderContextMenu={renderContextMenu}
 						state={state}
-						enableRescheduling={enableRescheduling}
 					/>
-					{children}
-				</div>
+				) : (
+					<TimeView
+						view={view}
+						enableRescheduling={enableRescheduling}
+						compact={compact}
+						activeDate={activeDate}
+						dispatch={dispatch}
+						eventsArray={eventsArray}
+						handleMouseEvent={handleMouseEvent}
+						handleStopDrag={handleStopDrag}
+						onEventClick={onEventClick}
+						onEventReschedule={onEventReschedule}
+						placeholderRef={placeholderRef}
+						renderContextMenu={renderContextMenu}
+						state={state}
+					/>
+				)}
+				{renderPopover && eventAnchor && (
+					<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
+						{renderPopover({ onClose, clickedEvent, newEvent: placeholderEvent })}
+					</EventsCalendarPopover>
+				)}
+				<OverflowCard
+					compact={compact}
+					dispatch={dispatch}
+					events={view === 'week' ? eventsArray.filter(event => event.isAllDay) : eventsArray}
+					placeholderRef={placeholderRef}
+					onEventClick={onEventClick}
+					renderContextMenu={renderContextMenu}
+					state={state}
+					enableRescheduling={enableRescheduling}
+				/>
+				{children}
 			</div>
 		</div>
 	);

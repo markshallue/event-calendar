@@ -21,7 +21,7 @@ export function DragNDrop() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Drag-n-drop event rescheduling</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar
 					enableRescheduling
 					calendar={calendar}

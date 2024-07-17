@@ -29,8 +29,8 @@ interface EventProps {
 	isInOverflow?: boolean;
 	isInDayHeader?: boolean;
 	minMaxDatesInView?: MinMaxDatesInView;
-	onEventClick?: ({ event, isDoubleClick }: EventClickProps) => void;
 	placeholderRef: RefObject<HTMLDivElement>;
+	onEventClick?: (props: EventClickProps) => void;
 	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	state: CalendarState;
 }

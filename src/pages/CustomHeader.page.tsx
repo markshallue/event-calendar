@@ -1,4 +1,4 @@
-import { Paper, Title } from '@mantine/core';
+import { Box, Paper, Title } from '@mantine/core';
 
 import { EventsCalendar } from '~/EventsCalendar';
 
@@ -6,6 +6,8 @@ import { ViewPopover } from '@/components';
 import { PageWrapper } from '@/layout/PageWrapper';
 import useDemoDataRequest from '@/data/hooks/useDemoDataRequest';
 import { useEventsCalendar } from '~/hooks';
+
+const HEADER_HEIGHT = 52;
 
 export function CustomHeader() {
 	const { data: events } = useDemoDataRequest();
@@ -18,6 +20,7 @@ export function CustomHeader() {
 				padding: '0.75rem 1rem',
 				borderBottom: '1px solid red',
 				display: 'flex',
+				height: HEADER_HEIGHT,
 				justifyContent: 'space-between',
 			}}
 		>
@@ -34,15 +37,17 @@ export function CustomHeader() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Custom header element</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				{customHeader}
-				<EventsCalendar
-					noHeader
-					calendar={calendar}
-					events={events}
-					onEventClick={({ openPopover }) => openPopover()}
-					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
-				/>
+				<Box h={`calc(100% - ${HEADER_HEIGHT}px)`}>
+					<EventsCalendar
+						noHeader
+						calendar={calendar}
+						events={events}
+						onEventClick={({ openPopover }) => openPopover()}
+						renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
+					/>
+				</Box>
 			</Paper>
 		</PageWrapper>
 	);

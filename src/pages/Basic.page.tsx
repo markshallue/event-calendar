@@ -11,7 +11,7 @@ export function Basic() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Basic calendar</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar events={events} />
 			</Paper>
 		</PageWrapper>

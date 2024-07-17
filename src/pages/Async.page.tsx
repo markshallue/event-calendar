@@ -9,7 +9,7 @@ export function Async() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Asynchronous data fetching</Title>
-			<Paper withBorder radius='md' shadow='lg'>
+			<Paper withBorder radius='md' shadow='lg' h={550}>
 				<EventsCalendar enableRescheduling events={events} isFetching={isLoading} />
 			</Paper>
 		</PageWrapper>
