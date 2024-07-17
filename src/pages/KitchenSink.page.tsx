@@ -89,10 +89,10 @@ export function KitchenSink() {
 						renderPopover={({ clickedEvent, newEvent, onClose }) => {
 							return popoverType === 'view' ? (
 								<ViewPopover
+									editable
 									event={clickedEvent}
 									onClose={onClose}
 									setPopoverType={setPopoverType}
-									editable
 									handleSubmit={handleSubmit}
 								/>
 							) : (
