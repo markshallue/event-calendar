@@ -1,18 +1,18 @@
 import dayjs, { Dayjs } from 'dayjs';
 import { Dispatch, SetStateAction } from 'react';
 import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
-import classes from './DefaultHeader.module.css';
+import classes from './Header.module.css';
 
 import { CalendarView } from '~/types';
 import { HeaderButton } from './HeaderButton';
 
-interface DefaultNavigationProps {
+interface NavigationProps {
 	date: Dayjs;
 	setDate: Dispatch<SetStateAction<Dayjs>>;
 	view: CalendarView;
 }
 
-export function DefaultNavigation({ date, setDate, view }: DefaultNavigationProps) {
+export function Navigation({ date, setDate, view }: NavigationProps) {
 	// Navigation handlers
 	const handleToday = () => setDate(dayjs());
 	const handleNext = (increment: CalendarView) => setDate(currDate => currDate.add(1, increment));

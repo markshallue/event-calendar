@@ -12,11 +12,7 @@ import {
 	RawCalendarEvent,
 } from './types';
 
-import { Month } from './features/month';
-import { TimeView } from './features/time-view';
-import { OverflowCard } from './features/overflow-card';
-import { DefaultHeader } from './features/default-header/DefaultHeader';
-
+import { Month, Header, TimeView, OverflowCard } from './features';
 import { EventsCalendarPopover, CircularLoader } from './components';
 import { useMouseEvent, useInitEventsCalendar, EventsCalendarObject } from './hooks';
 
@@ -80,14 +76,7 @@ export function EventsCalendar({
 	return (
 		<div className={classes.calendarWrapper}>
 			{noHeader ? null : (
-				<DefaultHeader
-					view={view}
-					dispatch={dispatch}
-					setDate={setActiveDate}
-					setView={setView}
-					date={activeDate}
-					views={views}
-				/>
+				<Header view={view} dispatch={dispatch} setDate={setActiveDate} setView={setView} date={activeDate} views={views} />
 			)}
 			<div
 				className={classes.calendar}

@@ -1,17 +1,17 @@
 import { Dispatch, ReactNode, SetStateAction } from 'react';
-import classes from './DefaultHeader.module.css';
+import classes from './Header.module.css';
 
 import { CalendarView } from '~/types';
 import { HeaderButton } from './HeaderButton';
 
-interface DefaultControlsProps {
+interface ControlsProps {
 	views: CalendarView[];
 	view: CalendarView;
 	setView?: Dispatch<SetStateAction<CalendarView>>;
 	children: ReactNode;
 }
 
-export function DefaultControls({ views, setView = () => null, view, children }: DefaultControlsProps) {
+export function Controls({ views, setView = () => null, view, children }: ControlsProps) {
 	if (views.length === 0 && !children) return;
 	return (
 		<div className={classes.controls}>
