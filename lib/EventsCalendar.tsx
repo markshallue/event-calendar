@@ -23,14 +23,13 @@ export interface EventsCalendarProps {
 	enableRescheduling?: boolean;
 	events?: CalendarEvent[] | RawCalendarEvent[];
 	isFetching?: boolean;
-	renderPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
-	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	noHeader?: boolean;
 	onEventClick?: (props: EventClickProps) => void;
 	onEventCreate?: (props: EventEditProps) => void;
 	onEventReschedule?: (props: EventEditProps) => void;
+	renderPopover?: (props: EventsCalendarPopoverProps) => ReactNode;
+	renderContextMenu?: (props: EventsCalendarContextMenuProps) => ReactNode;
 	views?: CalendarView[];
-	children?: ReactNode;
 }
 
 export function EventsCalendar({
@@ -40,14 +39,13 @@ export function EventsCalendar({
 	enableRescheduling = false,
 	events = [],
 	isFetching = false,
-	renderPopover,
-	renderContextMenu,
 	noHeader = false,
 	onEventClick,
 	onEventCreate,
 	onEventReschedule,
+	renderPopover,
+	renderContextMenu,
 	views = ['month', 'week', 'day'],
-	children,
 }: EventsCalendarProps) {
 	// Initialise data calendar
 	const { activeDate, setActiveDate, view, setView, state, dispatch } = useInitEventsCalendar(calendar);
@@ -131,7 +129,6 @@ export function EventsCalendar({
 					state={state}
 					enableRescheduling={enableRescheduling}
 				/>
-				{children}
 			</div>
 		</div>
 	);
