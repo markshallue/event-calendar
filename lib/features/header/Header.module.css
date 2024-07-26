@@ -1,6 +1,7 @@
 .header {
 	height: 52px;
 	display: flex;
+	flex-shrink: 0;
 	align-items: center;
 	row-gap: 0.5rem;
 	column-gap: 0.25rem;

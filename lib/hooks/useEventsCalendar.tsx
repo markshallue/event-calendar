@@ -3,7 +3,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import { CalendarAction, CalendarState, CalendarView } from '../types';
 import { DEFAULT_STATE, reducer } from '~/state';
 
-interface useEventsCalendarProps {
+export interface useEventsCalendarProps {
 	isInitialised?: boolean;
 	initialDate?: string | number | Date | dayjs.Dayjs | null;
 	initialView?: CalendarView;

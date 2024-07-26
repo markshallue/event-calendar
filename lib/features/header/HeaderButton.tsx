@@ -22,6 +22,7 @@ export function HeaderButton({
 }: HeaderButtonProps) {
 	return (
 		<button
+			type='button'
 			onClick={onClick}
 			data-first={isFirst}
 			data-middle={isMiddle}

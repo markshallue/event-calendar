@@ -20,10 +20,11 @@
 	"files": [
 		"dist/index.css",
 		"dist/index.d.ts",
+		"dist/features/header",
+		"dist/types/index.d.ts",
 		"dist/events-calendar.js",
 		"dist/EventsCalendar.d.ts",
-		"dist/hooks/useEventsCalendar.d.ts",
-		"dist/features/header"
+		"dist/hooks/useEventsCalendar.d.ts"
 	],
 	"sideEffects": [
 		"**/*.css"
