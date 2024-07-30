@@ -15,7 +15,10 @@
 }
 .headerCell {
 	text-align: center;
-	border-bottom: 1px solid #ccc;
+
+	&[data-border='true'] {
+		border-bottom: 1px solid #ccc;
+	}
 }
 .headerLabel {
 	user-select: none;

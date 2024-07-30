@@ -18,6 +18,7 @@
 	"main": "dist/events-calendar.js",
 	"types": "dist/index.d.ts",
 	"files": [
+		"dist/utils",
 		"dist/index.css",
 		"dist/index.d.ts",
 		"dist/features/header",

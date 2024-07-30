@@ -4,7 +4,7 @@ import classes from './ViewPopover.module.css';
 
 import { ImageCarousel } from '@/components';
 
-import { humanize, getDateTimeLabel } from '~/utils';
+import { humanize, getDateTimeLabel } from '@/utils';
 
 import { ViewPopoverToolbar } from './ViewPopoverToolbar';
 import { CalendarEvent } from '~/types';

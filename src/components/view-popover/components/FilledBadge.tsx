@@ -1,5 +1,6 @@
 import { Badge } from '@mantine/core';
-import { splitColourCSS } from '~/utils/functions';
+
+import { splitColorCSS } from '~/utils';
 import { CalendarEvent } from '~/types';
 
 interface FilledBadgeProps {
@@ -11,7 +12,7 @@ export function FilledBadge({ event }: FilledBadgeProps) {
 	const colors = event.groups.map(g => g.color);
 	const label = event.groups.map(g => g.label).join(' • ');
 	return (
-		<Badge styles={{ root: { border: 0, backgroundImage: splitColourCSS(colors) } }} variant='filled'>
+		<Badge styles={{ root: { border: 0, backgroundImage: splitColorCSS(colors) } }} variant='filled'>
 			{label}
 		</Badge>
 	);

@@ -52,7 +52,13 @@ export function EventsCalendar({
 
 	// Parse events to dayjs
 	const eventsArray: CalendarEvent[] = useMemo(
-		() => events.map(e => ({ ...e, start: dayjs(e.start), end: dayjs(e.end), dragId: null })),
+		() =>
+			events.map(e => ({
+				...e,
+				start: dayjs.isDayjs(e.start) ? e.start : dayjs(e.start),
+				end: dayjs.isDayjs(e.end) ? e.end : dayjs(e.end),
+				dragId: null,
+			})),
 		[events]
 	);
 

@@ -70,8 +70,9 @@ export function TimeViewHeader({
 		<div className={classes.headerRow} data-isweekview={view === 'week'} onMouseLeave={handleStopDrag}>
 			{weekDatesArray.map((dayRecord, dayIndex) => {
 				const { date } = dayRecord;
+				const withHeaderBorder = view === 'week' || filteredEvents.length > 0;
 				return (
-					<div className={classes.headerCell} key={dayIndex}>
+					<div className={classes.headerCell} data-border={withHeaderBorder} key={dayIndex}>
 						{view === 'week' && (
 							<div className={classes.headerLabel} data-today={date.isToday()} onMouseEnter={handleStopDrag}>
 								{`${date.format('ddd')} ${date.format('DD')}`}

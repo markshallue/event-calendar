@@ -1,6 +1,6 @@
 import { CalendarEvent } from '~/types';
-import { splitColourCSS } from '~/utils/functions';
 import classes from './TimeEvent.module.css';
+import { splitColorCSS } from '~/utils';
 
 interface TimeEventProps {
 	event: CalendarEvent;
@@ -21,7 +21,7 @@ export function TimeEvent({ event, isCompact }: TimeEventProps) {
 	// Event background color(s)
 	const colorStyles = {
 		backgroundColor: colors[0],
-		backgroundImage: splitColourCSS(colors),
+		backgroundImage: splitColorCSS(colors),
 	};
 
 	return (

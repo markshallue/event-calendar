@@ -1,5 +1,6 @@
-import { getDateTimeLabel } from '~/utils/functions';
 import classes from './DateTimeLabel.module.css';
+
+import { getDateTimeLabel } from '@/utils';
 import { CalendarEvent } from '~/types';
 
 export function DateTimeLabel({ event }: { event: CalendarEvent }) {

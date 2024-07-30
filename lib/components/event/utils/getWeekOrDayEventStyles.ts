@@ -1,5 +1,5 @@
+import { splitColorCSS } from '~/utils';
 import { OrderedCalendarEvent } from '~/types';
-import { splitColourCSS } from '~/utils';
 
 export const getWeekOrDayEventStyles = (
 	event: OrderedCalendarEvent,
@@ -18,7 +18,7 @@ export const getWeekOrDayEventStyles = (
 		gridRowEnd: event.end && event.end.hour() * 4 + Math.round(event.end.minute() / 15) + 1,
 		height: 12 * ((timeDuration || 60) / 15) - 1,
 		backgroundColor: colors[0],
-		backgroundImage: splitColourCSS(colors),
+		backgroundImage: splitColorCSS(colors),
 		borderWidth: event.indent > 0 ? (timeDuration > 30 ? '1px' : '0.5px') : 0,
 		marginLeft: overlapOffset * event.indent + sundayOffset,
 		width: `calc(100% - ${overlapOffset * (event.indent + 1) + sundayOffset}px)`,

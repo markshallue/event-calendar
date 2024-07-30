@@ -1,7 +1,7 @@
 import { Dayjs } from 'dayjs';
 import classes from './AllDayEvent.module.css';
 
-import { splitColourCSS } from '~/utils/functions';
+import { splitColorCSS } from '~/utils';
 import { CalendarEvent, MinMaxDatesInView } from '~/types';
 
 import { OverflowArrow } from '../overflow-arrow';
@@ -30,7 +30,7 @@ export function AllDayEvent({ date, event, minMaxDatesInView, isCompact, isInOve
 	// Event background color(s)
 	const colorstyles = {
 		backgroundColor: colors[0],
-		backgroundImage: splitColourCSS(colors),
+		backgroundImage: splitColorCSS(colors),
 	};
 
 	return (

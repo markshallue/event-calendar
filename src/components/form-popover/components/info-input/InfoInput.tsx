@@ -1,8 +1,8 @@
 import { Textarea } from '@mantine/core';
 import { UseFormReturnType } from '@mantine/form';
 
+import { humanize } from '@/utils';
 import { CalendarFields, FormPopoverReturnValues, FormPopoverValues } from '../../types';
-import { humanize } from '~/utils/functions';
 
 interface InfoInputProps {
 	fields: CalendarFields;

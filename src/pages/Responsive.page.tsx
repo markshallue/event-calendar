@@ -5,7 +5,7 @@ export function Responsive() {
 	const { data: events } = useDemoDataRequest();
 	return (
 		<div style={{ backgroundColor: '#fff', height: '100%' }}>
-			<EventsCalendar height='100%' events={events} />
+			<EventsCalendar events={events} />
 		</div>
 	);
 }

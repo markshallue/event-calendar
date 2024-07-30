@@ -16,11 +16,9 @@ import {
 	EventEditProps,
 } from '~/types';
 
-import { filterByDate, getVisibleEvents } from '~/utils/functions';
-
 import { CellHeader } from './CellHeader';
 import { ShowMoreText } from './ShowMoreText';
-import { updateEvent } from '~/utils';
+import { filterByDate, getVisibleEvents, updateEvent } from '~/utils';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;

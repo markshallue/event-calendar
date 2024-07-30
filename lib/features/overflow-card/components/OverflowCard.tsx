@@ -2,9 +2,8 @@ import { Dispatch, ReactNode, RefObject } from 'react';
 import dayjs from 'dayjs';
 import classes from './OverflowCard.module.css';
 
-import { arrangeWeekEvents } from '~/utils';
+import { arrangeWeekEvents, filterByDate } from '~/utils';
 import { EventsCalendarPopover, Event } from '~/components';
-import { filterByDate } from '~/utils/functions';
 import { CalendarEvent, EventsCalendarContextMenuProps, CalendarAction, CalendarState, EventClickProps } from '~/types';
 
 interface OverflowCardProps {
