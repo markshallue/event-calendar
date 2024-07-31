@@ -6,7 +6,7 @@ import { arrangeWeekEvents, filterByWeek } from '~/utils';
 import { CalendarAction, CalendarState, EventClickProps, EventEditProps } from '~/types';
 import { CalendarEvent, MouseEventHandler, EventsCalendarContextMenuProps } from '~/types';
 
-import { CellContainer } from '~/components';
+import { CellContainer, CircularLoader } from '~/components';
 import { useElementSize } from '~/hooks';
 
 import { getMonthDates } from '../utils/getMonthDates';
@@ -49,11 +49,13 @@ export function Month({
 
 	// Calculate the max number of events that fit within a cell
 	const { ref: gridRef, height: gridHeight } = useElementSize();
+	const gridLoaded = gridHeight > 0;
 	const ROW_HEIGHT = gridHeight / monthDates.weeks.length;
 	const EVENT_LIMIT = getMaxEvents(ROW_HEIGHT, compact);
 
 	return (
 		<div className={classes.calendar}>
+			<CircularLoader visible={!gridLoaded} />
 			<MonthHeader isCompact={compact} />
 			<div className={classes.grid} onMouseLeave={handleStopDrag} ref={gridRef}>
 				{monthDates.weeks.map((week, index) => {
@@ -75,7 +77,7 @@ export function Month({
 									minMaxDatesInView={minMaxDatesInView}
 									onEventClick={onEventClick}
 									onEventReschedule={onEventReschedule}
-									orderedEvents={orderedEvents}
+									orderedEvents={gridLoaded ? orderedEvents : []}
 									placeholderRef={placeholderRef}
 									renderContextMenu={renderContextMenu}
 									state={state}
