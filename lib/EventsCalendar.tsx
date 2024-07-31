@@ -52,23 +52,17 @@ export function EventsCalendar({
 
 	// Parse events to dayjs
 	const eventsArray: CalendarEvent[] = useMemo(
-		() =>
-			events.map(e => ({
-				...e,
-				start: dayjs.isDayjs(e.start) ? e.start : dayjs(e.start),
-				end: dayjs.isDayjs(e.end) ? e.end : dayjs(e.end),
-				dragId: null,
-			})),
+		() => events.map(e => ({ ...e, start: dayjs(e.start), end: dayjs(e.end), dragId: null })),
 		[events]
 	);
 
-	// Main reducer
-	const { eventAnchor, popoverIsOpen, clickedEvent, placeholderEvent } = state;
+	// Calendar state
+	const { eventAnchor, dragActive, eventDragActive, popoverIsOpen, clickedEvent, placeholderEvent } = state;
 
-	// Popover
+	// Popover handlers
 	const onClose = () => dispatch({ type: 'reset_calendar' });
 	const handleStopDrag = () => {
-		if (state.dragActive || state.eventDragActive) dispatch({ type: 'event_create_stop' });
+		if (dragActive || eventDragActive) dispatch({ type: 'event_create_stop' });
 	};
 
 	// Placeholder ref
@@ -82,11 +76,7 @@ export function EventsCalendar({
 			{noHeader ? null : (
 				<Header view={view} setActiveDate={setActiveDate} setView={setView} activeDate={activeDate} views={views} />
 			)}
-			<div
-				className={classes.calendar}
-				style={{ height: noHeader ? '100%' : 'calc(100% - 52px)' }}
-				onClick={e => e.stopPropagation()}
-			>
+			<div className={classes.calendar} onClick={e => e.stopPropagation()}>
 				<CircularLoader visible={isFetching} />
 				{view === 'month' ? (
 					<Month
