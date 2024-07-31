@@ -1,4 +1,5 @@
 export * from './setTime';
+export * from './isBetween';
 export * from './hasOverlap';
 export * from './updateEvent';
 export * from './getTimeDiff';

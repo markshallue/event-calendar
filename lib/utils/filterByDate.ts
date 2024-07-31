@@ -1,12 +1,11 @@
-import dayjs, { Dayjs } from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(isBetween);
+import { Dayjs } from 'dayjs';
 
 import { CalendarEvent, OrderedCalendarEvent } from '~/types';
+import { isBetween } from './isBetween';
 
 export function filterByDate(
 	data: OrderedCalendarEvent[] | CalendarEvent[],
 	date: Dayjs
 ): OrderedCalendarEvent[] | CalendarEvent[] {
-	return data.filter(({ start, end }) => date.isBetween(start, end, 'day', '[]'));
+	return data.filter(({ start, end }) => isBetween(date, start, end));
 }

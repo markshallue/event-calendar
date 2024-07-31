@@ -1,7 +1,5 @@
 import { Dispatch, ReactNode, RefObject, useEffect, useMemo, useRef } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(isBetween);
+import { Dayjs } from 'dayjs';
 
 import classes from './TimeView.module.css';
 
@@ -15,7 +13,7 @@ import {
 	EventsCalendarContextMenuProps,
 } from '~/types';
 import { Event } from '~/components';
-import { arrangeWeekdayEvents, filterByDate } from '~/utils';
+import { arrangeWeekdayEvents, filterByDate, isBetween } from '~/utils';
 
 import { getWeekDates } from './utils';
 import { TimeViewHeader, HoursColumn, TimeBackground, TimeIndicator } from './components';
@@ -121,7 +119,7 @@ export function TimeView({
 
 							// Add placeholder event to events when required
 							const { isActive, isAllDay, start, end } = state.placeholderEvent;
-							const showPlaceholder = isActive && !isAllDay && date.isBetween(start, end, 'd', '[]');
+							const showPlaceholder = isActive && !isAllDay && isBetween(date, start, end);
 							if (showPlaceholder) orderedEvents.push(state.placeholderEvent);
 
 							return orderedEvents.map(event => (

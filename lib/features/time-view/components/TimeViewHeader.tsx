@@ -15,6 +15,7 @@ import {
 } from '~/types';
 import { CellContainer } from '~/components';
 import { filterByDate, filterByWeek, arrangeWeekEvents } from '~/utils';
+import dayjs from 'dayjs';
 
 // Only show a max of two events in header
 const EVENT_LIMIT = 2;
@@ -74,7 +75,7 @@ export function TimeViewHeader({
 				return (
 					<div className={classes.headerCell} data-border={withHeaderBorder} key={dayIndex}>
 						{view === 'week' && (
-							<div className={classes.headerLabel} data-today={date.isToday()} onMouseEnter={handleStopDrag}>
+							<div className={classes.headerLabel} data-today={date.isSame(dayjs(), 'day')} onMouseEnter={handleStopDrag}>
 								{`${date.format('ddd')} ${date.format('DD')}`}
 							</div>
 						)}

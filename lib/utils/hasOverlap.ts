@@ -1,14 +1,9 @@
-import dayjs, { Dayjs } from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(isBetween);
+import { Dayjs } from 'dayjs';
+import { isBetween } from './isBetween';
 
 /*
     Function that returns true if two date ranges overlap
 */
-export function hasOverlap(start1: Dayjs, end1: Dayjs, start2?: Dayjs, end2?: Dayjs) {
-	return (
-		start1.isBetween(start2, end2, 'day', '[]') ||
-		start2?.isBetween(start1, end1, 'day', '[]') ||
-		end2?.isBetween(start1, end1, 'day', '[]')
-	);
+export function hasOverlap(start1: Dayjs, end1: Dayjs, start2: Dayjs, end2: Dayjs) {
+	return isBetween(start1, start2, end2) || isBetween(start2, start1, end1) || isBetween(end2, start1, end1);
 }

@@ -1,11 +1,10 @@
-import dayjs, { Dayjs } from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(isBetween);
+import { Dayjs } from 'dayjs';
 
 import { CalendarEvent, OrderedCalendarEvent } from '~/types';
 
 import { setTime } from './setTime';
 import { getTimeDiff } from './getTimeDiff';
+import { isBetween } from './isBetween';
 
 /*
     Function that sorts events by start time, from earliest to latest.
@@ -24,7 +23,7 @@ function sortByStart(array: CalendarEvent[]) {
     Function that checks if the start of a test event overlaps with another event
 */
 function overlapsStart(test_start: Dayjs, start_2: Dayjs, end_2: Dayjs) {
-	return test_start.isBetween(start_2, end_2, null, '[)');
+	return isBetween(test_start, start_2, end_2, true);
 }
 
 /*

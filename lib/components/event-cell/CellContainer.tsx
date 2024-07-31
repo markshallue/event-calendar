@@ -1,7 +1,5 @@
 import { Dispatch, ReactNode, RefObject } from 'react';
-import dayjs, { Dayjs } from 'dayjs';
-import isBetween from 'dayjs/plugin/isBetween';
-dayjs.extend(isBetween);
+import { Dayjs } from 'dayjs';
 
 import classes from './EventCell.module.css';
 
@@ -21,7 +19,7 @@ import {
 
 import { CellHeader } from './CellHeader';
 import { ShowMoreText } from './ShowMoreText';
-import { filterByDate, getVisibleEvents, updateEvent } from '~/utils';
+import { filterByDate, getVisibleEvents, isBetween, updateEvent } from '~/utils';
 
 interface CellContainerProps {
 	EVENT_LIMIT: number;
@@ -47,7 +45,7 @@ const getPlaceholderActiveState = (placeholderEvent: PlaceholderEvent, date: Day
 	return (
 		isActive &&
 		(!isInHeader || isAllDay) &&
-		date.isBetween(start, end, 'd', '[]') &&
+		isBetween(date, start, end) &&
 		(date.day() === 0 || date.isSame(start, 'day'))
 	);
 };
