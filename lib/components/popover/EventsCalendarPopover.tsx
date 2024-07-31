@@ -8,7 +8,7 @@ interface PopoverProps {
 	children: ReactNode;
 }
 
-export function EventsCalendarPopover({ anchor, isOpen, zIndex = 500, children }: PopoverProps) {
+export function EventsCalendarPopover({ anchor, isOpen, zIndex = 100, children }: PopoverProps) {
 	return (
 		<>
 			{isOpen && anchor && (

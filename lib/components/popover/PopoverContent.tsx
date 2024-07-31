@@ -19,7 +19,7 @@ export function PopoverContent({ anchor, zIndex, children }: PopoverContentProps
 	}, []);
 
 	return (
-		<div ref={refs.setFloating} style={{ ...floatingStyles, ...styles.current, zIndex: zIndex }}>
+		<div ref={refs.setFloating} style={{ ...floatingStyles, ...styles.current, zIndex }}>
 			<div onClick={e => e.stopPropagation()}>{children}</div>
 		</div>
 	);

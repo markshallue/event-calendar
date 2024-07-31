@@ -1,7 +1,6 @@
-'use client';
-
 import { AppShell, Burger, Group, Title } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+
 import { Navbar } from './Navbar';
 
 export function AppWrapper({ children }: React.PropsWithChildren) {
@@ -18,16 +17,7 @@ export function AppWrapper({ children }: React.PropsWithChildren) {
 			<AppShell.Navbar>
 				<Navbar />
 			</AppShell.Navbar>
-			<AppShell.Main>
-				<div
-					style={{
-						position: 'relative',
-						background: 'var(--mantine-color-gray-0)',
-					}}
-				>
-					{children}
-				</div>
-			</AppShell.Main>
+			<AppShell.Main display='grid'>{children}</AppShell.Main>
 		</AppShell>
 	);
 }

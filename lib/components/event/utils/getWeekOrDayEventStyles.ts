@@ -22,6 +22,6 @@ export const getWeekOrDayEventStyles = (
 		borderWidth: event.indent > 0 ? (timeDuration > 30 ? '1px' : '0.5px') : 0,
 		marginLeft: overlapOffset * event.indent + sundayOffset,
 		width: `calc(100% - ${overlapOffset * (event.indent + 1) + sundayOffset}px)`,
-		zIndex: isActive ? 299 : 201 + event.order,
+		zIndex: isActive ? 100 : 51 + event.order,
 	};
 };

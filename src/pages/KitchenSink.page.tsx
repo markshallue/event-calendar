@@ -1,20 +1,17 @@
 import { useState } from 'react';
 import dayjs from 'dayjs';
-import { Box, Button, Group, Paper, Title } from '@mantine/core';
+import { Box, Button, Group, Title } from '@mantine/core';
 
+import { Header } from '~/features';
 import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { ContextMenu, FormPopover, ViewPopover } from '@/components';
+import { CalendarWrapper, PageWrapper } from '@/layout';
+import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils';
+import { ContextMenu, FormPopover, ViewPopover, FilterControl, useGetVisibleEvents } from '@/components';
 
-import { PageWrapper } from '@/layout/PageWrapper';
-
-import { demoData } from '@/data/constants/demoData';
-import { demoGroups } from '@/data/constants/demoGroups';
-import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
-import { Header } from '~/features';
-import { FilterControl, useGetVisibleEvents } from '@/components/filter-control';
+import { demoData, demoGroups } from '@/data/constants';
 
 const formFields = {
 	id: 'id',
@@ -51,7 +48,7 @@ export function KitchenSink() {
 			<Group mb='sm'>
 				<Button onClick={() => calendar.setView('week')}>Week view</Button>
 			</Group>
-			<Paper withBorder radius='md' shadow='lg' h={550}>
+			<CalendarWrapper>
 				<Header
 					{...calendar}
 					customControls={
@@ -118,7 +115,7 @@ export function KitchenSink() {
 						)}
 					/>
 				</Box>
-			</Paper>
+			</CalendarWrapper>
 		</PageWrapper>
 	);
 }

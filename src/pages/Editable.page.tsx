@@ -1,17 +1,14 @@
 import { useState } from 'react';
-import { Paper, Title } from '@mantine/core';
+import { Title } from '@mantine/core';
 
 import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
+import { PageWrapper, CalendarWrapper } from '@/layout';
 import { ContextMenu, FormPopover } from '@/components';
-
-import { PageWrapper } from '@/layout/PageWrapper';
-
-import { demoData } from '@/data/constants/demoData';
-import { demoGroups } from '@/data/constants/demoGroups';
-import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils/exampleSubmitHandler';
+import { demoData, demoGroups } from '@/data/constants';
+import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils';
 
 export function Editable() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
@@ -32,7 +29,7 @@ export function Editable() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Edit and delete events</Title>
-			<Paper withBorder radius='md' shadow='lg' h={550}>
+			<CalendarWrapper>
 				<EventsCalendar
 					calendar={calendar}
 					events={events}
@@ -64,7 +61,7 @@ export function Editable() {
 						/>
 					)}
 				/>
-			</Paper>
+			</CalendarWrapper>
 		</PageWrapper>
 	);
 }

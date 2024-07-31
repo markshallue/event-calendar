@@ -1,16 +1,14 @@
 import { useState } from 'react';
-import { Paper, Title } from '@mantine/core';
+import { Title } from '@mantine/core';
 
 import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
 import { ViewPopover } from '@/components';
-
-import { PageWrapper } from '@/layout/PageWrapper';
-
-import { demoData } from '@/data/constants/demoData';
-import { exampleSubmitHandler } from '@/utils/exampleSubmitHandler';
+import { demoData } from '@/data/constants';
+import { exampleSubmitHandler } from '@/utils';
+import { PageWrapper, CalendarWrapper } from '@/layout';
 
 export function DragNDrop() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
@@ -21,7 +19,7 @@ export function DragNDrop() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Drag-n-drop event rescheduling</Title>
-			<Paper withBorder radius='md' shadow='lg' h={550}>
+			<CalendarWrapper>
 				<EventsCalendar
 					enableRescheduling
 					calendar={calendar}
@@ -39,7 +37,7 @@ export function DragNDrop() {
 					}}
 					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
 				/>
-			</Paper>
+			</CalendarWrapper>
 		</PageWrapper>
 	);
 }

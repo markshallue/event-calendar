@@ -121,7 +121,7 @@ export function EventsCalendar({
 					/>
 				)}
 				{renderPopover && eventAnchor && (
-					<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={501}>
+					<EventsCalendarPopover isOpen={popoverIsOpen} anchor={eventAnchor} zIndex={101}>
 						{renderPopover({ onClose, clickedEvent, newEvent: placeholderEvent })}
 					</EventsCalendarPopover>
 				)}

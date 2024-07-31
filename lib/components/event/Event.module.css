@@ -1,5 +1,5 @@
 .monthItemContainer {
-	z-index: 201;
+	z-index: 51;
 	display: flex;
 	border-radius: 0.25rem;
 	font-size: 0.75rem;
@@ -22,7 +22,7 @@
 	}
 	&[data-placeholder='true'] {
 		cursor: auto;
-		z-index: 202;
+		z-index: 52;
 		box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 	}
 }

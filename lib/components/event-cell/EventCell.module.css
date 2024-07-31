@@ -24,7 +24,7 @@
 }
 .showMoreText {
 	position: relative;
-	z-index: 201;
+	z-index: 51;
 	white-space: nowrap;
 	display: flex;
 	color: #555;

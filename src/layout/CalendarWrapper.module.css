@@ -1,0 +1,11 @@
+.wrapper {
+	height: 550px;
+	overflow: hidden;
+	border-radius: 0.5rem;
+}
+
+@media (min-width: 1560px) {
+	.wrapper {
+		height: 650px;
+	}
+}

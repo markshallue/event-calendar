@@ -1,17 +1,19 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { Root } from './pages/Root.page';
-import { ErrorFallback } from './error-pages/ErrorFallback';
-import { RootErrorBoundary } from './error-pages/RootErrorBoundary';
+import { RootErrorBoundary, ErrorFallback } from './error-pages';
 
-import { Basic } from './pages/Basic.page';
-import { Responsive } from './pages/Responsive.page';
-import { Async } from './pages/Async.page';
-import { Popovers } from './pages/Popovers.page';
-import { Editable } from './pages/Editable.page';
-import { DragNDrop } from './pages/DragNDrop.page';
-import { KitchenSink } from './pages/KitchenSink.page';
-import { CustomHeader } from './pages/CustomHeader.page';
+import {
+	Home,
+	Basic,
+	Root,
+	Responsive,
+	Async,
+	Popovers,
+	Editable,
+	DragNDrop,
+	KitchenSink,
+	CustomHeader,
+} from './pages';
 
 const router = createBrowserRouter([
 	{
@@ -19,6 +21,11 @@ const router = createBrowserRouter([
 		element: <Root />,
 		errorElement: <RootErrorBoundary />,
 		children: [
+			{
+				path: '/',
+				element: <Home />,
+				errorElement: <ErrorFallback />,
+			},
 			{
 				path: '/basic',
 				element: <Basic />,

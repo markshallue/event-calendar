@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { STATUS_OPTIONS } from '../constants/STATUS_OPTIONS';
 
-export default function useDemoGroupsRequest(delay?: number) {
+export function useDemoGroupsRequest(delay?: number) {
 	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {

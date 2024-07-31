@@ -1,7 +1,8 @@
-import useDemoDataRequest from '@/data/hooks/useDemoDataRequest';
-import { PageWrapper } from '@/layout/PageWrapper';
-import { Paper, Title } from '@mantine/core';
+import { Title } from '@mantine/core';
 import { EventsCalendar } from '~/EventsCalendar';
+
+import { PageWrapper, CalendarWrapper } from '@/layout';
+import { useDemoDataRequest } from '@/data/hooks';
 
 export function Async() {
 	const { data: events, isLoading } = useDemoDataRequest(2000);
@@ -9,9 +10,9 @@ export function Async() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Asynchronous data fetching</Title>
-			<Paper withBorder radius='md' shadow='lg' h={550}>
+			<CalendarWrapper>
 				<EventsCalendar enableRescheduling events={events} isFetching={isLoading} />
-			</Paper>
+			</CalendarWrapper>
 		</PageWrapper>
 	);
 }

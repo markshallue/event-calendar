@@ -1,9 +1,9 @@
-import { Paper, Title } from '@mantine/core';
+import { Title } from '@mantine/core';
 
 import { EventsCalendar } from '~/EventsCalendar';
 
-import { PageWrapper } from '@/layout/PageWrapper';
-import useDemoDataRequest from '@/data/hooks/useDemoDataRequest';
+import { CalendarWrapper, PageWrapper } from '@/layout';
+import { useDemoDataRequest } from '@/data/hooks';
 
 export function Basic() {
 	const { data: events } = useDemoDataRequest();
@@ -11,9 +11,9 @@ export function Basic() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Basic calendar</Title>
-			<Paper withBorder radius='md' shadow='lg' h={550}>
+			<CalendarWrapper>
 				<EventsCalendar events={events} />
-			</Paper>
+			</CalendarWrapper>
 		</PageWrapper>
 	);
 }

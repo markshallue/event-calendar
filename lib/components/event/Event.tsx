@@ -138,7 +138,7 @@ export function Event({
 				)}
 			</div>
 			{contextIsOpen && (
-				<div ref={refs.setFloating} style={{ ...floatingStyles, zIndex: 500 }} {...getFloatingProps()}>
+				<div ref={refs.setFloating} style={{ ...floatingStyles, zIndex: 100 }} {...getFloatingProps()}>
 					{renderContextMenu && renderContextMenu({ event, closeContextMenu, onClose, openPopover })}
 				</div>
 			)}
