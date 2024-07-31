@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { PopoverContent } from './PopoverContent';
 
 interface PopoverProps {
-	anchor: Element;
+	anchor: HTMLDivElement;
 	isOpen: boolean;
 	zIndex?: number;
 	children: ReactNode;
@@ -11,7 +11,7 @@ interface PopoverProps {
 export function EventsCalendarPopover({ anchor, isOpen, zIndex = 500, children }: PopoverProps) {
 	return (
 		<>
-			{isOpen && (
+			{isOpen && anchor && (
 				<PopoverContent anchor={anchor} zIndex={zIndex}>
 					{children}
 				</PopoverContent>
