@@ -35,10 +35,22 @@ export function FormPopover({ fields, formType, onClose, groups, handleSubmit, e
 		validate: validateValues(fields),
 	});
 
+	const onSubmit = () => {
+		const validation = form.validate();
+		const eventId = event?.id || event?.dragId || null;
+		if (!validation.hasErrors && eventId !== undefined) {
+			const submitType = formType === 'create' ? 'create' : 'edit';
+			handleSubmit({
+				id: eventId,
+				type: submitType,
+				values: form.getTransformedValues(),
+			});
+			onClose();
+		}
+	};
+
 	if (!event) return <></>;
 	const lengthInDays = event.end.diff(event.start, 'd') + 1;
-
-	// useHotkeys([['Enter', form.onSubmit(values => console.log(values))]]);
 
 	return (
 		<Card className={classes.FormPopover} withBorder>
@@ -51,7 +63,7 @@ export function FormPopover({ fields, formType, onClose, groups, handleSubmit, e
 			<TimeToggle form={form} setHasTime={setHasTime} hasTime={hasTime} />
 			<GroupInput groups={groups} fields={fields} form={form} />
 			<InfoInput fields={fields} form={form} />
-			<FormPopoverToolbar onClose={onClose} event={event} form={form} formType={formType} handleSubmit={handleSubmit} />
+			<FormPopoverToolbar onClose={onClose} onSubmit={onSubmit} />
 		</Card>
 	);
 }
