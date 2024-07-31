@@ -1,5 +1,8 @@
 import { Dispatch, ReactNode, RefObject, useEffect, useMemo, useRef } from 'react';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
+dayjs.extend(isBetween);
+
 import classes from './TimeView.module.css';
 
 import {

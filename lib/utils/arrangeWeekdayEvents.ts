@@ -1,4 +1,7 @@
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
+dayjs.extend(isBetween);
+
 import { CalendarEvent, OrderedCalendarEvent } from '~/types';
 
 import { setTime } from './setTime';

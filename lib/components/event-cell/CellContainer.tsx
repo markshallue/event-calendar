@@ -1,5 +1,8 @@
 import { Dispatch, ReactNode, RefObject } from 'react';
-import { Dayjs } from 'dayjs';
+import dayjs, { Dayjs } from 'dayjs';
+import isBetween from 'dayjs/plugin/isBetween';
+dayjs.extend(isBetween);
+
 import classes from './EventCell.module.css';
 
 import { Event } from '~/components';

@@ -19,7 +19,12 @@ export function AppWrapper({ children }: React.PropsWithChildren) {
 				<Navbar />
 			</AppShell.Navbar>
 			<AppShell.Main>
-				<div style={{ position: 'relative', height: 'calc(100vh - 60px)', background: 'var(--mantine-color-gray-0)' }}>
+				<div
+					style={{
+						position: 'relative',
+						background: 'var(--mantine-color-gray-0)',
+					}}
+				>
 					{children}
 				</div>
 			</AppShell.Main>
