@@ -63,6 +63,7 @@ export function reducer(state: CalendarState, action: CalendarAction): CalendarS
 				dragActive: true,
 				firstClickDate: action.date || state.firstClickDate,
 				placeholderEvent: { ...state.placeholderEvent, ...action.event, isActive: true },
+				eventAnchor: action.anchor || state.eventAnchor,
 			};
 		}
 		case 'event_create_end': {

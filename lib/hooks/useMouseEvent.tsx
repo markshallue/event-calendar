@@ -70,7 +70,7 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 				}
 
 				const updatedEvent = getPlaceholderEvent(date, date, isTimeEvent, true);
-				dispatch({ type: 'event_create_start', date: date, event: updatedEvent });
+				dispatch({ type: 'event_create_start', date, event: updatedEvent, anchor: placeholderRef.current });
 				break;
 			}
 			case 'mouseenter': {
