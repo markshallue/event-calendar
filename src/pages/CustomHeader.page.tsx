@@ -13,7 +13,7 @@ const HEADER_HEIGHT = 52;
 export function CustomHeader() {
 	const { data: events } = useDemoDataRequest();
 
-	const calendar = useEventsCalendar({});
+	const calendar = useEventsCalendar();
 
 	const customHeader = (
 		<div

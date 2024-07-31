@@ -3,13 +3,6 @@ import dayjs, { Dayjs } from 'dayjs';
 import { CalendarAction, CalendarState, CalendarView } from '../types';
 import { DEFAULT_STATE, reducer } from '~/state';
 
-export interface useEventsCalendarProps {
-	isInitialised?: boolean;
-	initialDate?: string | number | Date | dayjs.Dayjs | null;
-	initialView?: CalendarView;
-	closeOnClickOutside?: boolean;
-}
-
 export type EventsCalendarObject = {
 	activeDate: Dayjs;
 	setActiveDate: Dispatch<SetStateAction<Dayjs>>;
@@ -19,12 +12,19 @@ export type EventsCalendarObject = {
 	dispatch: Dispatch<CalendarAction>;
 };
 
+export interface useEventsCalendarProps {
+	isInitialised?: boolean;
+	initialDate?: string | number | Date | dayjs.Dayjs | null;
+	initialView?: CalendarView;
+	closeOnClickOutside?: boolean;
+}
+
 export function useEventsCalendar({
 	isInitialised = false,
 	initialDate = dayjs(),
 	initialView = 'month',
 	closeOnClickOutside = true,
-}: useEventsCalendarProps): EventsCalendarObject {
+}: Partial<useEventsCalendarProps> = {}): EventsCalendarObject {
 	const [activeDate, setActiveDate] = useState(dayjs(initialDate));
 	const [view, setView] = useState<CalendarView>(initialView);
 
