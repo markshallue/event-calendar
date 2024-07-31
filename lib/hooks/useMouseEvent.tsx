@@ -90,10 +90,7 @@ export const useMouseEvent = ({ enableDragCreation, dispatch, state, onEventCrea
 						reset,
 					});
 
-				// Delay opening of popup
-				setTimeout(() => {
-					dispatch({ type: 'event_create_end', anchor: placeholderRef.current });
-				}, 50);
+				dispatch({ type: 'event_create_end', anchor: placeholderRef.current });
 			}
 		}
 	};

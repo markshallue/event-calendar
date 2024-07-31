@@ -3,7 +3,7 @@ import { Dispatch, RefObject } from 'react';
 import classes from './TimeBackground.module.css';
 
 import { updateEvent } from '~/utils';
-import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps } from '~/types';
+import { MouseEventHandler, CalendarAction, CalendarState, EventEditProps, CalendarView } from '~/types';
 
 // Functions
 const buildIndexArr = (l: number) => {
@@ -11,12 +11,9 @@ const buildIndexArr = (l: number) => {
 		.fill(0)
 		.map((_, i) => i);
 };
-const getActiveDateTime = (activeDate: Dayjs, day: number, hour: number, timeBlock: number) => {
-	return activeDate
-		.startOf('week')
-		.add(day, 'd')
-		.hour(hour)
-		.minute(timeBlock * 15);
+const getActiveDateTime = (activeDate: Dayjs, day: number, hour: number, timeBlock: number, view: CalendarView) => {
+	const startDate = view === 'day' ? activeDate : activeDate.startOf('week').add(day, 'd');
+	return startDate.hour(hour).minute(timeBlock * 15);
 };
 
 interface TimeBackgroundProps {
@@ -52,7 +49,7 @@ export function TimeBackground({
 			{daysArray.map(day =>
 				hoursArray.map(hour =>
 					timeBlocksArray.map(timeBlock => {
-						const date = getActiveDateTime(activeDate, day, hour, timeBlock);
+						const date = getActiveDateTime(activeDate, day, hour, timeBlock, view);
 						return (
 							<div
 								className={classes.gridCell}
