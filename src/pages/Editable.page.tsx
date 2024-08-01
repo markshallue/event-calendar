@@ -8,23 +8,24 @@ import { EventsCalendar } from '~/EventsCalendar';
 import { PageWrapper, CalendarWrapper } from '@/layout';
 import { ContextMenu, FormPopover } from '@/components';
 import { demoData, demoGroups } from '@/data/constants';
-import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils';
+import { ExampleHandleSubmitArgs, exampleSubmitHandler } from '@/utils';
+
+const formFields = {
+	id: 'id',
+	start: 'start',
+	end: 'end',
+	group: 'Status',
+	info: 'Description',
+	multiGroup: false,
+};
 
 export function Editable() {
 	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
 
-	const formFields = {
-		id: 'id',
-		start: 'start',
-		end: 'end',
-		group: 'Status',
-		info: 'Description',
-	};
-
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
 
-	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
+	const handleSubmit = (args: ExampleHandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
 
 	return (
 		<PageWrapper>

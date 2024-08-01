@@ -1,5 +1,8 @@
-import { CalendarGroup, FormPopoverReturnValues } from '@/components/form-popover/types';
+import { FormPopoverReturnValues } from '@/components/form-popover/types';
+
+import { CalendarGroup } from '@/types';
 import { RawCalendarEvent } from '~/types';
+
 import { createDayjsObjFromTime } from '~/utils';
 
 type createNewEventFromFormArgs =

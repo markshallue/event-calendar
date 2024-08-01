@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import dayjs from 'dayjs';
 import { Box, Button, Group, Title } from '@mantine/core';
+import dayjs from 'dayjs';
 
 import { Header } from '~/features';
 import { RawCalendarEvent } from '~/types';
@@ -21,6 +21,7 @@ const formFields = {
 	end: 'end',
 	group: 'Status',
 	info: 'Description',
+	multiGroup: false,
 };
 
 export function KitchenSink() {

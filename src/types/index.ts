@@ -12,9 +12,11 @@ export type HandleSubmitArgs =
 	  };
 
 export type CalendarFormFields = {
+	start: string;
 	end: string;
 	group: string;
 	info: string;
+	multiGroup: boolean;
 };
 
 export type CalendarGroup = {

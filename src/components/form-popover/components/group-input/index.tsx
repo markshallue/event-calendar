@@ -1,12 +1,13 @@
-import { CalendarGroup, CalendarFields, FormPopoverReturnValues, FormPopoverValues } from '../../types';
+import { FormPopoverReturnValues, FormPopoverValues } from '../../types';
 import { GroupMultiSelect } from './GroupMultiSelect';
 import { UseFormReturnType } from '@mantine/form';
 import { GroupSelect } from './GroupSelect';
+import { CalendarGroup, CalendarFormFields } from '@/types';
 
 interface GroupInputProps {
 	disabled?: boolean;
 	groups: CalendarGroup[];
-	fields: CalendarFields;
+	fields: CalendarFormFields;
 	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 }
 

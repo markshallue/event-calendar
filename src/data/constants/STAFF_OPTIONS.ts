@@ -1,4 +1,4 @@
-import { CalendarGroup } from '@/components/form-popover/types';
+import { CalendarGroup } from '@/types';
 
 export const STAFF_OPTIONS: CalendarGroup[] = [
 	{

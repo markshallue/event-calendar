@@ -4,7 +4,7 @@ import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
 
 import { CalendarEvent } from '~/types';
 
-import { HandleSubmitArgs } from '@/utils';
+import { HandleSubmitArgs } from '@/types';
 import { ActionButton, ConfirmationModal, IconLink } from './components';
 
 interface EventActionsProps {

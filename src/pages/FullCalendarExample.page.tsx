@@ -12,6 +12,7 @@ const formFields = {
 	end: 'end',
 	group: 'Status',
 	info: 'Description',
+	multiGroup: false,
 };
 
 export function FullCalendarExample() {

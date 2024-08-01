@@ -1,13 +1,15 @@
+import { Group } from '@mantine/core';
 import { DateValue } from '@mantine/dates';
 import { UseFormReturnType } from '@mantine/form';
 import dayjs from 'dayjs';
 
 import { DateTimeSelect } from './DateTimeSelect';
-import { FormPopoverReturnValues, FormPopoverValues, CalendarFields } from '../../types';
-import { Group } from '@mantine/core';
+import { CalendarFormFields } from '@/types';
+
+import { FormPopoverReturnValues, FormPopoverValues } from '../../types';
 
 interface DateTimeInputs {
-	fields: CalendarFields;
+	fields: CalendarFormFields;
 	lengthInDays: number;
 	form: UseFormReturnType<FormPopoverValues, (values: FormPopoverValues) => FormPopoverReturnValues>;
 	hasTime: boolean;

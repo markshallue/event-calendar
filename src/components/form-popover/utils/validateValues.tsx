@@ -1,9 +1,10 @@
 import dayjs from 'dayjs';
 import { createDayjsObjFromTime } from '~/utils/createDayjsObjFromTime';
 
-import { CalendarFields, FormPopoverValues } from '../types';
+import { CalendarFormFields } from '@/types';
+import { FormPopoverValues } from '../types';
 
-export const validateValues = (fields: CalendarFields) => {
+export const validateValues = (fields: CalendarFormFields) => {
 	return {
 		title: (value: string) => (!value ? true : null),
 		// group: (value: string[]) => (fields.group && (!value || value.length === 0) ? true : null),

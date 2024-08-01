@@ -1,18 +1,5 @@
 import { Dayjs } from 'dayjs';
 
-export type CalendarFields = {
-	id?: string | null;
-	title?: string | null;
-	info?: string | null;
-	start?: string | null;
-	end?: string | null;
-	image?: string | null;
-	group?: string | null;
-	filter?: string | null;
-	popover?: string[];
-	multiGroup?: boolean;
-};
-
 export type FormPopoverValues = {
 	end: Date;
 	groups: string[];

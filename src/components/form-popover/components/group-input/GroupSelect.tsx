@@ -1,7 +1,8 @@
-// import { useState } from 'react';
-import { Combobox, Input, InputBase, useCombobox } from '@mantine/core';
-import { CalendarGroup } from '../../types';
 import { ReactNode } from 'react';
+import { Combobox, Input, InputBase, useCombobox } from '@mantine/core';
+
+import { CalendarGroup } from '@/types';
+
 import { DropdownItem } from './DropdownItem';
 
 interface GroupSelectProps {

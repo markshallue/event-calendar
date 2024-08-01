@@ -2,7 +2,7 @@ import classes from './ViewPopover.module.css';
 
 import { CalendarEvent } from '~/types';
 
-import { HandleSubmitArgs } from '@/utils';
+import { HandleSubmitArgs } from '@/types';
 import { EventActions } from '@/components';
 
 import { FilledBadge } from './FilledBadge';

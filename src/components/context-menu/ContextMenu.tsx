@@ -2,7 +2,7 @@ import { Card } from '@mantine/core';
 
 import { EventsCalendarContextMenuProps } from '~/types';
 
-import { HandleSubmitArgs } from '@/utils';
+import { HandleSubmitArgs } from '@/types';
 
 import { EventActions } from '../event-actions';
 

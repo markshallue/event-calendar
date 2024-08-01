@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
+import { CalendarEvent } from '~/types';
+import { CalendarGroup } from '@/types';
+
 import { useDemoDataRequest } from './useDemoDataRequest';
 import { useDemoGroupsRequest } from './useDemoGroupsRequest';
-
-import { CalendarEvent } from '~/types';
-import { CalendarGroup } from '@/components/form-popover/types';
 
 export function useBuildDemoData(delay: number = 0) {
 	// Calendar State
