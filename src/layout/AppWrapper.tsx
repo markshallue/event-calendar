@@ -17,7 +17,9 @@ export function AppWrapper({ children }: React.PropsWithChildren) {
 			<AppShell.Navbar>
 				<Navbar />
 			</AppShell.Navbar>
-			<AppShell.Main display='grid'>{children}</AppShell.Main>
+			<AppShell.Main display='flex' style={{ flexDirection: 'column' }}>
+				{children}
+			</AppShell.Main>
 		</AppShell>
 	);
 }
