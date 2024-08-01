@@ -83,7 +83,7 @@ function CustomHeader() {
 			<Title mb='sm'>Custom header element</Title>
 			<Text mb='md'>Use the useEventsCalendar hook to create a custom header component.</Text>
 			<Paper withBorder radius='md' bg='white' p='sm' mb='md'>
-				<CodeHighlight code={exampleCode} language='tsx' copyLabel='Copy button code' copiedLabel='Copied!' />
+				<CodeHighlight code={exampleCode} />
 			</Paper>
 			<CalendarWrapper>
 				<div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>

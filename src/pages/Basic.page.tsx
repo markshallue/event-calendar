@@ -23,7 +23,7 @@ function Basic() {
 			<Title mb='sm'>Basic calendar</Title>
 			<Text mb='md'>At its most basic, just pass the calendar an events array to display data.</Text>
 			<Paper withBorder radius='md' bg='white' p='sm' mb='md'>
-				<CodeHighlight code={exampleCode} language='tsx' copyLabel='Copy button code' copiedLabel='Copied!' />
+				<CodeHighlight code={exampleCode} />
 			</Paper>
 			<CalendarWrapper>
 				<EventsCalendar events={events} />

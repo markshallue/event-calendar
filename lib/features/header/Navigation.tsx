@@ -1,10 +1,11 @@
-import dayjs, { Dayjs } from 'dayjs';
 import { Dispatch, SetStateAction } from 'react';
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import dayjs, { Dayjs } from 'dayjs';
 import classes from './Header.module.css';
 
 import { CalendarView } from '~/types';
+
 import { HeaderButton } from './HeaderButton';
+import { IconChevronLeft, IconChevronRight } from '../icons';
 
 interface NavigationProps {
 	activeDate: Dayjs;
@@ -36,10 +37,10 @@ export function Navigation({ activeDate, setActiveDate, view }: NavigationProps)
 			</HeaderButton>
 			<div className={classes.actions}>
 				<HeaderButton variant='subtle' onClick={() => handlePrev(view)}>
-					<IconChevronLeft size='1.5rem' stroke={2} />
+					<IconChevronLeft size='1.5rem' />
 				</HeaderButton>
 				<HeaderButton variant='subtle' onClick={() => handleNext(view)}>
-					<IconChevronRight size='1.5rem' stroke={2} />
+					<IconChevronRight size='1.5rem' />
 				</HeaderButton>
 			</div>
 			<span className={classes.date}>{returnTitle(activeDate)}</span>

@@ -23,7 +23,7 @@ function Async() {
 			<Title mb='sm'>Asynchronous data fetching</Title>
 			<Text mb='md'>Set the isFetching prop to true to activate the loading overlay.</Text>
 			<Paper withBorder radius='md' bg='white' p='sm' mb='md'>
-				<CodeHighlight code={exampleCode} language='tsx' copyLabel='Copy button code' copiedLabel='Copied!' />
+				<CodeHighlight code={exampleCode} />
 			</Paper>
 
 			<CalendarWrapper>
