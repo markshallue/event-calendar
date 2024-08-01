@@ -9,3 +9,4 @@ export * from './Responsive.page';
 export * from './Responsive.page';
 export * from './KitchenSink.page';
 export * from './CustomHeader.page';
+export * from './FullCalendarExample.page';

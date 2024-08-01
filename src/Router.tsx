@@ -13,6 +13,7 @@ import {
 	DragNDrop,
 	KitchenSink,
 	CustomHeader,
+	FullCalendarExample,
 } from './pages';
 
 const router = createBrowserRouter([
@@ -59,6 +60,11 @@ const router = createBrowserRouter([
 			{
 				path: '/drag-n-drop',
 				element: <DragNDrop />,
+				errorElement: <ErrorFallback />,
+			},
+			{
+				path: '/full-calendar',
+				element: <FullCalendarExample />,
 				errorElement: <ErrorFallback />,
 			},
 			{

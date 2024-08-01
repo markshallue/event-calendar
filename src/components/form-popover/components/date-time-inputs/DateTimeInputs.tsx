@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import { DateTimeSelect } from './DateTimeSelect';
 import { FormPopoverReturnValues, FormPopoverValues, CalendarFields } from '../../types';
+import { Group } from '@mantine/core';
 
 interface DateTimeInputs {
 	fields: CalendarFields;
@@ -152,7 +153,7 @@ export function DateTimeInputs({ fields, lengthInDays, form, hasTime }: DateTime
 	};
 
 	return (
-		<div style={{ display: 'flex', gap: 8 }}>
+		<Group gap='xs' wrap='nowrap'>
 			<DateTimeSelect
 				dateLabel='Start'
 				dateValue={form.values.start}
@@ -174,6 +175,6 @@ export function DateTimeInputs({ fields, lengthInDays, form, hasTime }: DateTime
 					onTimeChange={handleEndTimeChange}
 				/>
 			)}
-		</div>
+		</Group>
 	);
 }

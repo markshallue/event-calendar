@@ -13,10 +13,10 @@ export type EventsCalendarObject = {
 };
 
 export interface useEventsCalendarProps {
-	isInitialised: boolean;
-	initialDate: string | number | Date | Dayjs;
-	initialView: CalendarView;
-	closeOnClickOutside: boolean;
+	isInitialised?: boolean;
+	initialDate?: string | number | Date | Dayjs;
+	initialView?: CalendarView;
+	closeOnClickOutside?: boolean;
 }
 
 export function useEventsCalendar({

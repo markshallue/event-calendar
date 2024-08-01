@@ -7,9 +7,11 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
+import { HandleSubmitArgs } from '@/types';
+import { exampleSubmitHandler } from '@/utils';
+import { useGetFilteredEvents } from '@/hooks';
 import { CalendarWrapper, PageWrapper } from '@/layout';
-import { exampleSubmitHandler, HandleSubmitArgs } from '@/utils';
-import { ContextMenu, FormPopover, ViewPopover, FilterControl, useGetVisibleEvents } from '@/components';
+import { ContextMenu, FormPopover, ViewPopover, FilterControl } from '@/components';
 
 import { demoData, demoGroups } from '@/data/constants';
 
@@ -30,7 +32,7 @@ export function KitchenSink() {
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
 
 	// Filter events
-	const eventsArray = useGetVisibleEvents({ data: events, inactiveGroups });
+	const filteredEvents = useGetFilteredEvents({ data: events, inactiveGroups });
 
 	// Submit handler
 	const handleSubmit = (args: HandleSubmitArgs) => exampleSubmitHandler(args, events, setEvents);
@@ -66,7 +68,7 @@ export function KitchenSink() {
 						enableRescheduling
 						noHeader
 						calendar={calendar}
-						events={eventsArray}
+						events={filteredEvents}
 						onEventClick={({ openPopover, isDoubleClick, closePopover }) => {
 							if (isDoubleClick) {
 								closePopover();

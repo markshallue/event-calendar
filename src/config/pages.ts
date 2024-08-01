@@ -19,6 +19,7 @@ export const pages = [
 			{ label: 'Custom header controls', link: '/custom-header' },
 			{ label: 'Edit & delete events', link: '/editable' },
 			{ label: 'Drag-n-drop rescheduling (beta)', link: '/drag-n-drop' },
+			{ label: 'Full Calendar', link: '/full-calendar' },
 			{ label: 'Kitchen sink', link: '/kitchen-sink' },
 		],
 	},

@@ -12,9 +12,9 @@ export function IconChevronLeft({ size = '24', stroke = '2' }: Props) {
 			viewBox='0 0 24 24'
 			fill='none'
 			stroke='currentColor'
-			stroke-width={stroke}
-			stroke-linecap='round'
-			stroke-linejoin='round'
+			strokeWidth={stroke}
+			strokeLinecap='round'
+			strokeLinejoin='round'
 			className='icon icon-tabler icons-tabler-outline icon-tabler-chevron-left'
 		>
 			<path stroke='none' d='M0 0h24v24H0z' fill='none' />

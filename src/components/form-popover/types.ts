@@ -1,12 +1,5 @@
 import { Dayjs } from 'dayjs';
 
-export type CalendarGroup = {
-	id: number;
-	label: string;
-	color: string;
-	isDefault?: boolean;
-};
-
 export type CalendarFields = {
 	id?: string | null;
 	title?: string | null;

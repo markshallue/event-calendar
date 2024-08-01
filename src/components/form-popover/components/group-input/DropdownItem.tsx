@@ -1,19 +1,15 @@
+import { Box, Group, Text } from '@mantine/core';
+
 interface DropdownItemProps {
-  label: string;
-  color?: string;
+	label: string;
+	color?: string;
 }
 
 export function DropdownItem({ label, color }: DropdownItemProps) {
-  return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-      {color && (
-        <div
-          style={{ width: 10, height: 10, borderRadius: 9999, flexShrink: 0, background: color }}
-        ></div>
-      )}
-      <div>
-        <span style={{ fontSize: '0.75rem' }}>{label}</span>
-      </div>
-    </div>
-  );
+	return (
+		<Group gap='xs'>
+			{color && <Box h='0.625rem' w='0.625rem' bg={color} style={{ borderRadius: 9999, flexShrink: 0 }}></Box>}
+			<Text size='xs'>{label}</Text>
+		</Group>
+	);
 }
