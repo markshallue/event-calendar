@@ -1,13 +1,12 @@
 import { Title } from '@mantine/core';
 
-import { HandleSubmitArgs } from '@/types';
+import { CalendarFormFields, HandleSubmitArgs } from '@/types';
 import { CalendarWrapper, PageWrapper } from '@/layout';
 import { demoData, demoGroups } from '@/data/constants';
 
 import { FullCalendar } from '../../ess';
 
-const formFields = {
-	id: 'id',
+const formFields: CalendarFormFields = {
 	start: 'start',
 	end: 'end',
 	group: 'Status',
@@ -17,8 +16,7 @@ const formFields = {
 
 export function FullCalendarExample() {
 	const handleSubmit = (args: HandleSubmitArgs) => {
-		console.log(args.type);
-		if (args.type === 'edit') console.log(args.values);
+		if (args.type !== 'delete') console.log(args.values);
 	};
 	return (
 		<PageWrapper>
@@ -26,8 +24,8 @@ export function FullCalendarExample() {
 			<CalendarWrapper>
 				<FullCalendar
 					// compact
-					// enableDragCreation
-					enableRescheduling
+					enableDragCreation
+					// enableRescheduling
 					// isFetching
 					// views = ['month', 'week', 'day'],
 					handleSubmit={handleSubmit}

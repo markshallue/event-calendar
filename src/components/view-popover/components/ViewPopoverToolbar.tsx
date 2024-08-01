@@ -1,11 +1,10 @@
-import classes from './ViewPopover.module.css';
-
 import { CalendarEvent } from '~/types';
 
 import { HandleSubmitArgs } from '@/types';
 import { EventActions } from '@/components';
 
 import { FilledBadge } from './FilledBadge';
+import { Group } from '@mantine/core';
 
 interface ViewPopoverToolbarProps {
 	event: CalendarEvent;
@@ -32,10 +31,10 @@ export function ViewPopoverToolbar({
 	if (!showBadge && !withEditLink && !withViewLink) return;
 
 	return (
-		<div className={classes.toolbar}>
+		<Group px='md' py='xs' style={{ flexShrink: 0, borderTop: '1px solid var(--mantine-color-gray-3)' }}>
 			{showBadge && <FilledBadge event={event} />}
 
-			<div style={{ display: 'flex', gap: '0.25rem', flexGrow: 1, justifyContent: 'flex-end' }}>
+			<Group gap='0.25rem' justify='flex-end' style={{ flexGrow: 1 }}>
 				<EventActions
 					onClose={onClose}
 					setPopoverType={setPopoverType}
@@ -45,7 +44,7 @@ export function ViewPopoverToolbar({
 					withViewLink={withViewLink}
 					type={editable ? 'icons' : 'links'}
 				/>
-			</div>
-		</div>
+			</Group>
+		</Group>
 	);
 }

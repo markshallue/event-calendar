@@ -18,6 +18,7 @@
 .title {
 	flex-grow: 1;
 	display: -webkit-box;
+	line-clamp: 4;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
@@ -30,15 +31,8 @@
 }
 .infoField {
 	display: -webkit-box;
+	line-clamp: 4;
 	-webkit-line-clamp: 4;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-}
-.toolbar {
-	display: flex;
-	align-items: center;
-	flex-shrink: 0;
-	gap: 0.75rem;
-	padding: 0.75rem 1rem;
-	border-top: 1px solid #dee2e6;
 }

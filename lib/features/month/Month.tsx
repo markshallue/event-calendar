@@ -2,17 +2,22 @@ import { Dispatch, ReactNode, RefObject, useMemo } from 'react';
 import { Dayjs } from 'dayjs';
 import classes from './Month.module.css';
 
+import {
+	CalendarAction,
+	CalendarState,
+	EventClickProps,
+	EventEditProps,
+	CalendarEvent,
+	MouseEventHandler,
+	EventsCalendarContextMenuProps,
+} from '~/types';
 import { arrangeWeekEvents, filterByWeek } from '~/utils';
-import { CalendarAction, CalendarState, EventClickProps, EventEditProps } from '~/types';
-import { CalendarEvent, MouseEventHandler, EventsCalendarContextMenuProps } from '~/types';
 
-import { CellContainer, CircularLoader } from '~/components';
 import { useElementSize } from '~/hooks';
+import { CellContainer, CircularLoader } from '~/components';
 
-import { getMonthDates } from '../utils/getMonthDates';
-import { getMaxEvents } from '../utils/getMaxEvents';
-
-import { MonthHeader } from './MonthHeader';
+import { MonthHeader } from './components';
+import { getMonthDates, getMaxEvents } from './utils';
 
 interface MonthProps {
 	enableRescheduling: boolean;
