@@ -76,7 +76,7 @@ export function EventsCalendar({
 			{noHeader ? null : (
 				<Header view={view} setActiveDate={setActiveDate} setView={setView} activeDate={activeDate} views={views} />
 			)}
-			<div className={classes.calendar} onClick={e => e.stopPropagation()}>
+			<div className={classes.calendar} data-withheader={!noHeader} onClick={e => e.stopPropagation()}>
 				<CircularLoader visible={isFetching} />
 				{view === 'month' ? (
 					<Month
