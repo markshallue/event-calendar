@@ -26,6 +26,6 @@
 			"~/*": ["./lib/*"]
 		}
 	},
-	"include": ["ess", "src", "lib", "ess/FullCalendar.tsx", "ess/index.ts", "ess/components/IconLink.tsx"],
+	"include": ["src", "lib", "full-calendar"],
 	"references": [{ "path": "./tsconfig.node.json" }]
 }

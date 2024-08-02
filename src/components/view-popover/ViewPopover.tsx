@@ -2,12 +2,12 @@ import { Card, Text, Badge, ScrollArea, Stack, Group } from '@mantine/core';
 import { IconCalendarEvent } from '@tabler/icons-react';
 import classes from './ViewPopover.module.css';
 
-import { EventActions, ImageCarousel } from '@/components';
+import { EventActions } from '@/components';
 
 import { CalendarEvent } from '~/types';
 import { humanize, getDateTimeLabel } from '@/utils';
 
-import { FilledBadge } from './components';
+import { FilledBadge, ImageCarousel } from './components';
 
 interface ViewPopoverProps {
 	onClose: () => void;

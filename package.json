@@ -23,9 +23,9 @@
 		"dist/index.d.ts",
 		"dist/features/header",
 		"dist/types/index.d.ts",
+		"dist/hooks/index.d.ts",
 		"dist/events-calendar.js",
-		"dist/EventsCalendar.d.ts",
-		"dist/hooks/useEventsCalendar.d.ts"
+		"dist/EventsCalendar.d.ts"
 	],
 	"sideEffects": [
 		"**/*.css"
@@ -33,6 +33,7 @@
 	"scripts": {
 		"dev": "vite",
 		"check": "tsc",
+		"full-build": "tsc --p ./tsconfig-build.json && vite build --mode full-calendar",
 		"build": "tsc --p ./tsconfig-build.json && vite build",
 		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
 		"preview": "vite preview"

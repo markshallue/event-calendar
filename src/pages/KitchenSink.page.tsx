@@ -41,15 +41,37 @@ export function KitchenSink() {
 	return (
 		<PageWrapper>
 			<Title mb='sm'>All features</Title>
-			<Group mb='sm'>
-				<Button onClick={() => calendar.setActiveDate(p => p.subtract(1, 'month'))}>Prev month</Button>
-				<Button onClick={() => calendar.setActiveDate(p => p.add(1, 'month'))}>Next month</Button>
-				<Button onClick={() => calendar.setActiveDate(dayjs())}>Today</Button>
-				<Button onClick={() => calendar.setActiveDate(dayjs('01-01-2023'))}>January 2023</Button>
-				<Button onClick={() => calendar.setActiveDate(dayjs().add(4, 'M'))}>4 months from now</Button>
-			</Group>
-			<Group mb='sm'>
-				<Button onClick={() => calendar.setView('week')}>Week view</Button>
+			<Group mb='lg' justify='space-between'>
+				<Group>
+					<Button color='pink' size='xs' onClick={() => calendar.setActiveDate(p => p.subtract(1, 'month'))}>
+						Prev month
+					</Button>
+					<Button color='pink' size='xs' onClick={() => calendar.setActiveDate(p => p.add(1, 'month'))}>
+						Next month
+					</Button>
+					<Button color='indigo' size='xs' onClick={() => calendar.setActiveDate(dayjs())}>
+						Today
+					</Button>
+					<Button color='orange' size='xs' onClick={() => calendar.setActiveDate(dayjs('01-01-2023'))}>
+						January 2023
+					</Button>
+					<Button color='grape' size='xs' onClick={() => calendar.setActiveDate(dayjs().add(4, 'M'))}>
+						4 months from now
+					</Button>
+				</Group>
+				<Group>
+					<Button
+						size='xs'
+						color='teal'
+						onClick={() => {
+							if (calendar.view === 'month') calendar.setView('week');
+							if (calendar.view === 'week') calendar.setView('day');
+							if (calendar.view === 'day') calendar.setView('month');
+						}}
+					>
+						Toggle calendar view
+					</Button>
+				</Group>
 			</Group>
 			<CalendarWrapper>
 				<Header

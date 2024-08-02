@@ -67,7 +67,7 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		setContextIsOpen(true);
 	};
 
-	// Handle event left click (info popover)
+	// Handle event left click (view popover)
 	const handleClick = (
 		e: MouseEvent,
 		isPlaceholder: boolean,
@@ -90,7 +90,6 @@ export function useCalendarEvent({ dispatch, event, isInOverflow, hasContextMenu
 		if (overflowShouldClose) dispatch({ type: 'reset_calendar' });
 
 		// Open popover if there is currently no anchored popover
-		// TODO: remove this block and let onEventClick handle this
 		if (!popoverIsAnchored) {
 			dispatch({ type: 'set_clicked_event', event: event, anchor: eventRef.current });
 		}

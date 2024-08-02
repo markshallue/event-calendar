@@ -28,7 +28,6 @@ export const exampleSubmitHandler = (
 	setEvents: Dispatch<SetStateAction<RawCalendarEvent[]>>
 ) => {
 	const { type } = args;
-	console.log(type);
 	if (type === 'delete') {
 		setEvents(p => p.filter(event => event.id !== args.id));
 	}

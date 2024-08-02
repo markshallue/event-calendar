@@ -5,7 +5,6 @@ export const EMPTY_EVENT: PlaceholderEvent = {
 	id: null,
 	dragId: null,
 	title: 'Untitled',
-	info: '',
 	groups: [{ label: '', color: '#0ea5e9' }],
 	start: dayjs(),
 	end: dayjs(),

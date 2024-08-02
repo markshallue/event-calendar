@@ -28,7 +28,6 @@ export interface CalendarEvent {
 	groups?: { label: string; color: string }[];
 	content?: { label: string; content: string | { label: string; color: string }[] }[];
 	images?: string[];
-	info?: string;
 	dragId: number | null;
 	[key: string]: unknown; // Any other properties
 }

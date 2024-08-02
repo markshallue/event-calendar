@@ -13,8 +13,6 @@ export function useBuildDemoData(delay: number = 0) {
 	const [isFetching, setIsFetching] = useState(true);
 
 	// Get calendar and grouping data
-	// const demoForm = useDemoRequest('form');
-	// const demoData = useDemoRequest('newEvent');
 	const demoData = useDemoDataRequest(delay);
 	const demoGroups = useDemoGroupsRequest(delay);
 	const requestsLoading = demoData.isLoading || demoGroups.isLoading;
@@ -22,10 +20,6 @@ export function useBuildDemoData(delay: number = 0) {
 	// Build calendar data on API response
 	useEffect(() => {
 		if (requestsLoading) return;
-
-		// TODO: Replace with real data
-		// const filteredData = filterInvalidDates(demoData.data, fields.start, fields.end);
-		// const transformedData = buildCalendarData(path, apikey, filteredData, fields, demoGroups.data);
 
 		// Update state
 		setGroups(demoGroups.data || []);

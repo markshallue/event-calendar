@@ -5,11 +5,10 @@ import classes from './FormPopover.module.css';
 
 import { CalendarEvent } from '~/types';
 
-import { DateTimeLabel } from '@/components';
 import { HandleSubmitArgs, CalendarFormFields, CalendarGroup } from '@/types';
 
 import { validateValues, getInitialValues, handleTransformValues } from './utils';
-import { GroupInput, TimeToggle, DateTimeInputs } from './components';
+import { GroupInput, TimeToggle, DateTimeInputs, DateTimeLabel } from './components';
 import { humanize } from '@/utils';
 
 interface FormPopoverProps {
@@ -25,7 +24,7 @@ export function FormPopover({ fields, formType, onClose, groups, handleSubmit, e
 	const [hasTime, setHasTime] = useState(!event?.isAllDay);
 
 	const form = useForm({
-		initialValues: getInitialValues(event),
+		initialValues: getInitialValues(event, fields.info),
 		transformValues: values => handleTransformValues(values, fields),
 		validateInputOnChange: true,
 		validate: validateValues(fields),

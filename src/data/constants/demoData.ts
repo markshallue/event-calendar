@@ -13,7 +13,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '5:00pm',
-		info: 'Implementing strategies to control weed growth in the vicinity of Gibson Creek.',
 		content: [
 			{
 				label: 'Description',
@@ -54,7 +53,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Rehabilitating the areas adjacent to the Murray River to enhance its ecosystem.',
 		content: [
 			{
 				label: 'Description',
@@ -75,7 +73,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Improving habitats in the Blue Mountains to support bird species diversity.',
 		content: [
 			{
 				label: 'Description',
@@ -111,7 +108,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Managing erosion to preserve coastal bluff stability and prevent land degradation.',
 		content: [
 			{
 				label: 'Description',
@@ -154,7 +150,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '10:00pm',
-		info: 'Maintaining firebreaks in remote areas to prevent the spread of wildfires.',
 		content: [
 			{
 				label: 'Description',
@@ -202,7 +197,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '3:00pm',
-		info: 'Engaging local communities to promote water conservation practices.',
 		content: [
 			{
 				label: 'Description',
@@ -255,7 +249,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '6:00pm',
-		info: 'Conducting evaluations to assess and enhance soil health in agricultural areas.',
 		content: [
 			{
 				label: 'Description',
@@ -303,7 +296,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '1:00pm',
-		info: 'Planting trees along urban streets for enhancing greenery and air quality.',
 		content: [
 			{
 				label: 'Description',
@@ -341,7 +333,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '6:00pm',
-		info: 'Conducting surveys to monitor wildlife populations in the Daintree Rainforest.',
 		content: [
 			{
 				label: 'Description',
@@ -389,7 +380,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '10:00am',
-		info: 'Eradicating invasive species to protect the biodiversity of Wilsons Promontory.',
 		content: [
 			{
 				label: 'Description',
@@ -412,7 +402,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '9:00pm',
-		info: 'Developing projects to interpret and preserve cultural heritage sites.',
 		content: [
 			{
 				label: 'Description',
@@ -455,7 +444,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '6:00pm',
-		info: 'Organizing campaigns involving the community to clean up rivers and waterways.',
 		content: [
 			{
 				label: 'Description',
@@ -478,7 +466,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '4:00pm',
-		info: 'Implementing sustainable practices to manage and protect forests.',
 		content: [
 			{
 				label: 'Description',
@@ -516,7 +503,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '6:00pm',
-		info: 'Running programs for the rehabilitation of native wildlife species.',
 		content: [
 			{
 				label: 'Description',
@@ -554,7 +540,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '8:00pm',
-		info: 'Creating habitats specifically designed to support endangered species.',
 		content: [
 			{
 				label: 'Description',
@@ -592,7 +577,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '5:00pm',
-		info: 'Promoting agricultural practices resilient to the effects of climate change.',
 		content: [
 			{
 				label: 'Description',
@@ -645,7 +629,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '11:00am',
-		info: 'Developing eco-friendly residential communities with sustainable practices.',
 		content: [
 			{
 				label: 'Description',
@@ -678,7 +661,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '12:00pm',
-		info: 'Implementing measures to protect and conserve water catchment areas.',
 		content: [
 			{
 				label: 'Description',
@@ -716,7 +698,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '5:00pm',
-		info: 'Conducting assessments to evaluate environmental impacts of various activities.',
 		content: [
 			{
 				label: 'Description',
@@ -764,7 +745,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '3:00pm',
-		info: 'Initiating recovery and regeneration efforts after bushfire incidents.',
 		content: [
 			{
 				label: 'Description',
@@ -817,7 +797,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '3:00pm',
-		info: 'Organizing workshops to promote conservation-focused agricultural methods.',
 		content: [
 			{
 				label: 'Description',
@@ -858,7 +837,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Promoting and encouraging the adoption of green energy sources.',
 		content: [
 			{
 				label: 'Description',
@@ -891,7 +869,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '4:00pm',
-		info: 'Replanting vegetation on sites that have undergone disturbances.',
 		content: [
 			{
 				label: 'Description',
@@ -924,7 +901,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '6:00pm',
-		info: 'Monitoring and managing soil carbon levels for sustainable land practices.',
 		content: [
 			{
 				label: 'Description',
@@ -967,7 +943,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '4:00pm',
-		info: 'Implementing controlled burns for cultural and fire management purposes.',
 		content: [
 			{
 				label: 'Description',
@@ -1005,7 +980,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '7:00pm',
-		info: 'Promoting and implementing sustainable landscaping techniques.',
 		content: [
 			{
 				label: 'Description',
@@ -1048,7 +1022,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '5:00pm',
-		info: 'Developing programs for eco-friendly disposal and waste management.',
 		content: [
 			{
 				label: 'Description',
@@ -1071,7 +1044,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '1:00pm',
-		info: 'Engaging communities in conservation planning and decision-making.',
 		content: [
 			{
 				label: 'Description',
@@ -1104,7 +1076,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '5:00pm',
-		info: 'Projects aimed at enhancing biodiversity within urban environments.',
 		content: [
 			{
 				label: 'Description',
@@ -1147,7 +1118,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '8:00pm',
-		info: 'Developing strategies for effective management of coastal zones.',
 		content: [
 			{
 				label: 'Description',
@@ -1188,7 +1158,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Efforts focused on restoring and rehabilitating waterways for ecosystem health.',
 		content: [
 			{
 				label: 'Description',
@@ -1234,7 +1203,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Maintaining trails in the Snowy Mountains for accessibility and conservation.',
 		content: [
 			{
 				label: 'Description',
@@ -1277,7 +1245,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '12:00pm',
-		info: 'Restoring riverbanks along the Darling River to prevent erosion.',
 		content: [
 			{
 				label: 'Description',
@@ -1330,7 +1297,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '7:00pm',
-		info: 'Planting native vegetation to restore degraded areas in the Northern Territory.',
 		content: [
 			{
 				label: 'Description',
@@ -1368,7 +1334,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '5:00pm',
-		info: 'Controlling invasive species in grassy woodlands to protect biodiversity.',
 		content: [
 			{
 				label: 'Description',
@@ -1421,7 +1386,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '4:00pm',
-		info: 'Implementing measures to control soil erosion in coastal areas.',
 		content: [
 			{
 				label: 'Description',
@@ -1462,7 +1426,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Managing fire regimes in arid landscapes for ecosystem health.',
 		content: [
 			{
 				label: 'Description',
@@ -1485,7 +1448,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '12:00pm',
-		info: 'Engaging communities in adopting sustainable farming practices.',
 		content: [
 			{
 				label: 'Description',
@@ -1526,7 +1488,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Creating habitats specifically for threatened frog species.',
 		content: [
 			{
 				label: 'Description',
@@ -1569,7 +1530,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '7:00pm',
-		info: 'Conserving wetlands in the Kimberley Region to protect unique ecosystems.',
 		content: [
 			{
 				label: 'Description',
@@ -1610,7 +1570,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Conducting surveys to assess biodiversity in the Cape York Peninsula.',
 		content: [
 			{
 				label: 'Description',
@@ -1648,7 +1607,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '1:00pm',
-		info: 'Implementing eco-friendly landscaping practices in urban developments.',
 		content: [
 			{
 				label: 'Description',
@@ -1681,7 +1639,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '1:00pm',
-		info: 'Promoting sustainable grazing practices in remote outback areas.',
 		content: [
 			{
 				label: 'Description',
@@ -1729,7 +1686,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '6:00pm',
-		info: 'Undertaking projects to revegetate areas in the Victoria Highlands.',
 		content: [
 			{
 				label: 'Description',
@@ -1765,7 +1721,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Running educational programs in schools to raise awareness about the environment.',
 		content: [
 			{
 				label: 'Description',
@@ -1796,7 +1751,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Monitoring rangelands in Western Australia for sustainable land management.',
 		content: [
 			{
 				label: 'Description',
@@ -1819,7 +1773,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '12:00pm',
-		info: 'Training volunteers for conservation efforts in coastal reserves.',
 		content: [
 			{
 				label: 'Description',
@@ -1860,7 +1813,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing erosion control measures in far North Queensland.',
 		content: [
 			{
 				label: 'Description',
@@ -1881,7 +1833,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Initiating projects to increase green spaces in Sydney suburbs.',
 		content: [
 			{
 				label: 'Description',
@@ -1927,7 +1878,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Improving water quality in rivers across Tasmania.',
 		content: [
 			{
 				label: 'Description',
@@ -1960,7 +1910,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '6:00pm',
-		info: 'Restoring habitats for the conservation of numbats in Southwest WA.',
 		content: [
 			{
 				label: 'Description',
@@ -2003,7 +1952,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '3:00pm',
-		info: 'Planning strategies for preventing bushfires in the Adelaide Hills.',
 		content: [
 			{
 				label: 'Description',
@@ -2041,7 +1989,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '8:00pm',
-		info: 'Monitoring coastal erosion patterns in South Australia.',
 		content: [
 			{
 				label: 'Description',
@@ -2074,7 +2021,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '1:00pm',
-		info: 'Developing sustainable tourism practices in Northern Queensland.',
 		content: [
 			{
 				label: 'Description',
@@ -2117,7 +2063,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '9:00pm',
-		info: 'Managing cultural landscapes in collaboration with Indigenous communities.',
 		content: [
 			{
 				label: 'Description',
@@ -2160,7 +2105,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '1:00pm',
-		info: 'Developing strategies to adapt to climate change impacts in urban areas.',
 		content: [
 			{
 				label: 'Description',
@@ -2183,7 +2127,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '6:00pm',
-		info: 'Rehabilitating land affected by mining activities for ecological restoration.',
 		content: [
 			{
 				label: 'Description',
@@ -2224,7 +2167,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Engaging communities in coastal cleanup drives and awareness campaigns.',
 		content: [
 			{
 				label: 'Description',
@@ -2265,7 +2207,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Monitoring vegetation patterns in the Great Dividing Range.',
 		content: [
 			{
 				label: 'Description',
@@ -2313,7 +2254,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '10:00am',
-		info: 'Managing grazing for conservation purposes in the New England region.',
 		content: [
 			{
 				label: 'Description',
@@ -2361,7 +2301,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '1:00pm',
-		info: 'Restoring corridors to enhance biodiversity in Outback NSW.',
 		content: [
 			{
 				label: 'Description',
@@ -2407,7 +2346,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Conducting workshops to help farmers adapt to climate change.',
 		content: [
 			{
 				label: 'Description',
@@ -2445,7 +2383,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '3:00pm',
-		info: 'Developing eco-friendly infrastructure in urban centers.',
 		content: [
 			{
 				label: 'Description',
@@ -2481,7 +2418,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Planning land use in coastal areas for sustainability and conservation.',
 		content: [
 			{
 				label: 'Description',
@@ -2504,7 +2440,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '8:00am',
 		endTime: '4:00pm',
-		info: 'Implementing waste reduction programs with community involvement.',
 		content: [
 			{
 				label: 'Description',
@@ -2547,7 +2482,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '12:00pm',
-		info: 'Initiating projects to conserve biodiversity within urban areas.',
 		content: [
 			{
 				label: 'Description',
@@ -2588,7 +2522,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Undertaking projects to restore wetlands in the Gulf Country.',
 		content: [
 			{
 				label: 'Description',
@@ -2624,7 +2557,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing programs for forest regeneration in Southeast Queensland.',
 		content: [
 			{
 				label: 'Description',
@@ -2672,7 +2604,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '3:00pm',
-		info: 'Developing trails for interpreting cultural heritage sites.',
 		content: [
 			{
 				label: 'Description',
@@ -2708,7 +2639,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Rehabilitating riverbanks in the Northern Rivers region.',
 		content: [
 			{
 				label: 'Description',
@@ -2754,7 +2684,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Developing programs for sustainable livelihoods in Indigenous communities.',
 		content: [
 			{
 				label: 'Description',
@@ -2790,7 +2719,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Initiating projects to improve soil health in Central Australia.',
 		content: [
 			{
 				label: 'Description',
@@ -2828,7 +2756,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '12:00pm',
-		info: 'Recovering and regenerating areas affected by bushfires in Gippsland.',
 		content: [
 			{
 				label: 'Description',
@@ -2859,7 +2786,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Training for adopting conservation-focused agriculture in the Wheatbelt region.',
 		content: [
 			{
 				label: 'Description',
@@ -2902,7 +2828,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '4:00pm',
-		info: 'Promoting and encouraging the adoption of renewable energy sources.',
 		content: [
 			{
 				label: 'Description',
@@ -2945,7 +2870,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '11:00am',
 		endTime: '4:00pm',
-		info: 'Revegetating urban wetlands for ecological enhancement in Brisbane.',
 		content: [
 			{
 				label: 'Description',
@@ -2986,7 +2910,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing measures for soil conservation in Outback Queensland.',
 		content: [
 			{
 				label: 'Description',
@@ -3009,7 +2932,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '11:00am',
-		info: 'Engaging communities in planting trees for urban greenery.',
 		content: [
 			{
 				label: 'Description',
@@ -3045,7 +2967,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing strategies to control weed growth in the vicinity of Gibson Creek.',
 		content: [
 			{
 				label: 'Description',
@@ -3093,7 +3014,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '1:00pm',
 		endTime: '2:00pm',
-		info: 'Rehabilitating the areas adjacent to the Murray River to enhance its ecosystem.',
 		content: [
 			{
 				label: 'Description',
@@ -3129,7 +3049,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Improving habitats in the Blue Mountains to support bird species diversity.',
 		content: [
 			{
 				label: 'Description',
@@ -3167,7 +3086,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '3:00pm',
-		info: 'Managing erosion to preserve coastal bluff stability and prevent land degradation.',
 		content: [
 			{
 				label: 'Description',
@@ -3205,7 +3123,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '12:00pm',
 		endTime: '7:00pm',
-		info: 'Maintaining firebreaks in remote areas to prevent the spread of wildfires.',
 		content: [
 			{
 				label: 'Description',
@@ -3246,7 +3163,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Engaging local communities to promote water conservation practices.',
 		content: [
 			{
 				label: 'Description',
@@ -3282,7 +3198,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Conducting evaluations to assess and enhance soil health in agricultural areas.',
 		content: [
 			{
 				label: 'Description',
@@ -3328,7 +3243,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Planting trees along urban streets for enhancing greenery and air quality.',
 		content: [
 			{
 				label: 'Description',
@@ -3376,7 +3290,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '2:00pm',
 		endTime: '10:00pm',
-		info: 'Conducting surveys to monitor wildlife populations in the Daintree Rainforest.',
 		content: [
 			{
 				label: 'Description',
@@ -3422,7 +3335,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Eradicating invasive species to protect the biodiversity of Wilsons Promontory.',
 		content: [
 			{
 				label: 'Description',
@@ -3463,7 +3375,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Developing projects to interpret and preserve cultural heritage sites.',
 		content: [
 			{
 				label: 'Description',
@@ -3501,7 +3412,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '10:00am',
 		endTime: '11:00am',
-		info: 'Organizing campaigns involving the community to clean up rivers and waterways.',
 		content: [
 			{
 				label: 'Description',
@@ -3542,7 +3452,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing sustainable practices to manage and protect forests.',
 		content: [
 			{
 				label: 'Description',
@@ -3573,7 +3482,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Running programs for the rehabilitation of native wildlife species.',
 		content: [
 			{
 				label: 'Description',
@@ -3604,7 +3512,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Creating habitats specifically designed to support endangered species.',
 		content: [
 			{
 				label: 'Description',
@@ -3650,7 +3557,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Promoting agricultural practices resilient to the effects of climate change.',
 		content: [
 			{
 				label: 'Description',
@@ -3691,7 +3597,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Developing eco-friendly residential communities with sustainable practices.',
 		content: [
 			{
 				label: 'Description',
@@ -3737,7 +3642,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Implementing measures to protect and conserve water catchment areas.',
 		content: [
 			{
 				label: 'Description',
@@ -3768,7 +3672,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Conducting assessments to evaluate environmental impacts of various activities.',
 		content: [
 			{
 				label: 'Description',
@@ -3804,7 +3707,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Initiating recovery and regeneration efforts after bushfire incidents.',
 		content: [
 			{
 				label: 'Description',
@@ -3840,7 +3742,6 @@ export const demoData = [
 			},
 		],
 		isAllDay: true,
-		info: 'Organizing workshops to promote conservation-focused agricultural methods.',
 		content: [
 			{
 				label: 'Description',
@@ -3883,7 +3784,6 @@ export const demoData = [
 		isAllDay: false,
 		startTime: '9:00am',
 		endTime: '4:00pm',
-		info: 'Promoting and encouraging the adoption of green energy sources.',
 		content: [
 			{
 				label: 'Description',

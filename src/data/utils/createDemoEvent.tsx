@@ -56,7 +56,6 @@ export function createDemoEvent(index: number): CalendarEvent {
 		isAllDay: IS_ALLDAY,
 		startTime: IS_ALLDAY ? undefined : START_DATE.format('h:mma'),
 		endTime: IS_ALLDAY ? undefined : END_DATE.format('h:mma'),
-		info: demoJobs[index % demoJobs.length].info,
 		content: [
 			{ label: 'Description', content: demoJobs[index % demoJobs.length].info },
 			{
