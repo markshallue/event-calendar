@@ -13,7 +13,8 @@ import { useGetFilteredEvents } from '@/hooks';
 import { CalendarWrapper, PageWrapper } from '@/layout';
 import { ContextMenu, FormPopover, ViewPopover, FilterControl } from '@/components';
 
-import { demoData, demoGroups } from '@/data/constants';
+import initialEvents from '@/data/events.json';
+import groups from '@/data/groups.json';
 
 const formFields = {
 	id: 'id',
@@ -25,12 +26,12 @@ const formFields = {
 };
 
 export function KitchenSink() {
-	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
+	const [events, setEvents] = useState<RawCalendarEvent[]>(initialEvents);
 	const [inactiveGroups, setInactiveGroups] = useState<string[]>([]);
 	const [popoverType, setPopoverType] = useState<'view' | 'edit' | 'create' | 'reschedule'>('view');
 
 	// Get calendar instance
-	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
+	const calendar = useEventsCalendar({ initialDate: '01-Aug-2024' });
 
 	// Filter events
 	const filteredEvents = useGetFilteredEvents({ data: events, inactiveGroups });
@@ -79,7 +80,7 @@ export function KitchenSink() {
 					customControls={
 						<FilterControl
 							filterLabel={formFields.group}
-							items={demoGroups}
+							items={groups}
 							hiddenItems={inactiveGroups}
 							setHiddenItems={setInactiveGroups}
 						/>
@@ -121,7 +122,7 @@ export function KitchenSink() {
 								<FormPopover
 									event={popoverType === 'edit' ? clickedEvent : newEvent}
 									onClose={onClose}
-									groups={demoGroups}
+									groups={groups}
 									fields={formFields}
 									handleSubmit={handleSubmit}
 									formType={popoverType === 'reschedule' ? 'edit' : popoverType}

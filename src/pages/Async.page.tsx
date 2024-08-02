@@ -1,20 +1,41 @@
+import { useEffect, useState } from 'react';
 import { Paper, Text, Title } from '@mantine/core';
-import { EventsCalendar } from '~/EventsCalendar';
-
-import { PageWrapper, CalendarWrapper } from '@/layout';
-import { useDemoDataRequest } from '@/data/hooks';
 import { CodeHighlight } from '@mantine/code-highlight';
 
+import { RawCalendarEvent } from '~/types';
+import { EventsCalendar } from '~/EventsCalendar';
+
+import initialEvents from '@/data/events.json';
+
+import { PageWrapper, CalendarWrapper } from '@/layout';
+
 export function Async() {
-	const { data: events, isLoading } = useDemoDataRequest(2000);
+	const [isFetching, setIsFetching] = useState(true);
+	const [events, setEvents] = useState<RawCalendarEvent[] | undefined>(undefined);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setEvents(initialEvents);
+			setIsFetching(false);
+		}, 2000);
+	}, []);
 
 	const exampleCode = `
 import { EventsCalendar } from 'events-calendar';
+import initialEvents from '@/data/events.json';
 
 function Async() {
-  const { data: events, isLoading } = useDemoDataRequest(2000);
+    const [isFetching, setIsFetching] = useState(true);
+    const [events, setEvents] = useState<RawCalendarEvent[] | undefined>(undefined);
 
-  return <EventsCalendar events={events} isFetching={isLoading} />;
+    useEffect(() => {
+        setTimeout(() => {
+            setEvents(initialEvents);
+            setIsFetching(false);
+        }, 2000);
+    }, []);
+
+    return <EventsCalendar events={events} isFetching={isFetching} />;
 }
 `;
 
@@ -27,7 +48,7 @@ function Async() {
 			</Paper>
 
 			<CalendarWrapper>
-				<EventsCalendar events={events} isFetching={isLoading} />
+				<EventsCalendar events={events} isFetching={isFetching} />
 			</CalendarWrapper>
 		</PageWrapper>
 	);

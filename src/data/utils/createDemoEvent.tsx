@@ -1,9 +1,10 @@
 import dayjs from 'dayjs';
-import { CalendarEvent } from '~/types';
+import { RawCalendarEvent } from '~/types';
 
-import { STATUS_OPTIONS } from '../constants/STATUS_OPTIONS';
-import { STAFF_OPTIONS } from '../constants/STAFF_OPTIONS';
-import { demoJobs } from '../constants/DEMO_JOBS';
+import tasks from '@/data/tasks.json';
+import groups from '@/data/groups.json';
+import staff from '@/data/staff.json';
+
 import demoImage1Url from '../images/demoImage1.jpg';
 import demoImage2Url from '../images/demoImage2.jpg';
 import demoImage3Url from '../images/demoImage3.jpg';
@@ -13,7 +14,7 @@ import demoImage5Url from '../images/demoImage5.jpg';
 const HOUR_OPTIONS = [8, 9, 10, 11, 12, 13, 14];
 const IMAGE_URLS = [demoImage1Url, demoImage2Url, demoImage3Url, demoImage4Url, demoImage5Url];
 
-export function createDemoEvent(index: number): CalendarEvent {
+export function createDemoEvent(index: number): RawCalendarEvent {
 	// Dates
 	const DAY_RANGE_PLUS_MINUS = 90;
 	const IS_PAST = Math.round(Math.random()) === 0 ? 1 : -1;
@@ -27,16 +28,17 @@ export function createDemoEvent(index: number): CalendarEvent {
 	const END_DATE = IS_ALLDAY ? START_DATE.add(DAY_DIFF, 'day') : START_DATE.add(Math.ceil(Math.random() * 8), 'hour');
 
 	// Status
-	const STATUS = STATUS_OPTIONS[Math.round(Math.random() * 2)].label;
+	const STATUS = groups[Math.round(Math.random() * 2)].label;
 
 	// Staff
 	const STAFF = new Set<string>();
 	const NUM_STAFF = Math.round(Math.random() * 6);
 	for (let staffIndex = 0; staffIndex < NUM_STAFF; staffIndex += 1) {
-		const j = Math.round(Math.random() * (STAFF_OPTIONS.length - 2));
-		STAFF.add(STAFF_OPTIONS[j].label);
+		const j = Math.round(Math.random() * (staff.length - 2));
+		STAFF.add(staff[j].label);
 	}
-	const STAFF_ARRAY = [...STAFF];
+	const staffArray = [...STAFF];
+	console.log(STAFF);
 
 	// Images
 	const IMAGES = new Set<string>();
@@ -48,22 +50,17 @@ export function createDemoEvent(index: number): CalendarEvent {
 
 	return {
 		id: index + 1,
-		dragId: null,
-		title: demoJobs[index % demoJobs.length].label,
+		title: tasks[index % tasks.length].label,
 		start: START_DATE,
 		end: END_DATE,
-		groups: [{ label: STATUS, color: STATUS_OPTIONS.find(o => o.label === STATUS)?.color || '#858E96' }],
+		groups: [{ label: STATUS, color: groups.find(o => o.label === STATUS)?.color || '#858E96' }],
 		isAllDay: IS_ALLDAY,
 		startTime: IS_ALLDAY ? undefined : START_DATE.format('h:mma'),
 		endTime: IS_ALLDAY ? undefined : END_DATE.format('h:mma'),
 		content: [
-			{ label: 'Description', content: demoJobs[index % demoJobs.length].info },
-			{
-				label: 'Staff',
-				content: STAFF_OPTIONS.filter(worker => STAFF_ARRAY.includes(worker.label)),
-			},
+			{ label: 'Description', content: tasks[index % tasks.length].info },
+			{ label: 'Staff', content: staffArray },
 		].filter(({ content }) => content && content.length > 0),
-		filter: STAFF_ARRAY.length > 0 ? STAFF_ARRAY : ['Undefined'],
 		images: IMAGE_ARRAY,
 	};
 }

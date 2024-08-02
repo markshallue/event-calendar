@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from 'react';
 
 import { CalendarEvent, RawCalendarEvent } from '~/types';
+import groups from '@/data/groups.json';
 
-import { demoGroups } from '@/data/constants/demoGroups';
 import { createNewEventFromForm } from './createNewEventFromForm';
 import { FormPopoverReturnValues } from '@/components/form-popover/types';
 
@@ -33,7 +33,7 @@ export const exampleSubmitHandler = (
 	}
 	if (type === 'create') {
 		const newId = Math.max(...events.map(e => e.id ?? 0)) + 1;
-		const newEvent = createNewEventFromForm({ type, values: args.values, groups: demoGroups, id: newId });
+		const newEvent = createNewEventFromForm({ type, values: args.values, groups, id: newId });
 		setEvents(p => [...p, newEvent]);
 	}
 	if (type === 'reschedule') {
@@ -48,7 +48,7 @@ export const exampleSubmitHandler = (
 	if (type === 'edit') {
 		const newEvents = events.map(event => {
 			if (event.id !== args.id) return event;
-			return createNewEventFromForm({ type, values: args.values, groups: demoGroups, event: event });
+			return createNewEventFromForm({ type, values: args.values, groups, event: event });
 		});
 		setEvents(newEvents);
 	}

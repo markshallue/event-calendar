@@ -5,13 +5,14 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
+import initialEvents from '@/data/events.json';
+
 import { ViewPopover } from '@/components';
-import { demoData } from '@/data/constants';
 import { exampleSubmitHandler } from '@/utils';
 import { PageWrapper, CalendarWrapper } from '@/layout';
 
 export function DragNDrop() {
-	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
+	const [events, setEvents] = useState<RawCalendarEvent[]>(initialEvents);
 
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
@@ -35,7 +36,7 @@ export function DragNDrop() {
 							openPopover();
 						}
 					}}
-					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} editable />}
+					renderPopover={({ clickedEvent, onClose }) => <ViewPopover event={clickedEvent} onClose={onClose} />}
 				/>
 			</CalendarWrapper>
 		</PageWrapper>

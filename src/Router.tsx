@@ -14,6 +14,7 @@ import {
 	KitchenSink,
 	CustomHeader,
 	FullCalendarExample,
+	ContextMenuPage,
 } from './pages';
 
 const router = createBrowserRouter([
@@ -55,6 +56,11 @@ const router = createBrowserRouter([
 			{
 				path: '/editable',
 				element: <Editable />,
+				errorElement: <ErrorFallback />,
+			},
+			{
+				path: '/context-menu',
+				element: <ContextMenuPage />,
 				errorElement: <ErrorFallback />,
 			},
 			{

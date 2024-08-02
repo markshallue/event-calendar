@@ -2,7 +2,9 @@ import { Title } from '@mantine/core';
 
 import { CalendarFormFields } from '@/types';
 import { CalendarWrapper, PageWrapper } from '@/layout';
-import { demoData, demoGroups } from '@/data/constants';
+
+import events from '@/data/events.json';
+import groups from '@/data/groups.json';
 
 import { FullCalendar } from '../../full-calendar';
 import { ActionButton } from '@/components/event-actions/components';
@@ -50,8 +52,8 @@ export function FullCalendarExample() {
 						</>
 					)}
 					handleSubmit={console.log}
-					events={demoData}
-					groups={demoGroups}
+					events={events}
+					groups={groups}
 					fields={formFields}
 				/>
 			</CalendarWrapper>

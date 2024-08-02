@@ -1,0 +1,8 @@
+{
+	"id": "id",
+	"start": "start",
+	"end": "end",
+	"group": "Status",
+	"info": "Description",
+	"multiGroup": false
+}

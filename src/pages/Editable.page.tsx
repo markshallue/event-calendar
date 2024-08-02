@@ -5,9 +5,11 @@ import { RawCalendarEvent } from '~/types';
 import { useEventsCalendar } from '~/hooks';
 import { EventsCalendar } from '~/EventsCalendar';
 
+import initialEvents from '@/data/events.json';
+import groups from '@/data/groups.json';
+
 import { PageWrapper, CalendarWrapper } from '@/layout';
 import { ContextMenu, FormPopover } from '@/components';
-import { demoData, demoGroups } from '@/data/constants';
 import { ExampleHandleSubmitArgs, exampleSubmitHandler } from '@/utils';
 
 const formFields = {
@@ -20,7 +22,7 @@ const formFields = {
 };
 
 export function Editable() {
-	const [events, setEvents] = useState<RawCalendarEvent[]>(demoData);
+	const [events, setEvents] = useState<RawCalendarEvent[]>(initialEvents);
 
 	// Get calendar instance
 	const calendar = useEventsCalendar({ initialDate: '01-Jul-2024' });
@@ -45,7 +47,7 @@ export function Editable() {
 						<FormPopover
 							event={clickedEvent}
 							onClose={onClose}
-							groups={demoGroups}
+							groups={groups}
 							fields={formFields}
 							handleSubmit={handleSubmit}
 							formType={'edit'}

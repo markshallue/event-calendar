@@ -1,0 +1,5558 @@
+[
+	{
+		"id": 1,
+		"title": "Team Meeting",
+		"start": "2024-05-04T00:00:00.000Z",
+		"end": "2024-05-08T00:00:00.000Z",
+		"groups": [{ "label": "In progress", "color": "#FAB005" }],
+		"isAllDay": true,
+		"content": [
+			{ "label": "Description", "content": "Discuss project updates and deadlines." },
+			{
+				"label": "Staff",
+				"content": [
+					{ "id": 2545, "label": "Erick Reynolds", "color": "#228BE6" },
+					{ "id": 2553, "label": "Herbert Cummerata", "color": "#228BE6" },
+					{ "id": 30495, "label": "Steven Herman", "color": "#228BE6" }
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 2,
+		"title": "Code Review",
+		"start": "2024-10-21T22:00:00.000Z",
+		"end": "2024-10-22T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review pull requests from the development team to ensure code quality and adherence to standards."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 3,
+		"title": "Design Mockup",
+		"start": "2024-07-14T22:00:00.000Z",
+		"end": "2024-07-18T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create detailed mockups for the new homepage layout, including responsive design elements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 4,
+		"title": "Client Presentation",
+		"start": "2024-09-28T22:00:00.000Z",
+		"end": "2024-10-03T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Present the project progress to the client, covering all milestones achieved and upcoming tasks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 5,
+		"title": "Sprint Planning",
+		"start": "2024-06-14T22:00:00.000Z",
+		"end": "2024-06-14T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan tasks for the upcoming sprint, allocate resources, and set priorities for the development team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 6,
+		"title": "QA Testing",
+		"start": "2024-06-20T09:00:00.000Z",
+		"end": "2024-06-20T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Test the new features thoroughly before release to ensure there are no bugs or performance issues."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 7,
+		"title": "Marketing Meeting",
+		"start": "2024-08-09T06:00:00.000Z",
+		"end": "2024-08-09T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss marketing strategies for the next quarter, focusing on social media campaigns and SEO improvements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage4.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 8,
+		"title": "Budget Review",
+		"start": "2024-07-12T10:00:00.000Z",
+		"end": "2024-07-12T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review the budget for the upcoming project phase and identify areas where costs can be optimized."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 9,
+		"title": "User Research",
+		"start": "2024-10-10T07:00:00.000Z",
+		"end": "2024-10-10T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct in-depth interviews with users to gather feedback on the new features and identify pain points."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 10,
+		"title": "Product Launch",
+		"start": "2024-09-14T22:00:00.000Z",
+		"end": "2024-09-19T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch the new product to the market with a comprehensive marketing and PR campaign."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 11,
+		"title": "Team Building Activity",
+		"start": "2024-06-23T08:00:00.000Z",
+		"end": "2024-06-23T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Organize a team building activity to improve collaboration and communication within the team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 12,
+		"title": "Bug Fixing Session",
+		"start": "2024-08-14T22:00:00.000Z",
+		"end": "2024-08-14T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Fix bugs reported by the QA team and ensure that the application runs smoothly and efficiently."
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 13,
+		"title": "Social Media Update",
+		"start": "2024-08-14T12:00:00.000Z",
+		"end": "2024-08-14T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "2:00pm",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Post updates on social media platforms about the latest product features and company news."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage1.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 14,
+		"title": "Internal Training Session",
+		"start": "2024-06-19T22:00:00.000Z",
+		"end": "2024-06-23T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct training sessions for new employees on company policies, tools, and workflows."
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 15,
+		"title": "Sales Call with Potential Client",
+		"start": "2024-05-27T09:00:00.000Z",
+		"end": "2024-05-27T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Call potential clients to discuss sales opportunities and demonstrate the benefits of our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 16,
+		"title": "Content Creation for Blog",
+		"start": "2024-09-22T22:00:00.000Z",
+		"end": "2024-09-24T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create engaging and informative content for the company blog, focusing on industry trends and insights."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 17,
+		"title": "Customer Support Tickets",
+		"start": "2024-05-16T22:00:00.000Z",
+		"end": "2024-05-20T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Respond to customer support tickets, resolving issues and answering queries promptly."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 18,
+		"title": "Project Kickoff Meeting",
+		"start": "2024-06-17T22:00:00.000Z",
+		"end": "2024-06-21T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Kickoff meeting for the new project, outlining goals, timelines, and team responsibilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 19,
+		"title": "SEO Optimization",
+		"start": "2024-10-22T10:00:00.000Z",
+		"end": "2024-10-22T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Optimize website content for search engines to improve organic search rankings and drive traffic."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 20,
+		"title": "Data Analysis from Survey",
+		"start": "2024-05-25T22:00:00.000Z",
+		"end": "2024-05-27T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze data from the recent survey to identify trends and areas for improvement."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 21,
+		"title": "Quarterly Board Meeting",
+		"start": "2024-10-03T09:00:00.000Z",
+		"end": "2024-10-03T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Quarterly board meeting to discuss company performance, financials, and strategic direction."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 22,
+		"title": "Industry Conference Attendance",
+		"start": "2024-10-07T09:00:00.000Z",
+		"end": "2024-10-07T17:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "7:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend an industry conference for networking and to stay updated on the latest trends and technologies."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 23,
+		"title": "Weekly Progress Report",
+		"start": "2024-08-30T12:00:00.000Z",
+		"end": "2024-08-30T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "2:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Prepare and send the weekly progress report to the stakeholders, highlighting key achievements and challenges."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 24,
+		"title": "Competitive Analysis Report",
+		"start": "2024-05-20T06:00:00.000Z",
+		"end": "2024-05-20T07:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "9:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze competitors' products and strategies to identify strengths, weaknesses, and opportunities for our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 25,
+		"title": "Website Maintenance",
+		"start": "2024-10-11T09:00:00.000Z",
+		"end": "2024-10-11T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform maintenance on the company website, including updates, backups, and security checks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 26,
+		"title": "Feature Brainstorming Session",
+		"start": "2024-06-14T22:00:00.000Z",
+		"end": "2024-06-17T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Brainstorm new features for the product, considering user feedback and market trends."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 27,
+		"title": "Performance Review Meeting",
+		"start": "2024-09-07T06:00:00.000Z",
+		"end": "2024-09-07T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct performance reviews for team members, providing feedback and setting goals for the next period."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 28,
+		"title": "Legal Consultation on Policies",
+		"start": "2024-10-25T11:00:00.000Z",
+		"end": "2024-10-25T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Consult with legal team on new policies and regulations affecting our industry and operations."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 29,
+		"title": "Inventory Check and Update",
+		"start": "2024-08-12T22:00:00.000Z",
+		"end": "2024-08-16T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Check and update inventory records, ensuring all items are accounted for and stock levels are adequate."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 30,
+		"title": "New Hire Orientation Session",
+		"start": "2024-10-26T06:00:00.000Z",
+		"end": "2024-10-26T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Orientation for new employees, covering company culture, policies, and job-specific training."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 31,
+		"title": "Press Release Drafting",
+		"start": "2024-05-30T22:00:00.000Z",
+		"end": "2024-06-01T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Draft and distribute a press release about the latest company achievements and product launches."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 32,
+		"title": "Vendor Meeting",
+		"start": "2024-07-13T22:00:00.000Z",
+		"end": "2024-07-15T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Meet with vendors to discuss supply issues, negotiate terms, and build stronger partnerships."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 33,
+		"title": "Code Refactoring",
+		"start": "2024-08-17T10:00:00.000Z",
+		"end": "2024-08-17T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Refactor old code for better performance, readability, and maintainability."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 34,
+		"title": "Email Campaign Launch",
+		"start": "2024-08-27T07:00:00.000Z",
+		"end": "2024-08-27T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch an email marketing campaign targeting potential and existing customers with personalized content."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 35,
+		"title": "Partnership Discussion",
+		"start": "2024-05-07T22:00:00.000Z",
+		"end": "2024-05-07T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss potential partnership with another company to explore synergies and collaborative opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 36,
+		"title": "User Feedback Review",
+		"start": "2024-05-11T22:00:00.000Z",
+		"end": "2024-05-14T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review feedback from users to identify common issues and areas for improvement."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 37,
+		"title": "Financial Audit",
+		"start": "2024-06-14T07:00:00.000Z",
+		"end": "2024-06-14T10:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "12:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct a financial audit for the last quarter to ensure compliance and accuracy in financial reporting."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 38,
+		"title": "Strategy Meeting",
+		"start": "2024-08-08T08:00:00.000Z",
+		"end": "2024-08-08T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss long-term strategy for the company, setting goals and defining action plans."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 39,
+		"title": "Graphics Design for Event",
+		"start": "2024-10-26T10:00:00.000Z",
+		"end": "2024-10-26T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create graphics for the upcoming event, including banners, flyers, and social media posts."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 40,
+		"title": "Workshop Facilitation",
+		"start": "2024-06-25T10:00:00.000Z",
+		"end": "2024-06-25T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Facilitate a workshop for team skill development, focusing on collaboration and problem-solving."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 41,
+		"title": "Security Update",
+		"start": "2024-10-04T09:00:00.000Z",
+		"end": "2024-10-04T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Update the security protocols and systems to protect against new threats and vulnerabilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 42,
+		"title": "Networking Event Attendance",
+		"start": "2024-05-12T07:00:00.000Z",
+		"end": "2024-05-12T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend a local networking event to build connections and explore business opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 43,
+		"title": "Technical Support",
+		"start": "2024-08-25T08:00:00.000Z",
+		"end": "2024-08-25T10:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "12:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Provide technical support to customers, troubleshooting issues and offering solutions."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 44,
+		"title": "Grant Proposal Writing",
+		"start": "2024-05-27T22:00:00.000Z",
+		"end": "2024-06-01T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Write and submit a grant proposal to secure funding for a new project or initiative."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 45,
+		"title": "Resource Allocation",
+		"start": "2024-06-21T22:00:00.000Z",
+		"end": "2024-06-25T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Allocate resources for the next project phase, ensuring that all teams have what they need to succeed."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 46,
+		"title": "Customer Onboarding",
+		"start": "2024-06-24T10:00:00.000Z",
+		"end": "2024-06-24T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Onboard new customers to the platform, providing training and support during the initial setup."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 47,
+		"title": "Routine Maintenance Check",
+		"start": "2024-06-18T22:00:00.000Z",
+		"end": "2024-06-18T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform routine maintenance checks on all systems and equipment to ensure optimal performance."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 48,
+		"title": "Budget Planning for Next Year",
+		"start": "2024-10-17T22:00:00.000Z",
+		"end": "2024-10-20T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan the budget for the next financial year, setting spending limits and identifying investment opportunities."
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 49,
+		"title": "Team Retrospective Meeting",
+		"start": "2024-09-22T11:00:00.000Z",
+		"end": "2024-09-22T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Reflect on the last sprint and discuss improvements, celebrating successes and learning from challenges."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 50,
+		"title": "Team Meeting",
+		"start": "2024-10-29T23:00:00.000Z",
+		"end": "2024-11-01T23:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss project updates and deadlines."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 51,
+		"title": "Code Review",
+		"start": "2024-06-12T06:00:00.000Z",
+		"end": "2024-06-12T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review pull requests from the development team to ensure code quality and adherence to standards."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 52,
+		"title": "Design Mockup",
+		"start": "2024-09-02T10:00:00.000Z",
+		"end": "2024-09-02T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create detailed mockups for the new homepage layout, including responsive design elements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 53,
+		"title": "Client Presentation",
+		"start": "2024-09-03T22:00:00.000Z",
+		"end": "2024-09-05T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Present the project progress to the client, covering all milestones achieved and upcoming tasks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 54,
+		"title": "Sprint Planning",
+		"start": "2024-05-11T22:00:00.000Z",
+		"end": "2024-05-15T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan tasks for the upcoming sprint, allocate resources, and set priorities for the development team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 55,
+		"title": "QA Testing",
+		"start": "2024-09-27T06:00:00.000Z",
+		"end": "2024-09-27T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Test the new features thoroughly before release to ensure there are no bugs or performance issues."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 56,
+		"title": "Marketing Meeting",
+		"start": "2024-07-08T10:00:00.000Z",
+		"end": "2024-07-08T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss marketing strategies for the next quarter, focusing on social media campaigns and SEO improvements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 57,
+		"title": "Budget Review",
+		"start": "2024-05-11T22:00:00.000Z",
+		"end": "2024-05-12T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review the budget for the upcoming project phase and identify areas where costs can be optimized."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 58,
+		"title": "User Research",
+		"start": "2024-06-07T08:00:00.000Z",
+		"end": "2024-06-07T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct in-depth interviews with users to gather feedback on the new features and identify pain points."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 59,
+		"title": "Product Launch",
+		"start": "2024-10-16T10:00:00.000Z",
+		"end": "2024-10-16T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch the new product to the market with a comprehensive marketing and PR campaign."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 60,
+		"title": "Team Building Activity",
+		"start": "2024-09-27T22:00:00.000Z",
+		"end": "2024-09-29T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Organize a team building activity to improve collaboration and communication within the team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 61,
+		"title": "Bug Fixing Session",
+		"start": "2024-08-23T11:00:00.000Z",
+		"end": "2024-08-23T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Fix bugs reported by the QA team and ensure that the application runs smoothly and efficiently."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 62,
+		"title": "Social Media Update",
+		"start": "2024-07-18T09:00:00.000Z",
+		"end": "2024-07-18T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Post updates on social media platforms about the latest product features and company news."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 63,
+		"title": "Internal Training Session",
+		"start": "2024-07-27T22:00:00.000Z",
+		"end": "2024-07-29T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct training sessions for new employees on company policies, tools, and workflows."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 64,
+		"title": "Sales Call with Potential Client",
+		"start": "2024-10-20T10:00:00.000Z",
+		"end": "2024-10-20T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Call potential clients to discuss sales opportunities and demonstrate the benefits of our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 65,
+		"title": "Content Creation for Blog",
+		"start": "2024-07-29T10:00:00.000Z",
+		"end": "2024-07-29T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create engaging and informative content for the company blog, focusing on industry trends and insights."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 66,
+		"title": "Customer Support Tickets",
+		"start": "2024-07-02T11:00:00.000Z",
+		"end": "2024-07-02T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Respond to customer support tickets, resolving issues and answering queries promptly."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 67,
+		"title": "Project Kickoff Meeting",
+		"start": "2024-09-05T22:00:00.000Z",
+		"end": "2024-09-09T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Kickoff meeting for the new project, outlining goals, timelines, and team responsibilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 68,
+		"title": "SEO Optimization",
+		"start": "2024-10-10T22:00:00.000Z",
+		"end": "2024-10-14T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Optimize website content for search engines to improve organic search rankings and drive traffic."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 69,
+		"title": "Data Analysis from Survey",
+		"start": "2024-05-22T22:00:00.000Z",
+		"end": "2024-05-26T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze data from the recent survey to identify trends and areas for improvement."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 70,
+		"title": "Quarterly Board Meeting",
+		"start": "2024-09-27T10:00:00.000Z",
+		"end": "2024-09-27T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Quarterly board meeting to discuss company performance, financials, and strategic direction."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 71,
+		"title": "Industry Conference Attendance",
+		"start": "2024-09-08T06:00:00.000Z",
+		"end": "2024-09-08T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend an industry conference for networking and to stay updated on the latest trends and technologies."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 72,
+		"title": "Weekly Progress Report",
+		"start": "2024-08-18T22:00:00.000Z",
+		"end": "2024-08-19T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Prepare and send the weekly progress report to the stakeholders, highlighting key achievements and challenges."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 73,
+		"title": "Competitive Analysis Report",
+		"start": "2024-09-28T22:00:00.000Z",
+		"end": "2024-10-03T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze competitors' products and strategies to identify strengths, weaknesses, and opportunities for our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 74,
+		"title": "Website Maintenance",
+		"start": "2024-06-02T22:00:00.000Z",
+		"end": "2024-06-07T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform maintenance on the company website, including updates, backups, and security checks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 75,
+		"title": "Feature Brainstorming Session",
+		"start": "2024-05-20T08:00:00.000Z",
+		"end": "2024-05-20T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Brainstorm new features for the product, considering user feedback and market trends."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 76,
+		"title": "Performance Review Meeting",
+		"start": "2024-09-01T06:00:00.000Z",
+		"end": "2024-09-01T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct performance reviews for team members, providing feedback and setting goals for the next period."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 77,
+		"title": "Legal Consultation on Policies",
+		"start": "2024-10-25T22:00:00.000Z",
+		"end": "2024-10-26T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Consult with legal team on new policies and regulations affecting our industry and operations."
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 78,
+		"title": "Inventory Check and Update",
+		"start": "2024-06-01T09:00:00.000Z",
+		"end": "2024-06-01T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Check and update inventory records, ensuring all items are accounted for and stock levels are adequate."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 79,
+		"title": "New Hire Orientation Session",
+		"start": "2024-10-11T10:00:00.000Z",
+		"end": "2024-10-11T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Orientation for new employees, covering company culture, policies, and job-specific training."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 80,
+		"title": "Press Release Drafting",
+		"start": "2024-10-08T22:00:00.000Z",
+		"end": "2024-10-09T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Draft and distribute a press release about the latest company achievements and product launches."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 81,
+		"title": "Vendor Meeting",
+		"start": "2024-05-25T11:00:00.000Z",
+		"end": "2024-05-25T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Meet with vendors to discuss supply issues, negotiate terms, and build stronger partnerships."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 82,
+		"title": "Code Refactoring",
+		"start": "2024-10-25T22:00:00.000Z",
+		"end": "2024-10-29T23:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Refactor old code for better performance, readability, and maintainability."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 83,
+		"title": "Email Campaign Launch",
+		"start": "2024-08-01T08:00:00.000Z",
+		"end": "2024-08-01T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch an email marketing campaign targeting potential and existing customers with personalized content."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 84,
+		"title": "Partnership Discussion",
+		"start": "2024-07-03T07:00:00.000Z",
+		"end": "2024-07-03T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss potential partnership with another company to explore synergies and collaborative opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 85,
+		"title": "User Feedback Review",
+		"start": "2024-06-09T22:00:00.000Z",
+		"end": "2024-06-11T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review feedback from users to identify common issues and areas for improvement."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 86,
+		"title": "Financial Audit",
+		"start": "2024-06-13T06:00:00.000Z",
+		"end": "2024-06-13T07:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "9:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct a financial audit for the last quarter to ensure compliance and accuracy in financial reporting."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 87,
+		"title": "Strategy Meeting",
+		"start": "2024-07-22T11:00:00.000Z",
+		"end": "2024-07-22T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss long-term strategy for the company, setting goals and defining action plans."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 88,
+		"title": "Graphics Design for Event",
+		"start": "2024-08-18T22:00:00.000Z",
+		"end": "2024-08-22T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create graphics for the upcoming event, including banners, flyers, and social media posts."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 89,
+		"title": "Workshop Facilitation",
+		"start": "2024-07-08T22:00:00.000Z",
+		"end": "2024-07-10T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Facilitate a workshop for team skill development, focusing on collaboration and problem-solving."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 90,
+		"title": "Security Update",
+		"start": "2024-09-25T10:00:00.000Z",
+		"end": "2024-09-25T17:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "7:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Update the security protocols and systems to protect against new threats and vulnerabilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage1.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 91,
+		"title": "Networking Event Attendance",
+		"start": "2024-10-16T22:00:00.000Z",
+		"end": "2024-10-19T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend a local networking event to build connections and explore business opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 92,
+		"title": "Technical Support",
+		"start": "2024-05-15T22:00:00.000Z",
+		"end": "2024-05-17T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Provide technical support to customers, troubleshooting issues and offering solutions."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 93,
+		"title": "Grant Proposal Writing",
+		"start": "2024-08-09T22:00:00.000Z",
+		"end": "2024-08-09T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Write and submit a grant proposal to secure funding for a new project or initiative."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 94,
+		"title": "Resource Allocation",
+		"start": "2024-07-14T06:00:00.000Z",
+		"end": "2024-07-14T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Allocate resources for the next project phase, ensuring that all teams have what they need to succeed."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 95,
+		"title": "Customer Onboarding",
+		"start": "2024-08-05T11:00:00.000Z",
+		"end": "2024-08-05T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Onboard new customers to the platform, providing training and support during the initial setup."
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 96,
+		"title": "Routine Maintenance Check",
+		"start": "2024-10-16T08:00:00.000Z",
+		"end": "2024-10-16T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform routine maintenance checks on all systems and equipment to ensure optimal performance."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 97,
+		"title": "Budget Planning for Next Year",
+		"start": "2024-09-25T09:00:00.000Z",
+		"end": "2024-09-25T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan the budget for the next financial year, setting spending limits and identifying investment opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 98,
+		"title": "Team Retrospective Meeting",
+		"start": "2024-06-12T22:00:00.000Z",
+		"end": "2024-06-12T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Reflect on the last sprint and discuss improvements, celebrating successes and learning from challenges."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 99,
+		"title": "Team Meeting",
+		"start": "2024-08-11T22:00:00.000Z",
+		"end": "2024-08-11T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss project updates and deadlines."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 100,
+		"title": "Code Review",
+		"start": "2024-10-18T22:00:00.000Z",
+		"end": "2024-10-22T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review pull requests from the development team to ensure code quality and adherence to standards."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 101,
+		"title": "Design Mockup",
+		"start": "2024-10-25T09:00:00.000Z",
+		"end": "2024-10-25T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create detailed mockups for the new homepage layout, including responsive design elements."
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 102,
+		"title": "Client Presentation",
+		"start": "2024-10-17T10:00:00.000Z",
+		"end": "2024-10-17T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Present the project progress to the client, covering all milestones achieved and upcoming tasks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 103,
+		"title": "Sprint Planning",
+		"start": "2024-09-27T22:00:00.000Z",
+		"end": "2024-09-28T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan tasks for the upcoming sprint, allocate resources, and set priorities for the development team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 104,
+		"title": "QA Testing",
+		"start": "2024-10-20T06:00:00.000Z",
+		"end": "2024-10-20T10:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "12:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Test the new features thoroughly before release to ensure there are no bugs or performance issues."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 105,
+		"title": "Marketing Meeting",
+		"start": "2024-08-04T07:00:00.000Z",
+		"end": "2024-08-04T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss marketing strategies for the next quarter, focusing on social media campaigns and SEO improvements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 106,
+		"title": "Budget Review",
+		"start": "2024-09-23T12:00:00.000Z",
+		"end": "2024-09-23T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "2:00pm",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review the budget for the upcoming project phase and identify areas where costs can be optimized."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 107,
+		"title": "User Research",
+		"start": "2024-06-14T22:00:00.000Z",
+		"end": "2024-06-15T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct in-depth interviews with users to gather feedback on the new features and identify pain points."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 108,
+		"title": "Product Launch",
+		"start": "2024-10-20T22:00:00.000Z",
+		"end": "2024-10-22T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch the new product to the market with a comprehensive marketing and PR campaign."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 109,
+		"title": "Team Building Activity",
+		"start": "2024-05-08T22:00:00.000Z",
+		"end": "2024-05-11T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Organize a team building activity to improve collaboration and communication within the team."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 110,
+		"title": "Bug Fixing Session",
+		"start": "2024-05-04T12:00:00.000Z",
+		"end": "2024-05-04T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "2:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Fix bugs reported by the QA team and ensure that the application runs smoothly and efficiently."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 111,
+		"title": "Social Media Update",
+		"start": "2024-05-09T08:00:00.000Z",
+		"end": "2024-05-09T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Post updates on social media platforms about the latest product features and company news."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 112,
+		"title": "Internal Training Session",
+		"start": "2024-10-18T07:00:00.000Z",
+		"end": "2024-10-18T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct training sessions for new employees on company policies, tools, and workflows."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 113,
+		"title": "Sales Call with Potential Client",
+		"start": "2024-06-15T22:00:00.000Z",
+		"end": "2024-06-16T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Call potential clients to discuss sales opportunities and demonstrate the benefits of our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 114,
+		"title": "Content Creation for Blog",
+		"start": "2024-10-16T07:00:00.000Z",
+		"end": "2024-10-16T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create engaging and informative content for the company blog, focusing on industry trends and insights."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 115,
+		"title": "Customer Support Tickets",
+		"start": "2024-06-21T07:00:00.000Z",
+		"end": "2024-06-21T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Respond to customer support tickets, resolving issues and answering queries promptly."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 116,
+		"title": "Project Kickoff Meeting",
+		"start": "2024-05-27T22:00:00.000Z",
+		"end": "2024-05-27T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Kickoff meeting for the new project, outlining goals, timelines, and team responsibilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 117,
+		"title": "SEO Optimization",
+		"start": "2024-08-01T11:00:00.000Z",
+		"end": "2024-08-01T15:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "5:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Optimize website content for search engines to improve organic search rankings and drive traffic."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 118,
+		"title": "Data Analysis from Survey",
+		"start": "2024-06-01T22:00:00.000Z",
+		"end": "2024-06-05T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze data from the recent survey to identify trends and areas for improvement."
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 119,
+		"title": "Quarterly Board Meeting",
+		"start": "2024-10-15T22:00:00.000Z",
+		"end": "2024-10-15T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Quarterly board meeting to discuss company performance, financials, and strategic direction."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 120,
+		"title": "Industry Conference Attendance",
+		"start": "2024-09-21T09:00:00.000Z",
+		"end": "2024-09-21T17:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "7:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend an industry conference for networking and to stay updated on the latest trends and technologies."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 121,
+		"title": "Weekly Progress Report",
+		"start": "2024-06-23T22:00:00.000Z",
+		"end": "2024-06-24T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Prepare and send the weekly progress report to the stakeholders, highlighting key achievements and challenges."
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 122,
+		"title": "Competitive Analysis Report",
+		"start": "2024-06-05T22:00:00.000Z",
+		"end": "2024-06-06T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Analyze competitors' products and strategies to identify strengths, weaknesses, and opportunities for our product."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 123,
+		"title": "Website Maintenance",
+		"start": "2024-07-22T10:00:00.000Z",
+		"end": "2024-07-22T16:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "6:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform maintenance on the company website, including updates, backups, and security checks."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 124,
+		"title": "Feature Brainstorming Session",
+		"start": "2024-10-26T09:00:00.000Z",
+		"end": "2024-10-26T17:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "7:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Brainstorm new features for the product, considering user feedback and market trends."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 125,
+		"title": "Performance Review Meeting",
+		"start": "2024-10-07T10:00:00.000Z",
+		"end": "2024-10-07T13:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "3:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct performance reviews for team members, providing feedback and setting goals for the next period."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 126,
+		"title": "Legal Consultation on Policies",
+		"start": "2024-09-16T22:00:00.000Z",
+		"end": "2024-09-18T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Consult with legal team on new policies and regulations affecting our industry and operations."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 127,
+		"title": "Inventory Check and Update",
+		"start": "2024-05-09T22:00:00.000Z",
+		"end": "2024-05-12T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Check and update inventory records, ensuring all items are accounted for and stock levels are adequate."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 128,
+		"title": "New Hire Orientation Session",
+		"start": "2024-06-29T07:00:00.000Z",
+		"end": "2024-06-29T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Orientation for new employees, covering company culture, policies, and job-specific training."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 129,
+		"title": "Press Release Drafting",
+		"start": "2024-10-10T22:00:00.000Z",
+		"end": "2024-10-10T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Draft and distribute a press release about the latest company achievements and product launches."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 130,
+		"title": "Vendor Meeting",
+		"start": "2024-05-19T09:00:00.000Z",
+		"end": "2024-05-19T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Meet with vendors to discuss supply issues, negotiate terms, and build stronger partnerships."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 131,
+		"title": "Code Refactoring",
+		"start": "2024-05-24T09:00:00.000Z",
+		"end": "2024-05-24T11:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "11:00am",
+		"endTime": "1:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Refactor old code for better performance, readability, and maintainability."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 132,
+		"title": "Email Campaign Launch",
+		"start": "2024-07-27T11:00:00.000Z",
+		"end": "2024-07-27T19:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "9:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Launch an email marketing campaign targeting potential and existing customers with personalized content."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": []
+	},
+	{
+		"id": 133,
+		"title": "Partnership Discussion",
+		"start": "2024-08-03T07:00:00.000Z",
+		"end": "2024-08-03T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss potential partnership with another company to explore synergies and collaborative opportunities."
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 134,
+		"title": "User Feedback Review",
+		"start": "2024-07-02T22:00:00.000Z",
+		"end": "2024-07-06T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review feedback from users to identify common issues and areas for improvement."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 135,
+		"title": "Financial Audit",
+		"start": "2024-07-02T22:00:00.000Z",
+		"end": "2024-07-04T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Conduct a financial audit for the last quarter to ensure compliance and accuracy in financial reporting."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 136,
+		"title": "Strategy Meeting",
+		"start": "2024-08-03T22:00:00.000Z",
+		"end": "2024-08-04T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss long-term strategy for the company, setting goals and defining action plans."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 137,
+		"title": "Graphics Design for Event",
+		"start": "2024-08-26T06:00:00.000Z",
+		"end": "2024-08-26T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "8:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create graphics for the upcoming event, including banners, flyers, and social media posts."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage5.jpg"]
+	},
+	{
+		"id": 138,
+		"title": "Workshop Facilitation",
+		"start": "2024-09-28T11:00:00.000Z",
+		"end": "2024-09-28T19:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "1:00pm",
+		"endTime": "9:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Facilitate a workshop for team skill development, focusing on collaboration and problem-solving."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 139,
+		"title": "Security Update",
+		"start": "2024-05-10T10:00:00.000Z",
+		"end": "2024-05-10T18:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "8:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Update the security protocols and systems to protect against new threats and vulnerabilities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 140,
+		"title": "Networking Event Attendance",
+		"start": "2024-05-29T07:00:00.000Z",
+		"end": "2024-05-29T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Attend a local networking event to build connections and explore business opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 141,
+		"title": "Technical Support",
+		"start": "2024-06-03T08:00:00.000Z",
+		"end": "2024-06-03T09:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "10:00am",
+		"endTime": "11:00am",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Provide technical support to customers, troubleshooting issues and offering solutions."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage5.jpg", "/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 142,
+		"title": "Grant Proposal Writing",
+		"start": "2024-07-29T07:00:00.000Z",
+		"end": "2024-07-29T12:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "2:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Write and submit a grant proposal to secure funding for a new project or initiative."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 143,
+		"title": "Resource Allocation",
+		"start": "2024-09-11T22:00:00.000Z",
+		"end": "2024-09-11T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Allocate resources for the next project phase, ensuring that all teams have what they need to succeed."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 64015,
+						"label": "Alvin Ernser",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 144,
+		"title": "Customer Onboarding",
+		"start": "2024-05-07T07:00:00.000Z",
+		"end": "2024-05-07T14:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "9:00am",
+		"endTime": "4:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Onboard new customers to the platform, providing training and support during the initial setup."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 30495,
+						"label": "Steven Herman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg"]
+	},
+	{
+		"id": 145,
+		"title": "Routine Maintenance Check",
+		"start": "2024-08-06T22:00:00.000Z",
+		"end": "2024-08-09T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Perform routine maintenance checks on all systems and equipment to ensure optimal performance."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg"]
+	},
+	{
+		"id": 146,
+		"title": "Budget Planning for Next Year",
+		"start": "2024-07-07T22:00:00.000Z",
+		"end": "2024-07-09T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Plan the budget for the next financial year, setting spending limits and identifying investment opportunities."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg", "/src/data/images/demoImage4.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 147,
+		"title": "Team Retrospective Meeting",
+		"start": "2024-06-20T22:00:00.000Z",
+		"end": "2024-06-21T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "Complete",
+				"color": "#22c55e"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Reflect on the last sprint and discuss improvements, celebrating successes and learning from challenges."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 148,
+		"title": "Team Meeting",
+		"start": "2024-05-29T22:00:00.000Z",
+		"end": "2024-05-30T22:00:00.000Z",
+		"groups": [
+			{
+				"label": "In progress",
+				"color": "#FAB005"
+			}
+		],
+		"isAllDay": true,
+		"content": [
+			{
+				"label": "Description",
+				"content": "Discuss project updates and deadlines."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2545,
+						"label": "Erick Reynolds",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2553,
+						"label": "Herbert Cummerata",
+						"color": "#228BE6"
+					},
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 30509,
+						"label": "Joel Lockman",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage3.jpg"]
+	},
+	{
+		"id": 149,
+		"title": "Code Review",
+		"start": "2024-10-20T10:00:00.000Z",
+		"end": "2024-10-20T18:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "12:00pm",
+		"endTime": "8:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Review pull requests from the development team to ensure code quality and adherence to standards."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 2714,
+						"label": "Melanie Armstrong-Nolan",
+						"color": "#228BE6"
+					},
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					},
+					{
+						"id": 62728,
+						"label": "Ivan Wisozk",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage2.jpg", "/src/data/images/demoImage1.jpg"]
+	},
+	{
+		"id": 150,
+		"title": "Design Mockup",
+		"start": "2024-07-05T12:00:00.000Z",
+		"end": "2024-07-05T19:00:00.000Z",
+		"groups": [
+			{
+				"label": "Pending",
+				"color": "#ef4444"
+			}
+		],
+		"isAllDay": false,
+		"startTime": "2:00pm",
+		"endTime": "9:00pm",
+		"content": [
+			{
+				"label": "Description",
+				"content": "Create detailed mockups for the new homepage layout, including responsive design elements."
+			},
+			{
+				"label": "Staff",
+				"content": [
+					{
+						"id": 60736,
+						"label": "Beulah Kreiger",
+						"color": "#228BE6"
+					}
+				]
+			}
+		],
+		"images": ["/src/data/images/demoImage4.jpg", "/src/data/images/demoImage2.jpg"]
+	}
+]

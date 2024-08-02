@@ -28,6 +28,7 @@ export function ViewPopover({
 	handleSubmit,
 	event,
 }: ViewPopoverProps) {
+	console.log(editable);
 	if (!event) return <></>;
 	const timeLabel = getDateTimeLabel(event.start, event.end, event.startTime, event.endTime);
 

@@ -2,13 +2,11 @@ import { Paper, Text, Title } from '@mantine/core';
 import { CodeHighlight } from '@mantine/code-highlight';
 
 import { EventsCalendar } from '~/EventsCalendar';
-
-import { useDemoDataRequest } from '@/data/hooks/useDemoDataRequest';
 import { CalendarWrapper, PageWrapper } from '@/layout';
 
-export function Responsive() {
-	const { data: events } = useDemoDataRequest();
+import events from '@/data/events.json';
 
+export function Responsive() {
 	const exampleCode = `
 import { EventsCalendar } from 'events-calendar';
 import events from '@/data/events.json';

@@ -1,0 +1,192 @@
+[
+	{ "label": "Team Meeting", "info": "Discuss project updates and deadlines." },
+	{
+		"label": "Code Review",
+		"info": "Review pull requests from the development team to ensure code quality and adherence to standards."
+	},
+	{
+		"label": "Design Mockup",
+		"info": "Create detailed mockups for the new homepage layout, including responsive design elements."
+	},
+	{
+		"label": "Client Presentation",
+		"info": "Present the project progress to the client, covering all milestones achieved and upcoming tasks."
+	},
+	{
+		"label": "Sprint Planning",
+		"info": "Plan tasks for the upcoming sprint, allocate resources, and set priorities for the development team."
+	},
+	{
+		"label": "QA Testing",
+		"info": "Test the new features thoroughly before release to ensure there are no bugs or performance issues."
+	},
+	{
+		"label": "Marketing Meeting",
+		"info": "Discuss marketing strategies for the next quarter, focusing on social media campaigns and SEO improvements."
+	},
+	{
+		"label": "Budget Review",
+		"info": "Review the budget for the upcoming project phase and identify areas where costs can be optimized."
+	},
+	{
+		"label": "User Research",
+		"info": "Conduct in-depth interviews with users to gather feedback on the new features and identify pain points."
+	},
+	{
+		"label": "Product Launch",
+		"info": "Launch the new product to the market with a comprehensive marketing and PR campaign."
+	},
+	{
+		"label": "Team Building Activity",
+		"info": "Organize a team building activity to improve collaboration and communication within the team."
+	},
+	{
+		"label": "Bug Fixing Session",
+		"info": "Fix bugs reported by the QA team and ensure that the application runs smoothly and efficiently."
+	},
+	{
+		"label": "Social Media Update",
+		"info": "Post updates on social media platforms about the latest product features and company news."
+	},
+	{
+		"label": "Internal Training Session",
+		"info": "Conduct training sessions for new employees on company policies, tools, and workflows."
+	},
+	{
+		"label": "Sales Call with Potential Client",
+		"info": "Call potential clients to discuss sales opportunities and demonstrate the benefits of our product."
+	},
+	{
+		"label": "Content Creation for Blog",
+		"info": "Create engaging and informative content for the company blog, focusing on industry trends and insights."
+	},
+	{
+		"label": "Customer Support Tickets",
+		"info": "Respond to customer support tickets, resolving issues and answering queries promptly."
+	},
+	{
+		"label": "Project Kickoff Meeting",
+		"info": "Kickoff meeting for the new project, outlining goals, timelines, and team responsibilities."
+	},
+	{
+		"label": "SEO Optimization",
+		"info": "Optimize website content for search engines to improve organic search rankings and drive traffic."
+	},
+	{
+		"label": "Data Analysis from Survey",
+		"info": "Analyze data from the recent survey to identify trends and areas for improvement."
+	},
+	{
+		"label": "Quarterly Board Meeting",
+		"info": "Quarterly board meeting to discuss company performance, financials, and strategic direction."
+	},
+	{
+		"label": "Industry Conference Attendance",
+		"info": "Attend an industry conference for networking and to stay updated on the latest trends and technologies."
+	},
+	{
+		"label": "Weekly Progress Report",
+		"info": "Prepare and send the weekly progress report to the stakeholders, highlighting key achievements and challenges."
+	},
+	{
+		"label": "Competitive Analysis Report",
+		"info": "Analyze competitors' products and strategies to identify strengths, weaknesses, and opportunities for our product."
+	},
+	{
+		"label": "Website Maintenance",
+		"info": "Perform maintenance on the company website, including updates, backups, and security checks."
+	},
+	{
+		"label": "Feature Brainstorming Session",
+		"info": "Brainstorm new features for the product, considering user feedback and market trends."
+	},
+	{
+		"label": "Performance Review Meeting",
+		"info": "Conduct performance reviews for team members, providing feedback and setting goals for the next period."
+	},
+	{
+		"label": "Legal Consultation on Policies",
+		"info": "Consult with legal team on new policies and regulations affecting our industry and operations."
+	},
+	{
+		"label": "Inventory Check and Update",
+		"info": "Check and update inventory records, ensuring all items are accounted for and stock levels are adequate."
+	},
+	{
+		"label": "New Hire Orientation Session",
+		"info": "Orientation for new employees, covering company culture, policies, and job-specific training."
+	},
+	{
+		"label": "Press Release Drafting",
+		"info": "Draft and distribute a press release about the latest company achievements and product launches."
+	},
+	{
+		"label": "Vendor Meeting",
+		"info": "Meet with vendors to discuss supply issues, negotiate terms, and build stronger partnerships."
+	},
+	{ "label": "Code Refactoring", "info": "Refactor old code for better performance, readability, and maintainability." },
+	{
+		"label": "Email Campaign Launch",
+		"info": "Launch an email marketing campaign targeting potential and existing customers with personalized content."
+	},
+	{
+		"label": "Partnership Discussion",
+		"info": "Discuss potential partnership with another company to explore synergies and collaborative opportunities."
+	},
+	{
+		"label": "User Feedback Review",
+		"info": "Review feedback from users to identify common issues and areas for improvement."
+	},
+	{
+		"label": "Financial Audit",
+		"info": "Conduct a financial audit for the last quarter to ensure compliance and accuracy in financial reporting."
+	},
+	{
+		"label": "Strategy Meeting",
+		"info": "Discuss long-term strategy for the company, setting goals and defining action plans."
+	},
+	{
+		"label": "Graphics Design for Event",
+		"info": "Create graphics for the upcoming event, including banners, flyers, and social media posts."
+	},
+	{
+		"label": "Workshop Facilitation",
+		"info": "Facilitate a workshop for team skill development, focusing on collaboration and problem-solving."
+	},
+	{
+		"label": "Security Update",
+		"info": "Update the security protocols and systems to protect against new threats and vulnerabilities."
+	},
+	{
+		"label": "Networking Event Attendance",
+		"info": "Attend a local networking event to build connections and explore business opportunities."
+	},
+	{
+		"label": "Technical Support",
+		"info": "Provide technical support to customers, troubleshooting issues and offering solutions."
+	},
+	{
+		"label": "Grant Proposal Writing",
+		"info": "Write and submit a grant proposal to secure funding for a new project or initiative."
+	},
+	{
+		"label": "Resource Allocation",
+		"info": "Allocate resources for the next project phase, ensuring that all teams have what they need to succeed."
+	},
+	{
+		"label": "Customer Onboarding",
+		"info": "Onboard new customers to the platform, providing training and support during the initial setup."
+	},
+	{
+		"label": "Routine Maintenance Check",
+		"info": "Perform routine maintenance checks on all systems and equipment to ensure optimal performance."
+	},
+	{
+		"label": "Budget Planning for Next Year",
+		"info": "Plan the budget for the next financial year, setting spending limits and identifying investment opportunities."
+	},
+	{
+		"label": "Team Retrospective Meeting",
+		"info": "Reflect on the last sprint and discuss improvements, celebrating successes and learning from challenges."
+	}
+]
