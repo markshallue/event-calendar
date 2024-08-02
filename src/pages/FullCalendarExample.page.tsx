@@ -16,26 +16,21 @@ const formFields: CalendarFormFields = {
 	multiGroup: false,
 };
 
-const withViewLink = false;
-const withEditLink = false;
-
 export function FullCalendarExample() {
-	const handleSubmit = (args: HandleSubmitArgs) => {
-		if (args.type !== 'delete') console.log(args.values);
-	};
 	return (
 		<PageWrapper>
 			<Title mb='sm'>Full Calendar</Title>
 			<CalendarWrapper>
 				<FullCalendar
-					editable
 					// compact
 					// enableDragCreation
 					// enableRescheduling
 					// isFetching
 					// views = ['month', 'week', 'day'],
-					withViewLink={withViewLink}
-					withEditLink={withEditLink}
+					// withViewLink={false}
+					// withEditLink={false}
+					// useEventsCalendarProps={{ initialView: 'week' }}
+					editable
 					renderCustomEditControls={(event, type, close) => (
 						<>
 							<ActionButton
@@ -60,8 +55,7 @@ export function FullCalendarExample() {
 							/>
 						</>
 					)}
-					handleSubmit={handleSubmit}
-					// useEventsCalendarProps={{ initialView: 'week' }}
+					handleSubmit={(args: HandleSubmitArgs) => console.log(args)}
 					events={demoData}
 					groups={demoGroups}
 					fields={formFields}

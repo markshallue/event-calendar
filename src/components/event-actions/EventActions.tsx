@@ -47,7 +47,7 @@ export function EventActions({
 					onClick={() => {
 						setPopoverType('edit');
 						openPopover();
-						closeAll();
+						closeContextMenu();
 					}}
 				/>
 			)}
