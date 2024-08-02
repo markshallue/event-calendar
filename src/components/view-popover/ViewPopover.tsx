@@ -1,20 +1,20 @@
-import { Card, Text, Badge, ScrollArea, Stack } from '@mantine/core';
+import { Card, Text, Badge, ScrollArea, Stack, Group } from '@mantine/core';
 import { IconCalendarEvent } from '@tabler/icons-react';
 import classes from './ViewPopover.module.css';
 
-import { ImageCarousel } from '@/components';
+import { EventActions, ImageCarousel } from '@/components';
 
 import { CalendarEvent } from '~/types';
 import { humanize, getDateTimeLabel } from '@/utils';
 
-import { ViewPopoverToolbar } from './components';
+import { FilledBadge } from './components';
 
 interface ViewPopoverProps {
 	onClose: () => void;
 	event: CalendarEvent;
-	withViewLink?: boolean;
-	withEditLink?: boolean;
 	editable?: boolean;
+	renderPopoverControls?: (event: CalendarEvent) => React.ReactNode;
+	renderCustomEditControls?: (event: CalendarEvent, type: 'icons' | 'buttons', close: () => void) => React.ReactNode;
 	setPopoverType?: (type: 'view' | 'edit') => void;
 	handleSubmit?: (args: any) => void;
 }
@@ -22,14 +22,18 @@ interface ViewPopoverProps {
 export function ViewPopover({
 	onClose,
 	setPopoverType,
-	withViewLink = true,
-	withEditLink = true,
 	editable = false,
+	renderPopoverControls,
+	renderCustomEditControls,
 	handleSubmit,
 	event,
 }: ViewPopoverProps) {
 	if (!event) return <></>;
 	const timeLabel = getDateTimeLabel(event.start, event.end, event.startTime, event.endTime);
+
+	// Toolbar visibility
+	const showBadge = event.groups && event.groups.length !== 0;
+	const showToolbar = showBadge || editable || renderPopoverControls;
 
 	return (
 		<Card className={classes.ViewPopover} padding={0} withBorder>
@@ -95,16 +99,28 @@ export function ViewPopover({
 					</ScrollArea.Autosize>
 				)}
 			</div>
-			{/* Bottom Toolbar */}
-			<ViewPopoverToolbar
-				withViewLink={withViewLink}
-				withEditLink={withEditLink}
-				editable={editable}
-				onClose={onClose}
-				setPopoverType={setPopoverType}
-				event={event}
-				handleSubmit={handleSubmit}
-			/>
+
+			{/* Toolbar */}
+			{showToolbar && (
+				<Group px='md' py='xs' style={{ flexShrink: 0, borderTop: '1px solid var(--mantine-color-gray-3)' }}>
+					{showBadge && <FilledBadge event={event} />}
+
+					<Group gap='0.25rem' justify='flex-end' style={{ flexGrow: 1 }}>
+						{renderPopoverControls ? (
+							renderPopoverControls(event)
+						) : editable ? (
+							<EventActions
+								onClose={onClose}
+								setPopoverType={setPopoverType}
+								event={event}
+								handleSubmit={handleSubmit}
+								renderCustomEditControls={renderCustomEditControls}
+								type='icons'
+							/>
+						) : null}
+					</Group>
+				</Group>
+			)}
 		</Card>
 	);
 }

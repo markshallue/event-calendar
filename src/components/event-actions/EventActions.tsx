@@ -1,11 +1,11 @@
-import { Button, Group } from '@mantine/core';
+import { Button } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { IconEdit, IconEye, IconTrash } from '@tabler/icons-react';
+import { IconEdit, IconTrash } from '@tabler/icons-react';
 
 import { CalendarEvent } from '~/types';
 
 import { HandleSubmitArgs } from '@/types';
-import { ActionButton, ConfirmationModal, IconLink } from './components';
+import { ActionButton, ConfirmationModal } from './components';
 
 interface EventActionsProps {
 	event: CalendarEvent;
@@ -14,9 +14,8 @@ interface EventActionsProps {
 	closeContextMenu?: () => void;
 	setPopoverType?: (type: 'view' | 'edit') => void;
 	handleSubmit?: (args: HandleSubmitArgs) => void;
-	type: 'links' | 'icons' | 'buttons';
-	withEditLink?: boolean;
-	withViewLink?: boolean;
+	renderCustomEditControls?: (event: CalendarEvent, type: 'icons' | 'buttons', close: () => void) => React.ReactNode;
+	type: 'icons' | 'buttons';
 }
 export function EventActions({
 	event,
@@ -25,97 +24,77 @@ export function EventActions({
 	openPopover = () => null,
 	onClose = () => null,
 	closeContextMenu = () => null,
+	renderCustomEditControls,
 	type,
-	withEditLink = true,
-	withViewLink = true,
 }: EventActionsProps) {
 	const [opened, { open, close }] = useDisclosure(false);
 
+	// Close modal, popover and context menu
+	const closeAll = () => {
+		close();
+		onClose();
+		closeContextMenu();
+	};
+
 	return (
 		<>
-			{type === 'links' ? (
-				<>
-					<Group wrap='nowrap' gap='0.25rem' justify='flex-end' style={{ flexGrow: 1 }}>
-						{withViewLink && (
-							<IconLink
-								label='View entry'
-								color='green'
-								link={`/entries/entry?EID=${event.entryId}`}
-								icon={<IconEye size='1.125rem' />}
-							/>
-						)}
-						{withEditLink && (
-							<IconLink
-								label='Edit entry'
-								color='blue'
-								link={`/entries/edit?EID=${event.entryId}`}
-								icon={<IconEdit size='1.125rem' />}
-							/>
-						)}
-					</Group>
-				</>
-			) : (
-				<>
-					{setPopoverType && (
-						<ActionButton
-							buttonContext={type}
-							color='indigo'
-							icon={<IconEdit size='1.125rem' />}
-							label='Edit'
-							onClick={() => {
-								setPopoverType('edit');
-								openPopover();
-								closeContextMenu();
-							}}
-						/>
-					)}
-					<ConfirmationModal
-						title='Confirm delete'
-						body='Are you sure you want to delete this entry?'
-						opened={opened}
-						onClose={close}
-						triggerButton={
-							<ActionButton
-								onClick={open}
-								buttonContext={type}
-								color='red'
-								icon={<IconTrash size='1.125rem' />}
-								label='Delete event'
-							/>
-						}
-						cancelButton={
-							<Button
-								size='xs'
-								color='gray'
-								variant='default'
-								onClick={e => {
-									e.stopPropagation();
-									onClose();
-									closeContextMenu();
-									close();
-								}}
-							>
-								Cancel
-							</Button>
-						}
-						confirmButton={
-							<Button
-								size='xs'
-								color='red'
-								onClick={e => {
-									e.stopPropagation();
-									onClose();
-									closeContextMenu();
-									close();
-									handleSubmit({ id: event.id, type: 'delete' });
-								}}
-							>
-								Delete
-							</Button>
-						}
-					/>
-				</>
+			{setPopoverType && (
+				<ActionButton
+					buttonContext={type}
+					color='indigo'
+					icon={<IconEdit size='1.125rem' />}
+					label='Quick edit'
+					onClick={() => {
+						setPopoverType('edit');
+						openPopover();
+						closeAll();
+					}}
+				/>
 			)}
+			{renderCustomEditControls && renderCustomEditControls(event, type, closeAll)}
+			<ConfirmationModal
+				title='Confirm delete'
+				body='Are you sure you want to delete this entry?'
+				opened={opened}
+				onClose={close}
+				triggerButton={
+					<ActionButton
+						onClick={open}
+						buttonContext={type}
+						color='red'
+						icon={<IconTrash size='1.125rem' />}
+						label='Delete event'
+					/>
+				}
+				cancelButton={
+					<Button
+						size='xs'
+						color='gray'
+						variant='default'
+						onClick={e => {
+							e.stopPropagation();
+							closeAll();
+						}}
+					>
+						Cancel
+					</Button>
+				}
+				confirmButton={
+					<Button
+						size='xs'
+						color='red'
+						onClick={e => {
+							e.stopPropagation();
+							onClose();
+							closeContextMenu();
+							close();
+							handleSubmit({ id: event.id, type: 'delete' });
+						}}
+					>
+						Delete
+					</Button>
+				}
+			/>
 		</>
 	);
 }
